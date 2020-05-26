@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Styleable">
+        <!--TextView-->
+        <attr name="legenda" format="string" />
+        <attr name="corLegenda" format="color" />
+        <attr name="tamLegenda" format="dimension" />
+
+
+        <attr name="descricao" format="string" />
+        <attr name="corDescricao" format="color" />
+        <attr name="tamDescricao" format="dimension" />
+
+        <!--EditText-->
+        <attr name="tamLegendaEditText" format="dimension" />
+        <attr name="tamTextEditText" format="dimension" />
+        <attr name="hint" format="string" />
+        <attr name="text" format="string" />
+        <attr name="lines" format="integer" />
+        <attr name="maxLength" format="integer" />
+        <attr name="iconLeft" format="reference" />
+        <attr name="iconRigth" format="reference" />
+        <attr name="coricon" format="color" />
+        <attr name="enabled" format="boolean" />
+        <attr name="focusable" format="boolean" />
+        <attr name="requestfocus" format="boolean" />
+        <attr name="requerido" format="boolean" />
+        <attr name="isDate" format="boolean" />
+        <attr name="isDateHour" format="boolean" />
+        <attr name="iconRigthVisible" format="boolean" />
+        <attr name="tag" format="string" />
+        <attr name="mascara" format="string" />
+
+        <attr name="inputType">
+            <flag name="none" value="0x00000000" />
+            <flag name="textPassword" value="0x00000081" />
+            <flag name="numberDecimal" value="0x00002002" />
+            <flag name="textMultiLine" value="0x00020001" />
+            <flag name="textCapCharacters" value="0x00020022" />
+            <flag name="number" value="0x00020034" />
+            <flag name="textEmailAddress" value="0x00026534" />
+        </attr>
+
+        <!--Spinner-->
+        <attr name="entries" format="reference" />
+
+        <!--EditTextCalendar-->
+        <attr name="hora" format="boolean"/>
+        <attr name="inicializa" format="boolean"/>
+
+        <!--ImageViewCustom-->
+        <attr name="hintAction" format="string" />
+
+    </declare-styleable>
+
+
+</resources>
