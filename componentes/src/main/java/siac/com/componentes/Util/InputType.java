@@ -5,14 +5,13 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.Gravity;
 import android.widget.EditText;
 
-import static siac.com.componentes.componentes.Util.Constantes.none;
-import static siac.com.componentes.componentes.Util.Constantes.number;
-import static siac.com.componentes.componentes.Util.Constantes.numberDecimal;
-import static siac.com.componentes.componentes.Util.Constantes.textCapCharacters;
-import static siac.com.componentes.componentes.Util.Constantes.textEmailAddress;
-import static siac.com.componentes.componentes.Util.Constantes.textMultiLine;
-import static siac.com.componentes.componentes.Util.Constantes.textPassword;
-
+import static siac.com.componentes.Util.Constantes.none;
+import static siac.com.componentes.Util.Constantes.numberDecimal;
+import static siac.com.componentes.Util.Constantes.textCapCharacters;
+import static siac.com.componentes.Util.Constantes.textEmailAddress;
+import static siac.com.componentes.Util.Constantes.textMultiLine;
+import static siac.com.componentes.Util.Constantes.textPassword;
+import static siac.com.componentes.Util.Constantes.number;
 
 public class InputType {
 
