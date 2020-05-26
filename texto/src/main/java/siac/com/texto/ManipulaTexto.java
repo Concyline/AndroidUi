@@ -18,9 +18,16 @@ public class ManipulaTexto {
 	private FileWriter fileWriter;
 	private String linha;
 	private File file;
-	private String log = "";
 	private static ManipulaTexto manipulaTexto;
 	private String traco = "+---------------------------------------------------------------------+\r\n";
+
+	private static String folderName = "ManipulaTexto";
+	private static String fileName = "Log.txt";
+
+	public static void init(String folder, String file){
+		folderName = folder;
+		fileName = file;
+	}
 
 	public static ManipulaTexto getInstance() {
 		if (manipulaTexto == null)
@@ -32,12 +39,12 @@ public class ManipulaTexto {
 	public ManipulaTexto() {
 		try {
 
-			String PATH = Environment.getExternalStorageDirectory() + "/OS/";
+			String PATH = Environment.getExternalStorageDirectory() + File.separator + folderName + File.separator;
 			File folder = new File(PATH);
 			if (!folder.exists())
 				folder.mkdirs();
 
-			file = new File(Environment.getExternalStorageDirectory()+ "/OS/log.txt");
+			file = new File(Environment.getExternalStorageDirectory() + File.separator + folderName + File.separator + fileName);
 			if (!file.exists())
 				file.createNewFile();
 			instanciarControles(file);
@@ -165,12 +172,6 @@ public class ManipulaTexto {
 		}
 		divisao();
 	}
-
-	/*public void processaException(String info, Exception e) {
-		info(info);
-		erro(e.toString());
-		insereLog(e.getStackTrace());
-	}*/
 
 	public void processaException(String classe, String info, Exception e) {
 		info(classe, info);
