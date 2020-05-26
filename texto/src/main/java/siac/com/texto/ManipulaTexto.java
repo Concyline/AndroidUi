@@ -24,6 +24,10 @@ public class ManipulaTexto {
 	private static String folderName = "ManipulaTexto";
 	private static String fileName = "Log.txt";
 
+	public static void init(String folder){
+		folderName = folder;
+	}
+
 	public static void init(String folder, String file){
 		folderName = folder;
 		fileName = file;
