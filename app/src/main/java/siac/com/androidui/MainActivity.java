@@ -28,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), LeitorActivity.class);
+
+                String codigo = "C=7898958119652;L=50962;V=30/09/2019";
+                intent.putExtra("teste",codigo);
+
                 startActivityForResult(intent, 0);
             }
         });

@@ -12,14 +12,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.zxing.Result;
 import com.orhanobut.hawk.Hawk;
+
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import siac.com.leitor.util.Util;
 
-public class LeitorActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{
+public class LeitorActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     private ZXingScannerView mScannerView;
     private LinearLayout container;
     private Menu menu;
+    private String teste = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
             setBar("Leitor");
 
             mScannerView = new ZXingScannerView(this);
+            teste = getIntent().getStringExtra("teste") == null ? "" : getIntent().getStringExtra("teste");
 
             // LIGA O PADRAO
             mScannerView.setFlash(Hawk.get("flash", false));
@@ -85,9 +88,9 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
         this.menu = menu;
 
         /////////// ARRUMAR ESSA LOGICA
-        if(Hawk.get("flash", false)){
+        if (Hawk.get("flash", false)) {
             menu.findItem(R.id.ligarFlash).setIcon(R.drawable.outline_flash_off_white_48dp);
-        }else{
+        } else {
             menu.findItem(R.id.ligarFlash).setIcon(R.drawable.outline_flash_on_white_48dp);
         }
 
@@ -101,28 +104,24 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
     public boolean itemSelected(MenuItem item, int tipoMenu, int position) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                 //FLUXO NORMAL
-                 finish();
 
-                // FLUXO TESTE
-                //String qrCode = "C=7898958119652;L=50962;V=30/09/2019";
-                /*String qrCode = "C=00000751;L=51021;V=31/12/2019;F=01/01/2019";
-                String codigoBarras = "00000751";
+                if (!teste.equals("")) {
+                    Intent intent = new Intent();
+                    //String codigo = "00000751";
+                    intent.putExtra("CODIGO", teste);
+                    setResult(0, intent);
+                }
+                finish();
 
-                Intent intent = new Intent();
-                intent.putExtra("CODIGO", qrCode );
-                //intent.putExtra("CODIGO", codigoBarras );
-                setResult(0, intent);
-                finish();*/
                 //mScannerView.resumeCameraPreview(this);
                 break;
             case 2131165305:
 
-                if(!Hawk.get("flash", false)){
+                if (!Hawk.get("flash", false)) {
                     Hawk.put("flash", true);
                     mScannerView.setFlash(true);
                     menu.findItem(R.id.ligarFlash).setIcon(R.drawable.outline_flash_off_white_48dp);
-                }else{
+                } else {
                     Hawk.put("flash", false);
                     mScannerView.setFlash(false);
                     menu.findItem(R.id.ligarFlash).setIcon(R.drawable.outline_flash_on_white_48dp);
@@ -135,7 +134,7 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
     @Override
     public void handleResult(Result rawResult) {
         Intent intent = new Intent();
-        intent.putExtra("CODIGO", rawResult.getText() );
+        intent.putExtra("CODIGO", rawResult.getText());
         setResult(0, intent);
         finish();
         mScannerView.resumeCameraPreview(this);
