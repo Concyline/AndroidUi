@@ -7,11 +7,20 @@
     tools:context=".MainActivity">
 
     <siac.com.componentes.EditTextLegenda
+        android:id="@+id/editTextLegenda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:legenda="teste" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abre o leitor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextLegenda" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

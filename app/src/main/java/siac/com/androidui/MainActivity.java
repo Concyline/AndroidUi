@@ -2,8 +2,12 @@ package siac.com.androidui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
+import siac.com.leitor.LeitorActivity;
 import siac.com.texto.ManipulaTexto;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,5 +23,22 @@ public class MainActivity extends AppCompatActivity {
 
         manipulaTexto.erro("erro teste");
 
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), LeitorActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (data != null) {
+            System.out.println(data.getStringExtra("CODIGO"));
+        }
     }
 }
