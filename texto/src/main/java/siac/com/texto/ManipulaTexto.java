@@ -98,12 +98,10 @@ public class ManipulaTexto {
 		return true;
 	}
 
-	public boolean info(String classe, String metodo) {
+	public boolean info(String value) {
 		try {
 			fileWriter = new FileWriter(file, true);
-			fileWriter.write(traco+ Util.dateHoraSegundo(new Date())+"\r\n");
-			//fileWriter.write("Info : " + value + "\r\n");
-			fileWriter.write("Info : Class " + classe +" - "+ metodo + "()"+ "\r\n");
+			fileWriter.write("Info : " + value + "\r\n");
 			fileWriter.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -177,8 +175,8 @@ public class ManipulaTexto {
 		divisao();
 	}
 
-	public void processaException(String classe, String info, Exception e) {
-		info(classe, info);
+	public void processaException(String classe, Exception e) {
+		info(classe);
 		erro(e.toString());
 		insereLog(e.getStackTrace());
 	}
