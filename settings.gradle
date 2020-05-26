@@ -1,3 +1,4 @@
 rootProject.name='AndroidUi'
 include ':app'
 include ':componentes'
+include ':texto'
