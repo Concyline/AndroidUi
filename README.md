@@ -16,7 +16,7 @@ This library has 3 modules to aid Android development, speeding up the completio
 
 Version 2.6.4 = 4d6c602321
 
-```
+```java
 allprojects {
 	repositories {
 			...
@@ -25,7 +25,7 @@ allprojects {
 	    }
 ````
 
-```Groovy
+```java
 dependencies {
 	        implementation 'com.github.Concyline:Androidui:4d6c602321'
 	     }
@@ -207,14 +207,126 @@ public listeners
   
   <img src="https://github.com/Concyline/AndroidUi/blob/master/img/manipulatexto.gif" width="50%">
   
-  ````
-  ManipulaTexto.init( this,"Manipula","Log.txt");
-  log = ManipulaTexto.getInstance();
+  ### Usage
   
-  // METHODS
-  //log.info("");
-  //log.erro("");
-  //log.processaException("class", Exception error);
-  //log.delete()
-  //String all = log.getAll();
+  ````java
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_manipula_texto);
+  
+  		ManipulaTexto.init( this,"Manipula","Log.txt");
+  		log = ManipulaTexto.getInstance();
+  
+  		// METHODS
+  		//log.info("");
+  		//log.erro("");
+  		//log.processaException("class", Exception error);
+  		//log.delete()
+  		//String all = log.getAll();
+  }
   ````
+  
+  ````xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="siac.com.androidui">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_teste"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon_teste"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ManipulaTextoActivity"></activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+	   
+    </application>
+
+</manifest>
+````
+  
+  # * Leitor Qr and CodeBar
+  
+  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/leitor.gif" width="50%">
+  
+  ### Usage
+  
+  ````java
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_manipula_texto);
+  
+  	retornoEditText = findViewById(R.id.retornoEditText);
+
+        Button lerQrTesteButton = findViewById(R.id.lerQrTesteButton);
+        lerQrTesteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), LeitorActivity.class);
+                String codigo = "C=7898958119652;L=50962;V=30/09/2019";
+                intent.putExtra("teste",codigo);
+                startActivityForResult(intent, 0);
+            }
+        });
+
+        Button lerQrButton = findViewById(R.id.lerQrButton);
+        lerQrButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), LeitorActivity.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+  }
+  
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        retornoEditText.setText("");
+        if (data != null) {
+            retornoEditText.setText(data.getStringExtra("CODIGO"));
+        }
+  }
+  ````
+  
+  ````xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="siac.com.androidui">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_teste"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon_teste"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ManipulaTextoActivity"></activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+	    
+        <activity android:name="siac.com.leitor.LeitorActivity" />
+
+    </application>
+
+</manifest>
+````
