@@ -203,6 +203,18 @@ public listeners
     }
   ````
   
-  # * Componentes
+  # * Manipulador de texto
   
   <img src="https://github.com/Concyline/AndroidUi/blob/master/img/manipulatexto.gif" width="50%">
+  
+  ````
+  ManipulaTexto.init( this,"Manipula","Log.txt");
+  log = ManipulaTexto.getInstance();
+  
+  // METHODS
+  //log.info("");
+  //log.erro("");
+  //log.processaException("class", Exception error);
+  //log.delete()
+  //String all = log.getAll();
+  ````
