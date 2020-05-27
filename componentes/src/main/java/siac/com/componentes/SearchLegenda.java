@@ -14,6 +14,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.text.Normalizer;
+
 import static siac.com.componentes.Util.InputType.setInputType;
 
 public class SearchLegenda extends FrameLayout {
@@ -144,6 +146,14 @@ public class SearchLegenda extends FrameLayout {
 
     public String getString() {
         return editText.getText().toString().trim();
+    }
+
+    public String getStringUperCase() {
+        return removerAcentos(editText.getText().toString().trim().toUpperCase());
+    }
+
+    private String removerAcentos(String str) {
+        return Normalizer.normalize(str, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
     }
 
     public Integer getInteger() {
