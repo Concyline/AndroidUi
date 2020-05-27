@@ -8,7 +8,7 @@ This library has 3 modules to aid Android development, speeding up the completio
  Features
 ------
  * Componentes
- * ManipulaTexto
+ * Manipulador de texto
  * Leitor CodeBar and QrCode
  
  Gradle Setup
