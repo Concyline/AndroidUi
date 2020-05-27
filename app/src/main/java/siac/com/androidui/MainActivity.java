@@ -27,34 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button componentesButton = findViewById(R.id.componentesButton);
-        componentesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), ComponentesActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button textoButton = findViewById(R.id.textoButton);
-        textoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), ManipulaTextoActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button leitorButton = findViewById(R.id.leitorButton);
-        leitorButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), LerQrBarCodeActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        //validaPermisoes();
+        validaPermisoes();
 
     }
 
