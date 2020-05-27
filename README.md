@@ -14,7 +14,7 @@ This library has 3 modules to aid Android development, speeding up the completio
  Gradle Setup
 ------
 
-Version 2.6.4 = 4d6c602321
+Version 2.6.8 = 4d6c602321
 
 ```java
 allprojects {
@@ -27,7 +27,7 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.Concyline:Androidui:4d6c602321'
+	        implementation 'com.github.Concyline:Androidui:2bd6187859'
 	     }
 ```
 
@@ -330,3 +330,7 @@ public listeners
 
 </manifest>
 ````
+
+Contact
+========
+* concyline@hotmail.com
