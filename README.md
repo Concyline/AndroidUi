@@ -25,7 +25,7 @@ dependencies {
 Usage
 -----
 
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentesimples.gif" width="50%">
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentesimples.png" width="50%">
 
 ```java
 
