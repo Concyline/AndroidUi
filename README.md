@@ -14,7 +14,7 @@ This library has 3 modules to aid Android development, speeding up the completio
  Gradle Setup
 ------
 
-Version 2.6.8 = 4d6c602321
+Version 2.6.8 = 2bd6187859
 
 ```java
 allprojects {
