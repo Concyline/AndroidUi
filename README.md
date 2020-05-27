@@ -5,8 +5,6 @@
 
 This library has 3 modules to aid Android development, speeding up the completion of the application
 
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentes.gif" width="50%">
-
  Features
 ------
  * Componentes
@@ -35,7 +33,8 @@ dependencies {
 
 
 
-# Componentes
+# * Componentes
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentes.gif" width="50%">
 
 ### Usage
 
@@ -203,3 +202,7 @@ public listeners
         iconRigthImageView.setOnClickListener(onClickListener);
     }
   ````
+  
+  # * Componentes
+  
+  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/manipulatexto.gif" width="50%">
