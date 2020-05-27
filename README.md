@@ -5,8 +5,6 @@
 
 This library has 3 modules to aid Android development, speeding up the completion of the application
 
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentes.gif" width="50%">
-
  Features
 ------
  * Componentes
@@ -17,13 +15,28 @@ This library has 3 modules to aid Android development, speeding up the completio
 ------
 
 Version 2.6.4 = 4d6c602321
+
+```
+allprojects {
+	repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		    }
+	    }
+````
+
 ```Groovy
 dependencies {
 	        implementation 'com.github.Concyline:Androidui:4d6c602321'
-	}
+	     }
 ```
-Usage
------
+
+
+
+# * Componentes
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentes.gif" width="50%">
+
+### Usage
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentesimples.png" width="50%">
 
@@ -188,4 +201,20 @@ public listeners
     public void setOnClickListenerIconRigth(OnClickListener onClickListener) {
         iconRigthImageView.setOnClickListener(onClickListener);
     }
+  ````
+  
+  # * Manipulador de texto
+  
+  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/manipulatexto.gif" width="50%">
+  
+  ````
+  ManipulaTexto.init( this,"Manipula","Log.txt");
+  log = ManipulaTexto.getInstance();
+  
+  // METHODS
+  //log.info("");
+  //log.erro("");
+  //log.processaException("class", Exception error);
+  //log.delete()
+  //String all = log.getAll();
   ````
