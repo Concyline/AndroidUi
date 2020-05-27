@@ -17,6 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:corLegenda="@color/colorAccent"
+            app:requerido="false"
+            app:enabled="true"
+            app:focusable="true"
+            app:requestfocus="true"
+            app:tag="edittext"
+            app:text="texto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -32,6 +38,11 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextLegenda"
             app:legenda="Mascara"
             app:mascara="  .   .   /    -  "
+            app:enabled="true"
+            app:focusable="true"
+            app:requestfocus="false"
+            app:tag="edittext"
+            app:text="texto"
             app:requerido="true" />
 
         <siac.com.componentes.EditTextCalendarLegenda
@@ -116,6 +127,7 @@
             app:layout_constraintTop_toBottomOf="@+id/searchLegenda"
             app:legenda="Senha"
             app:tamLegendaEditText="@dimen/tamLegendaEditText" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
