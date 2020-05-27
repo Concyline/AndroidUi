@@ -84,7 +84,7 @@ Usage
             app:entries="@array/tipo"
             app:legenda="Spinner" />
 ```
-or
+or add programaticaly adapter
 
 ````java
 ArrayAdapter<Object> adapter = new ArrayAdapter<Object>(getBaseContext(), 
@@ -92,6 +92,86 @@ ArrayAdapter<Object> adapter = new ArrayAdapter<Object>(getBaseContext(),
 	
 spinnerLegenda.setAdapter(adapter);
 ````
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/calendarhoradata.png" width="50%">
+
+```xml
+          <siac.com.componentes.EditTextCalendarLegenda
+            android:id="@+id/editTextCalendarLegenda"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:hora="true"
+            app:inicializa="false"
+            app:legenda="EditTextCalendarLegenda" />
+```
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/iconedireita.png" width="50%">
+
+```xml
+      <siac.com.componentes.EditTextLegenda
+            android:id="@+id/cadastroEditTextLegenda"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:coricon="#D6C"
+            app:iconRigth="@drawable/icons_coroa_48"
+            app:inputType="number"
+            app:legenda="Nome do cliente"
+            app:tamLegendaEditText="@dimen/tamLegendaEditText" />
+```
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/textocomlegenda.png" width="50%">
+
+```xml
+    <siac.com.componentes.TextViewLegenda
+            android:id="@+id/textViewsd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            app:corDescricao="@color/colorPrimaryDark"
+            app:corLegenda="@color/colorAccent"
+            app:descricao="Goiânia  adsdasdadsdasdsdasdsadsadsadasdsadadsdaszdsadasdsadasdasda"
+            app:legenda="Cidade" />
+```
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/pesquisasimples.png" width="50%">
+
+```xml
+   <siac.com.componentes.SearchLegenda
+            android:id="@+id/searchLegenda"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:hint="sua pesquisa"
+            app:inputType="none"
+            app:coricon="@color/colorAccent"
+            app:legenda="SearchLegenda" />
+```
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/senha.png" width="50%">
+
+```xml
+      <siac.com.componentes.EditTextLegenda
+            android:id="@+id/senhaEditTextLegenda"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:coricon="@color/colorAccent"
+            app:iconRigth="@drawable/round_visibility_black_48dp"
+            app:inputType="textPassword"
+            app:legenda="Senha"
+            app:tamLegendaEditText="@dimen/tamLegendaEditText" />
+```
+
+``` java
+final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLegenda);
+        senhaEditTextLegenda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                senhaEditTextLegenda.mostraSenha();
+            }
+        });
+````
+
+For all companions
+------
 
 all components have the following methods `boolean validaPreenchido()`, `boolean validaCpfCnpj()`, `void setError()`, `void removeError()`, `void mostraSenha()`, `String getString() `, `Integer getInteger()`, `Double getDouble()`
 
