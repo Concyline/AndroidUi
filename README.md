@@ -17,13 +17,27 @@ This library has 3 modules to aid Android development, speeding up the completio
 ------
 
 Version 2.6.4 = 4d6c602321
+
+```
+allprojects {
+	repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		    }
+	    }
+````
+
 ```Groovy
 dependencies {
 	        implementation 'com.github.Concyline:Androidui:4d6c602321'
-	}
+	     }
 ```
-Usage
------
+
+
+
+# Componentes
+
+### Usage
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentesimples.png" width="50%">
 
