@@ -1,6 +1,7 @@
 package siac.com.componentes;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.AdapterView;
@@ -21,7 +22,7 @@ public class SpinnerLegenda extends FrameLayout {
 
     // ATRIBUTOS
     private String legenda = "legenda";
-    private int corLegenda = R.color.corLegenda;
+    private ColorStateList corLegenda;
 
     private float tamLegenda = 13;
     private int entries = 0;
@@ -52,7 +53,7 @@ public class SpinnerLegenda extends FrameLayout {
         if (attrs != null) {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Styleable, defStyleAttr, 0);
             legenda = typedArray.getString(R.styleable.Styleable_legenda);
-            corLegenda = typedArray.getInteger(R.styleable.Styleable_corLegenda, R.color.corLegenda);
+            corLegenda = typedArray.getColorStateList(R.styleable.Styleable_corLegenda);
             tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.Styleable_tamLegendaEditText));
 
             charSequencesArray = typedArray.getTextArray(R.styleable.Styleable_entries);
@@ -84,7 +85,9 @@ public class SpinnerLegenda extends FrameLayout {
 
     private void setup() {
         legendaTextView.setText(legenda);
-        legendaTextView.setTextColor(ContextCompat.getColor(getContext(), corLegenda));
+        if(corLegenda != null) {
+            legendaTextView.setTextColor(corLegenda);
+        }
         legendaTextView.setTextSize(tamLegenda);
 
         setEntries();

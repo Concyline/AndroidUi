@@ -4,39 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    tools:context=".MainActivity">
-
+    android:layout_margin="10dp"
+    tools:context=".LerQrBarCodeActivity">
 
     <Button
-        android:id="@+id/componentesButton"
+        android:id="@+id/lerQrButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Componentes"
-        android:textAllCaps="false"
+        android:layout_marginTop="16dp"
+        android:text="Ler QR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lerQrTesteButton" />
+
+    <EditText
+        android:id="@+id/retornoEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:padding="5dp"
+        android:background="#CCC"
+        android:text=""
+        android:gravity="start|top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lerQrButton" />
+
+    <Button
+        android:id="@+id/lerQrTesteButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ler QR teste"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/textoButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Manipulador de texto"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/componentesButton" />
-
-    <Button
-        android:id="@+id/leitorButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Leitor Qr CodeBar"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

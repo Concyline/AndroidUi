@@ -1,6 +1,7 @@
 package siac.com.componentes;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
@@ -18,11 +19,11 @@ public class TextViewLegenda extends FrameLayout {
 
     // ATRIBUTOS
     private String legenda;
-    private int corLegenda;
+    private ColorStateList corLegenda;
     private float tamLegenda;
 
     private String descricao;
-    private int corDescricao;
+    private ColorStateList corDescricao;
     private float tamDescricao;
 
 
@@ -48,19 +49,17 @@ public class TextViewLegenda extends FrameLayout {
         if (attrs != null) {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Styleable, defStyleAttr, 0);
             legenda = typedArray.getString(R.styleable.Styleable_legenda);
-            corLegenda = typedArray.getInteger(R.styleable.Styleable_corLegenda, R.color.corLegenda);
+            corLegenda = typedArray.getColorStateList(R.styleable.Styleable_corLegenda);
             tamLegenda = getSizeFontLegenda(typedArray.getString(R.styleable.Styleable_tamLegenda));
 
             descricao = typedArray.getString(R.styleable.Styleable_descricao);
-            corDescricao = typedArray.getInteger(R.styleable.Styleable_corDescricao, R.color.corDescricao);
+            corDescricao = typedArray.getColorStateList(R.styleable.Styleable_corDescricao);
             tamDescricao = getSizeFontDescricao(typedArray.getString(R.styleable.Styleable_tamDescricao));
             return;
         }
         legenda = "legenda";
-        corLegenda = R.color.corLegenda;
         tamLegenda = 11;
         descricao = "descricao";
-        corDescricao = R.color.corDescricao;
         tamDescricao = 16;
     }
 
@@ -95,11 +94,15 @@ public class TextViewLegenda extends FrameLayout {
 
     private void setup() {
         legendaTextView.setText(legenda);
-        legendaTextView.setTextColor(ContextCompat.getColor(getContext(), corLegenda));
+        if(corLegenda != null) {
+            legendaTextView.setTextColor(corLegenda);
+        }
         legendaTextView.setTextSize(tamLegenda);
 
         descricaoTextView.setText(descricao);
-        descricaoTextView.setTextColor(ContextCompat.getColor(getContext(), corDescricao));
+        if(corDescricao != null) {
+            descricaoTextView.setTextColor(corDescricao);
+        }
         descricaoTextView.setTextSize(tamDescricao);
         descricaoTextView.setSingleLine();
     }

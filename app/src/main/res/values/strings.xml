@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AndroidUi</string>
+
+    <array name="tipo">
+        <item>Nome</item>
+        <item>cpf</item>
+        <item>rg</item>
+    </array>
 </resources>

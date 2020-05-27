@@ -1,6 +1,9 @@
 package siac.com.leitor;
 
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.Menu;
@@ -8,7 +11,9 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.google.zxing.Result;
 import com.orhanobut.hawk.Hawk;
@@ -30,18 +35,7 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
 
         try {
             Hawk.init(getBaseContext()).build();
-
             setBar("Leitor");
-
-            mScannerView = new ZXingScannerView(this);
-            teste = getIntent().getStringExtra("teste") == null ? "" : getIntent().getStringExtra("teste");
-
-            // LIGA O PADRAO
-            mScannerView.setFlash(Hawk.get("flash", false));
-
-            container = (LinearLayout) findViewById(R.id.containerLinearLayout);
-            container.addView(mScannerView);
-
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(getBaseContext(), "Erro: " + e.getMessage(), Toast.LENGTH_LONG).show();
@@ -67,14 +61,46 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
     @Override
     public void onResume() {
         super.onResume();
-        mScannerView.setResultHandler(this);
-        mScannerView.startCamera();
+        if(testaPermisao()) {
+            mScannerView = new ZXingScannerView(this);
+            teste = getIntent().getStringExtra("teste") == null ? "" : getIntent().getStringExtra("teste");
+
+            // LIGA O PADRAO
+            mScannerView.setFlash(Hawk.get("flash", false));
+
+            container = (LinearLayout) findViewById(R.id.containerLinearLayout);
+            container.addView(mScannerView);
+
+            mScannerView.setResultHandler(this);
+            mScannerView.startCamera();
+        }
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        mScannerView.stopCamera();
+        if(mScannerView != null) {
+            mScannerView.stopCamera();
+        }
+    }
+
+    public boolean testaPermisao() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            new AlertDialog.Builder(LeitorActivity.this)
+                    .setTitle("Atenção")
+                    .setMessage("A aplicação precisa da permissão da câmera no AndroidManifest.xml\n\n <uses-permission android:name=\"android.permission.CAMERA\" />")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .setIcon(R.drawable.round_error_outline_black_48dp
+                    )
+                    .show();
+            return false;
+        } else {
+            return true;
+        }
     }
 
     @Override
@@ -102,32 +128,29 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
     }
 
     public boolean itemSelected(MenuItem item, int tipoMenu, int position) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
 
-                if (!teste.equals("")) {
-                    Intent intent = new Intent();
-                    //String codigo = "00000751";
-                    intent.putExtra("CODIGO", teste);
-                    setResult(0, intent);
-                }
-                finish();
-
-                //mScannerView.resumeCameraPreview(this);
-                break;
-            case 2131165305:
-
-                if (!Hawk.get("flash", false)) {
-                    Hawk.put("flash", true);
-                    mScannerView.setFlash(true);
-                    menu.findItem(R.id.ligarFlash).setIcon(R.drawable.outline_flash_off_white_48dp);
-                } else {
-                    Hawk.put("flash", false);
-                    mScannerView.setFlash(false);
-                    menu.findItem(R.id.ligarFlash).setIcon(R.drawable.outline_flash_on_white_48dp);
-                }
-                break;
+        if (item.getItemId() == android.R.id.home) {
+            if (!teste.equals("")) {
+                Intent intent = new Intent();
+                //String codigo = "00000751";
+                intent.putExtra("CODIGO", teste);
+                setResult(0, intent);
+            }
+            finish();
         }
+
+        if (item.getItemId() == R.id.ligarFlash) {
+            if (!Hawk.get("flash", false)) {
+                Hawk.put("flash", true);
+                mScannerView.setFlash(true);
+                menu.findItem(R.id.ligarFlash).setIcon(R.drawable.outline_flash_off_white_48dp);
+            } else {
+                Hawk.put("flash", false);
+                mScannerView.setFlash(false);
+                menu.findItem(R.id.ligarFlash).setIcon(R.drawable.outline_flash_on_white_48dp);
+            }
+        }
+
         return true;
     }
 

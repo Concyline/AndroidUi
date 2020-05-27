@@ -3,6 +3,7 @@ package siac.com.componentes;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -53,7 +54,7 @@ public class EditTextLegenda extends FrameLayout {
     private String legenda = "legenda";
     private String hint = "";
     private String text = "";
-    private int corLegenda = R.color.corLegenda;
+    private ColorStateList corLegenda;
     private float tamLegendaEditText = 13;
     private float tamTextEditText = 16;
     private int inputType = 0;
@@ -65,8 +66,6 @@ public class EditTextLegenda extends FrameLayout {
     private boolean focusable;
     private boolean requestfocus;
     private boolean requerido;
-    private boolean isDate;
-    private boolean isDateHour;
     private boolean iconRigthVisible;
     private String tag;
     private Drawable iconLeft;
@@ -99,7 +98,7 @@ public class EditTextLegenda extends FrameLayout {
         if (attrs != null) {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Styleable, defStyleAttr, 0);
             legenda = typedArray.getString(R.styleable.Styleable_legenda);
-            corLegenda = typedArray.getInteger(R.styleable.Styleable_corLegenda, R.color.corLegenda);
+            corLegenda = typedArray.getColorStateList(R.styleable.Styleable_corLegenda);
             tamLegendaEditText = getSizeFontLegendaEditText(typedArray.getString(R.styleable.Styleable_tamLegendaEditText));
             tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.Styleable_tamTextEditText));
 
@@ -118,8 +117,6 @@ public class EditTextLegenda extends FrameLayout {
             focusable = typedArray.getBoolean(R.styleable.Styleable_focusable, true);
             requestfocus = typedArray.getBoolean(R.styleable.Styleable_requestfocus, false);
             requerido = typedArray.getBoolean(R.styleable.Styleable_requerido, false);
-            isDate = typedArray.getBoolean(R.styleable.Styleable_isDate, false);
-            isDateHour = typedArray.getBoolean(R.styleable.Styleable_isDateHour, false);
             iconRigthVisible = typedArray.getBoolean(R.styleable.Styleable_iconRigthVisible, false);
             tag = typedArray.getString(R.styleable.Styleable_tag);
             return;
@@ -161,7 +158,9 @@ public class EditTextLegenda extends FrameLayout {
 
     private void setup() {
         legendaTextView.setText(legenda);
-        legendaTextView.setTextColor(ContextCompat.getColor(getContext(), corLegenda));
+        if(corLegenda != null) {
+            legendaTextView.setTextColor(corLegenda);
+        }
         legendaTextView.setTextSize(tamLegendaEditText);
 
         editText.setHint(hint);
@@ -193,14 +192,6 @@ public class EditTextLegenda extends FrameLayout {
 
         if (mascara != null) {
             mascaraDinamica = new Mascara(editText, mascara);
-        }
-
-        if(isDate){
-            setOnClickListenerDate();
-        }
-
-        if(isDateHour){
-            setOnClickListenerDateHour();
         }
     }
 
@@ -329,38 +320,6 @@ public class EditTextLegenda extends FrameLayout {
 
     public void setOnClickListenerIconRigth(OnClickListener onClickListener) {
         iconRigthImageView.setOnClickListener(onClickListener);
-    }
-
-    private void setOnClickListenerDate() {
-        iconRigthImageView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fadeIn(getContext(), v);
-
-                createDialogData(new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        Calendar date = Calendar.getInstance();
-                        Calendar calendar = new GregorianCalendar(year, month, dayOfMonth,
-                                date.get(Calendar.HOUR_OF_DAY), date.get(Calendar.MINUTE), Calendar.SECOND);
-
-                        dateResult = calendar.getTime();
-                        editText.setText(Util.dateToStr(dateResult));
-                    }
-                }).show();
-            }
-        });
-    }
-
-    private void setOnClickListenerDateHour() {
-        iconLeftImageView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fadeIn(getContext(), v);
-                dateResult = new Date();
-                editText.setText(Util.dateHora(dateResult));
-            }
-        });
     }
 
     public Date getDate(){

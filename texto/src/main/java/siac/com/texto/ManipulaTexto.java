@@ -1,9 +1,17 @@
 package siac.com.texto;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.os.Environment;
 import android.util.Log;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
+
 import java.io.BufferedReader;
+import java.io.Console;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -23,14 +31,19 @@ public class ManipulaTexto {
 
 	private static String folderName = "ManipulaTexto";
 	private static String fileName = "Log.txt";
+	private static Context context;
 
-	public static void init(String folder){
+	public static void init(Context ctx, String folder){
+		context = ctx;
 		folderName = folder;
+		testaPermisao();
 	}
 
-	public static void init(String folder, String file){
+	public static void init(Context ctx, String folder, String file){
+		context = ctx;
 		folderName = folder;
 		fileName = file;
+		testaPermisao();
 	}
 
 	public static ManipulaTexto getInstance() {
@@ -38,6 +51,26 @@ public class ManipulaTexto {
 			manipulaTexto = new ManipulaTexto();
 
 		return manipulaTexto;
+	}
+
+	public static void testaPermisao() {
+
+		/*Manifest.permission.READ_EXTERNAL_STORAGE,
+				Manifest.permission.WRITE_EXTERNAL_STORAGE*/
+
+		if (ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+			new AlertDialog.Builder(context)
+					.setTitle("Atenção")
+					.setMessage("A aplicação precisa da permissão para manipular o SD Card no AndroidManifest.xml\n\n <uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />\n <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />")
+					.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							//finish();
+						}
+					})
+					.setIcon(R.drawable.round_error_outline_black_48dp
+					)
+					.show();
+		}
 	}
 
 	public ManipulaTexto() {

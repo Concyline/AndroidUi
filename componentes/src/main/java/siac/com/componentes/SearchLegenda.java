@@ -1,7 +1,10 @@
 package siac.com.componentes;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.util.AttributeSet;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -10,7 +13,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 
 import static siac.com.componentes.Util.InputType.setInputType;
 
@@ -24,8 +26,8 @@ public class SearchLegenda extends FrameLayout {
     // ATRIBUTOS
     private String legenda = "legenda";
     private String hint = "";
-    private int corLegenda = R.color.corLegenda;
-    ;
+    private ColorStateList corLegenda;
+
     private float tamLegenda = 13;
     private float tamTextEditText = 16;
     private int inputType = 0;
@@ -33,6 +35,7 @@ public class SearchLegenda extends FrameLayout {
     private boolean enabled;
     private boolean focusable;
     private boolean requestfocus;
+    private int coricon;
 
 
     public SearchLegenda(@NonNull Context context) {
@@ -58,7 +61,7 @@ public class SearchLegenda extends FrameLayout {
         if (attrs != null) {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Styleable, defStyleAttr, 0);
             legenda = typedArray.getString(R.styleable.Styleable_legenda);
-            corLegenda = typedArray.getInteger(R.styleable.Styleable_corLegenda, R.color.corLegenda);
+            corLegenda = typedArray.getColorStateList(R.styleable.Styleable_corLegenda);
             tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.Styleable_tamLegendaEditText));
             tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.Styleable_tamTextEditText));
 
@@ -69,6 +72,7 @@ public class SearchLegenda extends FrameLayout {
             enabled = typedArray.getBoolean(R.styleable.Styleable_enabled, true);
             focusable = typedArray.getBoolean(R.styleable.Styleable_focusable, true);
             requestfocus = typedArray.getBoolean(R.styleable.Styleable_requestfocus, false);
+            coricon = typedArray.getColor(R.styleable.Styleable_coricon, 0);
 
             return;
         }
@@ -115,7 +119,9 @@ public class SearchLegenda extends FrameLayout {
 
     private void setup() {
         legendaTextView.setText(legenda);
-        legendaTextView.setTextColor(ContextCompat.getColor(getContext(), corLegenda));
+        if (corLegenda != null) {
+            legendaTextView.setTextColor(corLegenda);
+        }
         legendaTextView.setTextSize(tamLegenda);
 
         editText.setHint(hint);
@@ -128,6 +134,8 @@ public class SearchLegenda extends FrameLayout {
         }
 
         setInputType(editText, inputType, 1);
+
+        imageView.setColorFilter(new PorterDuffColorFilter(coricon, PorterDuff.Mode.SRC_IN));
     }
 
     public void setText(String text) {
