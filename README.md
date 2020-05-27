@@ -5,5 +5,9 @@ This library has 3 modules to aid Android development, speeding up the completio
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentes.gif" width="50%">
 
 # Features
- * um
- * dois
+ * Componentes
+ * ManipulaTexto
+ * Leitor CodeBar and QrCode
+ 
+ Gradle Setup
+------
