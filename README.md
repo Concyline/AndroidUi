@@ -16,8 +16,17 @@ This library has 3 modules to aid Android development, speeding up the completio
  Gradle Setup
 ------
 
+Version 2.6.4 = 4d6c602321
 ```Groovy
 dependencies {
-    implementation 'com.kcrimi.tooltipdialog:tooltipdialog:1.0.0'
-}
+	        implementation 'com.github.Concyline:Androidui:4d6c602321'
+	}
+```
+Usage
+-----
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentesimples.gif" width="50%">
+
+```java
+
 ```
