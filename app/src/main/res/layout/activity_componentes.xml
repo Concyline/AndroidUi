@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
+    android:padding="10dp"
+    android:background="@drawable/shadow"
     tools:context=".ComponentesActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,38 +14,40 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <siac.com.componentes.EditTextLegenda
             android:id="@+id/editTextLegenda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:corLegenda="@color/colorAccent"
-            app:requerido="false"
             app:enabled="true"
             app:focusable="true"
-            app:requestfocus="true"
-            app:tag="edittext"
-            app:text="texto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:legenda="Componente simples" />
+            app:legenda="Componente simples"
+            app:requerido="false"
+            app:requestfocus="true"
+            app:tag="edittext"
+            app:text="texto" />
 
         <siac.com.componentes.EditTextLegenda
             android:id="@+id/editTextLegenda2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:enabled="true"
+            app:focusable="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextLegenda"
             app:legenda="Mascara"
             app:mascara="  .   .   /    -  "
-            app:enabled="true"
-            app:focusable="true"
+            app:requerido="true"
             app:requestfocus="false"
             app:tag="edittext"
-            app:text="texto"
-            app:requerido="true" />
+            app:text="texto" />
+
 
         <siac.com.componentes.EditTextCalendarLegenda
             android:id="@+id/editTextLegenda22"
@@ -107,9 +111,9 @@
             android:id="@+id/searchLegenda"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:coricon="@color/colorAccent"
             app:hint="sua pesquisa"
             app:inputType="none"
-            app:coricon="@color/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewsd"
