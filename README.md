@@ -345,6 +345,8 @@ Resources
 | --- | --- |
 | shadow | Composes with edges like a cardboard |
 | shadow_selected | Composes with edges like a cardboard selected |
+| edit_selector | skin for custom Edittext |
+| spinner_selector | skin for custom Spinner |
 
 Contact
 ========
