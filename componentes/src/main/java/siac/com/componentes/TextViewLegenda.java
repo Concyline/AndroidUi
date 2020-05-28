@@ -25,6 +25,7 @@ public class TextViewLegenda extends FrameLayout {
     private String descricao;
     private ColorStateList corDescricao;
     private float tamDescricao;
+    private boolean singleLine;
 
 
     public TextViewLegenda(@NonNull Context context) {
@@ -55,6 +56,7 @@ public class TextViewLegenda extends FrameLayout {
             descricao = typedArray.getString(R.styleable.Styleable_descricao);
             corDescricao = typedArray.getColorStateList(R.styleable.Styleable_corDescricao);
             tamDescricao = getSizeFontDescricao(typedArray.getString(R.styleable.Styleable_tamDescricao));
+            singleLine = typedArray.getBoolean(R.styleable.Styleable_singleLine, false);
             return;
         }
         legenda = "legenda";
@@ -104,7 +106,10 @@ public class TextViewLegenda extends FrameLayout {
             descricaoTextView.setTextColor(corDescricao);
         }
         descricaoTextView.setTextSize(tamDescricao);
-        descricaoTextView.setSingleLine();
+
+        descricaoTextView.setSingleLine(singleLine);
+
+        //descricaoTextView.setSingleLine();
     }
 
     public void setDescricao(String descricao) {
