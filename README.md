@@ -343,10 +343,10 @@ Resources
 
 | Drawable | Description | Image |
 | --- | --- | --- |
-| shadow | Composes with edges like a cardboard | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shadow.png">  |
-| shadow_selected | Composes with edges like a cardboard selected | |
-| edit_selector | skin for custom Edittext | |
-| spinner_selector | skin for custom Spinner | |
+| shadow | Composes with edges like a cardboard | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shadow_img.png" width="50px">  |
+| shadow_selected | Composes with edges like a cardboard selected | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shadow_img.png" width="50px">  |
+| edit_selector | skin for custom Edittext | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shadow_img.png" width="50px">  |
+| spinner_selector | skin for custom Spinner | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shadow_img.png" width="50px">  |
 
 Contact
 ========
