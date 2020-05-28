@@ -337,14 +337,16 @@ public listeners
 Resources
 =========
 
-| Anim | Descrição |
+| Anim | Description |
 | --- | --- |
 | shake | Balance the components |
 
-| Drawable | Descrição |
-| --- | --- |
-| shadow | Composes with edges like a cardboard |
-| shadow_selected | Composes with edges like a cardboard selected |
+| Drawable | Description | Image |
+| --- | --- | --- |
+| shadow | Composes with edges like a cardboard | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shadow.png">  |
+| shadow_selected | Composes with edges like a cardboard selected | |
+| edit_selector | skin for custom Edittext | |
+| spinner_selector | skin for custom Spinner | |
 
 Contact
 ========
