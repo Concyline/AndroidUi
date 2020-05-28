@@ -13,7 +13,7 @@ This library has 3 modules to aid Android development, speeding up the completio
  Gradle Setup
 ------
 
-Version 2.6.9 = e9e96e1423
+Version 2.6.17 = 43a1ee1071
 
 ```java
 allprojects {
@@ -26,7 +26,7 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.Concyline:Androidui:e9e96e1423'
+	        implementation 'com.github.Concyline:Androidui:43a1ee1071'
 	     }
 ```
 
