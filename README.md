@@ -1,4 +1,4 @@
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/logo_projeto.png" width="100%">
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/logo_projeto_novo.png" width="100%">
 
 [![](https://jitpack.io/v/Concyline/Androidui.svg)](https://jitpack.io/#Concyline/Androidui)
 
