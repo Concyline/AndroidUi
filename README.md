@@ -144,6 +144,7 @@ spinnerLegenda.setAdapter(adapter);
             app:corLegenda="@color/colorAccent"
 	    app:tamLegenda="13sp"
             app:tamDescricao="16sp"
+	    app:singleLine="false"
             app:descricao="Goiânia  adsdasdadsdasdsdasdsadsadsadasdsadadsdaszdsadasdsadasdasda"
             app:legenda="Cidade" />
 ```
