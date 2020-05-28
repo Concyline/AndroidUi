@@ -343,10 +343,11 @@ Resources
 
 | Drawable | Description | Image |
 | --- | --- | --- |
-| shadow | Composes with edges like a cardboard | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shadow_img.png" width="50px">  |
-| shadow_selected | Composes with edges like a cardboard selected | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shadow_img.png" width="50px">  |
-| edit_selector | skin for custom Edittext | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shadow_img.png" width="50px">  |
-| spinner_selector | skin for custom Spinner | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shadow_img.png" width="50px">  |
+| shadow | Composes with edges like a cardboard | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shadow_img.png" 		width="50px">  |
+| shadow_selected | Composes with edges like a cardboard selected | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shadow_selected_img.png" 
+	width="50px">  |
+| edit_selector | skin for custom Edittext | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/estados_edittext.png" 		width="50px">  |
+| spinner_selector | skin for custom Spinner | <img src="https://github.com/Concyline/AndroidUi/blob/master/img/estados_edittext.png" 		width="50px">  |
 
 Contact
 ========
