@@ -331,6 +331,18 @@ public listeners
 </manifest>
 ````
 
+Resources
+=========
+
+| Anim | Descrição |
+| --- | --- |
+| shake | Balance the components |
+
+| Drawable | Descrição |
+| --- | --- |
+| shadow | Composes with edges like a cardboard |
+| shadow_selected | Composes with edges like a cardboard selected |
+
 Contact
 ========
 * concyline@hotmail.com
