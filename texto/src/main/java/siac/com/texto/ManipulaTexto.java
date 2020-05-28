@@ -55,21 +55,8 @@ public class ManipulaTexto {
 
 	public static void testaPermisao() {
 
-		/*Manifest.permission.READ_EXTERNAL_STORAGE,
-				Manifest.permission.WRITE_EXTERNAL_STORAGE*/
-
 		if (ContextCompat.checkSelfPermission(context, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-			new AlertDialog.Builder(context)
-					.setTitle("Atenção")
-					.setMessage("A aplicação precisa da permissão para manipular o SD Card no AndroidManifest.xml\n\n <uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />\n <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />")
-					.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog, int which) {
-							//finish();
-						}
-					})
-					.setIcon(R.drawable.round_error_outline_black_48dp
-					)
-					.show();
+			Log.e("ERRO", "A aplicação precisa da permissão para manipular o SD Card no AndroidManifest.xml\n\n <uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />\n <uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />");
 		}
 	}
 
