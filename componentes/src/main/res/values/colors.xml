@@ -4,5 +4,6 @@
     <color name="corDescricao">#484848</color>
     <color name="tint">#444</color>
     <color name="colorAccent">#00D9A3</color>
+    <color name="colorTextEditext">#757575</color>
 
 </resources>

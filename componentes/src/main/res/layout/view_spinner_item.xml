@@ -7,5 +7,5 @@
     android:ellipsize="marquee"
     android:text="RAZAO"
     android:textSize="@dimen/txtEdit"
-    android:textStyle="normal"
+    android:textColor="@color/colorTextEditext"
     android:textAlignment="inherit"/>
