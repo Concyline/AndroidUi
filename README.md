@@ -14,7 +14,7 @@ This library has 3 modules to aid Android development, speeding up the completio
  Gradle Setup
 ------
 
-Version 2.6.8 = 2bd6187859
+Version 2.6.9 = e9e96e1423
 
 ```java
 allprojects {
@@ -27,7 +27,7 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.Concyline:Androidui:2bd6187859'
+	        implementation 'com.github.Concyline:Androidui:e9e96e1423'
 	     }
 ```
 
@@ -186,7 +186,7 @@ final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLege
 For all companions
 ------
 
-all components have the following methods `boolean validaPreenchido()`, `boolean validaCpfCnpj()`, `void setError()`, `void removeError()`, `void mostraSenha()`, `String getString() `, `Integer getInteger()`, `Double getDouble()`
+all components have the following methods `boolean validaPreenchido()`, `boolean validaCpfCnpj()`, `void setError()`, `void removeError()`, `void mostraSenha()`, `String getString() `, `String getStringUperCase() `, `Integer getInteger()`, `Double getDouble()`
 
 public listeners
 ```java
