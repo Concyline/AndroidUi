@@ -216,6 +216,21 @@ final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLege
             app:roundedCorners="topLeft|bottomRight" />
 ````
 
+---
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/rount_image.png" width="50%">
+
+````xml
+     <siac.com.componentes.RoundImageView
+        android:id="@+id/roundImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/cidade"
+        app:borderColor="@color/colorAccent"
+        app:borderWidth="5dp"
+        app:shadow="true" />
+````
+
 For all companions
 ------
 
