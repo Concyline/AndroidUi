@@ -191,6 +191,16 @@ spinnerLegenda.setAdapter(adapter);
             app:tamLegendaEditText="@dimen/tamLegendaEditText" />
 ```
 
+``` java
+final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLegenda);
+        senhaEditTextLegenda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                senhaEditTextLegenda.mostraSenha();
+            }
+        });
+````
+
 ---
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/image_rounted.png" width="50%">
@@ -204,16 +214,6 @@ spinnerLegenda.setAdapter(adapter);
             android:src="@drawable/cidade"
             app:cornerRadius="10dp"
             app:roundedCorners="topLeft|bottomRight" />
-````
-
-``` java
-final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLegenda);
-        senhaEditTextLegenda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                senhaEditTextLegenda.mostraSenha();
-            }
-        });
 ````
 
 For all companions
