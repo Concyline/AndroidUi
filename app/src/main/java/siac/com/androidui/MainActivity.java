@@ -52,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
+                    Button componentesDoisButton = findViewById(R.id.componentesDoisButton);
+                    componentesDoisButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getBaseContext(), ComponentesDoisActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
                     Button textoButton = findViewById(R.id.textoButton);
                     textoButton.setOnClickListener(new View.OnClickListener() {
                         @Override

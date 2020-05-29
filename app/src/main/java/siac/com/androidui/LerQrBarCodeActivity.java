@@ -26,7 +26,7 @@ public class LerQrBarCodeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), LeitorActivity.class);
                 String codigo = "C=7898958119652;L=50962;V=30/09/2019";
-                intent.putExtra("teste",codigo);
+                intent.putExtra("teste_componete_cardview",codigo);
                 startActivityForResult(intent, 0);
             }
         });

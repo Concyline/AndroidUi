@@ -64,7 +64,7 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
         super.onResume();
         if(testaPermisao()) {
             mScannerView = new ZXingScannerView(this);
-            teste = getIntent().getStringExtra("teste") == null ? "" : getIntent().getStringExtra("teste");
+            teste = getIntent().getStringExtra("teste_componete_cardview") == null ? "" : getIntent().getStringExtra("teste_componete_cardview");
 
             // LIGA O PADRAO
             mScannerView.setFlash(Hawk.get("flash", false));
