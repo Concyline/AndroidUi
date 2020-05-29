@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:layout_margin="10dp"
     android:padding="10dp"
-    android:background="@drawable/shadow"
     tools:context=".ComponentesActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -102,13 +101,13 @@
             app:corDescricao="@color/colorPrimaryDark"
             app:corLegenda="@color/colorAccent"
             app:descricao="Goiânia  adsdasdadsdasdsdasdsadsadsadasdsadadsdaszdsadasdsadasdasdaerwerwrwerwerwrwerwer"
-            app:tamLegenda="13sp"
-            app:tamDescricao="16sp"
-            app:singleLine="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cadastroEditTextLegenda"
-            app:legenda="Cidade" />
+            app:legenda="Cidade"
+            app:singleLine="false"
+            app:tamDescricao="16sp"
+            app:tamLegenda="13sp" />
 
         <siac.com.componentes.SearchLegenda
             android:id="@+id/searchLegenda"
@@ -134,6 +133,19 @@
             app:layout_constraintTop_toBottomOf="@+id/searchLegenda"
             app:legenda="Senha"
             app:tamLegendaEditText="@dimen/tamLegendaEditText" />
+
+        <siac.com.componentes.RoundishImageView
+            android:id="@+id/roundishImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/cidade"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/senhaEditTextLegenda"
+            app:roundedCorners="topLeft|bottomRight" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

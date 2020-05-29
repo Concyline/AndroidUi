@@ -96,29 +96,29 @@ public class EditTextLegenda extends FrameLayout {
     private void obtainStyledAttributes(Context context, AttributeSet attrs, int defStyleAttr) {
 
         if (attrs != null) {
-            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Styleable, defStyleAttr, 0);
-            legenda = typedArray.getString(R.styleable.Styleable_legenda);
-            corLegenda = typedArray.getColorStateList(R.styleable.Styleable_corLegenda);
-            tamLegendaEditText = getSizeFontLegendaEditText(typedArray.getString(R.styleable.Styleable_tamLegendaEditText));
-            tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.Styleable_tamTextEditText));
+            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.EditTextLegenda, defStyleAttr, 0);
+            legenda = typedArray.getString(R.styleable.EditTextLegenda_legenda);
+            corLegenda = typedArray.getColorStateList(R.styleable.EditTextLegenda_corLegenda);
+            tamLegendaEditText = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextLegenda_tamLegendaEditText));
+            tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.EditTextLegenda_tamTextEditText));
 
-            mascara = typedArray.getString(R.styleable.Styleable_mascara);
-            inputType = typedArray.getInteger(R.styleable.Styleable_inputType, 0);
-            lines = typedArray.getInteger(R.styleable.Styleable_lines, 1);
-            maxLength = typedArray.getInteger(R.styleable.Styleable_maxLength, 0);
-            hint = typedArray.getString(R.styleable.Styleable_hint);
-            text = typedArray.getString(R.styleable.Styleable_text);
+            mascara = typedArray.getString(R.styleable.EditTextLegenda_mascara);
+            inputType = typedArray.getInteger(R.styleable.EditTextLegenda_inputType, 0);
+            lines = typedArray.getInteger(R.styleable.EditTextLegenda_lines, 1);
+            maxLength = typedArray.getInteger(R.styleable.EditTextLegenda_maxLength, 0);
+            hint = typedArray.getString(R.styleable.EditTextLegenda_hint);
+            text = typedArray.getString(R.styleable.EditTextLegenda_text);
 
-            iconLeft = typedArray.getDrawable(R.styleable.Styleable_iconLeft);
-            iconRigth = typedArray.getDrawable(R.styleable.Styleable_iconRigth);
-            coricon = typedArray.getColor(R.styleable.Styleable_coricon, 0);
+            iconLeft = typedArray.getDrawable(R.styleable.EditTextLegenda_iconLeft);
+            iconRigth = typedArray.getDrawable(R.styleable.EditTextLegenda_iconRigth);
+            coricon = typedArray.getColor(R.styleable.EditTextLegenda_coricon, 0);
 
-            enabled = typedArray.getBoolean(R.styleable.Styleable_enabled, true);
-            focusable = typedArray.getBoolean(R.styleable.Styleable_focusable, true);
-            requestfocus = typedArray.getBoolean(R.styleable.Styleable_requestfocus, false);
-            requerido = typedArray.getBoolean(R.styleable.Styleable_requerido, false);
-            iconRigthVisible = typedArray.getBoolean(R.styleable.Styleable_iconRigthVisible, false);
-            tag = typedArray.getString(R.styleable.Styleable_tag);
+            enabled = typedArray.getBoolean(R.styleable.EditTextLegenda_enabled, true);
+            focusable = typedArray.getBoolean(R.styleable.EditTextLegenda_focusable, true);
+            requestfocus = typedArray.getBoolean(R.styleable.EditTextLegenda_requestfocus, false);
+            requerido = typedArray.getBoolean(R.styleable.EditTextLegenda_requerido, false);
+            iconRigthVisible = typedArray.getBoolean(R.styleable.EditTextLegenda_iconRigthVisible, false);
+            tag = typedArray.getString(R.styleable.EditTextLegenda_tag);
             return;
         }
 

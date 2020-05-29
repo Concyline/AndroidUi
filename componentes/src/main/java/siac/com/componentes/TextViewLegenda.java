@@ -48,15 +48,15 @@ public class TextViewLegenda extends FrameLayout {
 
     private void obtainStyledAttributes(Context context, AttributeSet attrs, int defStyleAttr) {
         if (attrs != null) {
-            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Styleable, defStyleAttr, 0);
-            legenda = typedArray.getString(R.styleable.Styleable_legenda);
-            corLegenda = typedArray.getColorStateList(R.styleable.Styleable_corLegenda);
-            tamLegenda = getSizeFontLegenda(typedArray.getString(R.styleable.Styleable_tamLegenda));
+            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.TextViewLegenda, defStyleAttr, 0);
+            legenda = typedArray.getString(R.styleable.TextViewLegenda_legenda);
+            corLegenda = typedArray.getColorStateList(R.styleable.TextViewLegenda_corLegenda);
+            tamLegenda = getSizeFontLegenda(typedArray.getString(R.styleable.TextViewLegenda_tamLegenda));
 
-            descricao = typedArray.getString(R.styleable.Styleable_descricao);
-            corDescricao = typedArray.getColorStateList(R.styleable.Styleable_corDescricao);
-            tamDescricao = getSizeFontDescricao(typedArray.getString(R.styleable.Styleable_tamDescricao));
-            singleLine = typedArray.getBoolean(R.styleable.Styleable_singleLine, false);
+            descricao = typedArray.getString(R.styleable.TextViewLegenda_descricao);
+            corDescricao = typedArray.getColorStateList(R.styleable.TextViewLegenda_corDescricao);
+            tamDescricao = getSizeFontDescricao(typedArray.getString(R.styleable.TextViewLegenda_tamDescricao));
+            singleLine = typedArray.getBoolean(R.styleable.TextViewLegenda_singleLine, false);
             return;
         }
         legenda = "legenda";

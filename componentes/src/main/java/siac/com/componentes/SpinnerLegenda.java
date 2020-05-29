@@ -51,12 +51,12 @@ public class SpinnerLegenda extends FrameLayout {
     private void obtainStyledAttributes(Context context, AttributeSet attrs, int defStyleAttr) {
 
         if (attrs != null) {
-            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Styleable, defStyleAttr, 0);
-            legenda = typedArray.getString(R.styleable.Styleable_legenda);
-            corLegenda = typedArray.getColorStateList(R.styleable.Styleable_corLegenda);
-            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.Styleable_tamLegendaEditText));
+            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.SpinnerLegenda, defStyleAttr, 0);
+            legenda = typedArray.getString(R.styleable.SpinnerLegenda_legenda);
+            corLegenda = typedArray.getColorStateList(R.styleable.SpinnerLegenda_corLegenda);
+            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.SpinnerLegenda_tamLegendaEditText));
 
-            charSequencesArray = typedArray.getTextArray(R.styleable.Styleable_entries);
+            charSequencesArray = typedArray.getTextArray(R.styleable.SpinnerLegenda_entries);
             if(charSequencesArray != null) {
                 entries = charSequencesArray.length;
             }

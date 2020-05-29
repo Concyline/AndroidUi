@@ -61,20 +61,20 @@ public class SearchLegenda extends FrameLayout {
     private void obtainStyledAttributes(Context context, AttributeSet attrs, int defStyleAttr) {
 
         if (attrs != null) {
-            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Styleable, defStyleAttr, 0);
-            legenda = typedArray.getString(R.styleable.Styleable_legenda);
-            corLegenda = typedArray.getColorStateList(R.styleable.Styleable_corLegenda);
-            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.Styleable_tamLegendaEditText));
-            tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.Styleable_tamTextEditText));
+            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.SearchLegenda, defStyleAttr, 0);
+            legenda = typedArray.getString(R.styleable.SearchLegenda_legenda);
+            corLegenda = typedArray.getColorStateList(R.styleable.SearchLegenda_corLegenda);
+            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.SearchLegenda_tamLegendaEditText));
+            tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.SearchLegenda_tamTextEditText));
 
-            mascara = typedArray.getInteger(R.styleable.Styleable_mascara, 0);
-            inputType = typedArray.getInteger(R.styleable.Styleable_inputType, 0);
-            hint = typedArray.getString(R.styleable.Styleable_hint);
+            mascara = typedArray.getInteger(R.styleable.SearchLegenda_mascara, 0);
+            inputType = typedArray.getInteger(R.styleable.SearchLegenda_inputType, 0);
+            hint = typedArray.getString(R.styleable.SearchLegenda_hint);
 
-            enabled = typedArray.getBoolean(R.styleable.Styleable_enabled, true);
-            focusable = typedArray.getBoolean(R.styleable.Styleable_focusable, true);
-            requestfocus = typedArray.getBoolean(R.styleable.Styleable_requestfocus, false);
-            coricon = typedArray.getColor(R.styleable.Styleable_coricon, 0);
+            enabled = typedArray.getBoolean(R.styleable.SearchLegenda_enabled, true);
+            focusable = typedArray.getBoolean(R.styleable.SearchLegenda_focusable, true);
+            requestfocus = typedArray.getBoolean(R.styleable.SearchLegenda_requestfocus, false);
+            coricon = typedArray.getColor(R.styleable.SearchLegenda_coricon, 0);
 
             return;
         }

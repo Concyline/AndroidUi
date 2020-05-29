@@ -62,12 +62,12 @@ public class EditTextCalendarLegenda extends FrameLayout {
     private void obtainStyledAttributes(Context context, AttributeSet attrs, int defStyleAttr) {
 
         if (attrs != null) {
-            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Styleable, defStyleAttr, 0);
-            legenda = typedArray.getString(R.styleable.Styleable_legenda);
-            corLegenda = typedArray.getColorStateList(R.styleable.Styleable_corLegenda);
-            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.Styleable_tamLegendaEditText));
-            hora = typedArray.getBoolean(R.styleable.Styleable_hora, false);
-            inicializa = typedArray.getBoolean(R.styleable.Styleable_inicializa, false);
+            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.EditTextCalendarLegenda, defStyleAttr, 0);
+            legenda = typedArray.getString(R.styleable.EditTextCalendarLegenda_legenda);
+            corLegenda = typedArray.getColorStateList(R.styleable.EditTextCalendarLegenda_corLegenda);
+            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextCalendarLegenda_tamLegendaEditText));
+            hora = typedArray.getBoolean(R.styleable.EditTextCalendarLegenda_hora, false);
+            inicializa = typedArray.getBoolean(R.styleable.EditTextCalendarLegenda_inicializa, false);
 
             return;
         }
