@@ -13,7 +13,7 @@ This library has 3 modules to aid Android development, speeding up the completio
  Gradle Setup
 ------
 
-Version 2.6.9 = e9e96e1423
+Version 2.6.17 = 43a1ee1071
 
 ```java
 allprojects {
@@ -26,7 +26,7 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.Concyline:Androidui:e9e96e1423'
+	        implementation 'com.github.Concyline:Androidui:43a1ee1071'
 	     }
 ```
 
@@ -54,6 +54,8 @@ dependencies {
             app:legenda="Componente simples" />
 ```
 
+---
+
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/mascara.png" width="50%">
 
 ```xml
@@ -74,6 +76,8 @@ dependencies {
             app:requerido="true" />
 ```
 
+---
+
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/sodata.png" width="50%">
 
 ```xml
@@ -85,6 +89,8 @@ dependencies {
             android:layout_height="wrap_content"
             app:legenda="Só data" />
 ```
+
+---
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/spinner.png" width="50%">
 
@@ -105,6 +111,8 @@ ArrayAdapter<Object> adapter = new ArrayAdapter<Object>(getBaseContext(),
 spinnerLegenda.setAdapter(adapter);
 ````
 
+---
+
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/calendarhoradata.png" width="50%">
 
 ```xml
@@ -116,6 +124,8 @@ spinnerLegenda.setAdapter(adapter);
             app:inicializa="false"
             app:legenda="EditTextCalendarLegenda" />
 ```
+
+---
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/iconedireita.png" width="50%">
 
@@ -130,6 +140,8 @@ spinnerLegenda.setAdapter(adapter);
             app:legenda="Nome do cliente"
             app:tamLegendaEditText="@dimen/tamLegendaEditText" />
 ```
+
+---
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/textocomlegenda.png" width="50%">
 
@@ -148,6 +160,8 @@ spinnerLegenda.setAdapter(adapter);
             app:legenda="Cidade" />
 ```
 
+---
+
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/pesquisasimples.png" width="50%">
 
 ```xml
@@ -160,6 +174,8 @@ spinnerLegenda.setAdapter(adapter);
             app:coricon="@color/colorAccent"
             app:legenda="SearchLegenda" />
 ```
+
+---
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/senha.png" width="50%">
 
@@ -183,6 +199,21 @@ final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLege
                 senhaEditTextLegenda.mostraSenha();
             }
         });
+````
+
+---
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/image_rounted.png" width="50%">
+
+````xml
+     <siac.com.componentes.RoundishImageView
+            android:id="@+id/roundishImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/cidade"
+            app:cornerRadius="10dp"
+            app:roundedCorners="topLeft|bottomRight" />
 ````
 
 For all companions
