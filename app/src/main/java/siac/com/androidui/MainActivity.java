@@ -18,6 +18,9 @@ import com.nabinbhandari.android.permissions.Permissions;
 import java.util.ArrayList;
 
 import siac.com.leitor.LeitorActivity;
+import siac.com.shortcut.IReceiveStringExtra;
+import siac.com.shortcut.Shortcut;
+import siac.com.shortcut.ShortcutUtils;
 import siac.com.texto.ManipulaTexto;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,8 +31,35 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         validaPermisoes();
-        // aqui
+        addShortCut();
 
+    }
+
+    private void addShortCut(){
+       ShortcutUtils shortcutUtils = new ShortcutUtils(this);
+
+       Shortcut dynamicShortcut = new Shortcut.ShortcutBuilder()
+                .setShortcutIcon(R.drawable.round_device_hub_white_48dp)
+                .setShortcutId("dynamicShortcutId")
+                .setShortcutLongLabel("ALL Devices")
+                .setShortcutShortLabel("ALL Devices")
+                .setIntentAction("dynamicShortcutIntentAction")
+                .setIntentStringExtraKey("dynamicShortcutKey")
+                .setIntentStringExtraValue("all")
+                .build();
+
+
+        shortcutUtils.addDynamicShortCut(dynamicShortcut, new IReceiveStringExtra() {
+            @Override
+            public void onReceiveStringExtra(String stringExtraKey, String stringExtraValue) {
+                String intent = getIntent().getStringExtra(stringExtraKey);
+                if (intent != null) {
+                    if (intent.equals("all")) {
+                        System.out.println("OKOKOKOKOKOKO");
+                    }
+                }
+            }
+        });
     }
 
     private void validaPermisoes() {

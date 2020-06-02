@@ -67,11 +67,6 @@ public class RoundImageView extends androidx.appcompat.widget.AppCompatImageView
 
         paintBorder = new Paint();
         paintBorder.setColor(borderColor.getDefaultColor());
-        //setBorderColor();
-
-
-       //paintBorder.setAntiAlias(true);
-        //this.setLayerType(LAYER_TYPE_SOFTWARE, paintBorder);
 
         if(shadow) {
             paintBorder.setShadowLayer(5.0f, 3.0f, 3.0f, Color.argb(90, 0, 0, 0));

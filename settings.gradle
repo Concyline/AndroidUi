@@ -1,3 +1,4 @@
+include ':shortcut'
 rootProject.name='AndroidUi'
 include ':app'
 include ':componentes'
