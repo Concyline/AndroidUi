@@ -383,6 +383,47 @@ public listeners
 # * ShortCut
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shortcut.png" width="50%">
 
+ ### Usage
+ 
+ #### ADD
+
+ ````java
+ ShortcutUtils shortcutUtils;
+ Shortcut dynamicShortcut;
+    
+ shortcutUtils = new ShortcutUtils(this);
+
+ dynamicShortcut = new Shortcut.ShortcutBuilder()
+      .setShortcutIcon(R.drawable.round_device_hub_white_48dp)
+      .setShortcutId("dynamicShortcutId")
+      .setShortcutLongLabel("ALL Devices")
+      .setShortcutShortLabel("ALL Devices")
+      .setIntentAction("dynamicShortcutIntentAction")
+      .setIntentStringExtraKey("dynamicShortcutKey")
+      .setIntentStringExtraValue("all")
+ .build();
+
+
+  shortcutUtils.addDynamicShortCut(dynamicShortcut, new IReceiveStringExtra() {
+       @Override
+       public void onReceiveStringExtra(String stringExtraKey, String stringExtraValue) {
+            String intent = getIntent().getStringExtra(stringExtraKey);
+                if (intent != null) {
+                    if (intent.equals("all")) {
+                        System.out.println("OKOKOKOKOKOKO");
+                    }
+                }
+            }
+        });
+    
+ ````
+ 
+ #### REMOVE
+ 
+ ````java
+ 	shortcutUtils.removeDynamicShortCut(dynamicShortcut);
+ ````
+
 
 Resources
 =========
