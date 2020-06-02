@@ -2,13 +2,14 @@
 
 [![](https://jitpack.io/v/Concyline/Androidui.svg)](https://jitpack.io/#Concyline/Androidui)
 
-This library has 3 modules to aid Android development, speeding up the completion of the application
+This library has 4 modules to aid Android development, speeding up the completion of the application
 
  Features
 ------
  * Componentes
  * Manipulador de texto
  * Leitor CodeBar and QrCode
+ * SortCut 
  
  Gradle Setup
 ------
@@ -378,6 +379,10 @@ public listeners
 
 </manifest>
 ````
+
+# * ShortCut
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/shortcut.png" width="50%">
+
 
 Resources
 =========
