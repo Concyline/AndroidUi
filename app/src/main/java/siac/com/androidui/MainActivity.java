@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.nabinbhandari.android.permissions.PermissionHandler;
@@ -22,6 +23,7 @@ import siac.com.shortcut.IReceiveStringExtra;
 import siac.com.shortcut.Shortcut;
 import siac.com.shortcut.ShortcutUtils;
 import siac.com.texto.ManipulaTexto;
+import siac.com.util.Util;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -106,6 +108,22 @@ public class MainActivity extends AppCompatActivity {
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), LerQrBarCodeActivity.class);
                             startActivity(intent);
+                        }
+                    });
+
+                    ImageView imageView = findViewById(R.id.buttonImageView);
+                    imageView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Util.fadeIn(getBaseContext(), v);
+                        }
+                    });
+
+                    Button alertButton = findViewById(R.id.alertButton);
+                    alertButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Util.alertOk(MainActivity.this, "OK AQUI");
                         }
                     });
 

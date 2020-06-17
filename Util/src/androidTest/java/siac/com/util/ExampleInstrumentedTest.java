@@ -1,4 +1,4 @@
-package siac.com.androidui;
+package siac.com.util;
 
 import android.content.Context;
 
@@ -21,7 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-
-        assertEquals("siac.com.androidui", appContext.getPackageName());
+        assertEquals("siac.com.util.test", appContext.getPackageName());
     }
 }

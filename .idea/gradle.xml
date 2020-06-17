@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/leitor" />
             <option value="$PROJECT_DIR$/shortcut" />
             <option value="$PROJECT_DIR$/texto" />
+            <option value="$PROJECT_DIR$/util" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
