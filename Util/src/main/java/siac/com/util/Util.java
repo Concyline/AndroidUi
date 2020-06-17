@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -16,8 +17,12 @@ public class Util {
         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
     }
 
-    public static void toast(Context context, String msg) {
+    public static void toastLong(Context context, String msg) {
         android.widget.Toast.makeText(context, msg, android.widget.Toast.LENGTH_LONG).show();
+    }
+
+    public static void toastShort(Context context, String msg) {
+        android.widget.Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
 
     public static void fadeIn(Context context, View button) {
