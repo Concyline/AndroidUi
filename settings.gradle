@@ -1,3 +1,6 @@
+include ':permision'
+include ':permisions'
+include ':Permisions'
 include ':util'
 include ':Util'
 include ':shortcut'

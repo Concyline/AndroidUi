@@ -13,12 +13,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.nabinbhandari.android.permissions.PermissionHandler;
-import com.nabinbhandari.android.permissions.Permissions;
 
 import java.util.ArrayList;
 
 import siac.com.leitor.LeitorActivity;
+import siac.com.permision.PermissionHandler;
+import siac.com.permision.Permissions;
 import siac.com.shortcut.IReceiveStringExtra;
 import siac.com.shortcut.Shortcut;
 import siac.com.shortcut.ShortcutUtils;
@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void validaPermisoes() {
         String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.CAMERA};
+                Manifest.permission.WRITE_EXTERNAL_STORAGE};//,
+                //Manifest.permission.CAMERA};
 
         Permissions.check(MainActivity.this, permissions, null, null, new PermissionHandler() {
             @Override
@@ -124,6 +124,25 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             Util.alertOk(MainActivity.this, "OK AQUI2");
+                        }
+                    });
+
+                    Button permision = findViewById(R.id.permision);
+                    permision.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            Premisao premisao = new Premisao();
+
+                            premisao.validaPermisoes(getApplicationContext(), new String[]{ Manifest.permission.CAMERA}, new Premisao.onOk() {
+                                @Override
+                                public void ok(boolean flag) {
+                                    if(flag){
+                                        System.out.println("aqui");
+                                    }
+                                }
+                            });
+
                         }
                     });
 
