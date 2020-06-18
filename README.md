@@ -432,7 +432,7 @@ public listeners
  #### REMOVE
  
  ````java
- 	shortcutUtils.removeDynamicShortCut(dynamicShortcut);
+shortcutUtils.removeDynamicShortCut(dynamicShortcut);
  ````
  
  # * Permisions
@@ -440,7 +440,56 @@ public listeners
 
  ### Usage
  
- #### ADD
+ ````java
+String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+Permissions.check(MainActivity.this, permissions, null, null, new PermissionHandler() {
+       @Override
+       public void onGranted() {
+	    	...
+       }
+
+       @Override
+       public void onDenied(Context context, ArrayList<String> deniedPermissions) {
+        	...
+       }
+});
+ ````
+ 
+ # * Util
+ 
+ ### Usage
+ ````java
+ Util.abaixaTeclado(getBaseContext(), view);
+                                
+ Util.fadeIn(getBaseContext(), view);
+                                
+ Util.toastLong(getBaseContext(),"Long mesage Toasta");
+ 
+ Util.toastShort(getBaseContext(),"Short mesage Toasta");
+                                
+ Util.alertOk(getBaseContext(), "Atention mesage");
+                                
+ Util.alertOk(getBaseContext(), "mesage", new OnListnerOk() {
+         @Override
+         public void ok() {
+                 ...                       
+         }
+ });
+                                
+ Util.alertSimCancelar(getBaseContext(), "mesage", new OnListnerAlertSimCancelar() {
+          @Override
+          public void sim() {
+                  ...                      
+          }
+
+          @Override
+          public void cancelar() {
+      		  ...
+          }
+  });
+ ````
 
 
 Resources
