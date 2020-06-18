@@ -176,6 +176,15 @@ spinnerLegenda.setAdapter(adapter);
             app:legenda="SearchLegenda" />
 ```
 
+````java
+searchLegenda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ...
+            }
+        });
+````
+
 ---
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/senha.png" width="50%">
