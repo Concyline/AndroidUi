@@ -2,7 +2,7 @@
 
 [![](https://jitpack.io/v/Concyline/Androidui.svg)](https://jitpack.io/#Concyline/Androidui)
 
-This library has 4 modules to aid Android development, speeding up the completion of the application
+This library has 6 modules to aid Android development, speeding up the completion of the application
 
  Features
 ------
@@ -10,6 +10,8 @@ This library has 4 modules to aid Android development, speeding up the completio
  * Manipulador de texto
  * Leitor CodeBar and QrCode
  * SortCut 
+ * Permisions
+ * Util
  
  Gradle Setup
 ------
@@ -432,6 +434,13 @@ public listeners
  ````java
  	shortcutUtils.removeDynamicShortCut(dynamicShortcut);
  ````
+ 
+ # * Permisions
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/permisions.png" width="50%">
+
+ ### Usage
+ 
+ #### ADD
 
 
 Resources
