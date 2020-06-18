@@ -469,16 +469,16 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
  
  Util.toastShort(getBaseContext(),"Short mesage Toasta");
                                 
- Util.alertOk(getBaseContext(), "Atention mesage");
+ Util.alertOk(UtilActivity.this, "Atention mesage");
                                 
- Util.alertOk(getBaseContext(), "mesage", new OnListnerOk() {
+ Util.alertOk(UtilActivity.this, "mesage", new OnListnerOk() {
          @Override
          public void ok() {
                  ...                       
          }
  });
                                 
- Util.alertSimCancelar(getBaseContext(), "mesage", new OnListnerAlertSimCancelar() {
+ Util.alertSimCancelar(UtilActivity.this, "mesage", new OnListnerAlertSimCancelar() {
           @Override
           public void sim() {
                   ...                      
