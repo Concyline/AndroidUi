@@ -23,6 +23,8 @@ import siac.com.shortcut.IReceiveStringExtra;
 import siac.com.shortcut.Shortcut;
 import siac.com.shortcut.ShortcutUtils;
 import siac.com.texto.ManipulaTexto;
+import siac.com.util.OnListnerAlertSimCancelar;
+import siac.com.util.OnListnerOk;
 import siac.com.util.Util;
 
 public class MainActivity extends AppCompatActivity {
@@ -146,6 +148,15 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
+                    Button abaixaTeclado = findViewById(R.id.abaixaTeclado);
+                    abaixaTeclado.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getBaseContext(), UtilActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -154,12 +165,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onDenied(Context context, ArrayList<String> deniedPermissions) {
+
                 new AlertDialog.Builder(MainActivity.this)
                         .setTitle("Atenção")
                         .setMessage("O aplicativo não tem as permições necessárias para prosseguir!")
                         .setPositiveButton("Pegar as permições?", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 validaPermisoes();
+
 
                             }
                         })

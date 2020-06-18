@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/icon_teste"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ManipulaTextoActivity"></activity>
+        <activity android:name=".UtilActivity"></activity>
+        <activity android:name=".ManipulaTextoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
