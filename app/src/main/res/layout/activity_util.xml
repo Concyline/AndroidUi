@@ -29,22 +29,22 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Toast Long"
         android:onClick="toastLong"
+        android:text="Toast Long"
         app:layout_constraintEnd_toStartOf="@+id/button4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Toast Short"
         android:onClick="toastShort"
+        android:text="Toast Short"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -61,29 +61,29 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="alert ok"
         android:onClick="alertOk"
+        android:text="alert ok"
         app:layout_constraintEnd_toStartOf="@+id/button6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Alert ok listener"
         android:onClick="alertOkListener"
+        android:text="Alert ok listener"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button5"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:onClick="alertSimCancelarListener"
@@ -91,4 +91,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Set data Action Bar"
+        android:onClick="setActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button7" />
 </androidx.constraintlayout.widget.ConstraintLayout>

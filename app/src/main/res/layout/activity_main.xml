@@ -53,35 +53,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textoButton" />
 
-    <ImageView
-        android:id="@+id/buttonImageView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/abaixaTeclado"
-        app:srcCompat="@drawable/cidade" />
-
-    <Button
-        android:id="@+id/alertButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Alert"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonImageView" />
-
     <Button
         android:id="@+id/permision"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="Permision"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alertButton" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/abaixaTeclado"
@@ -91,6 +71,7 @@
         android:text="Util Test"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/leitorButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import siac.com.util.OnListnerAlertSimCancelar;
-import siac.com.util.OnListnerOk;
+import siac.com.util.listeners.OnListnerAlertSimCancelar;
+import siac.com.util.listeners.OnListnerOk;
 import siac.com.util.Util;
 
 public class UtilActivity extends AppCompatActivity {
@@ -58,5 +58,9 @@ public class UtilActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public void setActionBar(View view) {
+        Util.setBar(UtilActivity.this, "Title", "Subtitle");
     }
 }

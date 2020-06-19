@@ -31,9 +31,6 @@ public class ManipulaTextoActivity extends AppCompatActivity {
         gravarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
                 log.info(textoEditText.getText().toString());
                 textoEditText.setText("");
                 montaTela();

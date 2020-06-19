@@ -1,7 +1,9 @@
 package siac.com.util;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.text.Html;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -9,6 +11,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import siac.com.util.listeners.OnListnerAlertSimCancelar;
+import siac.com.util.listeners.OnListnerOk;
 
 public class Util {
 
@@ -98,4 +104,26 @@ public class Util {
             e.printStackTrace();
         }
     }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static void setBar(AppCompatActivity context, String title) {
+        setBar(context, title, "");
+    }
+
+    public static void setBar(AppCompatActivity context, String title, String subtitle) {
+        context.getSupportActionBar().setDisplayShowTitleEnabled(true);
+        context.getSupportActionBar().setDisplayShowHomeEnabled(true);
+        context.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        context.getSupportActionBar().setDisplayUseLogoEnabled(true);
+
+        context.getSupportActionBar().setTitle(title);
+        if (subtitle != null) {
+            context.getSupportActionBar().setSubtitle(subtitle);
+        }
+    }
+
+
 }
