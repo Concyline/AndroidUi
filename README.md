@@ -462,6 +462,8 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
  
  ### Usage
  ````java
+ Util.setBar(UtilActivity.this, "Title", "Subtitle");
+ 
  Util.abaixaTeclado(getBaseContext(), view);
                                 
  Util.fadeIn(getBaseContext(), view);
