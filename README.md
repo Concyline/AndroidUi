@@ -458,7 +458,7 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
  ````
  
  # * Util
- <img src="https://github.com/Concyline/AndroidUi/blob/master/img/util.gif" width="50%">
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/util_dois.gif" width="50%">
  
  ### Usage
  ````java
