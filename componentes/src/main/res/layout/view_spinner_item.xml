@@ -4,8 +4,6 @@
     android:singleLine="true"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:ellipsize="marquee"
     android:text="RAZAO"
     android:textSize="@dimen/txtEdit"
-    android:textColor="@color/colorTextEditext"
-    android:textAlignment="inherit"/>
+    android:textColor="@color/colorTextEditext"/>
