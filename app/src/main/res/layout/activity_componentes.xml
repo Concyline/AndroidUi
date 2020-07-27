@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_margin="10dp"
+    android:orientation="vertical"
     android:padding="10dp"
     tools:context=".ComponentesActivity">
 
@@ -14,139 +15,186 @@
         android:orientation="vertical">
 
 
-        <siac.com.componentes.EditTextLegenda
-            android:id="@+id/editTextLegenda"
+        <LinearLayout
+            android:id="@+id/linearLayoutsafda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:corLegenda="@color/colorAccent"
-            app:enabled="true"
-            app:focusable="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal"
             app:layout_constraintTop_toTopOf="parent"
-            app:legenda="Componente simples"
-            app:requerido="false"
-            app:requestfocus="true"
-            app:tag="edittext"
-            app:text="texto" />
+            tools:layout_editor_absoluteX="16dp">
 
-        <siac.com.componentes.EditTextLegenda
-            android:id="@+id/editTextLegenda2"
+            <siac.com.componentes.EditTextCalendarLegenda
+                android:id="@+id/editTextLegenda22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:legenda="Só data"
+                android:layout_marginRight="5dp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="156dp" />
+
+            <siac.com.componentes.EditTextCalendarLegenda
+                android:id="@+id/editTextCalendarLegenda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:hora="true"
+                app:inicializa="false"
+                app:legenda="EditTextCalendarLegenda"
+                tools:layout_editor_absoluteX="112dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutsafdasd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:enabled="true"
-            app:focusable="true"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextLegenda"
-            app:legenda="Mascara"
-            app:mascara="  .   .   /    -  "
-            app:requerido="true"
-            app:requestfocus="false"
-            app:tag="edittext"
-            app:text="texto" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <siac.com.componentes.EditTextLegenda
+                android:id="@+id/cadastroEditTextLegenda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:coricon="#D6C"
+                android:layout_marginRight="5dp"
+                app:iconRigth="@drawable/icons_coroa_48"
+                app:inputType="number"
+                app:legenda="Nome do cliente"
+                app:tamLegendaEditText="@dimen/tamLegendaEditText" />
+
+            <siac.com.componentes.EditTextLegenda
+                android:id="@+id/editTextLegenda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:corLegenda="@color/colorAccent"
+                app:enabled="true"
+                app:focusable="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextCalendarLegenda"
+                app:legenda="Componente simples"
+                app:requerido="false"
+                app:requestfocus="true"
+                app:tag="edittext"
+                app:text="texto" />
 
 
-        <siac.com.componentes.EditTextCalendarLegenda
-            android:id="@+id/editTextLegenda22"
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutasdasd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextLegenda2"
-            app:legenda="Só data" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutsafdasd">
 
-        <siac.com.componentes.SpinnerLegenda
-            android:id="@+id/spinnerLegenda"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:entries="@array/tipo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextLegenda22"
-            app:legenda="Spinner" />
+            <siac.com.componentes.TextViewLegenda
+                android:id="@+id/textViewsd"
+                android:layout_width="372dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="5dp"
+                app:corDescricao="@color/colorPrimaryDark"
+                app:corLegenda="@color/colorAccent"
+                app:descricao="Goiânia  adsdasdadsdasdsdasdsadsadsadasdsa"
+                app:legenda="Cidade"
+                app:singleLine="false"
+                app:tamDescricao="16sp"
+                app:tamLegenda="13sp" />
 
-        <siac.com.componentes.EditTextCalendarLegenda
-            android:id="@+id/editTextCalendarLegenda"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:hora="true"
-            app:inicializa="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerLegenda"
-            app:legenda="EditTextCalendarLegenda" />
+            <siac.com.componentes.EditTextLegenda
+                android:id="@+id/editTextLegenda2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:enabled="true"
+                app:focusable="true"
+                app:legenda="Mascara"
+                app:mascara="  .   .   /    -  "
+                app:requerido="true"
+                app:requestfocus="false"
+                app:tag="edittext"
+                app:text="texto"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="346dp" />
+        </LinearLayout>
 
-        <siac.com.componentes.EditTextLegenda
-            android:id="@+id/cadastroEditTextLegenda"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:coricon="#D6C"
-            app:iconRigth="@drawable/icons_coroa_48"
-            app:inputType="number"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextCalendarLegenda"
-            app:legenda="Nome do cliente"
-            app:tamLegendaEditText="@dimen/tamLegendaEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutsafda">
 
-        <siac.com.componentes.TextViewLegenda
-            android:id="@+id/textViewsd"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="9dp"
-            app:corDescricao="@color/colorPrimaryDark"
-            app:corLegenda="@color/colorAccent"
-            app:descricao="Goiânia  adsdasdadsdasdsdasdsadsadsadasdsadadsdaszdsadasdsadasdasdaerwerwrwerwerwrwerwer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cadastroEditTextLegenda"
-            app:legenda="Cidade"
-            app:singleLine="false"
-            app:tamDescricao="16sp"
-            app:tamLegenda="13sp" />
+            <siac.com.componentes.SpinnerLegenda
+                android:id="@+id/spinnerLegenda"
+                android:layout_width="0dp"
+                android:layout_marginRight="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:entries="@array/tipo"
+                app:legenda="Spinner" />
 
-        <siac.com.componentes.SearchLegenda
-            android:id="@+id/searchLegenda"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:coricon="@color/colorAccent"
-            app:hint="sua pesquisa"
-            app:inputType="none"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewsd"
-            app:legenda="SearchLegenda" />
+            <siac.com.componentes.SearchLegenda
+                android:id="@+id/searchLegenda"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:coricon="@color/colorAccent"
+                app:hint="sua pesquisa"
+                app:inputType="none"
+                app:legenda="SearchLegenda" />
+        </LinearLayout>
 
-        <siac.com.componentes.EditTextLegenda
-            android:id="@+id/senhaEditTextLegenda"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/linearLayoutasd"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:coricon="@color/colorAccent"
-            app:iconRigth="@drawable/round_visibility_black_48dp"
-            app:inputType="textPassword"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchLegenda"
-            app:legenda="Senha"
-            app:tamLegendaEditText="@dimen/tamLegendaEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutasdasd">
+
+            <siac.com.componentes.EditTextLegenda
+                android:id="@+id/senhaEditTextLegenda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:coricon="@color/colorAccent"
+                app:iconRigth="@drawable/round_visibility_black_48dp"
+                app:inputType="textPassword"
+                app:legenda="Senha"
+                app:tamLegendaEditText="@dimen/tamLegendaEditText"
+                tools:layout_editor_absoluteX="32dp"
+                tools:layout_editor_absoluteY="610dp" />
+
+        </LinearLayout>
+
 
         <siac.com.componentes.RoundishImageView
             android:id="@+id/roundishImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:src="@drawable/cidade"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/senhaEditTextLegenda"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutasd"
             app:roundedCorners="topLeft|bottomRight" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+</LinearLayout>
