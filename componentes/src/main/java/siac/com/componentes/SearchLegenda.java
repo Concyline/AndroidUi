@@ -74,7 +74,7 @@ public class SearchLegenda extends FrameLayout {
             enabled = typedArray.getBoolean(R.styleable.SearchLegenda_enabled, true);
             focusable = typedArray.getBoolean(R.styleable.SearchLegenda_focusable, true);
             requestfocus = typedArray.getBoolean(R.styleable.SearchLegenda_requestfocus, false);
-            coricon = typedArray.getColor(R.styleable.SearchLegenda_coricon, 0);
+            coricon = typedArray.getColor(R.styleable.SearchLegenda_coricon, 1);
 
             return;
         }
@@ -137,7 +137,11 @@ public class SearchLegenda extends FrameLayout {
 
         setInputType(editText, inputType, 1);
 
-        imageView.setColorFilter(new PorterDuffColorFilter(coricon, PorterDuff.Mode.SRC_IN));
+        if(coricon == 1){
+            coricon = R.color.colorAccent; // SET DEFAULT
+        }
+
+        imageView.setColorFilter(new PorterDuffColorFilter(coricon , PorterDuff.Mode.SRC_IN));
     }
 
     public void setText(String text) {
