@@ -1,8 +1,8 @@
 <resources>
     <dimen name="tamDescricao">13sp</dimen>
-    <dimen name="tamLegendaEditText">13sp</dimen>
+    <dimen name="tamLegendaEditTextUi">13sp</dimen>
     <dimen name="tamLegenda">11sp</dimen>
-    <dimen name="txtEdit">16sp</dimen>
+    <dimen name="txtEditUi">16sp</dimen>
 
     <!-- Dimensoes views tela -->
     <dimen name="paddingTop">15dp</dimen>

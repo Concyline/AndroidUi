@@ -1,18 +1,18 @@
 <resources>
-    <dimen name="tamDescricao">13sp</dimen>
-    <dimen name="tamLegendaEditText">13sp</dimen>
-    <dimen name="tamLegenda">11sp</dimen>
-    <dimen name="txtEdit">16sp</dimen>
+    <dimen name="tamDescricaoUi">13sp</dimen>
+    <dimen name="tamLegendaEditTextUi">13sp</dimen>
+    <dimen name="tamLegendaUi">11sp</dimen>
+    <dimen name="txtEditUi">16sp</dimen>
 
     <!-- Dimensoes views tela -->
-    <dimen name="paddingTop">15dp</dimen>
-    <dimen name="paddingBotton">15dp</dimen>
-    <dimen name="paddingLeft">10dp</dimen>
-    <dimen name="paddingRight">10dp</dimen>
+    <dimen name="paddingTopUi">15dp</dimen>
+    <dimen name="paddingBottonUi">15dp</dimen>
+    <dimen name="paddingLeftUi">10dp</dimen>
+    <dimen name="paddingRightUi">10dp</dimen>
 
-    <dimen name="corners">4dp</dimen>
-    <dimen name="linear_decoracao">5dp</dimen>
-    <dimen name="app_bar_height">180dp</dimen>
-    <dimen name="text_margin">16dp</dimen>
+    <dimen name="cornersUi">4dp</dimen>
+    <dimen name="linear_decoracaoUi">5dp</dimen>
+    <dimen name="app_bar_heightUi">180dp</dimen>
+    <dimen name="text_marginUi">16dp</dimen>
     <!--  -->
 </resources>

@@ -15,7 +15,6 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -24,12 +23,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 
 import java.text.Normalizer;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 import siac.com.componentes.Util.Mascara;
 import siac.com.componentes.Util.Util;
@@ -55,7 +52,7 @@ public class EditTextLegenda extends FrameLayout {
     private String hint = "";
     private String text = "";
     private ColorStateList corLegenda;
-    private float tamLegendaEditText = 13;
+    private float tamLegendaEditTextUi = 13;
     private float tamTextEditText = 16;
     private int inputType = 0;
     private String mascara;
@@ -99,7 +96,7 @@ public class EditTextLegenda extends FrameLayout {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.EditTextLegenda, defStyleAttr, 0);
             legenda = typedArray.getString(R.styleable.EditTextLegenda_legenda);
             corLegenda = typedArray.getColorStateList(R.styleable.EditTextLegenda_corLegenda);
-            tamLegendaEditText = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextLegenda_tamLegendaEditText));
+            tamLegendaEditTextUi = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextLegenda_tamLegendaEditTextUi));
             tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.EditTextLegenda_tamTextEditText));
 
             mascara = typedArray.getString(R.styleable.EditTextLegenda_mascara);
@@ -130,7 +127,7 @@ public class EditTextLegenda extends FrameLayout {
             return Float.parseFloat(sp);
         } catch (Exception e) {
             float scaleRatio = getResources().getDisplayMetrics().density;
-            float dimenPix = getResources().getDimension(R.dimen.tamLegendaEditText);
+            float dimenPix = getResources().getDimension(R.dimen.tamLegendaEditTextUi);
             return dimenPix / scaleRatio;
         }
     }
@@ -141,13 +138,13 @@ public class EditTextLegenda extends FrameLayout {
             return Float.parseFloat(sp);
         } catch (Exception e) {
             float scaleRatio = getResources().getDisplayMetrics().density;
-            float dimenPix = getResources().getDimension(R.dimen.txtEdit);
+            float dimenPix = getResources().getDimension(R.dimen.txtEditUi);
             return dimenPix / scaleRatio;
         }
     }
 
     private void init() {
-        inflate(getContext(), R.layout.view_edittext_legenda, this);
+        inflate(getContext(), R.layout.view_edittext_legenda_ui, this);
         legendaTextView = findViewById(R.id.legendaTextView);
         editText = findViewById(R.id.editText);
         iconLeftImageView = findViewById(R.id.iconLeftImageView);
@@ -161,7 +158,7 @@ public class EditTextLegenda extends FrameLayout {
         if(corLegenda != null) {
             legendaTextView.setTextColor(corLegenda);
         }
-        legendaTextView.setTextSize(tamLegendaEditText);
+        legendaTextView.setTextSize(tamLegendaEditTextUi);
 
         editText.setHint(hint);
         editText.setText(text != null ? text : "");
@@ -235,7 +232,7 @@ public class EditTextLegenda extends FrameLayout {
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View view = inflater.inflate(R.layout.popup_layout, null);
+        View view = inflater.inflate(R.layout.popup_layout_ui, null);
         ((TextView) view.findViewById(R.id.textView)).setText(legenda);
 
         popupWindow.setFocusable(true);

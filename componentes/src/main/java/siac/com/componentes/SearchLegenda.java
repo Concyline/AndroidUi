@@ -64,7 +64,7 @@ public class SearchLegenda extends FrameLayout {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.SearchLegenda, defStyleAttr, 0);
             legenda = typedArray.getString(R.styleable.SearchLegenda_legenda);
             corLegenda = typedArray.getColorStateList(R.styleable.SearchLegenda_corLegenda);
-            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.SearchLegenda_tamLegendaEditText));
+            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.SearchLegenda_tamLegendaEditTextUi));
             tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.SearchLegenda_tamTextEditText));
 
             mascara = typedArray.getInteger(R.styleable.SearchLegenda_mascara, 0);
@@ -87,7 +87,7 @@ public class SearchLegenda extends FrameLayout {
             return Float.parseFloat(sp);
         } catch (Exception e) {
             float scaleRatio = getResources().getDisplayMetrics().density;
-            float dimenPix = getResources().getDimension(R.dimen.tamLegendaEditText);
+            float dimenPix = getResources().getDimension(R.dimen.tamLegendaEditTextUi);
             return dimenPix / scaleRatio;
         }
     }
@@ -98,7 +98,7 @@ public class SearchLegenda extends FrameLayout {
             return Float.parseFloat(sp);
         } catch (Exception e) {
             float scaleRatio = getResources().getDisplayMetrics().density;
-            float dimenPix = getResources().getDimension(R.dimen.txtEdit);
+            float dimenPix = getResources().getDimension(R.dimen.txtEditUi);
             return dimenPix / scaleRatio;
         }
     }
@@ -112,7 +112,7 @@ public class SearchLegenda extends FrameLayout {
     }
 
     private void init() {
-        inflate(getContext(), R.layout.view_search_legenda, this);
+        inflate(getContext(), R.layout.view_search_legenda_ui, this);
         legendaTextView = findViewById(R.id.legendaTextView);
         editText = findViewById(R.id.editText);
         imageView = findViewById(R.id.imageView);

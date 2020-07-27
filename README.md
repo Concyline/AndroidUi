@@ -141,7 +141,7 @@ spinnerLegenda.setAdapter(adapter);
             app:iconRigth="@drawable/icons_coroa_48"
             app:inputType="number"
             app:legenda="Nome do cliente"
-            app:tamLegendaEditText="@dimen/tamLegendaEditText" />
+            app:tamLegendaEditTextUi="@dimen/tamLegendaEditTextUi" />
 ```
 
 ---
@@ -200,7 +200,7 @@ searchLegenda.setOnClickListener(new View.OnClickListener() {
             app:iconRigth="@drawable/round_visibility_black_48dp"
             app:inputType="textPassword"
             app:legenda="Senha"
-            app:tamLegendaEditText="@dimen/tamLegendaEditText" />
+            app:tamLegendaEditTextUi="@dimen/tamLegendaEditTextUi" />
 ```
 
 ``` java

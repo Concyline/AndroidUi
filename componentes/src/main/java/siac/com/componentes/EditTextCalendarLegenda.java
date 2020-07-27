@@ -65,7 +65,7 @@ public class EditTextCalendarLegenda extends FrameLayout {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.EditTextCalendarLegenda, defStyleAttr, 0);
             legenda = typedArray.getString(R.styleable.EditTextCalendarLegenda_legenda);
             corLegenda = typedArray.getColorStateList(R.styleable.EditTextCalendarLegenda_corLegenda);
-            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextCalendarLegenda_tamLegendaEditText));
+            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextCalendarLegenda_tamLegendaEditTextUi));
             hora = typedArray.getBoolean(R.styleable.EditTextCalendarLegenda_hora, false);
             inicializa = typedArray.getBoolean(R.styleable.EditTextCalendarLegenda_inicializa, false);
 
@@ -79,13 +79,13 @@ public class EditTextCalendarLegenda extends FrameLayout {
             return Float.parseFloat(sp);
         } catch (Exception e) {
             float scaleRatio = getResources().getDisplayMetrics().density;
-            float dimenPix = getResources().getDimension(R.dimen.tamLegendaEditText);
+            float dimenPix = getResources().getDimension(R.dimen.tamLegendaEditTextUi);
             return dimenPix / scaleRatio;
         }
     }
 
     private void init() {
-        inflate(getContext(), R.layout.view_edittext_calendar_legenda, this);
+        inflate(getContext(), R.layout.view_edittext_calendar_legenda_ui, this);
         legendaTextView = findViewById(R.id.legendaTextView);
         editText = findViewById(R.id.editText);
         horaImageView = findViewById(R.id.horaImageView);

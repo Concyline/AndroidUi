@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 
 public class SpinnerLegenda extends FrameLayout {
 
@@ -54,7 +53,7 @@ public class SpinnerLegenda extends FrameLayout {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.SpinnerLegenda, defStyleAttr, 0);
             legenda = typedArray.getString(R.styleable.SpinnerLegenda_legenda);
             corLegenda = typedArray.getColorStateList(R.styleable.SpinnerLegenda_corLegenda);
-            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.SpinnerLegenda_tamLegendaEditText));
+            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.SpinnerLegenda_tamLegendaEditTextUi));
 
             charSequencesArray = typedArray.getTextArray(R.styleable.SpinnerLegenda_entries);
             if(charSequencesArray != null) {
@@ -71,13 +70,13 @@ public class SpinnerLegenda extends FrameLayout {
             return Float.parseFloat(sp);
         } catch (Exception e) {
             float scaleRatio = getResources().getDisplayMetrics().density;
-            float dimenPix = getResources().getDimension(R.dimen.tamLegendaEditText);
+            float dimenPix = getResources().getDimension(R.dimen.tamLegendaEditTextUi);
             return dimenPix / scaleRatio;
         }
     }
 
     private void init() {
-        inflate(getContext(), R.layout.view_spinner_legenda, this);
+        inflate(getContext(), R.layout.view_spinner_legenda_ui, this);
         legendaTextView = findViewById(R.id.legendaTextView);
         spinner = findViewById(R.id.spinner);
         setup();
@@ -122,7 +121,7 @@ public class SpinnerLegenda extends FrameLayout {
             }
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), R.layout.view_spinner_item, array);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), R.layout.view_spinner_item_ui, array);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
     }

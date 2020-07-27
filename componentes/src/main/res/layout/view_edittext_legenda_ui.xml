@@ -21,33 +21,46 @@
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/edit_selector"
+        android:background="@drawable/edit_selector_ui"
         android:textSize="@dimen/tamDescricao"
         android:textColor="@color/colorTextEditext"
         app:layout_constraintEnd_toEndOf="parent"
-        android:focusable="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/legendaTextView" />
 
     <ImageView
-        android:id="@+id/dataImageView"
+        android:id="@+id/requiredImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="2dp"
         android:padding="10dp"
+        android:tint="@color/colorAccent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="@+id/editText"
         app:layout_constraintTop_toBottomOf="@+id/legendaTextView"
-        app:srcCompat="@drawable/outline_date_range_black_48dp" />
+        app:srcCompat="@drawable/ic_error_outline_black_24dp" />
 
     <ImageView
-        android:id="@+id/horaImageView"
+        android:id="@+id/iconRigthImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:layout_marginRight="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText"
-        app:layout_constraintEnd_toStartOf="@+id/dataImageView"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/requiredImageView"
         app:layout_constraintTop_toBottomOf="@+id/legendaTextView"
-        app:srcCompat="@drawable/outline_av_timer_black_48dp" />
+        app:srcCompat="@drawable/outline_more_horiz_black_48dp" />
+
+    <ImageView
+        android:id="@+id/iconLeftImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toStartOf="@+id/iconRigthImageView"
+        app:layout_constraintTop_toBottomOf="@+id/legendaTextView"
+        app:srcCompat="@drawable/outline_more_horiz_black_48dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

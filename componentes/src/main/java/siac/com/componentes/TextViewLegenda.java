@@ -71,7 +71,7 @@ public class TextViewLegenda extends FrameLayout {
             return Float.parseFloat(sp);
         } catch (Exception e) {
             float scaleRatio = getResources().getDisplayMetrics().density;
-            float dimenPix = getResources().getDimension(R.dimen.tamLegenda);
+            float dimenPix = getResources().getDimension(R.dimen.tamLegendaUi);
             return dimenPix / scaleRatio;
         }
     }
@@ -82,13 +82,13 @@ public class TextViewLegenda extends FrameLayout {
             return Float.parseFloat(sp);
         } catch (Exception e) {
             float scaleRatio = getResources().getDisplayMetrics().density;
-            float dimenPix = getResources().getDimension(R.dimen.tamDescricao);
+            float dimenPix = getResources().getDimension(R.dimen.tamDescricaoUi);
             return dimenPix / scaleRatio;
         }
     }
 
     private void init() {
-        inflate(getContext(), R.layout.view_textview_legenda, this);
+        inflate(getContext(), R.layout.view_textview_legenda_ui, this);
         legendaTextView = findViewById(R.id.legendaTextView);
         descricaoTextView = findViewById(R.id.descricaoTextView);
         setup();

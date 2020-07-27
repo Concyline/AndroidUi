@@ -64,7 +64,7 @@
                 app:iconRigth="@drawable/icons_coroa_48"
                 app:inputType="number"
                 app:legenda="Nome do cliente"
-                app:tamLegendaEditText="@dimen/tamLegendaEditText" />
+                app:tamLegendaEditTextUi="@dimen/tamLegendaEditTextUi" />
 
             <siac.com.componentes.EditTextLegenda
                 android:id="@+id/editTextLegenda"
@@ -175,7 +175,7 @@
                 app:iconRigth="@drawable/round_visibility_black_48dp"
                 app:inputType="textPassword"
                 app:legenda="Senha"
-                app:tamLegendaEditText="@dimen/tamLegendaEditText"
+                app:tamLegendaEditTextUi="@dimen/tamLegendaEditTextUi"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="610dp" />
 

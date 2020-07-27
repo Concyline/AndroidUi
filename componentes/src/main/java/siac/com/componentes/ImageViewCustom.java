@@ -58,7 +58,7 @@ public class ImageViewCustom extends androidx.appcompat.widget.AppCompatImageVie
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View view = inflater.inflate(R.layout.popup_layout_action_bar, null);
+        View view = inflater.inflate(R.layout.popup_layout_action_bar_ui, null);
         ((TextView) view.findViewById(R.id.textView)).setText(this.getTag().toString());
 
         popupWindow.setFocusable(true);
