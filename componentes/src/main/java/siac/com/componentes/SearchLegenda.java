@@ -64,7 +64,7 @@ public class SearchLegenda extends FrameLayout {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.SearchLegenda, defStyleAttr, 0);
             legenda = typedArray.getString(R.styleable.SearchLegenda_legenda);
             corLegenda = typedArray.getColorStateList(R.styleable.SearchLegenda_corLegenda);
-            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.SearchLegenda_tamLegendaEditTextUi));
+            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.SearchLegenda_tamLegendaEditText));
             tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.SearchLegenda_tamTextEditText));
 
             mascara = typedArray.getInteger(R.styleable.SearchLegenda_mascara, 0);

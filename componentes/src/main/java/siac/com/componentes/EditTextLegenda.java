@@ -96,7 +96,7 @@ public class EditTextLegenda extends FrameLayout {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.EditTextLegenda, defStyleAttr, 0);
             legenda = typedArray.getString(R.styleable.EditTextLegenda_legenda);
             corLegenda = typedArray.getColorStateList(R.styleable.EditTextLegenda_corLegenda);
-            tamLegendaEditText = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextLegenda_tamLegendaEditTextUi));
+            tamLegendaEditText = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextLegenda_tamLegendaEditText));
             tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.EditTextLegenda_tamTextEditText));
 
             mascara = typedArray.getString(R.styleable.EditTextLegenda_mascara);
