@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_selector_ui"
-        android:textSize="@dimen/tamDescricao"
+        android:textSize="@dimen/tamDescricaoUi"
         android:textColor="@color/colorTextEditext"
         app:layout_constraintEnd_toEndOf="parent"
         android:focusable="false"

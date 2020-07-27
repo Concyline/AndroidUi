@@ -175,6 +175,7 @@
                 app:iconRigth="@drawable/round_visibility_black_48dp"
                 app:inputType="textPassword"
                 app:legenda="Senha"
+
                 app:tamLegendaEditText="@dimen/tamLegendaEditTextUi"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="610dp" />
