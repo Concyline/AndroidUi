@@ -11,15 +11,15 @@
         android:color="@color/colorAccent" />
 
     <padding
-        android:bottom="@dimen/paddingBotton"
-        android:left="@dimen/paddingLeft"
-        android:right="@dimen/paddingRight"
-        android:top="@dimen/paddingTop" />
+        android:bottom="@dimen/paddingBottonUi"
+        android:left="@dimen/paddingLeftUi"
+        android:right="@dimen/paddingRightUi"
+        android:top="@dimen/paddingTopUi" />
 
     <corners
-        android:bottomLeftRadius="@dimen/corners"
-        android:bottomRightRadius="@dimen/corners"
-        android:topLeftRadius="@dimen/corners"
-        android:topRightRadius="@dimen/corners" />
+        android:bottomLeftRadius="@dimen/cornersUi"
+        android:bottomRightRadius="@dimen/cornersUi"
+        android:topLeftRadius="@dimen/cornersUi"
+        android:topRightRadius="@dimen/cornersUi" />
 
 </shape>
