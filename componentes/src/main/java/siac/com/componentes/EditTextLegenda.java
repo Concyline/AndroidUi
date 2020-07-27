@@ -52,7 +52,7 @@ public class EditTextLegenda extends FrameLayout {
     private String hint = "";
     private String text = "";
     private ColorStateList corLegenda;
-    private float tamLegendaEditTextUi = 13;
+    private float tamLegendaEditText = 13;
     private float tamTextEditText = 16;
     private int inputType = 0;
     private String mascara;
@@ -96,7 +96,7 @@ public class EditTextLegenda extends FrameLayout {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.EditTextLegenda, defStyleAttr, 0);
             legenda = typedArray.getString(R.styleable.EditTextLegenda_legenda);
             corLegenda = typedArray.getColorStateList(R.styleable.EditTextLegenda_corLegenda);
-            tamLegendaEditTextUi = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextLegenda_tamLegendaEditTextUi));
+            tamLegendaEditText = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextLegenda_tamLegendaEditTextUi));
             tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.EditTextLegenda_tamTextEditText));
 
             mascara = typedArray.getString(R.styleable.EditTextLegenda_mascara);
@@ -158,7 +158,7 @@ public class EditTextLegenda extends FrameLayout {
         if(corLegenda != null) {
             legendaTextView.setTextColor(corLegenda);
         }
-        legendaTextView.setTextSize(tamLegendaEditTextUi);
+        legendaTextView.setTextSize(tamLegendaEditText);
 
         editText.setHint(hint);
         editText.setText(text != null ? text : "");
