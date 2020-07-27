@@ -50,7 +50,7 @@ public class UtilActivity extends AppCompatActivity {
         Util.alertSimCancelar(UtilActivity.this, "Message", new OnListnerAlertSimCancelar() {
             @Override
             public void sim() {
-
+                // aqui
             }
 
             @Override
