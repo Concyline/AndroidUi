@@ -127,7 +127,7 @@ public class SpinnerLegenda extends FrameLayout {
     }
 
     public void setSelection(int selection){
-        spinner.setSelection(0);
+        spinner.setSelection(selection);
     }
 
 }
