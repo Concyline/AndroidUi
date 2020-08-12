@@ -15,7 +15,9 @@ import java.io.Console;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import siac.com.texto.util.Util;
 
@@ -185,7 +187,21 @@ public class ManipulaTexto {
 			e.printStackTrace();
 			return null;
 		}
-		
+	}
+
+	public List<String> getAllList() {
+		try {
+			List<String> lista = new ArrayList<>();
+			instanciarControles(file);
+
+			while ((linha = bufferedReader.readLine()) != null) {
+				lista.add("" + linha);
+			}
+			return lista;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	public void insereLog(StackTraceElement[] erro){
