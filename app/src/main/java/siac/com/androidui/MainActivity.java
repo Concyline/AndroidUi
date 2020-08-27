@@ -65,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void validaPermisoes() {
         String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE};//,
-                //Manifest.permission.CAMERA};
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA};
 
         Permissions.check(MainActivity.this, permissions, null, null, new PermissionHandler() {
             @Override

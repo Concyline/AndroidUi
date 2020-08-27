@@ -77,11 +77,32 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
         }
     }
 
+    public void onBackPressed() {
+        if(mScannerView != null) {
+            mScannerView.stopCameraPreview();
+            mScannerView.stopCamera();
+            mScannerView.releasePointerCapture();
+        }
+        super.onBackPressed();
+    }
+
     @Override
     public void onPause() {
         super.onPause();
         if(mScannerView != null) {
+            mScannerView.stopCameraPreview();
             mScannerView.stopCamera();
+            mScannerView.releasePointerCapture();
+        }
+    }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(mScannerView != null) {
+            mScannerView.stopCameraPreview();
+            mScannerView.stopCamera();
+            mScannerView.releasePointerCapture();
         }
     }
 
@@ -120,6 +141,32 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
 
     public boolean itemSelected(MenuItem item, int tipoMenu, int position) {
 
+        switch (item.getItemId()){
+            case 16908332:{ // HOME
+                if (!teste.equals("")) {
+                    Intent intent = new Intent();
+                    //String codigo = "00000751";
+                    intent.putExtra("CODIGO", teste);
+                    setResult(0, intent);
+                }
+                finish();
+                break;
+            }
+            case 2131230865:{ // FLASH
+                if (!Hawk.get("flash", false)) {
+                    Hawk.put("flash", true);
+                    mScannerView.setFlash(true);
+                    menu.findItem(R.id.ligarFlash).setIcon(R.drawable.outline_flash_off_white_48dp);
+                } else {
+                    Hawk.put("flash", false);
+                    mScannerView.setFlash(false);
+                    menu.findItem(R.id.ligarFlash).setIcon(R.drawable.outline_flash_on_white_48dp);
+                }
+                break;
+            }
+        }
+
+        /*
         if (item.getItemId() == android.R.id.home) {
             if (!teste.equals("")) {
                 Intent intent = new Intent();
@@ -130,7 +177,7 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
             finish();
         }
 
-        if (item.getItemId() == R.id.ligarFlash) {
+       /* if (item.getItemId() == R.id.ligarFlash) {
             if (!Hawk.get("flash", false)) {
                 Hawk.put("flash", true);
                 mScannerView.setFlash(true);
@@ -140,7 +187,7 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
                 mScannerView.setFlash(false);
                 menu.findItem(R.id.ligarFlash).setIcon(R.drawable.outline_flash_on_white_48dp);
             }
-        }
+        }*/
 
         return true;
     }
