@@ -301,6 +301,7 @@ public listeners
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon_teste"
         android:supportsRtl="true"
+	android:requestLegacyExternalStorage="true" // VERY IMPORTANT API > 26
         android:theme="@style/AppTheme">
         <activity android:name=".ManipulaTextoActivity"></activity>
         <activity android:name=".MainActivity">
