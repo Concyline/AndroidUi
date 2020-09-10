@@ -19,6 +19,7 @@
         <flag name="textPassword" value="0x00000081" />
         <flag name="numberDecimal" value="0x00002002" />
         <flag name="textMultiLine" value="0x00020001" />
+        <flag name="textMultiLineAllCaps" value="0x00000145" />
         <flag name="textCapCharacters" value="0x00020022" />
         <flag name="number" value="0x00020034" />
         <flag name="textEmailAddress" value="0x00026534" />
