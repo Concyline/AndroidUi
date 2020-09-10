@@ -10,6 +10,7 @@ import static siac.com.componentes.Util.Constantes.numberDecimal;
 import static siac.com.componentes.Util.Constantes.textCapCharacters;
 import static siac.com.componentes.Util.Constantes.textEmailAddress;
 import static siac.com.componentes.Util.Constantes.textMultiLine;
+import static siac.com.componentes.Util.Constantes.textMultiLineAllCaps;
 import static siac.com.componentes.Util.Constantes.textPassword;
 import static siac.com.componentes.Util.Constantes.number;
 
@@ -36,6 +37,16 @@ public class InputType {
                 editText.setLines(lines);
                 editText.setMaxLines(lines);
                 editText.setMovementMethod(new ScrollingMovementMethod());
+                return;
+            }
+            case textMultiLineAllCaps: {
+                editText.setGravity(Gravity.TOP | Gravity.LEFT);
+                editText.setSingleLine(false);
+                editText.setInputType(android.text.InputType.TYPE_CLASS_TEXT | android.text.InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+                editText.setLines(lines);
+                editText.setMaxLines(lines);
+                editText.setMovementMethod(new ScrollingMovementMethod());
+                editText.setFilters(new InputFilter[]{new InputFilter.AllCaps()});
                 return;
             }
             case textCapCharacters: {

@@ -7,6 +7,7 @@ public class Constantes {
     public static final int textPassword = 0x00000081;
     public static final int numberDecimal = 0x00002002;
     public static final int textMultiLine = 0x00020001;
+    public static final int textMultiLineAllCaps = 0x00000145;
     public static final int textCapCharacters = 0x00020022;
     public static final int number = 0x00020034;
     public static final int textEmailAddress = 0x00026534;
