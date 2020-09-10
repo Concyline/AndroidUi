@@ -27,9 +27,9 @@
                 android:id="@+id/editTextLegenda22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 app:legenda="Só data"
-                android:layout_marginRight="5dp"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="156dp" />
 
@@ -58,9 +58,9 @@
                 android:id="@+id/cadastroEditTextLegenda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 app:coricon="#D6C"
-                android:layout_marginRight="5dp"
                 app:iconRigth="@drawable/icons_coroa_48"
                 app:inputType="number"
                 app:legenda="Nome do cliente"
@@ -100,8 +100,8 @@
                 android:id="@+id/textViewsd"
                 android:layout_width="372dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginRight="5dp"
+                android:layout_weight="1"
                 app:corDescricao="@color/colorPrimaryDark"
                 app:corLegenda="@color/colorAccent"
                 app:descricao="Goiânia  adsdasdadsdasdsdasdsadsadsadasdsa"
@@ -140,8 +140,8 @@
             <siac.com.componentes.SpinnerLegenda
                 android:id="@+id/spinnerLegenda"
                 android:layout_width="0dp"
-                android:layout_marginRight="5dp"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 app:entries="@array/tipo"
                 app:legenda="Spinner" />
@@ -182,18 +182,20 @@
 
         </LinearLayout>
 
-
-        <siac.com.componentes.RoundishImageView
-            android:id="@+id/roundishImageView"
-            android:layout_width="wrap_content"
+        <siac.com.componentes.EditTextLegenda
+            android:id="@+id/multilineEditTextLegenda"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/cidade"
-            app:cornerRadius="10dp"
+            android:layout_marginTop="8dp"
+            app:coricon="@color/colorAccent"
+            app:inputType="textMultiLine"
+            app:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayoutasd"
-            app:roundedCorners="topLeft|bottomRight" />
+            app:legenda="Multiline"
+            app:lines="4"
+            app:tamLegendaEditText="@dimen/tamLegendaEditTextUi" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

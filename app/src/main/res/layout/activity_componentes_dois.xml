@@ -35,5 +35,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:shadow="true" />
 
+    <siac.com.componentes.RoundishImageView
+        android:id="@+id/roundishImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/cidade"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roundImageView"
+        app:roundedCorners="topLeft|bottomRight" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
