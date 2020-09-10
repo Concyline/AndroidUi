@@ -187,7 +187,22 @@ searchLegenda.setOnClickListener(new View.OnClickListener() {
         });
 ````
 
----
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/multiline.png" width="50%">
+
+````xml
+    <siac.com.componentes.EditTextLegenda
+            android:id="@+id/multilineEditTextLegenda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:coricon="@color/colorAccent"
+            app:inputType="textMultiLine"
+            app:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+            app:legenda="Multiline"
+            app:lines="4"
+            app:tamLegendaEditText="@dimen/tamLegendaEditTextUi" />
+````
+
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/senha.png" width="50%">
 
