@@ -377,6 +377,10 @@ public class EditTextLegenda extends FrameLayout {
         editText.setText(text);
     }
 
+    public void setLegenda(String text) {
+        legendaTextView.setText(text);
+    }
+
     public String getString() {
         return editText.getText().toString().trim();
     }
