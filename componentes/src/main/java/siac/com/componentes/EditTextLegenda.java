@@ -401,7 +401,7 @@ public class EditTextLegenda extends FrameLayout {
         }
     }
 
-    public Double getdouble() {
+    public Double getDouble() {
         try {
             return Double.parseDouble(editText.getText().toString().trim());
         } catch (Exception e) {
