@@ -109,7 +109,7 @@ or add programaticaly adapter
 
 ````java
 ArrayAdapter<Object> adapter = new ArrayAdapter<Object>(getBaseContext(), 
-	R.layout.view_spinner_item, new String[]{"aureo", "ana", "davi"});
+	siac.com.componentes.R.layout.view_spinner_item_ui, new String[]{"aureo", "ana", "davi"});
 	
 spinnerLegenda.setAdapter(adapter);
 ````
