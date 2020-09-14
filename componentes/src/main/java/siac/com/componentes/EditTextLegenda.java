@@ -409,6 +409,10 @@ public class EditTextLegenda extends FrameLayout {
         }
     }
 
+    public void setFilters(InputFilter[] filters){
+        editText.setFilters(filters);
+    }
+
     public void setHint(String text) {
         editText.setHint(text);
     }
