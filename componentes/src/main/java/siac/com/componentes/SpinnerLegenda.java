@@ -130,6 +130,10 @@ public class SpinnerLegenda extends FrameLayout {
         spinner.setSelection(selection);
     }
 
+    public void setSelection(int selection, boolean aways){
+        spinner.setSelection(selection, aways);
+    }
+
     public void setLegenda(String text) {
         legendaTextView.setText(text);
     }
