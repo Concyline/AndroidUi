@@ -478,6 +478,10 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
  
  ### Usage
  ````java
+ // In Activity
+ import siac.com.util.Util;
+ 
+ // Usage in class
  Util.setBar(UtilActivity.this, "Title", "Subtitle");
  
  Util.abaixaTeclado(getBaseContext(), view);
