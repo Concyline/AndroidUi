@@ -28,7 +28,7 @@
         android:src="@drawable/cidade"
         app:borderColor="@color/colorAccent"
         app:borderWidth="5dp"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toStartOf="@+id/roundImageView2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
