@@ -263,6 +263,11 @@ For all companions
 
 all components have the following methods `boolean validaPreenchido()`, `boolean validaCpfCnpj()`, `void setError()`, `void removeError()`, `void mostraSenha()`, `String getString() `, `String getStringUperCase() `, `Integer getInteger()`, `Double getDouble()`
 
+update color icon error
+````xml
+<color name="colorAccent">#F79D91</color>
+````
+
 public listeners
 ```java
   public void setOnClickListener(OnClickListener onClickListener) {
@@ -478,6 +483,10 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
  
  ### Usage
  ````java
+ // In Activity
+ import siac.com.util.Util;
+ 
+ // Usage in class
  Util.setBar(UtilActivity.this, "Title", "Subtitle");
  
  Util.abaixaTeclado(getBaseContext(), view);
