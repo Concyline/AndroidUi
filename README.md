@@ -29,7 +29,7 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.Concyline:Androidui:740b7423a6'
+	        implementation 'com.github.Concyline:Androidui:7c0e98299f'
 	     }
 ```
 
