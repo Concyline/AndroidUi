@@ -29,7 +29,7 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.Concyline:Androidui:7acbec5f49'
+	        implementation 'com.github.Concyline:Androidui:740b7423a6'
 	     }
 ```
 
@@ -254,8 +254,7 @@ final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLege
         android:layout_height="150dp"
         android:src="@drawable/cidade"
         app:borderColor="@color/colorAccent"
-        app:borderWidth="5dp"
-        app:shadow="true" />
+        app:borderWidth="5dp" />
 ````
 
 For all companions
