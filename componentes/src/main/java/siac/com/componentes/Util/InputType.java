@@ -3,6 +3,7 @@ package siac.com.componentes.Util;
 import android.text.InputFilter;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.EditText;
 
 import static siac.com.componentes.Util.Constantes.none;

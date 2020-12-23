@@ -17,8 +17,7 @@
         app:borderWidth="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/roundImageView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shadow="false" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <siac.com.componentes.RoundImageView
         android:id="@+id/roundImageView"
@@ -32,8 +31,7 @@
         android:scaleType="fitXY"
         app:layout_constraintEnd_toStartOf="@+id/roundImageView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shadow="true" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <siac.com.componentes.RoundishImageView
         android:id="@+id/roundishImageView"

@@ -107,9 +107,10 @@
     </declare-styleable>
 
     <declare-styleable name="RoundImageView">
-        <attr name="borderWidth" format="dimension"/>
-        <attr name="borderColor" format="color"/>
-        <attr name="shadow" format="boolean"/>
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_circle_background_color" format="color" />
     </declare-styleable>
 
 </resources>
