@@ -76,7 +76,8 @@ dependencies {
             app:requestfocus="false"
             app:tag="edittext"
             app:text="texto"
-            app:requerido="true" />
+            app:requerido="true"
+	    app:legendaRequerido="Digite um CNPJ válido!"/>
 ```
 
 ---
