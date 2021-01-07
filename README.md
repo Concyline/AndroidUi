@@ -1,6 +1,6 @@
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/logo_projeto_novo.png" width="100%">
 
-[![](https://jitpack.io/v/Concyline/Androidui.svg)](https://jitpack.io/#Concyline/Androidui)
+[![](https://jitpack.io/v/concyline/androidui.svg)](https://jitpack.io/#concyline/androidui)
 
 This library has 6 modules to aid Android development, speeding up the completion of the application
 
@@ -16,7 +16,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  Gradle Setup
 ------
 
-Version 2.6.38 = 7acbec5f49
+Version 2.6.53 = 184b4a6034
 
 ```java
 allprojects {
@@ -29,7 +29,7 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.Concyline:Androidui:7c0e98299f'
+	        implementation 'com.github.Concyline:Androidui:184b4a6034'
 	     }
 ```
 
@@ -85,9 +85,6 @@ dependencies {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/legenda_requerido.png" width="50%">
 
 ```xml
-
-    <!-- Is free to create any mask just edit the app:mascara="" -->
-
     <siac.com.componentes.EditTextLegenda
             android:id="@+id/editTextLegenda2"
             android:layout_width="match_parent"
