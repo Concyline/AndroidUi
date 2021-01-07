@@ -45,5 +45,32 @@
         app:layout_constraintTop_toBottomOf="@+id/roundImageView"
         app:roundedCorners="topLeft|bottomRight" />
 
+    <siac.com.componentes.ProgressImageView
+        android:id="@+id/progressImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roundishImageView"
+        app:roundedCorners="topLeft|bottomRight"
+        app:src="@drawable/home"
+        app:progressSize="200dp"/>
+
+    <siac.com.componentes.ProgressImageView
+        android:id="@+id/lupaProgressImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/progressImageView"
+        app:layout_constraintStart_toEndOf="@+id/progressImageView"
+        app:layout_constraintTop_toBottomOf="@+id/roundishImageView"
+        app:progressSize="150dp"
+        app:roundedCorners="topLeft|bottomRight"
+        app:src="@drawable/lupa"
+        app:progressColor="#2DB200" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

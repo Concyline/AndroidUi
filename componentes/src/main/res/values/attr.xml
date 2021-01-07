@@ -113,4 +113,10 @@
         <attr name="civ_circle_background_color" format="color" />
     </declare-styleable>
 
+    <declare-styleable name="ProgressImageView">
+        <attr name="src" format="reference" />
+        <attr name="progressColor" format="color" />
+        <attr name="progressSize" format="dimension" />
+    </declare-styleable>
+
 </resources>
