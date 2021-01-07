@@ -70,6 +70,7 @@ public class EditTextLegenda extends FrameLayout {
     private Mascara mascaraDinamica;
     private int mascaraVigente = cnpj;
     private Date dateResult;
+    private String legendaRequerido;
 
 
     public EditTextLegenda(@NonNull Context context) {
@@ -114,11 +115,17 @@ public class EditTextLegenda extends FrameLayout {
             focusable = typedArray.getBoolean(R.styleable.EditTextLegenda_focusable, true);
             requestfocus = typedArray.getBoolean(R.styleable.EditTextLegenda_requestfocus, false);
             requerido = typedArray.getBoolean(R.styleable.EditTextLegenda_requerido, false);
+            legendaRequerido = getString(typedArray, R.styleable.EditTextLegenda_legendaRequerido, "Item requerido no formulário");
             iconRigthVisible = typedArray.getBoolean(R.styleable.EditTextLegenda_iconRigthVisible, false);
             tag = typedArray.getString(R.styleable.EditTextLegenda_tag);
             return;
         }
 
+    }
+
+    private String getString(TypedArray typedArray, int index, String defaultValue){
+        String value = typedArray.getString(index);
+        return value == null ? defaultValue : value;
     }
 
     private float getSizeFontLegendaEditText(String value) {
@@ -212,7 +219,7 @@ public class EditTextLegenda extends FrameLayout {
             @Override
             public void onClick(View v) {
                 fadeIn(getContext(), v);
-                popupDisplay(v, "Item requerido no formulário");
+                popupDisplay(v, legendaRequerido);
             }
         });
     }
