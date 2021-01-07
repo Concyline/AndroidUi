@@ -82,6 +82,28 @@ dependencies {
 
 ---
 
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/legenda_requerido.png" width="50%">
+
+```xml
+
+    <!-- Is free to create any mask just edit the app:mascara="" -->
+
+    <siac.com.componentes.EditTextLegenda
+            android:id="@+id/editTextLegenda2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:legenda="Enail"
+            app:enabled="true"
+            app:focusable="true"
+            app:requestfocus="false"
+            app:tag="edittext"
+            app:text="texto"
+            app:requerido="true"
+	    app:legendaRequerido="Digite um email válido!"/>
+```
+
+---
+
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/sodata.png" width="50%">
 
 ```xml
@@ -188,6 +210,8 @@ searchLegenda.setOnClickListener(new View.OnClickListener() {
         });
 ````
 
+---
+
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/multiline.png" width="50%">
 
 ````xml
@@ -204,6 +228,7 @@ searchLegenda.setOnClickListener(new View.OnClickListener() {
             app:tamLegendaEditText="@dimen/tamLegendaEditTextUi" />
 ````
 
+---
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/senha.png" width="50%">
 
@@ -228,6 +253,8 @@ final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLege
             }
         });
 ````
+
+---
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progress_image.png" width="50%">
 
