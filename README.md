@@ -239,7 +239,7 @@ final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLege
         android:layout_height="50dp"
         app:progressSize="150dp"
         app:src="@drawable/lupa"
-        app:tInt="#2DB200" />
+        app:progressColor="#2DB200" />
 ```
 ```java
  final ProgressImageView progressImageView = findViewById(R.id.progressImageView);
