@@ -228,6 +228,35 @@ final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLege
         });
 ````
 
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/progress_image.png" width="50%">
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/progress_image_click.png" width="50%">
+
+```xml
+    <siac.com.componentes.ProgressImageView
+        android:id="@+id/progressImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:progressSize="150dp"
+        app:src="@drawable/lupa"
+        app:tInt="#2DB200" />
+```
+```java
+ final ProgressImageView progressImageView = findViewById(R.id.progressImageView);
+        progressImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progressImageView.setProgres();
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressImageView.removeProgres();
+                    }
+                }, 2000);
+            }
+        });
+```
 ---
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/image_rounted.png" width="50%">
