@@ -14,6 +14,9 @@
     <attr name="coricon" format="color" />
     <attr name="singleLine" format="boolean" />
     <attr name="legendaRequerido" format="string" />
+    <attr name="text" format="string" />
+    <attr name="progressColor" format="color" />
+    <attr name="progressSize" format="dimension"/>
 
     <attr name="inputType">
         <flag name="none" value="0x00000000" />
@@ -43,7 +46,7 @@
         <attr name="tamLegendaEditText"/>
         <attr name="tamTextEditText" />
         <attr name="hint" />
-        <attr name="text" format="string" />
+        <attr name="text" />
         <attr name="lines" format="integer" />
         <attr name="maxLength" format="integer" />
         <attr name="iconLeft" format="reference" />
@@ -116,8 +119,14 @@
 
     <declare-styleable name="ProgressImageView">
         <attr name="src" format="reference" />
-        <attr name="progressColor" format="color" />
-        <attr name="progressSize" format="dimension" />
+        <attr name="progressColor" />
+        <attr name="progressSize" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressButton">
+        <attr name="text"/>
+        <attr name="progressColor" />
+        <attr name="progressSize" />
     </declare-styleable>
 
 </resources>

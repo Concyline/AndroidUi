@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import siac.com.componentes.ProgressButton;
 import siac.com.componentes.ProgressImageView;
 
 public class ComponentesDoisActivity extends AppCompatActivity {
@@ -53,6 +54,42 @@ public class ComponentesDoisActivity extends AppCompatActivity {
                 }, 2000);
             }
         });
+
+        final ProgressButton progressButton = findViewById(R.id.progressButton);
+        progressButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                progressButton.setProgres();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressButton.removeProgres();
+                    }
+                }, 2000);
+            }
+        });
+
+        final ProgressButton progressButtonOk = findViewById(R.id.progressButtonOk);
+        progressButtonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                progressButtonOk.setProgres();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressButtonOk.removeProgres();
+                    }
+                }, 2000);
+            }
+        });
+
+
 
 
     }

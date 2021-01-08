@@ -8,54 +8,42 @@
     android:padding="10dp">
 
     <siac.com.componentes.RoundImageView
-        android:id="@+id/roundImageView2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_margin="10dp"
-        android:src="@drawable/cidade"
-        app:borderColor="@color/colorAccent"
-        app:borderWidth="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/roundImageView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <siac.com.componentes.RoundImageView
         android:id="@+id/roundImageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_margin="10dp"
+        android:layout_marginStart="108dp"
         android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/cidade"
         app:borderColor="@color/colorAccent"
         app:borderWidth="5dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toStartOf="@+id/roundImageView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/roundishImageView" />
 
     <siac.com.componentes.RoundishImageView
         android:id="@+id/roundishImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:src="@drawable/cidade"
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/roundImageView"
+        app:layout_constraintTop_toTopOf="parent"
         app:roundedCorners="topLeft|bottomRight" />
 
     <siac.com.componentes.ProgressImageView
         android:id="@+id/progressImageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
         app:cornerRadius="10dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/roundImageView"
+        app:layout_constraintStart_toEndOf="@+id/roundImageView"
         app:layout_constraintTop_toBottomOf="@+id/roundishImageView"
+        app:progressSize="200dp"
         app:roundedCorners="topLeft|bottomRight"
-        app:src="@drawable/home"
-        app:progressSize="200dp"/>
+        app:src="@drawable/home" />
 
     <siac.com.componentes.ProgressImageView
         android:id="@+id/lupaProgressImageView"
@@ -71,6 +59,29 @@
         app:roundedCorners="topLeft|bottomRight"
         app:src="@drawable/lupa"
         app:progressColor="#2DB200" />
+
+    <siac.com.componentes.ProgressButton
+        android:id="@+id/progressButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roundImageView"
+        app:progressColor="#2DB200"
+        app:progressSize="100dp"
+        app:text="Ok Big Guy" />
+
+    <siac.com.componentes.ProgressButton
+        android:id="@+id/progressButtonOk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/progressButton"
+        app:layout_constraintTop_toBottomOf="@+id/roundImageView"
+        app:progressColor="#2DB200"
+        app:progressSize="100dp"
+        app:text="Ok" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
