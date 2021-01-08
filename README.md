@@ -284,6 +284,39 @@ final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLege
 ```
 ---
 
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_button.png" width="50%">
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_button_pressed.png" width="50%">
+
+```xml
+    <siac.com.componentes.ProgressButton
+        android:id="@+id/progressButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:progressColor="#2DB200"
+        app:progressSize="100dp"
+        app:text="Ok Big Guy" />
+```
+```java
+final ProgressButton progressButtonOk = findViewById(R.id.progressButtonOk);
+        progressButtonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                progressButtonOk.setProgres();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressButtonOk.removeProgres();
+                    }
+                }, 2000);
+            }
+        });
+```
+---
+
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/image_rounted.png" width="50%">
 
 ````xml
