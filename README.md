@@ -1,6 +1,6 @@
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/logo_projeto_novo.png" width="100%">
 
-[![](https://jitpack.io/v/Concyline/Androidui.svg)](https://jitpack.io/#Concyline/Androidui)
+[![](https://jitpack.io/v/concyline/androidui.svg)](https://jitpack.io/#concyline/androidui)
 
 This library has 6 modules to aid Android development, speeding up the completion of the application
 
@@ -16,7 +16,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  Gradle Setup
 ------
 
-Version 2.6.38 = 7acbec5f49
+Version 2.6.53 = 184b4a6034
 
 ```java
 allprojects {
@@ -29,7 +29,7 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.Concyline:Androidui:7c0e98299f'
+	        implementation 'com.github.Concyline:Androidui:184b4a6034'
 	     }
 ```
 
@@ -78,6 +78,25 @@ dependencies {
             app:text="texto"
             app:requerido="true"
 	    app:legendaRequerido="Digite um CNPJ válido!"/>
+```
+
+---
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/legenda_requerido.png" width="50%">
+
+```xml
+    <siac.com.componentes.EditTextLegenda
+            android:id="@+id/editTextLegenda2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:legenda="Enail"
+            app:enabled="true"
+            app:focusable="true"
+            app:requestfocus="false"
+            app:tag="edittext"
+            app:text="texto"
+            app:requerido="true"
+	    app:legendaRequerido="Digite um email válido!"/>
 ```
 
 ---
@@ -188,6 +207,8 @@ searchLegenda.setOnClickListener(new View.OnClickListener() {
         });
 ````
 
+---
+
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/multiline.png" width="50%">
 
 ````xml
@@ -204,6 +225,7 @@ searchLegenda.setOnClickListener(new View.OnClickListener() {
             app:tamLegendaEditText="@dimen/tamLegendaEditTextUi" />
 ````
 
+---
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/senha.png" width="50%">
 
@@ -229,6 +251,8 @@ final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLege
         });
 ````
 
+---
+
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progress_image.png" width="50%">
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progress_image_click.png" width="50%">
@@ -253,6 +277,39 @@ final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLege
                     @Override
                     public void run() {
                         progressImageView.removeProgres();
+                    }
+                }, 2000);
+            }
+        });
+```
+---
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_button.png" width="50%">
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_button_pressed.png" width="50%">
+
+```xml
+    <siac.com.componentes.ProgressButton
+        android:id="@+id/progressButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:progressColor="#2DB200"
+        app:progressSize="100dp"
+        app:text="Ok Big Guy" />
+```
+```java
+final ProgressButton progressButtonOk = findViewById(R.id.progressButtonOk);
+        progressButtonOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                progressButtonOk.setProgres();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressButtonOk.removeProgres();
                     }
                 }, 2000);
             }
