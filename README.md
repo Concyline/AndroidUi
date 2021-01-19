@@ -347,7 +347,7 @@ final ProgressButton progressButtonOk = findViewById(R.id.progressButtonOk);
 
 ## Custon Dialog
 
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/custon_dimness.png" width="15%"/> <img src="https://github.com/Concyline/AndroidUi/blob/master/img/error_dialog.png" width="15%"/> <img src="https://github.com/Concyline/AndroidUi/blob/master/img/circle_dialog.png" width="15%"/> <img src="https://github.com/Concyline/AndroidUi/blob/master/img/custon_background_color.png" width="15%"/>  
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/custon_dimness.png" width="20%"/> <img src="https://github.com/Concyline/AndroidUi/blob/master/img/error_dialog.png" width="20%"/> <img src="https://github.com/Concyline/AndroidUi/blob/master/img/circle_dialog.png" width="20%"/> <img src="https://github.com/Concyline/AndroidUi/blob/master/img/custon_background_color.png" width="20%"/>  
 
 ````java
 new CDialog(ComponentesDoisActivity.this)
@@ -383,7 +383,7 @@ new CDialog(ComponentesDoisActivity.this)
 ---
 ## SnackBar
 
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/sneckbar.png" width="15%"/> 
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/sneckbar.png" width="20%"/> 
 
 ````java
  new CDialog(ComponentesDoisActivity.this)
