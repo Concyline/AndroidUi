@@ -15,4 +15,17 @@
     <dimen name="app_bar_heightUi">180dp</dimen>
     <dimen name="text_marginUi">16dp</dimen>
     <!--  -->
+
+    <!-- CDialog -->
+    <item type="integer" name="small_dialog">300</item>
+    <item type="integer" name="medium_dialog">400</item>
+    <item type="integer" name="large_dialog">500</item>
+    <item type="integer" name="big_dialog">700</item>
+
+    <item type="integer" name="small_text">12</item>
+    <item type="integer" name="medium_text">15</item>
+    <item type="integer" name="large_text">20</item>
+    <item type="integer" name="extra_large_text">23</item>
+    <!---->
+
 </resources>

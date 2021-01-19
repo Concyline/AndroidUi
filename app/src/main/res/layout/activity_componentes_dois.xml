@@ -83,5 +83,48 @@
         app:progressSize="100dp"
         app:text="Ok" />
 
+    <Button
+        android:id="@+id/ovalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="OVAL"
+        app:layout_constraintStart_toEndOf="@+id/drawableButton"
+        app:layout_constraintTop_toBottomOf="@+id/progressButtonOk" />
+
+    <Button
+        android:id="@+id/bitimapButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="ICON BITMAP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressButton" />
+
+    <Button
+        android:id="@+id/drawableButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="ICON DRAWABLE"
+        app:layout_constraintStart_toEndOf="@+id/bitimapButton"
+        app:layout_constraintTop_toBottomOf="@+id/progressButtonOk" />
+
+    <Button
+        android:id="@+id/snackBarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SNACK BAR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ovalButton" />
+
+    <Button
+        android:id="@+id/errorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Error"
+        app:layout_constraintStart_toEndOf="@+id/snackBarButton"
+        app:layout_constraintTop_toBottomOf="@+id/ovalButton" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,9 @@
 package siac.com.androidui;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -13,8 +16,17 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.InputStream;
+
+import siac.com.componentes.CDialog;
 import siac.com.componentes.ProgressButton;
 import siac.com.componentes.ProgressImageView;
+import siac.com.componentes.extras.AnimateDialog;
+import siac.com.componentes.extras.PositionDialog;
+import siac.com.componentes.extras.SizeDialog;
+import siac.com.componentes.extras.SizeText;
+import siac.com.componentes.extras.TypeDialog;
+import siac.com.componentes.extras.WindowFormat;
 
 public class ComponentesDoisActivity extends AppCompatActivity {
 
@@ -91,7 +103,103 @@ public class ComponentesDoisActivity extends AppCompatActivity {
 
 
 
+        /* Custon Dialog */
 
+
+        findViewById(R.id.ovalButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new CDialog(ComponentesDoisActivity.this)
+                        .createAlert("success !",
+                                WindowFormat.BACKGROUND_OVAL,
+                                TypeDialog.SUCCESS,
+                                SizeDialog.XLARGE)
+                        .setAnimation(AnimateDialog.SCALE_FROM_LEFT_TO_RIGHT)
+                        .setDuration(3000)  // in milliseconds
+                        .setTextSize(SizeText.SMALL)
+                        .setBackgroundColor(R.color.pink)
+                        .show();
+
+            }
+        });
+
+        findViewById(R.id.bitimapButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new CDialog(ComponentesDoisActivity.this)
+                        .createAlert("WARNING! custon mensagem",
+                                WindowFormat.BACKGROUND_RECTANGLE,
+                                getBitmapFromAsset(),
+                                TypeDialog.WARNING,
+                                SizeDialog.XLARGE)
+                        .setAnimation(AnimateDialog.SCALE_FROM_BOTTOM_TO_TOP)
+                        .setDuration(3000)  // in milliseconds
+                        .setTextSize(SizeText.XLARGE)
+                        .setPosition(PositionDialog.POSITION_CENTER)
+                        .setBackDimness(0.9f) // less Than One
+                        .show();
+
+            }
+        });
+
+        findViewById(R.id.drawableButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new CDialog(ComponentesDoisActivity.this).createAlert("success !",
+                        WindowFormat.BACKGROUND_OVAL,
+                        getDrawable(),
+                        TypeDialog.SUCCESS,
+                        SizeDialog.XLARGE)
+                        .setAnimation(AnimateDialog.SCALE_FROM_BOTTOM_TO_TOP)
+                        .setDuration(3000)   // in milliseconds
+                        .setTextSize(SizeText.LARGE)
+                        .show();
+
+            }
+        });
+
+        findViewById(R.id.errorButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new CDialog(ComponentesDoisActivity.this).createAlert("Error message !",
+                        WindowFormat.BACKGROUND_OVAL,
+                        TypeDialog.ERROR,
+                        SizeDialog.XLARGE)
+                        .setAnimation(AnimateDialog.SCALE_FROM_LEFT_TO_RIGHT)
+                        .setDuration(3000)   // in milliseconds
+                        .setTextSize(SizeText.LARGE)
+                        .show();
+
+            }
+        });
+
+        findViewById(R.id.snackBarButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new CDialog(ComponentesDoisActivity.this).createAlertSneckBar("Info SnackBar",
+                        WindowFormat.BACKGROUND_OVAL, // Type of background
+                        TypeDialog.INFO,   // Type of dialog
+                        SizeDialog.MEDIUM)    //  size of dialog
+                        .show();
+
+            }
+        });
+    }
+
+    public Bitmap getBitmapFromAsset() {
+        InputStream imageStream = getResources().openRawResource(R.raw.lamp);
+        Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
+        return bitmap;
+    }
+
+    public Drawable getDrawable() {
+        Drawable myDrawable = getResources().getDrawable(R.drawable.checked_1);
+        return myDrawable;
     }
 
     public void vibrate(View button) {
