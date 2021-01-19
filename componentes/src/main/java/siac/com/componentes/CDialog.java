@@ -43,9 +43,7 @@ public class CDialog {
         dialog = new Dialog(context);
     }
 
-    public CDialog createAlertSneckBar(String message, WindowFormat windowFormat, TypeDialog alertType, SizeDialog sizeDialog) {
-
-        prepareBackGroundType(windowFormat);
+    public CDialog createAlertSneckBar(String message, TypeDialog alertType, SizeDialog sizeDialog) {
 
         size = prepareSizeBackBround(sizeDialog);
 
@@ -58,6 +56,22 @@ public class CDialog {
 
         return this;
     }
+
+   /* public CDialog createAlertSneckBar(String message, WindowFormat windowFormat, TypeDialog alertType, SizeDialog sizeDialog) {
+
+        //prepareBackGroundType(windowFormat);
+
+        size = prepareSizeBackBround(sizeDialog);
+
+        prepareWindowSneckBar(message);
+
+        imageView = dialog.findViewById(R.id.icn);
+        imageView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.rotate));
+
+        prepareBackGroundColorImage(alertType);
+
+        return this;
+    }*/
 
     public CDialog createAlert(String message, WindowFormat windowFormat, TypeDialog typeDialog, SizeDialog givenSize) {
 
@@ -111,6 +125,7 @@ public class CDialog {
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.view_custon_dialog);
         dialog.getWindow().getAttributes().windowAnimations = R.style.scale_from_left_to_right;
+        dialog.getWindow().setBackgroundDrawableResource(R.drawable.round_back);
 
         dialog.getWindow().setLayout(ConstraintLayout.LayoutParams.MATCH_PARENT, size);
         messageTextView = dialog.findViewById(R.id.msg);

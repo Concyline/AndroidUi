@@ -139,6 +139,7 @@ public class ComponentesDoisActivity extends AppCompatActivity {
                         .setTextSize(SizeText.XLARGE)
                         .setPosition(PositionDialog.POSITION_CENTER)
                         .setBackDimness(0.9f) // less Than One
+                        .setBackgroundColor(R.color.pink)
                         .show();
 
             }
@@ -181,11 +182,17 @@ public class ComponentesDoisActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new CDialog(ComponentesDoisActivity.this).createAlertSneckBar("Info SnackBar",
+                new CDialog(ComponentesDoisActivity.this)
+                        .createAlertSneckBar("Info SnackBar",
+                            TypeDialog.INFO,
+                            SizeDialog.MEDIUM)
+                        .show();
+
+               /* new CDialog(ComponentesDoisActivity.this).createAlertSneckBar("Info SnackBar",
                         WindowFormat.BACKGROUND_OVAL, // Type of background
                         TypeDialog.INFO,   // Type of dialog
                         SizeDialog.MEDIUM)    //  size of dialog
-                        .show();
+                        .show();*/
 
             }
         });
