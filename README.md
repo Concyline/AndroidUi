@@ -284,8 +284,7 @@ final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLege
 ```
 ---
 
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_button.png" width="50%">
-
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_button.png" width="50%"> 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_button_pressed.png" width="50%">
 
 ```xml
@@ -343,6 +342,58 @@ final ProgressButton progressButtonOk = findViewById(R.id.progressButtonOk);
         app:borderColor="@color/colorAccent"
         app:borderWidth="5dp" />
 ````
+
+--- 
+
+## Custon Dialog
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/custon_dimness.png" width="20%"/> <img src="https://github.com/Concyline/AndroidUi/blob/master/img/error_dialog.png" width="20%"/> <img src="https://github.com/Concyline/AndroidUi/blob/master/img/circle_dialog.png" width="20%"/> <img src="https://github.com/Concyline/AndroidUi/blob/master/img/custon_background_color.png" width="20%"/>  
+
+````java
+new CDialog(ComponentesDoisActivity.this)
+                        .createAlert("WARNING! custon mensagem",
+                                WindowFormat.BACKGROUND_RECTANGLE,
+                                getBitmapFromAsset(),
+                                TypeDialog.WARNING,
+                                SizeDialog.XLARGE)
+                        .setAnimation(AnimateDialog.SCALE_FROM_BOTTOM_TO_TOP)
+                        .setDuration(3000)  // in milliseconds
+                        .setTextSize(SizeText.XLARGE)
+                        .setPosition(PositionDialog.POSITION_CENTER)
+                        .setBackDimness(0.9f) // less Than One
+                        .setBackgroundColor(R.color.pink)
+                        .show();
+````
+
+> Get Image resources
+
+````java
+ public Bitmap getBitmapFromAsset() {
+      InputStream imageStream = getResources().openRawResource(R.raw.lamp);
+      Bitmap bitmap = BitmapFactory.decodeStream(imageStream);
+      return bitmap;
+  }
+
+  public Drawable getDrawable() {
+      Drawable myDrawable = getResources().getDrawable(R.drawable.checked_1);
+      return myDrawable;
+  }
+````
+
+---
+## SnackBar
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/sneckbar.png" width="20%"/> 
+
+````java
+ new CDialog(ComponentesDoisActivity.this)
+                        .createAlertSneckBar("Info SnackBar",
+                            TypeDialog.INFO,
+                            SizeDialog.MEDIUM)
+                        .show();
+````
+
+---
 
 For all companions
 ------
