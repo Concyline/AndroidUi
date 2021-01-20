@@ -196,6 +196,30 @@ public class ComponentesDoisActivity extends AppCompatActivity {
 
             }
         });
+
+        findViewById(R.id.listenerButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new CDialog(ComponentesDoisActivity.this)
+                        .createAlertSneckBar("Info SnackBar",
+                            TypeDialog.INFO,
+                            SizeDialog.MEDIUM)
+                        .show(new CDialog.CDialogListener() {
+                            @Override
+                            public void onDismiss() {
+                                System.out.println("aqui");
+                            }
+                        });
+
+               /* new CDialog(ComponentesDoisActivity.this).createAlertSneckBar("Info SnackBar",
+                        WindowFormat.BACKGROUND_OVAL, // Type of background
+                        TypeDialog.INFO,   // Type of dialog
+                        SizeDialog.MEDIUM)    //  size of dialog
+                        .show();*/
+
+            }
+        });
     }
 
     public Bitmap getBitmapFromAsset() {

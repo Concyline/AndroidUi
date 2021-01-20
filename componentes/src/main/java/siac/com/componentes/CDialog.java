@@ -442,4 +442,24 @@ public class CDialog {
             }
         }).start();
     }
+
+    public void show(final CDialogListener onDismissListener) {
+        dialog.show();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(duration);
+                    dialog.dismiss();
+                    onDismissListener.onDismiss();
+                } catch (InterruptedException e) {
+                    Log.e("show intrupt", "" + e.getMessage());
+                }
+            }
+        }).start();
+    }
+
+    public interface CDialogListener{
+        void onDismiss();
+    }
 }
