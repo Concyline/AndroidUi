@@ -364,6 +364,21 @@ new CDialog(ComponentesDoisActivity.this)
                         .setBackgroundColor(R.color.pink)
                         .show();
 ````
+> Or Listener, when you finish the task
+
+````java
+new CDialog(ParametrosActivity.this)
+                .createAlertSneckBar("Salvo com sucesso!",
+                        TypeDialog.INFO,
+                        SizeDialog.MEDIUM)
+                .setDuration(2000)
+                .show(new CDialog.CDialogListener() {
+                    @Override
+                    public void onDismiss() {
+                	...
+                    }
+                });
+````
 
 > Get Image resources
 
