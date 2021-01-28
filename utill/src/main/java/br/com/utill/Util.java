@@ -1,9 +1,7 @@
-package siac.com.util;
+package br.com.utill;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.Html;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -13,8 +11,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import siac.com.util.listeners.OnListnerAlertSimCancelar;
-import siac.com.util.listeners.OnListnerOk;
+import br.com.utill.listeners.OnListnerAlertSimCancelar;
+import br.com.utill.listeners.OnListnerOk;
+import siac.com.util.R;
 
 public class Util {
 
@@ -24,11 +23,11 @@ public class Util {
     }
 
     public static void toastLong(Context context, String msg) {
-        android.widget.Toast.makeText(context, msg, android.widget.Toast.LENGTH_LONG).show();
+        Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
     }
 
     public static void toastShort(Context context, String msg) {
-        android.widget.Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
     }
 
     public static void fadeIn(Context context, View button) {

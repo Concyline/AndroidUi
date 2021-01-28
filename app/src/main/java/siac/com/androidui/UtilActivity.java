@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import siac.com.util.listeners.OnListnerAlertSimCancelar;
-import siac.com.util.listeners.OnListnerOk;
-import siac.com.util.Util;
+import br.com.utill.Util;
+import br.com.utill.listeners.OnListnerAlertSimCancelar;
+import br.com.utill.listeners.OnListnerOk;
+
 
 public class UtilActivity extends AppCompatActivity {
 

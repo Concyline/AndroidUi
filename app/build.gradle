@@ -35,11 +35,14 @@ dependencies {
     //https://github.com/nabinbhandari/Android-Permissions
     //implementation 'com.nabinbhandari.android:permissions:3.8'
 
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
     implementation project(':componentes')
     implementation project(':texto')
     implementation project(':leitor')
     implementation project(':shortcut')
-    implementation project(':util')
+    implementation project(':utill')
     implementation project(':permision')
+    implementation project(':campix')
 
 }

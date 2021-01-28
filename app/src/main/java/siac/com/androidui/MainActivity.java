@@ -15,12 +15,12 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
+import br.com.utill.Util;
 import siac.com.permision.PermissionHandler;
 import siac.com.permision.Permissions;
 import siac.com.shortcut.IReceiveStringExtra;
 import siac.com.shortcut.Shortcut;
 import siac.com.shortcut.ShortcutUtils;
-import siac.com.util.Util;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -73,9 +73,7 @@ public class MainActivity extends AppCompatActivity {
             public void onGranted() {
 
                 try {
-
-                    Button componentesButton = findViewById(R.id.componentesButton);
-                    componentesButton.setOnClickListener(new View.OnClickListener() {
+                    findViewById(R.id.componentesButton).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), ComponentesActivity.class);
@@ -83,8 +81,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
-                    Button componentesDoisButton = findViewById(R.id.componentesDoisButton);
-                    componentesDoisButton.setOnClickListener(new View.OnClickListener() {
+                    findViewById(R.id.componentesDoisButton).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), ComponentesDoisActivity.class);
@@ -92,8 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
-                    Button textoButton = findViewById(R.id.textoButton);
-                    textoButton.setOnClickListener(new View.OnClickListener() {
+                    findViewById(R.id.textoButton).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), ManipulaTextoActivity.class);
@@ -101,8 +97,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
-                    Button leitorButton = findViewById(R.id.leitorButton);
-                    leitorButton.setOnClickListener(new View.OnClickListener() {
+                    findViewById(R.id.leitorButton).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), LerQrBarCodeActivity.class);
@@ -110,8 +105,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
-                    Button permision = findViewById(R.id.permision);
-                    permision.setOnClickListener(new View.OnClickListener() {
+                    findViewById(R.id.permision).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
 
@@ -129,11 +123,18 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
-                    Button abaixaTeclado = findViewById(R.id.abaixaTeclado);
-                    abaixaTeclado.setOnClickListener(new View.OnClickListener() {
+                    findViewById(R.id.abaixaTeclado).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), UtilActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
+                    findViewById(R.id.campix).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getBaseContext(), CamPixActivity.class);
                             startActivity(intent);
                         }
                     });

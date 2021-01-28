@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_teste"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UtilActivity"></activity>
+        <activity android:name=".CamPixActivity"></activity>
+        <activity android:name=".UtilActivity" />
         <activity android:name=".ManipulaTextoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -26,6 +28,8 @@
         <activity android:name=".LerQrBarCodeActivity" />
         <activity android:name=".ComponentesActivity" />
         <activity android:name=".ComponentesDoisActivity" />
+
+        <activity android:name="br.com.campix.Pix"/>
     </application>
 
 </manifest>
