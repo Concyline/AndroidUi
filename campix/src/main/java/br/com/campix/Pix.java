@@ -50,10 +50,13 @@ public class Pix extends AppCompatActivity {
     private Options options = null;
     private int status_bar_height = 0;
     private int colorPrimaryDark;
-    private String selectionImage;
+    private String selectionImagePath;
+    private File selectionImageFile;
 
     private static final String OPTIONS = "options";
-    public static String IMAGE_RESULTS = "image_results";
+
+    public static String IMAGE_PATH = "IMAGE_PATH";
+    public static String IMAGE_FILE = "IMAGE_FILE";
 
     private ImageView clickme;
     private FrameLayout flash;
@@ -300,8 +303,11 @@ public class Pix extends AppCompatActivity {
                         Utility.vibe(Pix.this, 50);
                         clickme.animate().scaleX(1.2f).scaleY(1.2f).setDuration(300).setInterpolator(new AccelerateDecelerateInterpolator()).start();
 
-                        selectionImage = photo.getAbsolutePath();
                         Utility.scanPhoto(Pix.this, photo);
+
+                        selectionImagePath = photo.getAbsolutePath();
+                        selectionImageFile = photo;
+
                         returnObject();
                     }
                 });
@@ -314,7 +320,8 @@ public class Pix extends AppCompatActivity {
 
     public void returnObject() {
         Intent resultIntent = new Intent();
-        resultIntent.putExtra(IMAGE_RESULTS, selectionImage);
+        resultIntent.putExtra(IMAGE_PATH, selectionImagePath);
+        resultIntent.putExtra(IMAGE_FILE, selectionImageFile);
         setResult(Activity.RESULT_OK, resultIntent);
         finish();
     }

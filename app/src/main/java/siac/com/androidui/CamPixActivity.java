@@ -42,13 +42,13 @@ public class CamPixActivity extends AppCompatActivity {
                 .setRequestCode(requestCodePicker)
                 .setFrontfacing(false)
                 .setPath("pix/photo");
-                //.setFileName("teste");
+        //.setFileName("teste");
 
         Pix.start(this, options);
 
     }
 
-    private String newFileName(){
+    private String newFileName() {
         return "IMG_" + new SimpleDateFormat("yyyyMMdd_HHmmSS", Locale.ENGLISH).format(new Date()) + ".jpg";
     }
 
@@ -59,7 +59,8 @@ public class CamPixActivity extends AppCompatActivity {
         if (requestCode == requestCodePicker) {
             if (resultCode == Activity.RESULT_OK) {
 
-               String path = data.getStringExtra(Pix.IMAGE_RESULTS);
+                String path = data.getStringExtra(Pix.IMAGE_PATH);
+                File file = (File) data.getExtras().get(Pix.IMAGE_FILE);
 
                 glide = Glide.with(CamPixActivity.this);
                 glide.load(path).into(imageView);
