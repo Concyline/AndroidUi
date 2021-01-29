@@ -670,7 +670,81 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
           }
   });
  ````
+ 
+ # * CamPix
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/campix.png" width="50%">
+ 
+ ### Usage
+ 
+ AndroidManifest.xml
+ ````xml
+	<?xml version="1.0" encoding="utf-8"?>
+	<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    	package="...">
 
+    		<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    		<uses-permission android:name="android.permission.CAMERA" />
+    		<uses-permission android:name="android.permission.VIBRATE" />
+
+    		<application>
+
+			...    
+
+        		<activity android:name="br.com.campix.Pix"/>
+    		</application>
+
+	</manifest>
+ ````
+ 
+ ````java
+
+       findViewById(R.id.cliclButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                options = Options.init()
+                        .setRequestCode(requestCodePicker)
+                        .setFrontfacing(false)
+                        .setPath("pix/photo");
+                //.setFileName("teste");
+
+                Pix.start(CamPixActivity.this, options);
+            }
+        });
+	
+ ````
+ 
+  ````java
+   @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == requestCodePicker) {
+            if (resultCode == Activity.RESULT_OK) {
+
+                String path = data.getStringExtra(Pix.IMAGE_PATH);
+                File file = (File) data.getExtras().get(Pix.IMAGE_FILE);
+
+                glide = Glide.with(CamPixActivity.this);
+                glide.load(path).into(imageView);
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == PermUtil.REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS) {
+            if (grantResults.length != 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Pix.start(this, options);
+            } else {
+                Toast.makeText(this, "Approve permissions to open Pix ImagePicker", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+	
+ ````
 
 Resources
 =========
