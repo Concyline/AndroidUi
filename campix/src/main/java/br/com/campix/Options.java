@@ -8,6 +8,7 @@ public class Options implements Serializable {
 
     private int requestCode = 0;
     private String path = "Pix/Camera";
+    private String fileName;
     private int height = 0, width = 0;
     private boolean frontfacing = false;
     public static final int SCREEN_ORIENTATION_UNSET = -2;
@@ -29,6 +30,16 @@ public class Options implements Serializable {
     public static final int SCREEN_ORIENTATION_LOCKED = 14;
 
     private Options() {
+    }
+
+
+    public Options setFileName(String fileName) {
+        this.fileName = fileName;
+        return this;
+    }
+
+    public String getFileName(){
+        return fileName;
     }
 
     public static Options init() {

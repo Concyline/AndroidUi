@@ -283,9 +283,16 @@ public class Pix extends AppCompatActivity {
                 if (!dir.exists()) {
                     dir.mkdirs();
                 }
-                File photo = new File(dir, "IMG_"
+
+                String fileName = options.getFileName() == null ? "IMG_"
                         + new SimpleDateFormat("yyyyMMdd_HHmmSS", Locale.ENGLISH).format(new Date())
-                        + ".jpg");
+                        + ".jpg" : options.getFileName()+".jpg";
+
+                File photo = new File(dir, fileName);
+
+                /*File photo = new File(dir, "IMG_"
+                        + new SimpleDateFormat("yyyyMMdd_HHmmSS", Locale.ENGLISH).format(new Date())
+                        + ".jpg");*/
 
                 result.toFile(photo, new FileCallback() {
                     @Override

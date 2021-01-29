@@ -14,6 +14,11 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import br.com.campix.Options;
 import br.com.campix.Pix;
 import br.com.campix.utility.PermUtil;
@@ -37,9 +42,14 @@ public class CamPixActivity extends AppCompatActivity {
                 .setRequestCode(requestCodePicker)
                 .setFrontfacing(false)
                 .setPath("pix/photo");
+                //.setFileName("teste");
 
         Pix.start(this, options);
 
+    }
+
+    private String newFileName(){
+        return "IMG_" + new SimpleDateFormat("yyyyMMdd_HHmmSS", Locale.ENGLISH).format(new Date()) + ".jpg";
     }
 
     @Override
