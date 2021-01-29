@@ -322,7 +322,8 @@ public class Pix extends AppCompatActivity {
         Intent resultIntent = new Intent();
         resultIntent.putExtra(IMAGE_PATH, selectionImagePath);
         resultIntent.putExtra(IMAGE_FILE, selectionImageFile);
-        setResult(Activity.RESULT_OK, resultIntent);
+        //setResult(Activity.RESULT_OK, resultIntent);
+        setResult(options.getRequestCode(), resultIntent);
         finish();
     }
 }

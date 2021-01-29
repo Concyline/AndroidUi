@@ -65,7 +65,7 @@ public class Utility {
         return 0;
     }
 
-    public static void vibe(Context c, long l) {
+    public static void vibe(Context c, long l){
         ((Vibrator) c.getSystemService(Context.VIBRATOR_SERVICE)).vibrate(l);
     }
 
