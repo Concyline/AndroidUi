@@ -42,7 +42,7 @@ public class CamPixActivity extends AppCompatActivity {
                 .setRequestCode(requestCodePicker)
                 .setFrontfacing(false)
                 .setPath("pix/photo");
-        //.setFileName("teste");
+                //.setFileName("teste");
 
         Pix.start(this, options);
 

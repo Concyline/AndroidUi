@@ -293,10 +293,6 @@ public class Pix extends AppCompatActivity {
 
                 File photo = new File(dir, fileName);
 
-                /*File photo = new File(dir, "IMG_"
-                        + new SimpleDateFormat("yyyyMMdd_HHmmSS", Locale.ENGLISH).format(new Date())
-                        + ".jpg");*/
-
                 result.toFile(photo, new FileCallback() {
                     @Override
                     public void onFileReady(@Nullable File photo) {
@@ -322,7 +318,6 @@ public class Pix extends AppCompatActivity {
         Intent resultIntent = new Intent();
         resultIntent.putExtra(IMAGE_PATH, selectionImagePath);
         resultIntent.putExtra(IMAGE_FILE, selectionImageFile);
-        //setResult(Activity.RESULT_OK, resultIntent);
         setResult(options.getRequestCode(), resultIntent);
         finish();
     }
