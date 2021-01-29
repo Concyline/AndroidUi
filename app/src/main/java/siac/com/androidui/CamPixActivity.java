@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import java.util.Locale;
 
 import br.com.campix.Options;
 import br.com.campix.Pix;
+import br.com.campix.photoView.PhotoViewAttacher;
 import br.com.campix.utility.PermUtil;
 
 public class CamPixActivity extends AppCompatActivity {
@@ -42,7 +44,7 @@ public class CamPixActivity extends AppCompatActivity {
                 .setRequestCode(requestCodePicker)
                 .setFrontfacing(false)
                 .setPath("pix/photo");
-                //.setFileName("teste");
+        //.setFileName("teste");
 
         Pix.start(this, options);
 
@@ -57,15 +59,18 @@ public class CamPixActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == requestCodePicker) {
-            if (resultCode == Activity.RESULT_OK) {
 
-                String path = data.getStringExtra(Pix.IMAGE_PATH);
-                File file = (File) data.getExtras().get(Pix.IMAGE_FILE);
+            String path = data.getStringExtra(Pix.IMAGE_PATH);
+            File file = (File) data.getExtras().get(Pix.IMAGE_FILE);
 
-                glide = Glide.with(CamPixActivity.this);
-                glide.load(path).into(imageView);
-            }
+            glide = Glide.with(CamPixActivity.this);
+            glide.load(path).into(imageView);
+
+            PhotoViewAttacher photoViewAttacher = new PhotoViewAttacher(imageView);
+            photoViewAttacher.setZoomTransitionDuration(1000);
+            photoViewAttacher.update();
         }
+
     }
 
     @Override
