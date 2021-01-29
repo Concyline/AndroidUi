@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 
 public class Options implements Serializable {
 
-    private int requestCode = 0;
+    private int requestCode = -1;
     private String path = "Pix/Camera";
     private String fileName;
     private int height = 0, width = 0;
@@ -70,7 +70,7 @@ public class Options implements Serializable {
     }
 
     public int getRequestCode() {
-        if (this.requestCode == 0) {
+        if (this.requestCode < 0) {
             throw new NullPointerException("requestCode in Options class is null");
         }
         return requestCode;
