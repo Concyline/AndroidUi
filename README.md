@@ -12,6 +12,8 @@ This library has 6 modules to aid Android development, speeding up the completio
  * SortCut 
  * Permisions
  * Util
+ * CamPix
+ * PhotoView
  
  Gradle Setup
 ------
