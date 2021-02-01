@@ -745,6 +745,24 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
     }
 	
  ````
+ 
+# * PhotoView
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/photo_view.gif" width="50%">
+ 
+### Usage
+````xml
+  <br.com.campix.photoView.PhotoView
+        android:id="@+id/imagemImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/button" />
+````
+
+````java
+PhotoView photoView = (PhotoView) findViewById(R.id.photo_view);
+photoView.setImageResource(R.drawable.image);
+````
 
 Resources
 =========
