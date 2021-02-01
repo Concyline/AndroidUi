@@ -4,11 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -22,14 +20,14 @@ import java.util.Locale;
 
 import br.com.campix.Options;
 import br.com.campix.Pix;
-import br.com.campix.photoView.PhotoViewAttacher;
+import br.com.campix.photoView.PhotoView;
 import br.com.campix.utility.PermUtil;
 
 public class CamPixActivity extends AppCompatActivity {
 
     private Options options;
     private int requestCodePicker = 100;
-    private ImageView imageView;
+    private PhotoView imageView;
     private RequestManager glide;
 
     @Override
@@ -66,9 +64,9 @@ public class CamPixActivity extends AppCompatActivity {
             glide = Glide.with(CamPixActivity.this);
             glide.load(path).into(imageView);
 
-            PhotoViewAttacher photoViewAttacher = new PhotoViewAttacher(imageView);
+     /*       PhotoViewAttacher photoViewAttacher = new PhotoViewAttacher(imageView);
             photoViewAttacher.setZoomTransitionDuration(1000);
-            photoViewAttacher.update();
+            photoViewAttacher.update();*/
         }
 
     }
