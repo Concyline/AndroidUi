@@ -12,11 +12,13 @@ This library has 6 modules to aid Android development, speeding up the completio
  * SortCut 
  * Permisions
  * Util
+ * CamPix
+ * PhotoView
  
  Gradle Setup
 ------
 
-Version 2.6.54 = 3b1b4b1c78
+Version 2.6.65 = 062b005694
 
 ```java
 allprojects {
@@ -29,7 +31,7 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.Concyline:Androidui:3b1b4b1c78'
+	        implementation 'com.github.Concyline:Androidui:062b005694'
 	     }
 ```
 
@@ -744,6 +746,36 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
         }
     }
 	
+ ````
+ 
+# * PhotoView
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/photo_view.gif" width="50%">
+ 
+### Usage
+````xml
+  <br.com.campix.photoView.PhotoView
+        android:id="@+id/imagemImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/button" />
+````
+
+````java
+PhotoView photoView = (PhotoView) findViewById(R.id.photo_view);
+photoView.setImageResource(R.drawable.image);
+````
+
+# * Zoom Frame
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/zoom.gif" width="50%">
+ 
+ ### Usage
+ ````xml
+   <siac.com.componentes.ZoomFrameImageView
+        android:id="@+id/fragmentloginKenBurnsView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/image_3" />
  ````
 
 Resources
