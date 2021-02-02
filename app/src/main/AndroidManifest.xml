@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_teste"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CamPixActivity"></activity>
+        <activity android:name=".CamPixActivity" />
         <activity android:name=".UtilActivity" />
         <activity android:name=".ManipulaTextoActivity" />
         <activity android:name=".MainActivity">
@@ -28,8 +28,8 @@
         <activity android:name=".LerQrBarCodeActivity" />
         <activity android:name=".ComponentesActivity" />
         <activity android:name=".ComponentesDoisActivity" />
-
-        <activity android:name="br.com.campix.Pix"/>
+        <activity android:name=".ZoomFrameImageViewActivity" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name="br.com.campix.Pix" />
     </application>
 
 </manifest>

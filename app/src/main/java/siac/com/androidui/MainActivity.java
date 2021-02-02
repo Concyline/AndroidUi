@@ -139,6 +139,14 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
+                    findViewById(R.id.zoomFrameButton).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getBaseContext(), ZoomFrameImageViewActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
