@@ -766,6 +766,18 @@ PhotoView photoView = (PhotoView) findViewById(R.id.photo_view);
 photoView.setImageResource(R.drawable.image);
 ````
 
+# * Zoom Frame
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/zoom.gif" width="50%">
+ 
+ ### Usage
+ ````xml
+   <siac.com.componentes.ZoomFrameImageView
+        android:id="@+id/fragmentloginKenBurnsView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/image_3" />
+ ````
+
 Resources
 =========
 
