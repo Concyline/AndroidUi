@@ -1,4 +1,4 @@
-package siac.com.androidui;
+package siac.com.androidui.ui;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog;
 
 import java.util.ArrayList;
 
+import siac.com.androidui.R;
 import siac.com.permision.PermissionHandler;
 import siac.com.permision.Permissions;
 

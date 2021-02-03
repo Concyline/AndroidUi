@@ -1,4 +1,4 @@
-package siac.com.androidui;
+package siac.com.androidui.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import siac.com.androidui.R;
 import siac.com.texto.ManipulaTexto;
 
 public class ManipulaTextoActivity extends AppCompatActivity {

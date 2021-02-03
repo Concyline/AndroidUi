@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".ui.HawkActivity">
+
+    <siac.com.componentes.EditTextLegenda
+        android:id="@+id/setEditTextLegenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:coricon="@color/colorAccent"
+        app:inputType="textMultiLine"
+        app:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutasd"
+        app:legenda="Add value"
+        app:lines="4"
+        app:tamLegendaEditText="@dimen/tamLegendaEditTextUi" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/setEditTextLegenda" />
+
+    <siac.com.componentes.EditTextLegenda
+        android:id="@+id/valuesEditTextLegenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:coricon="@color/colorAccent"
+        app:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addButton"
+        app:legenda=""
+        app:lines="8"
+        app:tamLegendaEditText="@dimen/tamLegendaEditTextUi"
+        app:text="" />
+
+    <Button
+        android:id="@+id/readDataButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Read data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/valuesEditTextLegenda" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

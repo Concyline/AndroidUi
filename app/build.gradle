@@ -41,5 +41,6 @@ dependencies {
     implementation project(':utill')
     implementation project(':permision')
     implementation project(':campix')
+    implementation project(':hawk')
 
 }

@@ -1,4 +1,4 @@
-package siac.com.androidui;
+package siac.com.androidui.ui;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -22,6 +21,7 @@ import br.com.campix.Options;
 import br.com.campix.Pix;
 import br.com.campix.photoView.PhotoView;
 import br.com.campix.utility.PermUtil;
+import siac.com.androidui.R;
 
 public class CamPixActivity extends AppCompatActivity {
 

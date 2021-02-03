@@ -9,13 +9,20 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 
 
 import java.util.ArrayList;
 
 import br.com.utill.Util;
+import siac.com.androidui.ui.CamPixActivity;
+import siac.com.androidui.ui.ComponentesActivity;
+import siac.com.androidui.ui.ComponentesDoisActivity;
+import siac.com.androidui.ui.HawkActivity;
+import siac.com.androidui.ui.LerQrBarCodeActivity;
+import siac.com.androidui.ui.ManipulaTextoActivity;
+import siac.com.androidui.ui.Premisao;
+import siac.com.androidui.ui.UtilActivity;
+import siac.com.androidui.ui.ZoomFrameImageViewActivity;
 import siac.com.permision.PermissionHandler;
 import siac.com.permision.Permissions;
 import siac.com.shortcut.IReceiveStringExtra;
@@ -143,6 +150,14 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), ZoomFrameImageViewActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
+                    findViewById(R.id.halkButton).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getBaseContext(), HawkActivity.class);
                             startActivity(intent);
                         }
                     });

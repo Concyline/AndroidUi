@@ -15,51 +15,19 @@ import siac.com.componentes.zoom.RandomTransitionGenerator;
 import siac.com.componentes.zoom.Transition;
 import siac.com.componentes.zoom.TransitionGenerator;
 
-/**
- * {@link ImageView} extension that animates its image with the
- * <a href="http://en.wikipedia.org/wiki/Ken_Burns_effect">Ken Burns Effect</a>.
- * @author Flavio Faria
- * @see Transition
- * @see TransitionGenerator
- */
+
 public class ZoomFrameImageView extends androidx.appcompat.widget.AppCompatImageView {
 
-    /** Delay between a pair of frames at a 60 FPS frame rate. */
     private static final long FRAME_DELAY = 1000 / 60;
-
-    /** Matrix used to perform all the necessary transition transformations. */
     private final Matrix mMatrix = new Matrix();
-
-    /** The {@link TransitionGenerator} implementation used to perform the transitions between
-     *  rects. The default {@link TransitionGenerator} is {@link RandomTransitionGenerator}. */
     private TransitionGenerator mTransGen = new RandomTransitionGenerator();
-
-    /** A {@link ZoomFrameImageView.TransitionListener} to be notified when
-     *  a transition starts or ends. */
     private TransitionListener mTransitionListener;
-
-    /** The ongoing transition. */
     private Transition mCurrentTrans;
-
-    /** The rect that holds the bounds of this view. */
     private final RectF mViewportRect = new RectF();
-    /** The rect that holds the bounds of the current {@link Drawable}. */
     private RectF mDrawableRect;
-
-    /** The progress of the animation, in milliseconds. */
     private long mElapsedTime;
-
-    /** The time, in milliseconds, of the last animation frame.
-     * This is useful to increment {@link #mElapsedTime} regardless
-     * of the amount of time the animation has been paused. */
     private long mLastFrameTime;
-
-    /** Controls whether the the animation is running. */
     private boolean mPaused;
-
-    /** Indicates whether the parent constructor was already called.
-     * This is needed to distinguish if the image is being set before
-     * or after the super class constructor returns. */
     private boolean mInitialized;
 
 
@@ -76,7 +44,6 @@ public class ZoomFrameImageView extends androidx.appcompat.widget.AppCompatImage
     public ZoomFrameImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         mInitialized = true;
-        // Attention to the super call here!
         super.setScaleType(ImageView.ScaleType.MATRIX);
     }
 
@@ -90,8 +57,6 @@ public class ZoomFrameImageView extends androidx.appcompat.widget.AppCompatImage
     @Override
     public void setVisibility(int visibility) {
         super.setVisibility(visibility);
-        /* When not visible, onDraw() doesn't get called,
-           but the time elapses anyway. */
         switch (visibility) {
             case VISIBLE:
                 resume();
@@ -192,9 +157,6 @@ public class ZoomFrameImageView extends androidx.appcompat.widget.AppCompatImage
     }
 
 
-    /**
-     * Generates and starts a transition.
-     */
     private void startNewTransition() {
         if (!hasBounds()) {
             return; // Can't start transition if the drawable has no bounds.

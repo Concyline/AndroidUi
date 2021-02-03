@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ZoomFrameImageViewActivity">
+    tools:context=".ui.ZoomFrameImageViewActivity">
 
     <siac.com.componentes.ZoomFrameImageView
         android:id="@+id/fragmentloginKenBurnsView1"

@@ -1,4 +1,4 @@
-package siac.com.androidui;
+package siac.com.androidui.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 
+import siac.com.androidui.R;
 import siac.com.componentes.ZoomFrameImageView;
 
 public class ZoomFrameImageViewActivity extends AppCompatActivity {
@@ -14,6 +15,7 @@ public class ZoomFrameImageViewActivity extends AppCompatActivity {
     ZoomFrameImageView zoomFrameImageView;
     int index = -1;
     int[] array = new int[]{R.drawable.image_1, R.drawable.image_2, R.drawable.image_3};
+     Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,7 @@ public class ZoomFrameImageViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_zoom_frame_image_view);
 
         zoomFrameImageView = findViewById(R.id.fragmentloginKenBurnsView1);
+        handler = new Handler();
         chama();
     }
 
@@ -29,6 +32,7 @@ public class ZoomFrameImageViewActivity extends AppCompatActivity {
 
         if(index>= array.length){
             index = -1;
+            zoomFrameImageView.restart();
             chama();
             //return;
         }
@@ -37,7 +41,6 @@ public class ZoomFrameImageViewActivity extends AppCompatActivity {
     }
 
     private void setImage(final int image){
-        final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {

@@ -1,4 +1,4 @@
-package siac.com.androidui;
+package siac.com.androidui.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.view.View;
 import br.com.utill.Util;
 import br.com.utill.listeners.OnListnerAlertSimCancelar;
 import br.com.utill.listeners.OnListnerOk;
+import siac.com.androidui.R;
 
 
 public class UtilActivity extends AppCompatActivity {

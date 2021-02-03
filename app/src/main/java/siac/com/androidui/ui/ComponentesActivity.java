@@ -1,4 +1,4 @@
-package siac.com.androidui;
+package siac.com.androidui.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import siac.com.androidui.R;
 import siac.com.componentes.EditTextLegenda;
 
 public class ComponentesActivity extends AppCompatActivity {

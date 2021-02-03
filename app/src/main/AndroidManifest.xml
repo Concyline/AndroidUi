@@ -14,9 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_teste"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CamPixActivity" />
-        <activity android:name=".UtilActivity" />
-        <activity android:name=".ManipulaTextoActivity" />
+        <activity android:name=".ui.HawkActivity"></activity>
+        <activity android:name=".ui.CamPixActivity" />
+        <activity android:name=".ui.UtilActivity" />
+        <activity android:name=".ui.ManipulaTextoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,10 +26,12 @@
             </intent-filter>
         </activity>
         <activity android:name="siac.com.leitor.LeitorActivity" />
-        <activity android:name=".LerQrBarCodeActivity" />
-        <activity android:name=".ComponentesActivity" />
-        <activity android:name=".ComponentesDoisActivity" />
-        <activity android:name=".ZoomFrameImageViewActivity" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".ui.LerQrBarCodeActivity" />
+        <activity android:name=".ui.ComponentesActivity" />
+        <activity android:name=".ui.ComponentesDoisActivity" />
+        <activity
+            android:name=".ui.ZoomFrameImageViewActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name="br.com.campix.Pix" />
     </application>
 
