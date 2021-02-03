@@ -14,11 +14,12 @@ This library has 6 modules to aid Android development, speeding up the completio
  * Util
  * CamPix
  * PhotoView
+ * Halk
  
  Gradle Setup
 ------
 
-Version 2.6.65 = 062b005694
+Version 2.6.67 = d3677dbd42
 
 ```java
 allprojects {
@@ -31,7 +32,7 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.Concyline:Androidui:062b005694'
+	        implementation 'com.github.Concyline:Androidui:d3677dbd42'
 	     }
 ```
 
@@ -778,7 +779,7 @@ photoView.setImageResource(R.drawable.image);
         android:src="@drawable/image_3" />
  ````
  
- # * Zoom Frame
+ # * Hawk
  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/hawk.png" width="50%">
  
  ### Usage
