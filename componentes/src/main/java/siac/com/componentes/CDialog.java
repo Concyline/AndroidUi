@@ -50,7 +50,7 @@ public class CDialog {
         prepareWindowSneckBar(message);
 
         imageView = dialog.findViewById(R.id.icn);
-        imageView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.rotate));
+        imageView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.rotate_dialog));
 
         prepareBackGroundColorImage(alertType);
 
@@ -82,7 +82,7 @@ public class CDialog {
         prepareWindow(message);
 
         imageView = dialog.findViewById(R.id.icn);
-        imageView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.rotate));
+        imageView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.rotate_dialog));
 
         prepareBackGroundColorImage(typeDialog);
 
