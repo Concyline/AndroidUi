@@ -14,11 +14,12 @@ This library has 6 modules to aid Android development, speeding up the completio
  * Util
  * CamPix
  * PhotoView
+ * Halk
  
  Gradle Setup
 ------
 
-Version 2.6.65 = 062b005694
+Version 2.6.67 = d3677dbd42
 
 ```java
 allprojects {
@@ -31,7 +32,7 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.Concyline:Androidui:062b005694'
+	        implementation 'com.github.Concyline:Androidui:d3677dbd42'
 	     }
 ```
 
@@ -776,6 +777,35 @@ photoView.setImageResource(R.drawable.image);
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/image_3" />
+ ````
+ 
+ # * Hawk
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/hawk.png" width="50%">
+ 
+ ### Usage
+ ````java
+Initialize
+Hawk.init(context).build();
+
+Usage
+Save any type (Any object, primitives, lists, sets, maps ...)
+
+Hawk.put(key, T);
+Get the original value with the original type
+
+T value = Hawk.get(key);
+Delete any entry
+
+Hawk.delete(key);
+Check if any key exists
+
+Hawk.contains(key);
+Check total entry count
+
+Hawk.count();
+
+Get crazy and delete everything
+Hawk.deleteAll();
  ````
 
 Resources
