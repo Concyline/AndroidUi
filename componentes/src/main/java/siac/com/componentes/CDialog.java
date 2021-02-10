@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -32,12 +33,14 @@ public class CDialog {
     private Dialog dialog;
     private Context context;
     private TextView messageTextView;
+    private ProgressBar progressBar;
     private ImageView imageView;
     private ConstraintLayout constraintLayout;
 
     private int size = 0;
     private int background = 0;
     private int duration = 3000; // DEFAULT
+    private boolean progressVisible = false;
 
     public CDialog(Context context) {
         this.context = context;
@@ -46,10 +49,12 @@ public class CDialog {
 
     public CDialog createAlertSneckBar(String message, TypeDialog alertType, SizeDialog sizeDialog) {
 
+        progressVisible = true;
         size = prepareSizeBackBround(sizeDialog);
 
         prepareWindowSneckBar(message);
 
+        progressBar = dialog.findViewById(R.id.progressBar);
         imageView = dialog.findViewById(R.id.icn);
         imageView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.rotate_dialog));
 
@@ -60,12 +65,14 @@ public class CDialog {
 
     public CDialog createAlert(String message, WindowFormat windowFormat, TypeDialog typeDialog, SizeDialog givenSize) {
 
+        progressVisible = false;
         prepareBackGroundType(windowFormat);
 
         size = prepareSizeBackBround(givenSize);
 
         prepareWindow(message);
 
+        progressBar = dialog.findViewById(R.id.progressBar);
         imageView = dialog.findViewById(R.id.icn);
         imageView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.rotate_dialog));
 
@@ -76,12 +83,14 @@ public class CDialog {
 
     public CDialog createAlert(String message, WindowFormat windowFormat, Bitmap icon, TypeDialog alertType, SizeDialog givenSize) {
 
+        progressVisible = false;
         prepareBackGroundType(windowFormat);
 
         size = prepareSizeBackBround(givenSize);
 
         prepareWindow(message);
 
+        progressBar = dialog.findViewById(R.id.progressBar);
         imageView = dialog.findViewById(R.id.icn);
         imageView.setImageBitmap(icon);
 
@@ -92,12 +101,14 @@ public class CDialog {
 
     public CDialog createAlert(String message, WindowFormat windowFormat, Drawable icon, TypeDialog alertType, SizeDialog givenSize) {
 
+        progressVisible = false;
         prepareBackGroundType(windowFormat);
 
         size = prepareSizeBackBround(givenSize);
 
         prepareWindow(message);
 
+        progressBar = dialog.findViewById(R.id.progressBar);
         imageView = dialog.findViewById(R.id.icn);
         imageView.setImageDrawable(icon);
 
@@ -214,21 +225,25 @@ public class CDialog {
             case SUCCESS:
                 imageView.setImageResource(R.drawable.checked_1);
                 constraintLayout.setBackgroundColor(context.getResources().getColor(R.color.colorSuccess));
+                progressBar.setProgressDrawable(context.getResources().getDrawable(R.drawable.custon_progresbar_success));
                 break;
 
             case WARNING:
                 imageView.setImageResource(R.drawable.warning);
                 constraintLayout.setBackgroundColor(context.getResources().getColor(R.color.colorWarning));
+                progressBar.setProgressDrawable(context.getResources().getDrawable(R.drawable.custon_progresbar_warning));
                 break;
 
             case ERROR:
                 imageView.setImageResource(R.drawable.cancel1);
                 constraintLayout.setBackgroundColor(context.getResources().getColor(R.color.colorError));
+                progressBar.setProgressDrawable(context.getResources().getDrawable(R.drawable.custon_progresbar_error));
                 break;
 
             case INFO:
                 imageView.setImageResource(R.drawable.info);
                 constraintLayout.setBackgroundColor(context.getResources().getColor(R.color.colorInfo));
+                progressBar.setProgressDrawable(context.getResources().getDrawable(R.drawable.custon_progresbar_info));
                 break;
         }
     }
@@ -415,6 +430,12 @@ public class CDialog {
 
     public void show() {
         dialog.show();
+
+        if(progressVisible) {
+            progressBar.setVisibility(View.VISIBLE);
+            progresSnakBar();
+        }
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -425,6 +446,12 @@ public class CDialog {
 
     public void show(final CDialogListener onDismissListener) {
         dialog.show();
+
+        if(progressVisible) {
+            progressBar.setVisibility(View.VISIBLE);
+            progresSnakBar();
+        }
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -432,6 +459,28 @@ public class CDialog {
                 onDismissListener.onDismiss();
             }
         }, duration);
+    }
+
+    int value = 0;
+
+    private void progresSnakBar(){
+        progressBar.setMax(duration / 1000);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    do{
+                        value++;
+                        progressBar.setProgress(value);
+                        Thread.sleep( 1000);
+                    }while (value < progressBar.getMax());
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
     }
 
     public interface CDialogListener{

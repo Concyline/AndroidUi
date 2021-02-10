@@ -180,8 +180,8 @@ public class ComponentesDoisActivity extends AppCompatActivity {
 
                 new CDialog(ComponentesDoisActivity.this)
                         .createAlertSneckBar("Info SnackBar Button",
-                            TypeDialog.INFO,
-                            SizeDialog.MEDIUM)
+                            TypeDialog.WARNING,
+                            SizeDialog.SMALL)
                         .setDuration(10000)
                         .show();
 
