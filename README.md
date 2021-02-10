@@ -413,6 +413,88 @@ new CDialog(ParametrosActivity.this)
 
 ---
 
+## SwipeLayout
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/swipe_rigth.png" width="20%"/> 
+
+````xml
+<siac.com.componentes.SwipeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/swipe_layout"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:layout_marginTop="3dp"
+    app:draggedItem="@id/drag_item"
+    app:swipeDirection="left|right"
+    app:leftItem="@id/left_view"
+    app:rightItem="@id/right_view">
+
+    <ImageView
+        android:id="@+id/left_view"
+        android:layout_width="90dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#ff5722"
+        android:gravity="center"
+        android:paddingEnd="24dp"
+        android:paddingStart="24dp"
+        android:src="@drawable/ic_upload"/>
+
+    <ImageView
+        android:id="@+id/right_view"
+        android:layout_width="90dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="#ff5722"
+        android:gravity="center"
+        android:paddingEnd="24dp"
+        android:paddingStart="24dp"
+        android:src="@drawable/ic_delete"/>
+
+    <TextView
+        android:id="@+id/drag_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eeeeee"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackgroundBorderless"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingEnd="10dp"
+        android:paddingStart="20dp"
+        android:textSize="20sp"/>
+
+</siac.com.componentes.SwipeLayout>
+````
+In Holder
+
+````java
+    leftView = itemView.findViewById(R.id.left_view);
+                rightView = itemView.findViewById(R.id.right_view);
+
+                rightView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (getAdapterPosition() != NO_POSITION) {
+                            remove(itemView.getContext(), getAdapterPosition());
+                        }
+                    }
+                });
+
+                leftView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (getAdapterPosition() != NO_POSITION) {
+                            upload(itemView.getContext(), getAdapterPosition());
+                        }
+                    }
+                });
+````
+
+---
+
 For all companions
 ------
 
