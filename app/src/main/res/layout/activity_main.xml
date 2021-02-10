@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Componentes"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/componentesDoisButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,23 +22,20 @@
         android:id="@+id/componentesDoisButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="Componentes Dois"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/componentesButton" />
+        app:layout_constraintStart_toEndOf="@+id/componentesButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/textoButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:text="Manipulador de texto"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintEnd_toStartOf="@+id/leitorButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/componentesDoisButton" />
 
@@ -46,12 +43,12 @@
         android:id="@+id/leitorButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:text="Leitor Qr CodeBar"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textoButton" />
+        app:layout_constraintStart_toEndOf="@+id/textoButton"
+        app:layout_constraintTop_toBottomOf="@+id/componentesDoisButton" />
 
     <Button
         android:id="@+id/permision"
@@ -70,8 +67,7 @@
         android:layout_marginTop="10dp"
         android:text="Util Test"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toStartOf="@+id/campix"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/leitorButton" />
 
@@ -83,9 +79,8 @@
         android:text="CamPix"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/abaixaTeclado" />
+        app:layout_constraintStart_toEndOf="@+id/abaixaTeclado"
+        app:layout_constraintTop_toBottomOf="@+id/leitorButton" />
 
     <Button
         android:id="@+id/zoomFrameButton"
@@ -94,8 +89,7 @@
         android:layout_marginTop="10dp"
         android:text="Zoom Frame"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintEnd_toStartOf="@+id/halkButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/campix" />
 
@@ -107,7 +101,18 @@
         android:text="Halk"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/zoomFrameButton"
+        app:layout_constraintTop_toBottomOf="@+id/campix" />
+
+    <Button
+        android:id="@+id/SwipeLayoutButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="SwipeLayout"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/zoomFrameButton" />
+        app:layout_constraintTop_toBottomOf="@+id/halkButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

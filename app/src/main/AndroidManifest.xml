@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_teste"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.HawkActivity"></activity>
+        <activity android:name=".ui.SwipLayoutActivity"></activity>
+        <activity android:name=".ui.HawkActivity" />
         <activity android:name=".ui.CamPixActivity" />
         <activity android:name=".ui.UtilActivity" />
         <activity android:name=".ui.ManipulaTextoActivity" />

@@ -21,6 +21,7 @@ import siac.com.androidui.ui.HawkActivity;
 import siac.com.androidui.ui.LerQrBarCodeActivity;
 import siac.com.androidui.ui.ManipulaTextoActivity;
 import siac.com.androidui.ui.Premisao;
+import siac.com.androidui.ui.SwipLayoutActivity;
 import siac.com.androidui.ui.UtilActivity;
 import siac.com.androidui.ui.ZoomFrameImageViewActivity;
 import siac.com.permision.PermissionHandler;
@@ -158,6 +159,14 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), HawkActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
+                    findViewById(R.id.SwipeLayoutButton).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getBaseContext(), SwipLayoutActivity.class);
                             startActivity(intent);
                         }
                     });
