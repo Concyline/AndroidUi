@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -56,22 +57,6 @@ public class CDialog {
 
         return this;
     }
-
-   /* public CDialog createAlertSneckBar(String message, WindowFormat windowFormat, TypeDialog alertType, SizeDialog sizeDialog) {
-
-        //prepareBackGroundType(windowFormat);
-
-        size = prepareSizeBackBround(sizeDialog);
-
-        prepareWindowSneckBar(message);
-
-        imageView = dialog.findViewById(R.id.icn);
-        imageView.setAnimation(AnimationUtils.loadAnimation(context, R.anim.rotate));
-
-        prepareBackGroundColorImage(alertType);
-
-        return this;
-    }*/
 
     public CDialog createAlert(String message, WindowFormat windowFormat, TypeDialog typeDialog, SizeDialog givenSize) {
 
@@ -249,7 +234,7 @@ public class CDialog {
     }
 
     public CDialog setDuration(int inMilleseconds) {
-        this.duration = duration;
+        this.duration = inMilleseconds;
         return this;
     }
 
@@ -430,33 +415,23 @@ public class CDialog {
 
     public void show() {
         dialog.show();
-        new Thread(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                try {
-                    Thread.sleep(duration);
-                    dialog.dismiss();
-                } catch (InterruptedException e) {
-                    Log.e("show intrupt", "" + e.getMessage());
-                }
+                dialog.dismiss();
             }
-        }).start();
+        }, duration);
     }
 
     public void show(final CDialogListener onDismissListener) {
         dialog.show();
-        new Thread(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                try {
-                    Thread.sleep(duration);
-                    dialog.dismiss();
-                    onDismissListener.onDismiss();
-                } catch (InterruptedException e) {
-                    Log.e("show intrupt", "" + e.getMessage());
-                }
+                dialog.dismiss();
+                onDismissListener.onDismiss();
             }
-        }).start();
+        }, duration);
     }
 
     public interface CDialogListener{

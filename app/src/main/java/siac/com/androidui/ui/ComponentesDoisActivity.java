@@ -179,16 +179,11 @@ public class ComponentesDoisActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 new CDialog(ComponentesDoisActivity.this)
-                        .createAlertSneckBar("Info SnackBar",
+                        .createAlertSneckBar("Info SnackBar Button",
                             TypeDialog.INFO,
                             SizeDialog.MEDIUM)
+                        .setDuration(10000)
                         .show();
-
-               /* new CDialog(ComponentesDoisActivity.this).createAlertSneckBar("Info SnackBar",
-                        WindowFormat.BACKGROUND_OVAL, // Type of background
-                        TypeDialog.INFO,   // Type of dialog
-                        SizeDialog.MEDIUM)    //  size of dialog
-                        .show();*/
 
             }
         });
