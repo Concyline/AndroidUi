@@ -30,5 +30,8 @@ public class ComponentesActivity extends AppCompatActivity {
             }
         });
 
+        EditTextLegenda editTextLegendaSelection = findViewById(R.id.editTextLegendaSelection);
+        editTextLegendaSelection.setSelection(editTextLegendaSelection.getString().length() - 2);
+
     }
 }

@@ -304,6 +304,10 @@ public class EditTextLegenda extends FrameLayout {
         editText.setSelection(editText.getText().length());
     }
 
+    public void setSelection(int index){
+        editText.setSelection(index);
+    }
+
     private void setListnerSenha(){
         iconRigthImageView.setOnClickListener(new OnClickListener() {
             @Override

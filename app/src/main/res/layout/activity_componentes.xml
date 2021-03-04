@@ -198,21 +198,38 @@
             app:lines="4"
             app:tamLegendaEditText="@dimen/tamLegendaEditTextUi" />
 
+        <siac.com.componentes.EditTextLegenda
+            android:id="@+id/editTextLegendaSelection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:corLegenda="@color/colorAccent"
+            app:enabled="true"
+            app:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/multilineEditTextLegenda"
+            app:legenda="Set Selection"
+            app:requerido="false"
+            app:requestfocus="true"
+            app:tag="edittext"
+            app:text="texto" />
+
         <Button
             android:id="@+id/button9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="8dp"
             android:text="Button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/multilineEditTextLegenda" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextLegendaSelection" />
 
         <Button
             android:id="@+id/button10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="8dp"
             android:text="Button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
