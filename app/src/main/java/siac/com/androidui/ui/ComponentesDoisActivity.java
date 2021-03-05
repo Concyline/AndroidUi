@@ -218,7 +218,7 @@ public class ComponentesDoisActivity extends AppCompatActivity {
 
                 progressDialog.show();*/
 
-                ProgressIndeterminate pi = ProgressIndeterminate.show(ComponentesDoisActivity.this, "OK");
+               // ProgressIndeterminate pi = ProgressIndeterminate.show(ComponentesDoisActivity.this, "OK");
 
             /* new Thread(new Runnable() {
                  @Override
