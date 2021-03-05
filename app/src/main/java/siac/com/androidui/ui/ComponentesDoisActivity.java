@@ -2,6 +2,7 @@ package siac.com.androidui.ui;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,6 +17,7 @@ import java.io.InputStream;
 import siac.com.androidui.R;
 import siac.com.componentes.CDialog;
 import siac.com.componentes.ProgressButton;
+import siac.com.componentes.ProgressDialog;
 import siac.com.componentes.ProgressImageView;
 import siac.com.componentes.extras.AnimateDialog;
 import siac.com.componentes.extras.PositionDialog;
@@ -180,8 +182,8 @@ public class ComponentesDoisActivity extends AppCompatActivity {
 
                 new CDialog(ComponentesDoisActivity.this)
                         .createAlertSneckBar("Info SnackBar Button",
-                            TypeDialog.WARNING,
-                            SizeDialog.SMALL)
+                                TypeDialog.WARNING,
+                                SizeDialog.SMALL)
                         .setDuration(10000)
                         .show();
 
@@ -194,21 +196,47 @@ public class ComponentesDoisActivity extends AppCompatActivity {
 
                 new CDialog(ComponentesDoisActivity.this)
                         .createAlertSneckBar("Info SnackBar",
-                            TypeDialog.INFO,
-                            SizeDialog.MEDIUM)
+                                TypeDialog.INFO,
+                                SizeDialog.MEDIUM)
                         .show(new CDialog.CDialogListener() {
                             @Override
                             public void onDismiss() {
                                 System.out.println("aqui");
                             }
                         });
+            }
+        });
 
-               /* new CDialog(ComponentesDoisActivity.this).createAlertSneckBar("Info SnackBar",
-                        WindowFormat.BACKGROUND_OVAL, // Type of background
-                        TypeDialog.INFO,   // Type of dialog
-                        SizeDialog.MEDIUM)    //  size of dialog
-                        .show();*/
 
+        findViewById(R.id.progressDialogButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ProgressDialog progressDialog = new ProgressDialog(ComponentesDoisActivity.this).
+                        create("Atenção!")
+                        .multColor(true)
+                        .setTextSize(SizeText.MEDIUM)
+                        .cancelable(false);
+
+                progressDialog.show();
+
+            /* new Thread(new Runnable() {
+                 @Override
+                 public void run() {
+                     try{
+                         Thread.sleep(1000);
+                         progressDialog.setMessage("um");
+                         Thread.sleep(1000);
+                         progressDialog.setMessage("dois");
+                         Thread.sleep(1000);
+                         progressDialog.setMessage("tres");
+                         Thread.sleep(1000);
+
+                         progressDialog.dismiss();
+                     }catch (Exception e){
+                         e.printStackTrace();
+                     }
+                 }
+             }).start();*/
             }
         });
     }
