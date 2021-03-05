@@ -217,27 +217,6 @@ public class ComponentesDoisActivity extends AppCompatActivity {
                         .cancelable(false);
 
                 progressDialog.show();*/
-
-               // ProgressIndeterminate pi = ProgressIndeterminate.show(ComponentesDoisActivity.this, "OK");
-
-            /* new Thread(new Runnable() {
-                 @Override
-                 public void run() {
-                     try{
-                         Thread.sleep(1000);
-                         progressDialog.setMessage("um");
-                         Thread.sleep(1000);
-                         progressDialog.setMessage("dois");
-                         Thread.sleep(1000);
-                         progressDialog.setMessage("tres");
-                         Thread.sleep(1000);
-
-                         progressDialog.dismiss();
-                     }catch (Exception e){
-                         e.printStackTrace();
-                     }
-                 }
-             }).start();*/
             }
         });
     }
