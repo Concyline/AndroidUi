@@ -137,6 +137,15 @@
             app:layout_constraintStart_toEndOf="@+id/errorButton"
             app:layout_constraintTop_toBottomOf="@+id/ovalButton" />
 
+        <Button
+            android:id="@+id/progressDialogButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Progress Dialog"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/snackBarButton" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
