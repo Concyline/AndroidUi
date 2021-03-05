@@ -39,7 +39,7 @@ public class ProgressIndeterminate {
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.view_custon_progress_dialog);
 
-        dialog.getWindow().getAttributes().windowAnimations = R.style.scale_from_left_to_right;
+        dialog.getWindow().getAttributes().windowAnimations = R.style.scale_fade_in_out;
         dialog.getWindow().setBackgroundDrawableResource(R.drawable.rectangle_back);
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -114,7 +114,7 @@ public class ProgressIndeterminate {
         return this;
     }
 
-    public void show() {
+    public ProgressIndeterminate show() {
         dialog.show();
 
         new Thread(new Runnable() {
@@ -136,6 +136,12 @@ public class ProgressIndeterminate {
                 }
             }
         }).start();
+
+        return this;
+    }
+
+    public static ProgressIndeterminate show(Context context, String mesagem){
+        return new ProgressIndeterminate(context).create(mesagem).show();
     }
 
     public void dismiss() {
