@@ -3,38 +3,23 @@ package siac.com.componentes;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.os.Handler;
 import android.util.DisplayMetrics;
-import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import siac.com.componentes.extras.AnimateDialog;
-import siac.com.componentes.extras.PositionDialog;
-import siac.com.componentes.extras.SizeDialog;
 import siac.com.componentes.extras.SizeText;
-import siac.com.componentes.extras.TypeDialog;
-import siac.com.componentes.extras.WindowFormat;
 
 /**
  * Created by multimeet on 18/01/21.
  */
 
-public class ProgressDialog {
+public class ProgressIndeterminate {
 
     private Dialog dialog;
     private Context context;
@@ -44,12 +29,12 @@ public class ProgressDialog {
     private int background = 0;
     private boolean multColor = false;
 
-    public ProgressDialog(Context context) {
+    public ProgressIndeterminate(Context context) {
         this.context = context;
         dialog = new Dialog(context);
     }
 
-    public ProgressDialog create(String message) {
+    public ProgressIndeterminate create(String message) {
 
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.view_custon_progress_dialog);
@@ -82,14 +67,14 @@ public class ProgressDialog {
         return this;
     }
 
-    public ProgressDialog setBackgroundColor(int color) {
+    public ProgressIndeterminate setBackgroundColor(int color) {
         if (constraintLayout != null) {
             constraintLayout.setBackgroundColor(context.getResources().getColor(color));
         }
         return this;
     }
 
-    public ProgressDialog setTextSize(SizeText sizeText) {
+    public ProgressIndeterminate setTextSize(SizeText sizeText) {
         messageTextView = dialog.findViewById(R.id.msg);
         switch (sizeText) {
             case SMALL:
@@ -111,7 +96,7 @@ public class ProgressDialog {
         return this;
     }
 
-    public ProgressDialog cancelable(boolean cancelable) {
+    public ProgressIndeterminate cancelable(boolean cancelable) {
         dialog.setCancelable(cancelable);
         return this;
     }
@@ -124,7 +109,7 @@ public class ProgressDialog {
         messageTextView.setText(message);
     }
 
-    public ProgressDialog multColor(boolean multColor){
+    public ProgressIndeterminate multColor(boolean multColor){
         this.multColor = multColor;
         return this;
     }
