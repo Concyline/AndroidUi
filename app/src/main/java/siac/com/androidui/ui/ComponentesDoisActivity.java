@@ -2,7 +2,6 @@ package siac.com.androidui.ui;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,7 +16,7 @@ import java.io.InputStream;
 import siac.com.androidui.R;
 import siac.com.componentes.CDialog;
 import siac.com.componentes.ProgressButton;
-import siac.com.componentes.ProgressDialog;
+import siac.com.componentes.ProgressIndeterminate;
 import siac.com.componentes.ProgressImageView;
 import siac.com.componentes.extras.AnimateDialog;
 import siac.com.componentes.extras.PositionDialog;
@@ -211,7 +210,7 @@ public class ComponentesDoisActivity extends AppCompatActivity {
         findViewById(R.id.progressDialogButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final ProgressDialog progressDialog = new ProgressDialog(ComponentesDoisActivity.this).
+                final ProgressIndeterminate progressDialog = new ProgressIndeterminate(ComponentesDoisActivity.this).
                         create("Atenção!")
                         .multColor(true)
                         .setTextSize(SizeText.MEDIUM)
