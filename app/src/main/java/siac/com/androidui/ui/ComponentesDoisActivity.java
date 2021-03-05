@@ -213,7 +213,7 @@ public class ComponentesDoisActivity extends AppCompatActivity {
                 final ProgressIndeterminate progressDialog = new ProgressIndeterminate(ComponentesDoisActivity.this).
                         create("Atenção!")
                         .multColor(true)
-                        .setTextSize(SizeText.MEDIUM)
+                        //.setTextSize(SizeText.MEDIUM)
                         .cancelable(false);
 
                 progressDialog.show();
