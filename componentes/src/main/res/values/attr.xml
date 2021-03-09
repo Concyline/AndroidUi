@@ -159,4 +159,10 @@
         <attr name="gp_style" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="DotLoader">
+        <attr name="dot_radius" format="dimension" />
+        <attr name="color_array" format="reference" />
+        <attr name="number_of_dots" format="integer" />
+    </declare-styleable>
+
 </resources>
