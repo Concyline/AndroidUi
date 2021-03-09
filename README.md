@@ -412,6 +412,58 @@ new CDialog(ParametrosActivity.this)
 
 ---
 
+## GeometricProgress
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/geometric_progress.gif" width="20%"/> 
+
+````xml
+ <siac.com.componentes.GeometricProgressView
+    android:id="@+id/progressView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:gp_type="triangle"
+    app:gp_number_of_angles="7"
+    app:gp_color="@android:color/black"
+    app:gp_duration="800"
+    app:gp_figure_padding="3dp" />
+````
+
+````java
+GeometricProgressView progressView = (GeometricProgressView) findViewById(R.id.progressView);
+progressView.setType(TYPE.KITE);
+progressView.setNumberOfAngles(6);
+progressView.setColor(Color.parseColor("#00897b"));
+progressView.setDuration(1000);
+progressView.setFigurePadding(getResources().getDimensionPixelOffset(R.dimen.figure_padding));
+````
+
+---
+
+## ProgressIndeterminate
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_indetermined.png" width="20%"/> 
+
+````java
+ProgressIndeterminate progressDialog = new ProgressIndeterminate(ComponentesDoisActivity.this).
+                        create("Atenção!")
+                        .multColor(true)
+                        .setTextSize(SizeText.MEDIUM)
+                        .cancelable(false);
+
+      progressDialog.show();
+      
+      //progressDialog.dismiss();
+      //progressDialog.isShowing();
+      //progressDialog.setMessage("Text");
+      //progressDialog.setBackgroundColor(R.color.pink);
+		
+// or
+
+ProgressIndeterminate progressDialog = ProgressIndeterminate.show(ComponentesDoisActivity.this, "OK");
+````
+
+---
+
 ## SwipeLayout
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/swipe_rigth.png" width="20%"/> 
