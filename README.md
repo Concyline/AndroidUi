@@ -439,6 +439,40 @@ progressView.setFigurePadding(getResources().getDimensionPixelOffset(R.dimen.fig
 
 ---
 
+## DotLoader
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/loading_anim.gif" width="50%"/> 
+
+````xml
+ <siac.com.componentes.DotLoader
+    android:id="@+id/text_dot_loader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:color_array="@array/dot_colors"
+    app:dot_radius="4dp"
+    app:number_of_dots="3"/>
+````
+
+color.xml
+````xml
+<array name="dot_colors">
+    <item>#03A9F4</item>
+    <item>#E65100</item>
+    <item>#FFBB00</item>
+</array>
+````
+
+````java
+dotLoader.postDelayed(new Runnable() {
+    @Override
+    public void run() {
+        dotLoader.setNumberOfDots(5);
+    }
+}, 3000);
+````
+
+---
+
 ## ProgressIndeterminate
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_indetermined.png" width="20%"/> 
