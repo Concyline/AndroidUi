@@ -17,11 +17,19 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
-            <ProgressBar
+<!--            <ProgressBar
                 android:id="@+id/progressBarUi"
                 style="?android:attr/progressBarStyle"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" />-->
+
+            <siac.com.componentes.GeometricProgressView
+                android:id="@+id/progressBarUi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:gp_figure_padding="5dp"
+                app:gp_number_of_angles="4" />
 
             <TextView
                 android:id="@+id/msg"

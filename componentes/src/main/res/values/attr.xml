@@ -147,4 +147,16 @@
         <attr name="leftDragViewPadding" format="dimension"/>
     </declare-styleable>
 
+    <declare-styleable name="GeometricProgressView">
+        <attr name="gp_type" format="enum">
+            <enum name="kite" value="0" />
+            <enum name="triangle" value="1" />
+        </attr>
+        <attr name="gp_number_of_angles" format="integer" />
+        <attr name="gp_color" format="color" />
+        <attr name="gp_duration" format="integer" />
+        <attr name="gp_figure_padding" format="dimension" />
+        <attr name="gp_style" format="reference" />
+    </declare-styleable>
+
 </resources>
