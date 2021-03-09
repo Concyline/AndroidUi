@@ -38,7 +38,7 @@ dependencies {
 
 
 # * Componentes
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentes.gif" width="50%">
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentes.gif" width="20%">
 
 ### Usage
 
@@ -573,7 +573,7 @@ public listeners
   
   # * Manipulador de texto
   
-  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/manipulatexto.gif" width="50%">
+  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/manipulatexto.gif" width="20%">
   
   ### Usage
   
@@ -627,7 +627,7 @@ public listeners
   
   # * Leitor Qr and CodeBar
   
-  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/leitor.gif" width="50%">
+  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/leitor.gif" width="20%">
   
   ### Usage
   
@@ -701,7 +701,7 @@ public listeners
 ````
 
 # * ShortCut
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/shortcut.png" width="50%">
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/shortcut.png" width="20%">
 
  ### Usage
  
@@ -745,7 +745,7 @@ shortcutUtils.removeDynamicShortCut(dynamicShortcut);
  ````
  
  # * Permisions
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/permisions.png" width="50%">
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/permisions.png" width="20%">
 
  ### Usage
  
@@ -767,7 +767,7 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
  ````
  
  # * Util
- <img src="https://github.com/Concyline/AndroidUi/blob/master/img/util_dois.gif" width="50%">
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/util_dois.gif" width="20%">
  
  ### Usage
  ````java
@@ -808,7 +808,7 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
  ````
  
  # * CamPix
- <img src="https://github.com/Concyline/AndroidUi/blob/master/img/campix.png" width="50%">
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/campix.png" width="20%">
  
  ### Usage
  
@@ -883,7 +883,7 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
  ````
  
 # * PhotoView
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/photo_view.gif" width="50%">
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/photo_view.gif" width="20%">
  
 ### Usage
 ````xml
@@ -901,7 +901,7 @@ photoView.setImageResource(R.drawable.image);
 ````
 
 # * Zoom Frame
- <img src="https://github.com/Concyline/AndroidUi/blob/master/img/zoom.gif" width="50%">
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/zoom.gif" width="20%">
  
  ### Usage
  ````xml
@@ -913,7 +913,7 @@ photoView.setImageResource(R.drawable.image);
  ````
  
  # * Hawk
- <img src="https://github.com/Concyline/AndroidUi/blob/master/img/hawk.png" width="50%">
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/hawk.png" width="20%">
  
  ### Usage
  ````java
