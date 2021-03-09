@@ -32,23 +32,23 @@
         android:id="@+id/textoButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:text="Manipulador de texto"
         android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@+id/leitorButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/componentesDoisButton" />
+        app:layout_constraintTop_toBottomOf="@+id/componentesTresButton" />
 
     <Button
         android:id="@+id/leitorButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:text="Leitor Qr CodeBar"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textoButton"
-        app:layout_constraintTop_toBottomOf="@+id/componentesDoisButton" />
+        app:layout_constraintTop_toBottomOf="@+id/button13" />
 
     <Button
         android:id="@+id/permision"
@@ -64,7 +64,7 @@
         android:id="@+id/abaixaTeclado"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:text="Util Test"
         android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@+id/campix"
@@ -75,7 +75,7 @@
         android:id="@+id/campix"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:text="CamPix"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +86,7 @@
         android:id="@+id/zoomFrameButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:text="Zoom Frame"
         android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@+id/halkButton"
@@ -97,7 +97,7 @@
         android:id="@+id/halkButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:text="Halk"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -108,11 +108,33 @@
         android:id="@+id/SwipeLayoutButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:text="SwipeLayout"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/halkButton" />
+
+    <Button
+        android:id="@+id/componentesTresButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textAllCaps="false"
+        android:text="Componentes Tres"
+        app:layout_constraintEnd_toStartOf="@+id/button13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/componentesButton" />
+
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/componentesTresButton"
+        app:layout_constraintTop_toBottomOf="@+id/componentesDoisButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

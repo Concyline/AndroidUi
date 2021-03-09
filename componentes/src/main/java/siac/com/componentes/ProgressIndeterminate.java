@@ -25,7 +25,7 @@ public class ProgressIndeterminate {
     private Context context;
     private TextView messageTextView;
     private ConstraintLayout constraintLayout;
-    private ProgressBar progressBarUi;
+    private GeometricProgressView progressBarUi;
     private int background = 0;
     private boolean multColor = false;
 
@@ -122,13 +122,17 @@ public class ProgressIndeterminate {
             public void run() {
                 try{
                     while (multColor) {
-                        progressBarUi.getIndeterminateDrawable().setColorFilter(Color.RED, PorterDuff.Mode.MULTIPLY);
+                        //progressBarUi.getIndeterminateDrawable().setColorFilter(Color.RED, PorterDuff.Mode.MULTIPLY);
+                        progressBarUi.setColor(Color.RED);
                         Thread.sleep(1000);
-                        progressBarUi.getIndeterminateDrawable().setColorFilter(Color.MAGENTA, PorterDuff.Mode.MULTIPLY);
+                        //progressBarUi.getIndeterminateDrawable().setColorFilter(Color.MAGENTA, PorterDuff.Mode.MULTIPLY);
+                        progressBarUi.setColor(Color.MAGENTA);
                         Thread.sleep(1000);
-                        progressBarUi.getIndeterminateDrawable().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
+                       // progressBarUi.getIndeterminateDrawable().setColorFilter(Color.GREEN, PorterDuff.Mode.MULTIPLY);
+                        progressBarUi.setColor(Color.GREEN);
                         Thread.sleep(1000);
-                        progressBarUi.getIndeterminateDrawable().setColorFilter(Color.BLUE, PorterDuff.Mode.MULTIPLY);
+                       // progressBarUi.getIndeterminateDrawable().setColorFilter(Color.BLUE, PorterDuff.Mode.MULTIPLY);
+                        progressBarUi.setColor(Color.BLUE);
                         Thread.sleep(1000);
                     }
                 }catch (Exception e){

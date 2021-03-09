@@ -17,6 +17,7 @@ import br.com.utill.Util;
 import siac.com.androidui.ui.CamPixActivity;
 import siac.com.androidui.ui.ComponentesActivity;
 import siac.com.androidui.ui.ComponentesDoisActivity;
+import siac.com.androidui.ui.ComponentesTresActivity;
 import siac.com.androidui.ui.HawkActivity;
 import siac.com.androidui.ui.LerQrBarCodeActivity;
 import siac.com.androidui.ui.ManipulaTextoActivity;
@@ -167,6 +168,14 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), SwipLayoutActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
+                    findViewById(R.id.componentesTresButton).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getBaseContext(), ComponentesTresActivity.class);
                             startActivity(intent);
                         }
                     });

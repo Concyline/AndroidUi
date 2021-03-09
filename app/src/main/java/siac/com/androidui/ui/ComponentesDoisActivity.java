@@ -210,13 +210,13 @@ public class ComponentesDoisActivity extends AppCompatActivity {
         findViewById(R.id.progressDialogButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*final ProgressIndeterminate progressDialog = new ProgressIndeterminate(ComponentesDoisActivity.this).
+                final ProgressIndeterminate progressDialog = new ProgressIndeterminate(ComponentesDoisActivity.this).
                         create("Atenção!")
                         .multColor(true)
                         //.setTextSize(SizeText.MEDIUM)
                         .cancelable(false);
 
-                progressDialog.show();*/
+                progressDialog.show();
             }
         });
     }
