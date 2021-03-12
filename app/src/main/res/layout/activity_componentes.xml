@@ -200,13 +200,13 @@
 
         <siac.com.componentes.EditTextLegenda
             android:id="@+id/editTextLegendaSelection"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:corLegenda="@color/colorAccent"
             app:enabled="true"
             app:focusable="true"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/editTextLegenda22asd"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/multilineEditTextLegenda"
             app:legenda="Set Selection"
@@ -214,6 +214,16 @@
             app:requestfocus="true"
             app:tag="edittext"
             app:text="texto" />
+
+        <siac.com.componentes.EditTextCalendarLegenda
+            android:id="@+id/editTextLegenda22asd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/editTextLegendaSelection"
+            app:layout_constraintTop_toBottomOf="@+id/multilineEditTextLegenda"
+            app:legenda="Só data" />
 
         <Button
             android:id="@+id/button9"
