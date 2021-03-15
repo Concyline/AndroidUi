@@ -23,7 +23,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class EditTextCalendarLegenda extends FrameLayout {
+public class EditTextCalendarSubtitle extends FrameLayout {
 
     private SimpleDateFormat format;
 
@@ -41,19 +41,19 @@ public class EditTextCalendarLegenda extends FrameLayout {
     private boolean inicializa;
     private Date dataColetada;
 
-    public EditTextCalendarLegenda(@NonNull Context context) {
+    public EditTextCalendarSubtitle(@NonNull Context context) {
         super(context);
         obtainStyledAttributes(context, null, 0);
         init();
     }
 
-    public EditTextCalendarLegenda(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public EditTextCalendarSubtitle(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         obtainStyledAttributes(context, attrs, 0);
         init();
     }
 
-    public EditTextCalendarLegenda(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public EditTextCalendarSubtitle(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         obtainStyledAttributes(context, attrs, defStyleAttr);
         init();

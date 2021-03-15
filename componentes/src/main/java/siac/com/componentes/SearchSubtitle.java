@@ -18,7 +18,7 @@ import java.text.Normalizer;
 
 import static siac.com.componentes.Util.InputType.setInputType;
 
-public class SearchLegenda extends FrameLayout {
+public class SearchSubtitle extends FrameLayout {
 
     // COMPONENTES
     private TextView legendaTextView;
@@ -40,19 +40,19 @@ public class SearchLegenda extends FrameLayout {
     private int coricon;
 
 
-    public SearchLegenda(@NonNull Context context) {
+    public SearchSubtitle(@NonNull Context context) {
         super(context);
         obtainStyledAttributes(context, null, 0);
         init();
     }
 
-    public SearchLegenda(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public SearchSubtitle(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         obtainStyledAttributes(context, attrs, 0);
         init();
     }
 
-    public SearchLegenda(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public SearchSubtitle(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         obtainStyledAttributes(context, attrs, defStyleAttr);
         init();
