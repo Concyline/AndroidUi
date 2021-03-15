@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/legendaTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="legenda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_selector_ui"
+        android:textSize="@dimen/tamDescricaoUi"
+        android:textColor="@color/colorTextEditext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/legendaTextView" />-->
+
+    <siac.com.componentes.currency.CurrencyEditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:textSize="@dimen/tamDescricaoUi"
+        android:textColor="@color/colorTextEditext"
+        android:background="@drawable/edit_selector_ui"
+        android:text="0.00"
+        app:locale="pt_BR"
+        app:showSymbol="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/legendaTextView" />
+
+    <ImageView
+        android:id="@+id/requiredImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:padding="10dp"
+        android:tint="@color/colorAccent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="@+id/editText"
+        app:layout_constraintTop_toBottomOf="@+id/legendaTextView"
+        app:srcCompat="@drawable/ic_error_outline_black_24dp" />
+
+<!--    <ImageView
+        android:id="@+id/iconRigthImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/requiredImageView"
+        app:layout_constraintTop_toBottomOf="@+id/legendaTextView"
+        app:srcCompat="@drawable/outline_more_horiz_black_48dp" />
+
+    <ImageView
+        android:id="@+id/iconLeftImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toStartOf="@+id/iconRigthImageView"
+        app:layout_constraintTop_toBottomOf="@+id/legendaTextView"
+        app:srcCompat="@drawable/outline_more_horiz_black_48dp" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
