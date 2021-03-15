@@ -17,6 +17,11 @@
     <attr name="text" format="string" />
     <attr name="progressColor" format="color" />
     <attr name="progressSize" format="dimension"/>
+    <attr name="requerido" format="boolean" />
+    <attr name="tag" format="string" />
+    <attr name="maxLength" format="integer" />
+    <attr name="showSymbol" format="boolean" />
+    <attr name="locale" format="string" />
 
     <attr name="inputType">
         <flag name="none" value="0x00000000" />
@@ -48,24 +53,45 @@
         <attr name="hint" />
         <attr name="text" />
         <attr name="lines" format="integer" />
-        <attr name="maxLength" format="integer" />
+        <attr name="maxLength" />
         <attr name="iconLeft" format="reference" />
         <attr name="iconRigth" format="reference" />
         <attr name="coricon"/>
         <attr name="enabled" />
         <attr name="focusable" />
         <attr name="requestfocus" />
-        <attr name="requerido" format="boolean" />
+        <attr name="requerido" />
         <attr name="isDate" format="boolean" />
         <attr name="isDateHour" format="boolean" />
         <attr name="iconRigthVisible" format="boolean" />
-        <attr name="tag" format="string" />
+        <attr name="tag" />
         <attr name="mascara" />
         <attr name="singleLine" />
         <attr name="inputType"/>
         <attr name="legendaRequerido"/>
+    </declare-styleable>
 
 
+    <declare-styleable name="EditTextCurrencyLegenda">
+        <attr name="legenda"/>
+        <attr name="corLegenda" />
+        <attr name="tamLegendaEditText"/>
+        <attr name="tamTextEditText" />
+        <attr name="hint" />
+        <attr name="text" />
+        <attr name="maxLength" />
+        <attr name="coricon"/>
+        <attr name="enabled" />
+        <attr name="focusable" />
+        <attr name="requestfocus" />
+        <attr name="requerido"/>
+        <attr name="tag" />
+        <attr name="mascara" />
+        <attr name="singleLine" />
+        <attr name="inputType"/>
+        <attr name="legendaRequerido"/>
+        <attr name="showSymbol" />
+        <attr name="locale"/>
     </declare-styleable>
 
     <declare-styleable name="EditTextCalendarLegenda">
@@ -163,6 +189,12 @@
         <attr name="dot_radius" format="dimension" />
         <attr name="color_array" format="reference" />
         <attr name="number_of_dots" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="currencyEditText">
+        <attr name="locale" />
+        <attr name="showSymbol"/>
+        <attr name="decimalPoints" format="integer" />
     </declare-styleable>
 
 </resources>

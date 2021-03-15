@@ -217,6 +217,12 @@ public class ComponentesDoisActivity extends AppCompatActivity {
                         .cancelable(false);
 
                 progressDialog.show();
+                progressDialog.dismiss();
+                progressDialog.isShowing();
+                progressDialog.setMessage("Text");
+                progressDialog.setBackgroundColor(R.color.pink);
+
+
 
                 //progressDialog.dismiss();
                 //progressDialog.isShowing();
