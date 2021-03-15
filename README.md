@@ -45,8 +45,8 @@ dependencies {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentesimples.png" width="50%">
 
 ```xml
- <siac.com.componentes.EditTextLegenda
-            android:id="@+id/editTextLegenda"
+ <siac.com.componentes.EditTextSubtitle
+            android:id="@+id/editTextSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:corLegenda="@color/colorAccent"
@@ -67,8 +67,8 @@ dependencies {
 
     <!-- Is free to create any mask just edit the app:mascara="" -->
 
-    <siac.com.componentes.EditTextLegenda
-            android:id="@+id/editTextLegenda2"
+    <siac.com.componentes.EditTextSubtitle
+            android:id="@+id/editTextSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:legenda="Mascara"
@@ -87,8 +87,8 @@ dependencies {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/legenda_requerido.png" width="50%">
 
 ```xml
-    <siac.com.componentes.EditTextLegenda
-            android:id="@+id/editTextLegenda2"
+    <siac.com.componentes.EditTextSubtitle
+            android:id="@+id/editTextSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:legenda="Enail"
@@ -108,8 +108,8 @@ dependencies {
 ```xml
     <!-- the calendar listener is already implemented within the component -->
 
-     <siac.com.componentes.EditTextCalendarLegenda
-            android:id="@+id/editTextLegenda22"
+     <siac.com.componentes.EditTextCalendarSubtitle
+            android:id="@+id/editTextSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:legenda="Só data" />
@@ -120,8 +120,8 @@ dependencies {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/spinner.png" width="50%">
 
 ```xml
-         <siac.com.componentes.SpinnerLegenda
-            android:id="@+id/spinnerLegenda"
+         <siac.com.componentes.SpinnerSubtitle
+            android:id="@+id/spinnerSubtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:entries="@array/tipo"
@@ -141,13 +141,13 @@ spinnerLegenda.setAdapter(adapter);
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/calendarhoradata.png" width="50%">
 
 ```xml
-          <siac.com.componentes.EditTextCalendarLegenda
-            android:id="@+id/editTextCalendarLegenda"
+          <siac.com.componentes.EditTextCalendarSubtitle
+            android:id="@+id/editTextCalendarSubtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:hora="true"
             app:inicializa="false"
-            app:legenda="EditTextCalendarLegenda" />
+            app:legenda="EditTextCalendarSubtitle" />
 ```
 
 ---
@@ -155,8 +155,8 @@ spinnerLegenda.setAdapter(adapter);
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/iconedireita.png" width="50%">
 
 ```xml
-      <siac.com.componentes.EditTextLegenda
-            android:id="@+id/cadastroEditTextLegenda"
+      <siac.com.componentes.EditTextSubtitle
+            android:id="@+id/cadastroEditTextSubtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:coricon="#D6C"
@@ -171,7 +171,7 @@ spinnerLegenda.setAdapter(adapter);
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/textocomlegenda.png" width="50%">
 
 ```xml
-    <siac.com.componentes.TextViewLegenda
+    <siac.com.componentes.TextViewSubtitle
             android:id="@+id/textViewsd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -190,18 +190,18 @@ spinnerLegenda.setAdapter(adapter);
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/pesquisasimples.png" width="50%">
 
 ```xml
-   <siac.com.componentes.SearchLegenda
-            android:id="@+id/searchLegenda"
+   <siac.com.componentes.SearchSubtitle
+            android:id="@+id/searchSubtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:hint="sua pesquisa"
             app:inputType="none"
             app:coricon="@color/colorAccent"
-            app:legenda="SearchLegenda" />
+            app:legenda="SearchSubtitle" />
 ```
 
 ````java
-searchLegenda.setOnClickListener(new View.OnClickListener() {
+searchSubtitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ...
@@ -214,8 +214,8 @@ searchLegenda.setOnClickListener(new View.OnClickListener() {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/multiline.png" width="50%">
 
 ````xml
-    <siac.com.componentes.EditTextLegenda
-            android:id="@+id/multilineEditTextLegenda"
+    <siac.com.componentes.EditTextSubtitle
+            android:id="@+id/multilineEditTextSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -232,8 +232,8 @@ searchLegenda.setOnClickListener(new View.OnClickListener() {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/senha.png" width="50%">
 
 ```xml
-      <siac.com.componentes.EditTextLegenda
-            android:id="@+id/senhaEditTextLegenda"
+      <siac.com.componentes.EditTextSubtitle
+            android:id="@+id/senhaEditTextSubtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:coricon="@color/colorAccent"
@@ -244,11 +244,11 @@ searchLegenda.setOnClickListener(new View.OnClickListener() {
 ```
 
 ``` java
-final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLegenda);
-        senhaEditTextLegenda.setOnClickListener(new View.OnClickListener() {
+final EditTextSubtitle senhaEditTextSubtitle = findViewById(R.id.senhaEditTextSubtitle);
+        senhaEditTextSubtitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                senhaEditTextLegenda.mostraSenha();
+                senhaEditTextSubtitle.mostraSenha();
             }
         });
 ````
@@ -258,8 +258,8 @@ final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLege
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/componente_currence.png" width="50%">
 
 ```xml
-         <siac.com.componentes.EditTexCurrencyLegenda
-            android:id="@+id/valorEditTextLegenda"
+         <siac.com.componentes.EditTexCurrencySubtitle
+            android:id="@+id/valorEditTextSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:enabled="true"
