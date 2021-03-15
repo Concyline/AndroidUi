@@ -33,7 +33,7 @@ public class ComponentesActivity extends AppCompatActivity {
 
         EditTextLegenda editTextLegendaSelection = findViewById(R.id.editTextLegendaSelection);
         editTextLegendaSelection.setSelection(editTextLegendaSelection.getString().length() - 2);
-        
+
         final EditTexCurrencyLegenda editTexCurrencyLegenda = findViewById(R.id.editTexFinaceirotLegenda);
 
         findViewById(R.id.button9).setOnClickListener(new View.OnClickListener() {
