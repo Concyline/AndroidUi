@@ -255,6 +255,25 @@ final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLege
 
 ---
 
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/componente_currence.png" width="50%">
+
+```xml
+         <siac.com.componentes.EditTexCurrencyLegenda
+            android:id="@+id/valorEditTextLegenda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:enabled="true"
+            app:focusable="true"
+            app:legenda="Valor"
+            app:requerido="false"
+            app:requestfocus="false"
+            app:locale="pt_BR"
+            app:showSymbol="true"
+            app:tag="Valor"
+            app:text="" />
+```
+---
+
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progress_image.png" width="50%">
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progress_image_click.png" width="50%">
