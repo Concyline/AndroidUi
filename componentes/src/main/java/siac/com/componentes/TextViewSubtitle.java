@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
-public class TextViewLegenda extends FrameLayout {
+public class TextViewSubtitle extends FrameLayout {
 
     // COMPONENTES
     private TextView legendaTextView;
@@ -28,19 +28,19 @@ public class TextViewLegenda extends FrameLayout {
     private boolean singleLine;
 
 
-    public TextViewLegenda(@NonNull Context context) {
+    public TextViewSubtitle(@NonNull Context context) {
         super(context);
         obtainStyledAttributes(context, null, 0);
         init();
     }
 
-    public TextViewLegenda(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public TextViewSubtitle(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         obtainStyledAttributes(context, attrs, 0);
         init();
     }
 
-    public TextViewLegenda(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public TextViewSubtitle(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         obtainStyledAttributes(context, attrs, defStyleAttr);
         init();

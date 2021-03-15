@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="16dp">
 
-            <siac.com.componentes.EditTextCalendarLegenda
+            <siac.com.componentes.EditTextCalendarSubtitle
                 android:id="@+id/editTextLegenda22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="156dp" />
 
-            <siac.com.componentes.EditTextCalendarLegenda
+            <siac.com.componentes.EditTextCalendarSubtitle
                 android:id="@+id/editTextCalendarLegenda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-            <siac.com.componentes.EditTextLegenda
+            <siac.com.componentes.EditTextSubtitle
                 android:id="@+id/cadastroEditTextLegenda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
                 app:legenda="Nome do cliente"
                 app:tamLegendaEditText="@dimen/tamLegendaEditTextUi" />
 
-            <siac.com.componentes.EditTextLegenda
+            <siac.com.componentes.EditTextSubtitle
                 android:id="@+id/editTextLegenda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,7 +96,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayoutsafdasd">
 
-            <siac.com.componentes.TextViewLegenda
+            <siac.com.componentes.TextViewSubtitle
                 android:id="@+id/textViewsd"
                 android:layout_width="372dp"
                 android:layout_height="wrap_content"
@@ -110,7 +110,7 @@
                 app:tamDescricao="16sp"
                 app:tamLegenda="13sp" />
 
-            <siac.com.componentes.EditTextLegenda
+            <siac.com.componentes.EditTextSubtitle
                 android:id="@+id/editTextLegenda2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayoutsafda">
 
-            <siac.com.componentes.SpinnerLegenda
+            <siac.com.componentes.SpinnerSubtitle
                 android:id="@+id/spinnerLegenda"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -147,7 +147,7 @@
                 app:entries="@array/tipo"
                 app:legenda="Spinner" />
 
-            <siac.com.componentes.SearchLegenda
+            <siac.com.componentes.SearchSubtitle
                 android:id="@+id/searchLegenda"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -168,7 +168,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayoutasdasd">
 
-            <siac.com.componentes.EditTextLegenda
+            <siac.com.componentes.EditTextSubtitle
                 android:id="@+id/senhaEditTextLegenda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -183,7 +183,7 @@
 
         </LinearLayout>
 
-        <siac.com.componentes.EditTextLegenda
+        <siac.com.componentes.EditTextSubtitle
             android:id="@+id/multilineEditTextLegenda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -198,7 +198,7 @@
             app:tamLegendaEditText="@dimen/tamLegendaEditTextUi"
             app:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
 
-        <siac.com.componentes.EditTextLegenda
+        <siac.com.componentes.EditTextSubtitle
             android:id="@+id/editTextLegendaSelection"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -215,7 +215,7 @@
             app:tag="edittext"
             app:text="texto" />
 
-        <siac.com.componentes.EditTextCalendarLegenda
+        <siac.com.componentes.EditTextCalendarSubtitle
             android:id="@+id/editTextLegenda22asd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -226,7 +226,7 @@
             app:legenda="Só data" />
 
 
-        <siac.com.componentes.EditTexCurrencyLegenda
+        <siac.com.componentes.EditTexCurrencySubtitle
             android:id="@+id/editTexFinaceirotLegenda"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

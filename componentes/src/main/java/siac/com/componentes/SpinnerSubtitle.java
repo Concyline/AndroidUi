@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class SpinnerLegenda extends FrameLayout {
+public class SpinnerSubtitle extends FrameLayout {
 
     // COMPONENTES
     private TextView legendaTextView;
@@ -27,19 +27,19 @@ public class SpinnerLegenda extends FrameLayout {
     private int entries = 0;
 
 
-    public SpinnerLegenda(@NonNull Context context) {
+    public SpinnerSubtitle(@NonNull Context context) {
         super(context);
         obtainStyledAttributes(context, null, 0);
         init();
     }
 
-    public SpinnerLegenda(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public SpinnerSubtitle(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         obtainStyledAttributes(context, attrs, 0);
         init();
     }
 
-    public SpinnerLegenda(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public SpinnerSubtitle(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         obtainStyledAttributes(context, attrs, defStyleAttr);
         init();
