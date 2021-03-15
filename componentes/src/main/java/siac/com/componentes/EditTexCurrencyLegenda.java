@@ -10,6 +10,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.Editable;
@@ -114,21 +115,30 @@ public class EditTexCurrencyLegenda extends FrameLayout {
             mShowSymbol = typedArray.getBoolean(R.styleable.EditTextCurrencyLegenda_showSymbol, false);
             mLocale = typedArray.getString(R.styleable.EditTextCurrencyLegenda_locale);
 
-
-            if (mLocale.contains("-")) {
-                mLocale = mLocale.replace("-", "_");
-            }
-
-            String[] l = mLocale.split("_");
-            if (l.length > 1) {
-                locale = new Locale(l[0], l[1]);
+            if (mLocale == null) {
+                locale = getDefaultLocale();
             } else {
-                locale = new Locale("", mLocale);
-            }
+                if (mLocale.contains("-")) {
+                    mLocale = mLocale.replace("-", "_");
+                }
 
+                String[] l = mLocale.split("_");
+                if (l.length > 1) {
+                    locale = new Locale(l[0], l[1]);
+                } else {
+                    locale = new Locale("", mLocale);
+                }
+            }
             return;
         }
 
+    }
+
+    private Locale getDefaultLocale() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
+            return getContext().getResources().getConfiguration().getLocales().get(0);
+        else
+            return getContext().getResources().getConfiguration().locale;
     }
 
     private String getString(TypedArray typedArray, int index, String defaultValue) {
@@ -184,7 +194,7 @@ public class EditTexCurrencyLegenda extends FrameLayout {
         editText.setSelection(editText.getText().length());
         editText.showSymbol(mShowSymbol);
 
-        if(locale != null) {
+        if (locale != null) {
             editText.setLocale(locale);
         }
 
@@ -326,7 +336,20 @@ public class EditTexCurrencyLegenda extends FrameLayout {
 
     public Double getDouble() {
         try {
-            return Double.parseDouble(editText.getText().toString().trim());
+
+            String dado = editText.getText().toString().trim();
+
+            if (locale.toString().equals("en_US")) {
+                dado = dado.replace("$", "");
+                dado = dado.replace(",", "");
+
+            } else if (locale.toString().equals("pt_BR")) {
+                dado = dado.replace("R$", "");
+                dado = dado.replace(".", "");
+                dado = dado.replace(",", ".");
+            }
+
+            return Double.parseDouble(dado);
         } catch (Exception e) {
             return 0.0;
         }

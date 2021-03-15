@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import siac.com.androidui.R;
+import siac.com.componentes.EditTexCurrencyLegenda;
 import siac.com.componentes.EditTextLegenda;
 
 public class ComponentesActivity extends AppCompatActivity {
@@ -32,8 +33,15 @@ public class ComponentesActivity extends AppCompatActivity {
 
         EditTextLegenda editTextLegendaSelection = findViewById(R.id.editTextLegendaSelection);
         editTextLegendaSelection.setSelection(editTextLegendaSelection.getString().length() - 2);
+        
+        final EditTexCurrencyLegenda editTexCurrencyLegenda = findViewById(R.id.editTexFinaceirotLegenda);
 
-        //aqui a
+        findViewById(R.id.button9).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println(""+editTexCurrencyLegenda.getDouble());
+            }
+        });
 
     }
 }
