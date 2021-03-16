@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <attr name="tamLegendaEditText" format="dimension" />
-    <attr name="legenda" format="string" />
-    <attr name="corLegenda" format="color" />
-    <attr name="tamLegenda" format="dimension" />
+    <attr name="tamTitleEditText" format="dimension" />
+    <attr name="title" format="string" />
+    <attr name="colorTitle" format="color" />
+    <attr name="tamTitle" format="dimension" />
     <attr name="tamTextEditText" format="dimension" />
     <attr name="mascara" format="string" />
     <attr name="hint" format="string" />
@@ -46,9 +46,10 @@
     </declare-styleable>
 
     <declare-styleable name="EditTextLegenda">
-        <attr name="legenda"/>
-        <attr name="corLegenda" />
-        <attr name="tamLegendaEditText"/>
+        <attr name="title"/>
+        <attr name="tamTitle"/>
+        <attr name="colorTitle" />
+        <attr name="tamTitleEditText"/>
         <attr name="tamTextEditText" />
         <attr name="hint" />
         <attr name="text" />
@@ -73,9 +74,9 @@
 
 
     <declare-styleable name="EditTextCurrencyLegenda">
-        <attr name="legenda"/>
-        <attr name="corLegenda" />
-        <attr name="tamLegendaEditText"/>
+        <attr name="title"/>
+        <attr name="colorTitle" />
+        <attr name="tamTitleEditText"/>
         <attr name="tamTextEditText" />
         <attr name="hint" />
         <attr name="text" />
@@ -95,19 +96,19 @@
     </declare-styleable>
 
     <declare-styleable name="EditTextCalendarLegenda">
-        <attr name="tamLegendaEditText" />
-        <attr name="legenda"/>
-        <attr name="corLegenda"/>
-        <attr name="tamLegenda" />
+        <attr name="tamTitleEditText" />
+        <attr name="title"/>
+        <attr name="colorTitle"/>
+        <attr name="tamTitle" />
         <attr name="hora" format="boolean"/>
         <attr name="inicializa" format="boolean"/>
     </declare-styleable>
 
     <declare-styleable name="SearchLegenda">
-        <attr name="legenda" />
-        <attr name="corLegenda"/>
-        <attr name="tamLegenda" />
-        <attr name="tamLegendaEditText"/>
+        <attr name="title" />
+        <attr name="colorTitle"/>
+        <attr name="tamTitle" />
+        <attr name="tamTitleEditText"/>
         <attr name="tamTextEditText"/>
         <attr name="mascara" />
         <attr name="hint" />
@@ -121,15 +122,16 @@
 
     <declare-styleable name="SpinnerLegenda">
         <attr name="entries" format="reference" />
-        <attr name="legenda"/>
-        <attr name="corLegenda" />
-        <attr name="tamLegendaEditText" />
+        <attr name="tamTitle" />
+        <attr name="title"/>
+        <attr name="colorTitle" />
+        <attr name="tamTitleEditText" />
     </declare-styleable>
 
     <declare-styleable name="TextViewLegenda">
-        <attr name="legenda" />
-        <attr name="corLegenda" />
-        <attr name="tamLegenda" />
+        <attr name="title" />
+        <attr name="colorTitle" />
+        <attr name="tamTitle" />
         <attr name="descricao" format="string" />
         <attr name="corDescricao" format="color" />
         <attr name="tamDescricao" format="dimension" />

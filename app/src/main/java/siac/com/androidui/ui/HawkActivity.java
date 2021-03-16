@@ -7,7 +7,7 @@ import android.view.View;
 
 import br.com.hawk.Hawk;
 import siac.com.androidui.R;
-import siac.com.componentes.EditTextSubtitle;
+import siac.com.componentes.EditTextTitle;
 
 public class HawkActivity extends AppCompatActivity {
 
@@ -18,8 +18,8 @@ public class HawkActivity extends AppCompatActivity {
 
         Hawk.init(this).build();
 
-        final EditTextSubtitle setEditTextLegenda = findViewById(R.id.setEditTextLegenda);
-        final EditTextSubtitle valuesEditTextLegenda = findViewById(R.id.valuesEditTextLegenda);
+        final EditTextTitle setEditTextLegenda = findViewById(R.id.setEditTextLegenda);
+        final EditTextTitle valuesEditTextLegenda = findViewById(R.id.valuesEditTextLegenda);
 
         findViewById(R.id.addButton).setOnClickListener(new View.OnClickListener() {
             @Override

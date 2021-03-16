@@ -18,7 +18,7 @@ import java.text.Normalizer;
 
 import static siac.com.componentes.Util.InputType.setInputType;
 
-public class SearchSubtitle extends FrameLayout {
+public class EditTextSearch extends FrameLayout {
 
     // COMPONENTES
     private TextView legendaTextView;
@@ -26,11 +26,11 @@ public class SearchSubtitle extends FrameLayout {
     private ImageView imageView;
 
     // ATRIBUTOS
-    private String legenda = "legenda";
+    private String title = "title";
     private String hint = "";
-    private ColorStateList corLegenda;
+    private ColorStateList colorTitle;
 
-    private float tamLegenda = 13;
+    private float tamTitle = 13;
     private float tamTextEditText = 16;
     private int inputType = 0;
     private int mascara = 0;
@@ -40,19 +40,19 @@ public class SearchSubtitle extends FrameLayout {
     private int coricon;
 
 
-    public SearchSubtitle(@NonNull Context context) {
+    public EditTextSearch(@NonNull Context context) {
         super(context);
         obtainStyledAttributes(context, null, 0);
         init();
     }
 
-    public SearchSubtitle(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public EditTextSearch(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         obtainStyledAttributes(context, attrs, 0);
         init();
     }
 
-    public SearchSubtitle(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public EditTextSearch(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         obtainStyledAttributes(context, attrs, defStyleAttr);
         init();
@@ -62,9 +62,9 @@ public class SearchSubtitle extends FrameLayout {
 
         if (attrs != null) {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.SearchLegenda, defStyleAttr, 0);
-            legenda = typedArray.getString(R.styleable.SearchLegenda_legenda);
-            corLegenda = typedArray.getColorStateList(R.styleable.SearchLegenda_corLegenda);
-            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.SearchLegenda_tamLegendaEditText));
+            title = typedArray.getString(R.styleable.SearchLegenda_title);
+            colorTitle = typedArray.getColorStateList(R.styleable.SearchLegenda_colorTitle);
+            tamTitle = getSizeFontLegendaEditText(typedArray.getString(R.styleable.SearchLegenda_tamTitle));
             tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.SearchLegenda_tamTextEditText));
 
             mascara = typedArray.getInteger(R.styleable.SearchLegenda_mascara, 0);
@@ -120,11 +120,11 @@ public class SearchSubtitle extends FrameLayout {
     }
 
     private void setup() {
-        legendaTextView.setText(legenda);
-        if (corLegenda != null) {
-            legendaTextView.setTextColor(corLegenda);
+        legendaTextView.setText(title);
+        if (colorTitle != null) {
+            legendaTextView.setTextColor(colorTitle);
         }
-        legendaTextView.setTextSize(tamLegenda);
+        legendaTextView.setTextSize(tamTitle);
 
         editText.setHint(hint);
         editText.setEnabled(enabled);

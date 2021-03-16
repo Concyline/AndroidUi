@@ -7,7 +7,7 @@
     android:layout_margin="16dp"
     tools:context=".ui.HawkActivity">
 
-    <siac.com.componentes.EditTextSubtitle
+    <siac.com.componentes.EditTextTitle
         android:id="@+id/setEditTextLegenda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,9 +18,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutasd"
-        app:legenda="Add value"
+        app:title="Add value"
         app:lines="4"
-        app:tamLegendaEditText="@dimen/tamLegendaEditTextUi" />
+        app:tamTitle="@dimen/tamLegendaEditTextUi" />
 
     <Button
         android:id="@+id/addButton"
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/setEditTextLegenda" />
 
-    <siac.com.componentes.EditTextSubtitle
+    <siac.com.componentes.EditTextTitle
         android:id="@+id/valuesEditTextLegenda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,9 +41,9 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addButton"
-        app:legenda=""
+        app:title=""
         app:lines="8"
-        app:tamLegendaEditText="@dimen/tamLegendaEditTextUi"
+        app:tamTitle="@dimen/tamLegendaEditTextUi"
         app:text="" />
 
     <Button

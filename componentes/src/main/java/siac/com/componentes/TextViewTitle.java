@@ -11,16 +11,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
-public class TextViewSubtitle extends FrameLayout {
+public class TextViewTitle extends FrameLayout {
 
     // COMPONENTES
     private TextView legendaTextView;
     private TextView descricaoTextView;
 
     // ATRIBUTOS
-    private String legenda;
-    private ColorStateList corLegenda;
-    private float tamLegenda;
+    private String title = "title";
+    private ColorStateList colorTitle;
+    private float tamTitle = 11;
 
     private String descricao;
     private ColorStateList corDescricao;
@@ -28,19 +28,19 @@ public class TextViewSubtitle extends FrameLayout {
     private boolean singleLine;
 
 
-    public TextViewSubtitle(@NonNull Context context) {
+    public TextViewTitle(@NonNull Context context) {
         super(context);
         obtainStyledAttributes(context, null, 0);
         init();
     }
 
-    public TextViewSubtitle(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public TextViewTitle(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         obtainStyledAttributes(context, attrs, 0);
         init();
     }
 
-    public TextViewSubtitle(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public TextViewTitle(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         obtainStyledAttributes(context, attrs, defStyleAttr);
         init();
@@ -49,9 +49,9 @@ public class TextViewSubtitle extends FrameLayout {
     private void obtainStyledAttributes(Context context, AttributeSet attrs, int defStyleAttr) {
         if (attrs != null) {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.TextViewLegenda, defStyleAttr, 0);
-            legenda = typedArray.getString(R.styleable.TextViewLegenda_legenda);
-            corLegenda = typedArray.getColorStateList(R.styleable.TextViewLegenda_corLegenda);
-            tamLegenda = getSizeFontLegenda(typedArray.getString(R.styleable.TextViewLegenda_tamLegenda));
+            title = typedArray.getString(R.styleable.TextViewLegenda_title);
+            colorTitle = typedArray.getColorStateList(R.styleable.TextViewLegenda_colorTitle);
+            tamTitle = getSizeFontLegenda(typedArray.getString(R.styleable.TextViewLegenda_tamTitle));
 
             descricao = typedArray.getString(R.styleable.TextViewLegenda_descricao);
             corDescricao = typedArray.getColorStateList(R.styleable.TextViewLegenda_corDescricao);
@@ -59,8 +59,6 @@ public class TextViewSubtitle extends FrameLayout {
             singleLine = typedArray.getBoolean(R.styleable.TextViewLegenda_singleLine, false);
             return;
         }
-        legenda = "legenda";
-        tamLegenda = 11;
         descricao = "descricao";
         tamDescricao = 16;
     }
@@ -95,11 +93,11 @@ public class TextViewSubtitle extends FrameLayout {
     }
 
     private void setup() {
-        legendaTextView.setText(legenda);
-        if(corLegenda != null) {
-            legendaTextView.setTextColor(corLegenda);
+        legendaTextView.setText(title);
+        if(colorTitle != null) {
+            legendaTextView.setTextColor(colorTitle);
         }
-        legendaTextView.setTextSize(tamLegenda);
+        legendaTextView.setTextSize(tamTitle);
 
         descricaoTextView.setText(descricao);
         if(corDescricao != null) {

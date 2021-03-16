@@ -40,15 +40,6 @@ import androidx.core.view.GestureDetectorCompat;
 import androidx.core.view.ViewCompat;
 import androidx.customview.widget.ViewDragHelper;
 
-/**
- * This project provides an opportunity to perform swipe for any layout,
- * in the direction specified by you.
- * <p>
- * Date: 2018-09-27
- * Repository #https://github.com/zerobranch/SwipeLayout
- *
- * @author Arman Sargsyan
- */
 public class SwipeLayout extends FrameLayout {
     public static final int LEFT = 1;
     public static final int RIGHT = LEFT << 1;
@@ -57,68 +48,15 @@ public class SwipeLayout extends FrameLayout {
     private static final int NO_POSITION = -1;
     private static final int DEFAULT_AUTO_OPEN_SPEED = 1000;
 
-    /**
-     * Current direction of a swipe
-     */
     private int currentDirection;
-
-    /**
-     * The secondary view will move along with the main view
-     */
     private boolean isTogether;
-
-    /**
-     * Is enabled Swipe
-     */
     private boolean isEnabledSwipe;
-
-    /**
-     * Swipe to the end of the screen.
-     * Can work without a secondary view {@link #staticLeftView} and {@link #staticRightView}
-     * <p>
-     * If a particular direction of the swipe is used ({@link #LEFT} or {@link #RIGHT}),
-     * and this flag is set, then {@link #isFreeDragAfterOpen} always will be true.
-     * <p>
-     * If the left and right directions of the swipe are used simultaneously ({@link #HORIZONTAL}),
-     * then this flag will be ignored
-     */
     private boolean isContinuousSwipe;
-
-    /**
-     * Moving the main view after it was open.
-     * <p>
-     * if {@link #isEmptyLeftView()} or {@link #isEmptyRightView()},
-     * then this flag will be ignored
-     */
     private boolean isFreeDragAfterOpen;
-
-    /**
-     * If a particular direction of the swipe is used ({@link #LEFT} or {@link #RIGHT}),
-     * then this flag allows you to do the swipe in the opposite direction.
-     * <p>
-     * If the horizontal direction is used ({@link #HORIZONTAL}),
-     * this flag allows you to move the main view continuously in both directions
-     */
     private boolean isFreeHorizontalDrag;
-
-    /**
-     * The right bounding border of the swipe for the main view
-     */
     private int rightDragViewPadding;
-
-    /**
-     * The left bounding border of the swipe for the main view
-     */
     private int leftDragViewPadding;
-
-    /**
-     * Sensitivity of automatic closing of the main view
-     */
     private double autoOpenSpeed;
-
-    /**
-     * Disable intercept touch event for draggable view
-     */
     private boolean disallowIntercept;
 
     private int currentDraggingState = ViewDragHelper.STATE_IDLE;
@@ -238,29 +176,14 @@ public class SwipeLayout extends FrameLayout {
         }
     }
 
-    /**
-     * Is enabled Swipe
-     *
-     * @return True if swipe is enabled, false otherwise.
-     */
     public boolean isEnabledSwipe() {
         return isEnabledSwipe;
     }
 
-    /**
-     * Set the enabled swipe.
-     *
-     * @param enabledSwipe True if swipe is enabled, false otherwise.
-     */
     public void setEnabledSwipe(boolean enabledSwipe) {
         this.isEnabledSwipe = enabledSwipe;
     }
 
-    /**
-     * Performs manual swipe to the left
-     *
-     * @param animated - flag to animate opening
-     */
     public void openRight(boolean animated) {
         if (animated) {
             openRight();
@@ -276,11 +199,6 @@ public class SwipeLayout extends FrameLayout {
         }
     }
 
-    /**
-     * Performs a full manual swipe to the left
-     *
-     * @param animated - flag to animate opening
-     */
     public void openRightCompletely(boolean animated) {
         if (animated) {
             openRightCompletely();
@@ -297,11 +215,6 @@ public class SwipeLayout extends FrameLayout {
         }
     }
 
-    /**
-     * Performs manual swipe to the right
-     *
-     * @param animated - flag to animate opening
-     */
     public void openLeft(boolean animated) {
         if (animated) {
             openLeft();
@@ -317,11 +230,6 @@ public class SwipeLayout extends FrameLayout {
         }
     }
 
-    /**
-     * Performs a full manual swipe to the right
-     *
-     * @param animated - flag to animate opening
-     */
     public void openLeftCompletely(boolean animated) {
         if (animated) {
             openRightCompletely();
@@ -338,11 +246,6 @@ public class SwipeLayout extends FrameLayout {
         }
     }
 
-    /**
-     * Performs manual close
-     *
-     * @param animated - flag to animate closing
-     */
     public void close(boolean animated) {
         if (animated) {
             close();
@@ -372,9 +275,6 @@ public class SwipeLayout extends FrameLayout {
         }
     }
 
-    /**
-     * Performs manual swipe to the right
-     */
     public void openLeft() {
         if (isDragIdle(currentDraggingState) && ((currentDirection == RIGHT && !isEmptyLeftView())
                 || currentDirection == HORIZONTAL)) {
@@ -382,9 +282,6 @@ public class SwipeLayout extends FrameLayout {
         }
     }
 
-    /**
-     * Performs manual swipe to the left
-     */
     public void openRight() {
         if (isDragIdle(currentDraggingState) && ((currentDirection == LEFT && !isEmptyRightView())
                 || currentDirection == HORIZONTAL)) {
@@ -392,208 +289,111 @@ public class SwipeLayout extends FrameLayout {
         }
     }
 
-    /**
-     * Performs a full manual swipe to the right
-     */
     public void openLeftCompletely() {
         if (isDragIdle(currentDraggingState) && currentDirection == RIGHT) {
             moveTo(horizontalWidth);
         }
     }
 
-    /**
-     * Performs a full manual swipe to the left
-     */
     public void openRightCompletely() {
         if (isDragIdle(currentDraggingState) && currentDirection == LEFT) {
             moveTo(-horizontalWidth);
         }
     }
 
-    /**
-     * Performs manual close
-     */
     public void close() {
         moveTo(CLOSE_POSITION);
     }
 
-    /**
-     * Is moving main view
-     */
     public boolean isMoving() {
         return (currentDraggingState == ViewDragHelper.STATE_DRAGGING ||
                 currentDraggingState == ViewDragHelper.STATE_SETTLING);
     }
 
-    /**
-     * Is closed main view
-     */
     public boolean isClosed() {
         return draggingViewLeft == CLOSE_POSITION;
     }
 
-    /**
-     * Get current direction of a swipe
-     */
     public int getCurrentDirection() {
         return currentDirection;
     }
 
-    /**
-     * Set current direction of a swipe
-     */
     public SwipeLayout setCurrentDirection(int currentDirection) {
         this.currentDirection = currentDirection;
         return this;
     }
 
-    /**
-     * Is move the secondary view along with the main view
-     */
     public boolean isTogether() {
         return isTogether;
     }
 
-    /**
-     * The secondary view will move along with the main view
-     */
     public SwipeLayout setTogether(boolean together) {
         isTogether = together;
         return this;
     }
 
-    /**
-     * Swipe to the end of the screen.
-     * Can work without a secondary view {@link #staticLeftView} and {@link #staticRightView}
-     * <p>
-     * If a particular direction of the swipe is used ({@link #LEFT} or {@link #RIGHT}),
-     * and this flag is set, then {@link #isFreeDragAfterOpen} always will be true.
-     * <p>
-     * If the left and right directions of the swipe are used simultaneously ({@link #HORIZONTAL}),
-     * then this flag will be ignored
-     */
     public boolean isContinuousSwipe() {
         return isContinuousSwipe;
     }
 
-    /**
-     * Swipe to the end of the screen.
-     * Can work without a secondary view {@link #staticLeftView} and {@link #staticRightView}
-     * <p>
-     * If a particular direction of the swipe is used ({@link #LEFT} or {@link #RIGHT}),
-     * and this flag is set, then {@link #isFreeDragAfterOpen} always will be true.
-     * <p>
-     * If the left and right directions of the swipe are used simultaneously ({@link #HORIZONTAL}),
-     * then this flag will be ignored
-     */
     public SwipeLayout setContinuousSwipe(boolean continuousSwipe) {
         isContinuousSwipe = continuousSwipe;
         parametersAdjustment();
         return this;
     }
 
-    /**
-     * Moving the main view after it was open.
-     * <p>
-     * if {@link #isEmptyLeftView()} or {@link #isEmptyRightView()},
-     * then this flag will be ignored
-     */
     public boolean isFreeDragAfterOpen() {
         return isFreeDragAfterOpen;
     }
 
-    /**
-     * Moving the main view after it was open.
-     * <p>
-     * if {@link #isEmptyLeftView()} or {@link #isEmptyRightView()},
-     * then this flag will be ignored
-     */
     public SwipeLayout setFreeDragAfterOpen(boolean freeDragAfterOpen) {
         isFreeDragAfterOpen = freeDragAfterOpen;
         parametersAdjustment();
         return this;
     }
 
-    /**
-     * If a particular direction of the swipe is used ({@link #LEFT} or {@link #RIGHT}),
-     * then this flag allows you to do the swipe in the opposite direction.
-     * <p>
-     * If the horizontal direction is used ({@link #HORIZONTAL}),
-     * this flag allows you to move the main view continuously in both directions
-     */
     public boolean isFreeHorizontalDrag() {
         return isFreeHorizontalDrag;
     }
 
-    /**
-     * If a particular direction of the swipe is used ({@link #LEFT} or {@link #RIGHT}),
-     * then this flag allows you to do the swipe in the opposite direction.
-     * <p>
-     * If the horizontal direction is used ({@link #HORIZONTAL}),
-     * this flag allows you to move the main view continuously in both directions
-     */
     public SwipeLayout setFreeHorizontalDrag(boolean freeHorizontalDrag) {
         isFreeHorizontalDrag = freeHorizontalDrag;
         return this;
     }
 
-    /**
-     * Is open right view
-     */
     public boolean isRightOpen() {
         return isRightOpen;
     }
 
-    /**
-     * Is open left view
-     */
     public boolean isLeftOpen() {
         return isLeftOpen;
     }
 
-    /**
-     * Set swipe actions listener
-     */
     public SwipeLayout setOnActionsListener(@Nullable SwipeActionsListener actionsListener) {
         this.actionsListener = actionsListener;
         return this;
     }
 
-    /**
-     * Get the right bounding border of the swipe for the main view
-     */
     public int getRightDragViewPadding() {
         return rightDragViewPadding;
     }
 
-    /**
-     * Set the right bounding border of the swipe for the main view
-     */
     public SwipeLayout setRightDragViewPadding(int minRightDragViewPadding) {
         this.rightDragViewPadding = minRightDragViewPadding;
         parametersAdjustment();
         return this;
     }
 
-    /**
-     * Get the left bounding border of the swipe for the main view
-     */
     public int getLeftDragViewPadding() {
         return leftDragViewPadding;
     }
 
-    /**
-     * Set the left bounding border of the swipe for the main view
-     */
     public SwipeLayout setLeftDragViewPadding(int minLeftDragViewPadding) {
         this.leftDragViewPadding = minLeftDragViewPadding;
         parametersAdjustment();
         return this;
     }
 
-    /**
-     * Enable touch for ViewGroup
-     */
     public void enableTouchForViewGroup(@NonNull final ViewGroup viewGroup) {
         viewGroup.setOnTouchListener(new OnTouchListener() {
             @Override
