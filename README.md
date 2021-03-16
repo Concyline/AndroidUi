@@ -45,8 +45,8 @@ dependencies {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentesimples.png" width="50%">
 
 ```xml
- <siac.com.componentes.EditTextSubtitle
-            android:id="@+id/editTextSubtitle"
+ <siac.com.componentes.EditTextTitle
+            android:id="@+id/editTextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:colorTitle="@color/colorAccent"
@@ -67,8 +67,8 @@ dependencies {
 
     <!-- Is free to create any mask just edit the app:mascara="" -->
 
-    <siac.com.componentes.EditTextSubtitle
-            android:id="@+id/editTextSubtitle"
+    <siac.com.componentes.EditTextTitle
+            android:id="@+id/editTextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Mascara"
@@ -87,8 +87,8 @@ dependencies {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/legenda_requerido.png" width="50%">
 
 ```xml
-    <siac.com.componentes.EditTextSubtitle
-            android:id="@+id/editTextSubtitle"
+    <siac.com.componentes.EditTextTitle
+            android:id="@+id/editTextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Enail"
@@ -109,7 +109,7 @@ dependencies {
     <!-- the calendar listener is already implemented within the component -->
 
      <siac.com.componentes.EditTextCalendarSubtitle
-            android:id="@+id/editTextSubtitle"
+            android:id="@+id/editTextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Só data" />
@@ -159,8 +159,8 @@ spinnerLegenda.setAdapter(adapter);
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/iconedireita.png" width="50%">
 
 ```xml
-      <siac.com.componentes.EditTextSubtitle
-            android:id="@+id/cadastroEditTextSubtitle"
+      <siac.com.componentes.EditTextTitle
+            android:id="@+id/cadastroEditTextTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:coricon="#D6C"
@@ -201,11 +201,7 @@ spinnerLegenda.setAdapter(adapter);
             app:hint="sua pesquisa"
             app:inputType="none"
             app:coricon="@color/colorAccent"
-<<<<<<< HEAD
             app:legenda="SearchSubtitle" />
-=======
-            app:title="SearchLegenda" />
->>>>>>> develop
 ```
 
 ````java
@@ -222,8 +218,8 @@ searchSubtitle.setOnClickListener(new View.OnClickListener() {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/multiline.png" width="50%">
 
 ````xml
-    <siac.com.componentes.EditTextSubtitle
-            android:id="@+id/multilineEditTextSubtitle"
+    <siac.com.componentes.EditTextTitle
+            android:id="@+id/multilineEditTextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -240,8 +236,8 @@ searchSubtitle.setOnClickListener(new View.OnClickListener() {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/senha.png" width="50%">
 
 ```xml
-      <siac.com.componentes.EditTextSubtitle
-            android:id="@+id/senhaEditTextSubtitle"
+      <siac.com.componentes.EditTextTitle
+            android:id="@+id/senhaEditTextTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:coricon="@color/colorAccent"
@@ -252,11 +248,11 @@ searchSubtitle.setOnClickListener(new View.OnClickListener() {
 ```
 
 ``` java
-final EditTextSubtitle senhaEditTextSubtitle = findViewById(R.id.senhaEditTextSubtitle);
-        senhaEditTextSubtitle.setOnClickListener(new View.OnClickListener() {
+final EditTextTitle senhaEditTextTitle = findViewById(R.id.senhaEditTextTitle);
+        senhaEditTextTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                senhaEditTextSubtitle.mostraSenha();
+                senhaEditTextTitle.mostraSenha();
             }
         });
 ````
@@ -267,7 +263,7 @@ final EditTextSubtitle senhaEditTextSubtitle = findViewById(R.id.senhaEditTextSu
 
 ```xml
          <siac.com.componentes.EditTexCurrencySubtitle
-            android:id="@+id/valorEditTextSubtitle"
+            android:id="@+id/valorEditTextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:enabled="true"
