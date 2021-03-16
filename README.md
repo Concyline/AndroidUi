@@ -163,7 +163,7 @@ spinnerTitle.setAdapter(adapter);
             app:iconRigth="@drawable/icons_coroa_48"
             app:inputType="number"
             app:title="Nome do cliente"
-            app:tamLegendaEditTextUi="@dimen/tamLegendaEditTextUi" />
+            app:tamTitle="@dimen/tamLegendaEditTextUi" />
 ```
 
 ---
@@ -178,7 +178,7 @@ spinnerTitle.setAdapter(adapter);
             android:layout_marginTop="9dp"
             app:corDescricao="@color/colorPrimaryDark"
             app:colorTitle="@color/colorAccent"
-	    app:tamLegenda="13sp"
+	    app:tamTitle="13sp"
             app:tamDescricao="16sp"
 	    app:singleLine="false"
             app:descricao="Goiânia  adsdasdadsdasdsdasdsadsadsadasdsadadsdaszdsadasdsadasdasda"
@@ -224,7 +224,7 @@ editTextSearch.setOnClickListener(new View.OnClickListener() {
             app:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
             app:title="Multiline"
             app:lines="4"
-            app:tamLegendaEditText="@dimen/tamLegendaEditTextUi" />
+            app:tamTitle="@dimen/tamLegendaEditTextUi" />
 ````
 
 ---
@@ -240,7 +240,7 @@ editTextSearch.setOnClickListener(new View.OnClickListener() {
             app:iconRigth="@drawable/round_visibility_black_48dp"
             app:inputType="textPassword"
             app:title="Senha"
-            app:tamLegendaEditTextUi="@dimen/tamLegendaEditTextUi" />
+            app:tamTitle="@dimen/tamLegendaEditTextUi" />
 ```
 
 ``` java
