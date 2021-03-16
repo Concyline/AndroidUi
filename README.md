@@ -79,7 +79,7 @@ dependencies {
             app:tag="edittext"
             app:text="texto"
             app:requerido="true"
-	        app:titleRequerido="Digite um CNPJ válido!"/>
+	    app:titleRequerido="Digite um CNPJ válido!"/>
 ```
 
 ---
@@ -98,7 +98,7 @@ dependencies {
             app:tag="edittext"
             app:text="texto"
             app:requerido="true"
-	        app:titleRequerido="Digite um email válido!"/>
+	    app:titleRequerido="Digite um email válido!"/>
 ```
 
 ---
@@ -120,8 +120,8 @@ dependencies {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/spinner.png" width="50%">
 
 ```xml
-         <siac.com.componentes.SpinnerSubtitle
-            android:id="@+id/spinnerSubtitle"
+         <siac.com.componentes.SpinnerTitle
+            android:id="@+id/spinnerTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:entries="@array/tipo"
@@ -133,7 +133,7 @@ or add programaticaly adapter
 ArrayAdapter<Object> adapter = new ArrayAdapter<Object>(getBaseContext(), 
 	siac.com.componentes.R.layout.view_spinner_item_ui, new String[]{"aureo", "ana", "davi"});
 	
-spinnerLegenda.setAdapter(adapter);
+spinnerTitle.setAdapter(adapter);
 ````
 
 ---
@@ -171,16 +171,16 @@ spinnerLegenda.setAdapter(adapter);
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/textocomlegenda.png" width="50%">
 
 ```xml
-    <siac.com.componentes.TextViewSubtitle
-            android:id="@+id/textViewsd"
+    <siac.com.componentes.TextViewTitle
+            android:id="@+id/textViewTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
             app:corDescricao="@color/colorPrimaryDark"
             app:colorTitle="@color/colorAccent"
-	        app:tamLegenda="13sp"
+	    app:tamLegenda="13sp"
             app:tamDescricao="16sp"
-	        app:singleLine="false"
+	    app:singleLine="false"
             app:descricao="Goiânia  adsdasdadsdasdsdasdsadsadsadasdsadadsdaszdsadasdsadasdasda"
             app:title="Cidade" />
 ```
@@ -190,18 +190,18 @@ spinnerLegenda.setAdapter(adapter);
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/pesquisasimples.png" width="50%">
 
 ```xml
-   <siac.com.componentes.SearchSubtitle
-            android:id="@+id/searchSubtitle"
+   <siac.com.componentes.EditTextSearch
+            android:id="@+id/editTextSearch"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:hint="sua pesquisa"
             app:inputType="none"
             app:coricon="@color/colorAccent"
-            app:title="SearchSubtitle" />
+            app:title="EditTextSearch" />
 ```
 
 ````java
-searchSubtitle.setOnClickListener(new View.OnClickListener() {
+editTextSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ...
@@ -258,8 +258,8 @@ final EditTextTitle senhaEditTextTitle = findViewById(R.id.senhaEditTextTitle);
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/componente_currence.png" width="50%">
 
 ```xml
-         <siac.com.componentes.EditTexCurrencySubtitle
-            android:id="@+id/valorEditTextTitle"
+         <siac.com.componentes.EditTexCurrency
+            android:id="@+id/editTexCurrency"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:enabled="true"
