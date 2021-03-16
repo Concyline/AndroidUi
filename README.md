@@ -79,7 +79,7 @@ dependencies {
             app:tag="edittext"
             app:text="texto"
             app:requerido="true"
-	    app:titleRequerido="Digite um CNPJ válido!"/>
+	        app:titleRequerido="Digite um CNPJ válido!"/>
 ```
 
 ---
@@ -98,7 +98,7 @@ dependencies {
             app:tag="edittext"
             app:text="texto"
             app:requerido="true"
-	    app:titleRequerido="Digite um email válido!"/>
+	        app:titleRequerido="Digite um email válido!"/>
 ```
 
 ---
@@ -108,7 +108,7 @@ dependencies {
 ```xml
     <!-- the calendar listener is already implemented within the component -->
 
-     <siac.com.componentes.EditTextCalendarSubtitle
+     <siac.com.componentes.EditTextCalendar
             android:id="@+id/editTextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -141,17 +141,13 @@ spinnerLegenda.setAdapter(adapter);
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/calendarhoradata.png" width="50%">
 
 ```xml
-          <siac.com.componentes.EditTextCalendarSubtitle
-            android:id="@+id/editTextCalendarSubtitle"
+          <siac.com.componentes.EditTextCalendar
+            android:id="@+id/editTextCalendar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:hora="true"
             app:inicializa="false"
-<<<<<<< HEAD
-            app:legenda="EditTextCalendarSubtitle" />
-=======
-            app:title="EditTextCalendarLegenda" />
->>>>>>> develop
+            app:title="EditTextCalendar" />
 ```
 
 ---
@@ -182,9 +178,9 @@ spinnerLegenda.setAdapter(adapter);
             android:layout_marginTop="9dp"
             app:corDescricao="@color/colorPrimaryDark"
             app:colorTitle="@color/colorAccent"
-	    app:tamLegenda="13sp"
+	        app:tamLegenda="13sp"
             app:tamDescricao="16sp"
-	    app:singleLine="false"
+	        app:singleLine="false"
             app:descricao="Goiânia  adsdasdadsdasdsdasdsadsadsadasdsadadsdaszdsadasdsadasdasda"
             app:title="Cidade" />
 ```
@@ -201,7 +197,7 @@ spinnerLegenda.setAdapter(adapter);
             app:hint="sua pesquisa"
             app:inputType="none"
             app:coricon="@color/colorAccent"
-            app:legenda="SearchSubtitle" />
+            app:title="SearchSubtitle" />
 ```
 
 ````java
@@ -268,7 +264,7 @@ final EditTextTitle senhaEditTextTitle = findViewById(R.id.senhaEditTextTitle);
             android:layout_height="wrap_content"
             app:enabled="true"
             app:focusable="true"
-            app:legenda="Valor"
+            app:title="Valor"
             app:requerido="false"
             app:requestfocus="false"
             app:locale="pt_BR"
