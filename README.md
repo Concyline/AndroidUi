@@ -49,14 +49,14 @@ dependencies {
             android:id="@+id/editTextSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:corLegenda="@color/colorAccent"
+            app:colorTitle="@color/colorAccent"
             app:requerido="false"
             app:enabled="true"
             app:focusable="true"
             app:requestfocus="true"
             app:tag="edittext"
             app:text="texto"
-            app:legenda="Componente simples" />
+            app:title="Componente simples" />
 ```
 
 ---
@@ -71,7 +71,7 @@ dependencies {
             android:id="@+id/editTextSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:legenda="Mascara"
+            app:title="Mascara"
             app:mascara="  .   .   /    -  "
             app:enabled="true"
             app:focusable="true"
@@ -79,7 +79,7 @@ dependencies {
             app:tag="edittext"
             app:text="texto"
             app:requerido="true"
-	    app:legendaRequerido="Digite um CNPJ válido!"/>
+	    app:titleRequerido="Digite um CNPJ válido!"/>
 ```
 
 ---
@@ -91,14 +91,14 @@ dependencies {
             android:id="@+id/editTextSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:legenda="Enail"
+            app:title="Enail"
             app:enabled="true"
             app:focusable="true"
             app:requestfocus="false"
             app:tag="edittext"
             app:text="texto"
             app:requerido="true"
-	    app:legendaRequerido="Digite um email válido!"/>
+	    app:titleRequerido="Digite um email válido!"/>
 ```
 
 ---
@@ -112,7 +112,7 @@ dependencies {
             android:id="@+id/editTextSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:legenda="Só data" />
+            app:title="Só data" />
 ```
 
 ---
@@ -125,7 +125,7 @@ dependencies {
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:entries="@array/tipo"
-            app:legenda="Spinner" />
+            app:title="Spinner" />
 ```
 or add programaticaly adapter
 
@@ -147,7 +147,11 @@ spinnerLegenda.setAdapter(adapter);
             android:layout_height="wrap_content"
             app:hora="true"
             app:inicializa="false"
+<<<<<<< HEAD
             app:legenda="EditTextCalendarSubtitle" />
+=======
+            app:title="EditTextCalendarLegenda" />
+>>>>>>> develop
 ```
 
 ---
@@ -162,7 +166,7 @@ spinnerLegenda.setAdapter(adapter);
             app:coricon="#D6C"
             app:iconRigth="@drawable/icons_coroa_48"
             app:inputType="number"
-            app:legenda="Nome do cliente"
+            app:title="Nome do cliente"
             app:tamLegendaEditTextUi="@dimen/tamLegendaEditTextUi" />
 ```
 
@@ -177,12 +181,12 @@ spinnerLegenda.setAdapter(adapter);
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
             app:corDescricao="@color/colorPrimaryDark"
-            app:corLegenda="@color/colorAccent"
+            app:colorTitle="@color/colorAccent"
 	    app:tamLegenda="13sp"
             app:tamDescricao="16sp"
 	    app:singleLine="false"
             app:descricao="Goiânia  adsdasdadsdasdsdasdsadsadsadasdsadadsdaszdsadasdsadasdasda"
-            app:legenda="Cidade" />
+            app:title="Cidade" />
 ```
 
 ---
@@ -197,7 +201,11 @@ spinnerLegenda.setAdapter(adapter);
             app:hint="sua pesquisa"
             app:inputType="none"
             app:coricon="@color/colorAccent"
+<<<<<<< HEAD
             app:legenda="SearchSubtitle" />
+=======
+            app:title="SearchLegenda" />
+>>>>>>> develop
 ```
 
 ````java
@@ -222,7 +230,7 @@ searchSubtitle.setOnClickListener(new View.OnClickListener() {
             app:coricon="@color/colorAccent"
             app:inputType="textMultiLine"
             app:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-            app:legenda="Multiline"
+            app:title="Multiline"
             app:lines="4"
             app:tamLegendaEditText="@dimen/tamLegendaEditTextUi" />
 ````
@@ -239,7 +247,7 @@ searchSubtitle.setOnClickListener(new View.OnClickListener() {
             app:coricon="@color/colorAccent"
             app:iconRigth="@drawable/round_visibility_black_48dp"
             app:inputType="textPassword"
-            app:legenda="Senha"
+            app:title="Senha"
             app:tamLegendaEditTextUi="@dimen/tamLegendaEditTextUi" />
 ```
 

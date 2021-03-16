@@ -23,7 +23,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class EditTextCalendarSubtitle extends FrameLayout {
+public class EditTextCalendar extends FrameLayout {
 
     private SimpleDateFormat format;
 
@@ -33,27 +33,27 @@ public class EditTextCalendarSubtitle extends FrameLayout {
     private ImageView horaImageView, dataImageView;
 
     // ATRIBUTOS
-    private String legenda = "legenda";
-    private ColorStateList corLegenda;
+    private String title = "title";
+    private ColorStateList colorTitle;
 
-    private float tamLegenda = 13;
+    private float tamTitle = 13;
     private boolean hora;
     private boolean inicializa;
     private Date dataColetada;
 
-    public EditTextCalendarSubtitle(@NonNull Context context) {
+    public EditTextCalendar(@NonNull Context context) {
         super(context);
         obtainStyledAttributes(context, null, 0);
         init();
     }
 
-    public EditTextCalendarSubtitle(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public EditTextCalendar(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         obtainStyledAttributes(context, attrs, 0);
         init();
     }
 
-    public EditTextCalendarSubtitle(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public EditTextCalendar(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         obtainStyledAttributes(context, attrs, defStyleAttr);
         init();
@@ -63,9 +63,9 @@ public class EditTextCalendarSubtitle extends FrameLayout {
 
         if (attrs != null) {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.EditTextCalendarLegenda, defStyleAttr, 0);
-            legenda = typedArray.getString(R.styleable.EditTextCalendarLegenda_legenda);
-            corLegenda = typedArray.getColorStateList(R.styleable.EditTextCalendarLegenda_corLegenda);
-            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextCalendarLegenda_tamLegendaEditText));
+            title = typedArray.getString(R.styleable.EditTextCalendarLegenda_title);
+            colorTitle = typedArray.getColorStateList(R.styleable.EditTextCalendarLegenda_colorTitle);
+            tamTitle = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextCalendarLegenda_tamTitle));
             hora = typedArray.getBoolean(R.styleable.EditTextCalendarLegenda_hora, false);
             inicializa = typedArray.getBoolean(R.styleable.EditTextCalendarLegenda_inicializa, false);
 
@@ -94,11 +94,11 @@ public class EditTextCalendarSubtitle extends FrameLayout {
     }
 
     private void setup() {
-        legendaTextView.setText(legenda);
-        if (corLegenda != null) {
-            legendaTextView.setTextColor(corLegenda);
+        legendaTextView.setText(title);
+        if (colorTitle != null) {
+            legendaTextView.setTextColor(colorTitle);
         }
-        legendaTextView.setTextSize(tamLegenda);
+        legendaTextView.setTextSize(tamTitle);
 
         if (hora) {
             format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");

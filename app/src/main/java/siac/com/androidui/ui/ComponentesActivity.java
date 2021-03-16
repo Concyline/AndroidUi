@@ -6,19 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 
 import siac.com.androidui.R;
-import siac.com.componentes.EditTexCurrencySubtitle;
-import siac.com.componentes.EditTextSubtitle;
+import siac.com.componentes.EditTexCurrency;
+import siac.com.componentes.EditTextTitle;
 
 public class ComponentesActivity extends AppCompatActivity {
 
-    EditTextSubtitle multilineEditTextLegenda;
+    EditTextTitle multilineEditTextLegenda;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_componentes);
 
-        final EditTextSubtitle senhaEditTextLegenda = findViewById(R.id.senhaEditTextLegenda);
+        final EditTextTitle senhaEditTextLegenda = findViewById(R.id.senhaEditTextLegenda);
         senhaEditTextLegenda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,10 +26,10 @@ public class ComponentesActivity extends AppCompatActivity {
             }
         });
 
-        EditTextSubtitle editTextLegendaSelection = findViewById(R.id.editTextLegendaSelection);
+        EditTextTitle editTextLegendaSelection = findViewById(R.id.editTextLegendaSelection);
         editTextLegendaSelection.setSelection(editTextLegendaSelection.getString().length() - 2);
 
-        final EditTexCurrencySubtitle editTexCurrencyLegenda = findViewById(R.id.editTexFinaceirotLegenda);
+        final EditTexCurrency editTexCurrencyLegenda = findViewById(R.id.editTexFinaceirotLegenda);
 
         findViewById(R.id.button9).setOnClickListener(new View.OnClickListener() {
             @Override

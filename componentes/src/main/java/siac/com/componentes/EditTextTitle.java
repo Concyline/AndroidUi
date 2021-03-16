@@ -10,12 +10,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.text.Editable;
 import android.text.InputFilter;
-import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,64 +24,68 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import java.text.DecimalFormat;
 import java.text.Normalizer;
-import java.text.NumberFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 
 import siac.com.componentes.Util.Mascara;
 import siac.com.componentes.Util.Util;
 import siac.com.componentes.Util.ValidaCNPJ;
 import siac.com.componentes.Util.ValidaCPF;
-import siac.com.componentes.currency.CurrencyEditText;
 
 import static siac.com.componentes.Util.Constantes.cnpj;
 import static siac.com.componentes.Util.Constantes.cpf;
+import static siac.com.componentes.Util.InputType.setInputType;
 import static siac.com.componentes.Util.Util.fadeIn;
 import static siac.com.componentes.Util.Util.shake;
 
 
-public class EditTexCurrencySubtitle extends FrameLayout {
+public class EditTextTitle extends FrameLayout {
 
     // COMPONENTES
     private TextView legendaTextView;
-    private CurrencyEditText editText;
-    private ImageView requiredImageView;
+    private EditText editText;
+    private ImageView iconLeftImageView, iconRigthImageView, requiredImageView;
 
     // ATRIBUTOS
-    private String legenda = "legenda";
+    private String title = "title";
     private String hint = "";
     private String text = "";
-    private ColorStateList corLegenda;
-    private float tamLegendaEditText = 13;
+    private ColorStateList colorTitle;
+    private float tamTitle = 13;
     private float tamTextEditText = 16;
+    private int inputType = 0;
+    private String mascara;
+    private int lines = 1;
     private int maxLength = 0;
+    private int coricon;
     private boolean enabled;
     private boolean focusable;
     private boolean requestfocus;
     private boolean requerido;
+    private boolean iconRigthVisible;
     private String tag;
+    private Drawable iconLeft;
+    private Drawable iconRigth;
+    private Mascara mascaraDinamica;
+    private int mascaraVigente = cnpj;
+    private Date dateResult;
     private String legendaRequerido;
-    private boolean mShowSymbol;
-    private String mLocale = "";
-    private Locale locale;
 
 
-    public EditTexCurrencySubtitle(@NonNull Context context) {
+    public EditTextTitle(@NonNull Context context) {
         super(context);
         obtainStyledAttributes(context, null, 0);
         init();
     }
 
-    public EditTexCurrencySubtitle(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public EditTextTitle(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         obtainStyledAttributes(context, attrs, 0);
         init();
     }
 
-    public EditTexCurrencySubtitle(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public EditTextTitle(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         obtainStyledAttributes(context, attrs, defStyleAttr);
         init();
@@ -95,53 +94,36 @@ public class EditTexCurrencySubtitle extends FrameLayout {
     private void obtainStyledAttributes(Context context, AttributeSet attrs, int defStyleAttr) {
 
         if (attrs != null) {
-            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.EditTextCurrencyLegenda, defStyleAttr, 0);
-            legenda = typedArray.getString(R.styleable.EditTextCurrencyLegenda_legenda);
-            corLegenda = typedArray.getColorStateList(R.styleable.EditTextCurrencyLegenda_corLegenda);
-            tamLegendaEditText = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextCurrencyLegenda_tamLegendaEditText));
-            tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.EditTextCurrencyLegenda_tamTextEditText));
+            TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.EditTextLegenda, defStyleAttr, 0);
+            title = typedArray.getString(R.styleable.EditTextLegenda_title);
+            colorTitle = typedArray.getColorStateList(R.styleable.EditTextLegenda_colorTitle);
+            tamTitle = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextLegenda_tamTitle));
+            tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.EditTextLegenda_tamTextEditText));
 
-            maxLength = typedArray.getInteger(R.styleable.EditTextCurrencyLegenda_maxLength, 0);
-            hint = typedArray.getString(R.styleable.EditTextCurrencyLegenda_hint);
-            text = typedArray.getString(R.styleable.EditTextCurrencyLegenda_text);
+            mascara = typedArray.getString(R.styleable.EditTextLegenda_mascara);
+            inputType = typedArray.getInteger(R.styleable.EditTextLegenda_inputType, 0);
+            lines = typedArray.getInteger(R.styleable.EditTextLegenda_lines, 1);
+            maxLength = typedArray.getInteger(R.styleable.EditTextLegenda_maxLength, 0);
+            hint = typedArray.getString(R.styleable.EditTextLegenda_hint);
+            text = typedArray.getString(R.styleable.EditTextLegenda_text);
 
-            enabled = typedArray.getBoolean(R.styleable.EditTextCurrencyLegenda_enabled, true);
-            focusable = typedArray.getBoolean(R.styleable.EditTextCurrencyLegenda_focusable, true);
-            requestfocus = typedArray.getBoolean(R.styleable.EditTextCurrencyLegenda_requestfocus, false);
-            requerido = typedArray.getBoolean(R.styleable.EditTextCurrencyLegenda_requerido, false);
-            legendaRequerido = getString(typedArray, R.styleable.EditTextCurrencyLegenda_legendaRequerido, "Item requerido no formulário");
-            tag = typedArray.getString(R.styleable.EditTextCurrencyLegenda_tag);
+            iconLeft = typedArray.getDrawable(R.styleable.EditTextLegenda_iconLeft);
+            iconRigth = typedArray.getDrawable(R.styleable.EditTextLegenda_iconRigth);
+            coricon = typedArray.getColor(R.styleable.EditTextLegenda_coricon, 0);
 
-            mShowSymbol = typedArray.getBoolean(R.styleable.EditTextCurrencyLegenda_showSymbol, false);
-            mLocale = typedArray.getString(R.styleable.EditTextCurrencyLegenda_locale);
-
-            if (mLocale == null) {
-                locale = getDefaultLocale();
-            } else {
-                if (mLocale.contains("-")) {
-                    mLocale = mLocale.replace("-", "_");
-                }
-
-                String[] l = mLocale.split("_");
-                if (l.length > 1) {
-                    locale = new Locale(l[0], l[1]);
-                } else {
-                    locale = new Locale("", mLocale);
-                }
-            }
+            enabled = typedArray.getBoolean(R.styleable.EditTextLegenda_enabled, true);
+            focusable = typedArray.getBoolean(R.styleable.EditTextLegenda_focusable, true);
+            requestfocus = typedArray.getBoolean(R.styleable.EditTextLegenda_requestfocus, false);
+            requerido = typedArray.getBoolean(R.styleable.EditTextLegenda_requerido, false);
+            legendaRequerido = getString(typedArray, R.styleable.EditTextLegenda_legendaRequerido, "Item requerido no formulário");
+            iconRigthVisible = typedArray.getBoolean(R.styleable.EditTextLegenda_iconRigthVisible, false);
+            tag = typedArray.getString(R.styleable.EditTextLegenda_tag);
             return;
         }
 
     }
 
-    private Locale getDefaultLocale() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-            return getContext().getResources().getConfiguration().getLocales().get(0);
-        else
-            return getContext().getResources().getConfiguration().locale;
-    }
-
-    private String getString(TypedArray typedArray, int index, String defaultValue) {
+    private String getString(TypedArray typedArray, int index, String defaultValue){
         String value = typedArray.getString(index);
         return value == null ? defaultValue : value;
     }
@@ -169,20 +151,21 @@ public class EditTexCurrencySubtitle extends FrameLayout {
     }
 
     private void init() {
-        inflate(getContext(), R.layout.view_edittext_financeiro_legenda_ui, this);
+        inflate(getContext(), R.layout.view_edittext_legenda_ui, this);
         legendaTextView = findViewById(R.id.legendaTextView);
         editText = findViewById(R.id.editText);
+        iconLeftImageView = findViewById(R.id.iconLeftImageView);
+        iconRigthImageView = findViewById(R.id.iconRigthImageView);
         requiredImageView = findViewById(R.id.requiredImageView);
-
         setup();
     }
 
     private void setup() {
-        legendaTextView.setText(legenda);
-        if (corLegenda != null) {
-            legendaTextView.setTextColor(corLegenda);
+        legendaTextView.setText(title);
+        if(colorTitle != null) {
+            legendaTextView.setTextColor(colorTitle);
         }
-        legendaTextView.setTextSize(tamLegendaEditText);
+        legendaTextView.setTextSize(tamTitle);
 
         editText.setHint(hint);
         editText.setText(text != null ? text : "");
@@ -190,13 +173,6 @@ public class EditTexCurrencySubtitle extends FrameLayout {
         editText.setFocusable(focusable);
         editText.setTextSize(tamTextEditText);
         editText.setTag(tag);
-        editText.setText("0.00");
-        editText.setSelection(editText.getText().length());
-        editText.showSymbol(mShowSymbol);
-
-        if (locale != null) {
-            editText.setLocale(locale);
-        }
 
         if (maxLength > 0) {
             editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
@@ -209,18 +185,32 @@ public class EditTexCurrencySubtitle extends FrameLayout {
         if (requerido) {
             setRequerido();
         }
+
+        setIconRigthVisible(iconRigthVisible);
+
+        setIcon();
+        setInputType(editText, inputType, lines);
+        if(inputType == 0x00000081){
+            setListnerSenha();
+        }
+
+        if (mascara != null) {
+            mascaraDinamica = new Mascara(editText, mascara);
+        }
     }
 
-    private boolean flag = true;
+    private void setIcon() {
+        if (iconLeft != null) {
+            iconLeftImageView.setVisibility(View.VISIBLE);
+            iconLeftImageView.setColorFilter(new PorterDuffColorFilter(coricon, PorterDuff.Mode.SRC_IN));
+            iconLeftImageView.setImageDrawable(iconLeft);
+        }
 
-    private void whatch() {
-        final Handler handler = new Handler(Looper.getMainLooper());
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                flag = true;
-            }
-        }, 1000);
+        if (iconRigth != null) {
+            iconRigthImageView.setVisibility(View.VISIBLE);
+            iconRigthImageView.setColorFilter(new PorterDuffColorFilter(coricon, PorterDuff.Mode.SRC_IN));
+            iconRigthImageView.setImageDrawable(iconRigth);
+        }
     }
 
     private void setRequerido() {
@@ -232,6 +222,14 @@ public class EditTexCurrencySubtitle extends FrameLayout {
                 popupDisplay(v, legendaRequerido);
             }
         });
+    }
+
+    public void setIconRigthVisible(boolean visible){
+        if(visible){
+            iconRigthImageView.setVisibility(View.VISIBLE);
+        }else{
+            iconRigthImageView.setVisibility(View.GONE);
+        }
     }
 
     public void popupDisplay(final View destino, final String legenda) {
@@ -256,13 +254,28 @@ public class EditTexCurrencySubtitle extends FrameLayout {
 
     public boolean validaPreenchido() {
         if (requerido) {
-            return editText.getText().toString().length() > 0 ? true : false;
+            if (mascara != null) {
+                return retiraCaracteres(editText.getText().toString()).length() > 0 ? true : false;
+            } else {
+                return editText.getText().toString().length() > 0 ? true : false;
+            }
         }
         return true;
     }
 
     private String retiraCaracteres(String current) {
         return current.replaceAll("[^0-9]*", "");
+    }
+
+    public boolean validaCpfCnpj() {
+        if (mascaraVigente == cpf) {
+            return ValidaCPF.isCPF(getString());
+        }
+        if (mascaraVigente == cnpj) {
+            return ValidaCNPJ.isCNPJ(getString());
+        }
+
+        return false;
     }
 
     public void setError() {
@@ -275,19 +288,82 @@ public class EditTexCurrencySubtitle extends FrameLayout {
     }
 
     boolean controle = true;
+    public void mostraSenha(){
+        if(controle) {
+            controle = false;
+            setInputType(editText, 0x00000000, lines);
 
+            iconRigth = getResources().getDrawable(R.drawable.round_visibility_off_black_48dp);
+        }else {
+            controle = true;
+            setInputType(editText, 0x00000081, lines);
 
-    public void setSelection(int index) {
+            iconRigth = getResources().getDrawable(R.drawable.round_visibility_black_48dp);
+        }
+        setIcon();
+        editText.setSelection(editText.getText().length());
+    }
+
+    public void setSelection(int index){
         editText.setSelection(index);
+    }
+
+    private void setListnerSenha(){
+        iconRigthImageView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fadeIn(getContext(), v);
+                mostraSenha();
+            }
+        });
     }
 
     public void setOnClickListener(OnClickListener onClickListener) {
         editText.setOnClickListener(onClickListener);
     }
 
+    public void setOnClickListenerIconLeft(OnClickListener onClickListener) {
+        iconLeftImageView.setOnClickListener(onClickListener);
+    }
+
+    public void setOnClickListenerIconRigth(OnClickListener onClickListener) {
+        iconRigthImageView.setOnClickListener(onClickListener);
+    }
+
+    public Date getDate(){
+        if(dateResult != null){
+            return dateResult;
+        }
+        return null;
+    }
+
+    public void setDate(Date date){
+        dateResult = date;
+        editText.setText(Util.dateToStr(dateResult));
+    }
+
+    public void setDateHour(Date date){
+        dateResult = date;
+        editText.setText(Util.dateHora(dateResult));
+    }
+
     public Dialog createDialogData(DatePickerDialog.OnDateSetListener mDateSetListener) {
         Calendar calendar = Calendar.getInstance();
         return new DatePickerDialog(getContext(), mDateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+    }
+
+    public void setMascara(int mascara) {
+        mascaraVigente = mascara;
+
+        if (mascara == cpf) {
+            legendaTextView.setText("CPF");
+            mascaraDinamica.changeMask("   .   .   /  ");
+
+        } else if (mascara == cnpj) {
+            legendaTextView.setText("CNPJ");
+            mascaraDinamica.changeMask("  .   .   /    -  ");
+
+        }
     }
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -300,6 +376,8 @@ public class EditTexCurrencySubtitle extends FrameLayout {
 
     public void setEnabled(boolean enabled) {
         editText.setEnabled(enabled);
+        iconLeftImageView.setEnabled(enabled);
+        iconRigthImageView.setEnabled(enabled);
     }
 
     public String getTag() {
@@ -336,26 +414,13 @@ public class EditTexCurrencySubtitle extends FrameLayout {
 
     public Double getDouble() {
         try {
-
-            String dado = editText.getText().toString().trim();
-
-            if (locale.toString().equals("en_US")) {
-                dado = dado.replace("$", "");
-                dado = dado.replace(",", "");
-
-            } else if (locale.toString().equals("pt_BR")) {
-                dado = dado.replace("R$", "");
-                dado = dado.replace(".", "");
-                dado = dado.replace(",", ".");
-            }
-
-            return Double.parseDouble(dado);
+            return Double.parseDouble(editText.getText().toString().trim());
         } catch (Exception e) {
             return 0.0;
         }
     }
 
-    public void setFilters(InputFilter[] filters) {
+    public void setFilters(InputFilter[] filters){
         editText.setFilters(filters);
     }
 

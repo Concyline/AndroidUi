@@ -13,33 +13,33 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class SpinnerSubtitle extends FrameLayout {
+public class SpinnerTitle extends FrameLayout {
 
     // COMPONENTES
     private TextView legendaTextView;
     private Spinner spinner;
 
     // ATRIBUTOS
-    private String legenda = "legenda";
-    private ColorStateList corLegenda;
+    private String title = "title";
+    private ColorStateList colorTitle;
 
-    private float tamLegenda = 13;
+    private float tamTitle = 13;
     private int entries = 0;
 
 
-    public SpinnerSubtitle(@NonNull Context context) {
+    public SpinnerTitle(@NonNull Context context) {
         super(context);
         obtainStyledAttributes(context, null, 0);
         init();
     }
 
-    public SpinnerSubtitle(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public SpinnerTitle(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         obtainStyledAttributes(context, attrs, 0);
         init();
     }
 
-    public SpinnerSubtitle(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public SpinnerTitle(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         obtainStyledAttributes(context, attrs, defStyleAttr);
         init();
@@ -51,9 +51,9 @@ public class SpinnerSubtitle extends FrameLayout {
 
         if (attrs != null) {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.SpinnerLegenda, defStyleAttr, 0);
-            legenda = typedArray.getString(R.styleable.SpinnerLegenda_legenda);
-            corLegenda = typedArray.getColorStateList(R.styleable.SpinnerLegenda_corLegenda);
-            tamLegenda = getSizeFontLegendaEditText(typedArray.getString(R.styleable.SpinnerLegenda_tamLegendaEditText));
+            title = typedArray.getString(R.styleable.SpinnerLegenda_title);
+            colorTitle = typedArray.getColorStateList(R.styleable.SpinnerLegenda_colorTitle);
+            tamTitle = getSizeFontLegendaEditText(typedArray.getString(R.styleable.SpinnerLegenda_tamTitle));
 
             charSequencesArray = typedArray.getTextArray(R.styleable.SpinnerLegenda_entries);
             if(charSequencesArray != null) {
@@ -83,11 +83,11 @@ public class SpinnerSubtitle extends FrameLayout {
     }
 
     private void setup() {
-        legendaTextView.setText(legenda);
-        if(corLegenda != null) {
-            legendaTextView.setTextColor(corLegenda);
+        legendaTextView.setText(title);
+        if(colorTitle != null) {
+            legendaTextView.setTextColor(colorTitle);
         }
-        legendaTextView.setTextSize(tamLegenda);
+        legendaTextView.setTextSize(tamTitle);
 
         setEntries();
     }

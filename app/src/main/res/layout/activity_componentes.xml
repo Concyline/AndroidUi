@@ -23,24 +23,24 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="16dp">
 
-            <siac.com.componentes.EditTextCalendarSubtitle
+            <siac.com.componentes.EditTextCalendar
                 android:id="@+id/editTextLegenda22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                app:legenda="Só data"
+                app:title="Só data"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="156dp" />
 
-            <siac.com.componentes.EditTextCalendarSubtitle
+            <siac.com.componentes.EditTextCalendar
                 android:id="@+id/editTextCalendarLegenda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:hora="true"
                 app:inicializa="false"
-                app:legenda="EditTextCalendarLegenda"
+                app:title="EditTextCalendarLegenda"
                 tools:layout_editor_absoluteX="112dp" />
         </LinearLayout>
 
@@ -54,7 +54,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-            <siac.com.componentes.EditTextSubtitle
+            <siac.com.componentes.EditTextTitle
                 android:id="@+id/cadastroEditTextLegenda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,21 +63,21 @@
                 app:coricon="#D6C"
                 app:iconRigth="@drawable/icons_coroa_48"
                 app:inputType="number"
-                app:legenda="Nome do cliente"
-                app:tamLegendaEditText="@dimen/tamLegendaEditTextUi" />
+                app:title="Nome do cliente"
+                app:tamTitle="@dimen/tamLegendaEditTextUi" />
 
-            <siac.com.componentes.EditTextSubtitle
+            <siac.com.componentes.EditTextTitle
                 android:id="@+id/editTextLegenda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:corLegenda="@color/colorAccent"
+                app:colorTitle="@color/colorAccent"
                 app:enabled="true"
                 app:focusable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextCalendarLegenda"
-                app:legenda="Componente simples"
+                app:title="Componente simples"
                 app:requerido="false"
                 app:requestfocus="true"
                 app:tag="edittext"
@@ -96,28 +96,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayoutsafdasd">
 
-            <siac.com.componentes.TextViewSubtitle
+            <siac.com.componentes.TextViewTitle
                 android:id="@+id/textViewsd"
                 android:layout_width="372dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 app:corDescricao="@color/colorPrimaryDark"
-                app:corLegenda="@color/colorAccent"
+                app:colorTitle="@color/colorAccent"
                 app:descricao="Goiânia  adsdasdadsdasdsdasdsadsadsadasdsa"
-                app:legenda="Cidade"
+                app:title="Cidade"
                 app:singleLine="false"
                 app:tamDescricao="16sp"
-                app:tamLegenda="13sp" />
+                app:tamTitle="13sp" />
 
-            <siac.com.componentes.EditTextSubtitle
+            <siac.com.componentes.EditTextTitle
                 android:id="@+id/editTextLegenda2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:enabled="true"
                 app:focusable="true"
-                app:legenda="Mascara"
+                app:title="Mascara"
                 app:legendaRequerido="Digite um CNPJ válido!"
                 app:mascara="  .   .   /    -  "
                 app:requerido="true"
@@ -138,16 +138,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayoutsafda">
 
-            <siac.com.componentes.SpinnerSubtitle
+            <siac.com.componentes.SpinnerTitle
                 android:id="@+id/spinnerLegenda"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 app:entries="@array/tipo"
-                app:legenda="Spinner" />
+                app:title="Spinner" />
 
-            <siac.com.componentes.SearchSubtitle
+            <siac.com.componentes.EditTextSearch
                 android:id="@+id/searchLegenda"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -155,7 +155,7 @@
                 app:coricon="@color/colorAccent"
                 app:hint="sua pesquisa"
                 app:inputType="none"
-                app:legenda="SearchLegenda" />
+                app:title="SearchLegenda" />
         </LinearLayout>
 
         <LinearLayout
@@ -168,22 +168,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayoutasdasd">
 
-            <siac.com.componentes.EditTextSubtitle
+            <siac.com.componentes.EditTextTitle
                 android:id="@+id/senhaEditTextLegenda"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:coricon="@color/colorAccent"
                 app:iconRigth="@drawable/round_visibility_black_48dp"
                 app:inputType="textPassword"
-                app:legenda="Senha"
-
-                app:tamLegendaEditText="@dimen/tamLegendaEditTextUi"
+                app:title="Senha"
+                app:tamTitle="@dimen/tamLegendaEditTextUi"
                 tools:layout_editor_absoluteX="32dp"
                 tools:layout_editor_absoluteY="610dp" />
 
         </LinearLayout>
 
-        <siac.com.componentes.EditTextSubtitle
+        <siac.com.componentes.EditTextTitle
             android:id="@+id/multilineEditTextLegenda"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -193,29 +192,29 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayoutasd"
-            app:legenda="Multiline"
+            app:title="Multiline"
             app:lines="4"
-            app:tamLegendaEditText="@dimen/tamLegendaEditTextUi"
+            app:tamTitle="@dimen/tamLegendaEditTextUi"
             app:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
 
-        <siac.com.componentes.EditTextSubtitle
+        <siac.com.componentes.EditTextTitle
             android:id="@+id/editTextLegendaSelection"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:corLegenda="@color/colorAccent"
+            app:colorTitle="@color/colorAccent"
             app:enabled="true"
             app:focusable="true"
             app:layout_constraintEnd_toStartOf="@+id/editTextLegenda22asd"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/multilineEditTextLegenda"
-            app:legenda="Set Selection"
+            app:title="Set Selection"
             app:requerido="false"
             app:requestfocus="true"
             app:tag="edittext"
             app:text="texto" />
 
-        <siac.com.componentes.EditTextCalendarSubtitle
+        <siac.com.componentes.EditTextCalendar
             android:id="@+id/editTextLegenda22asd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -223,22 +222,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/editTextLegendaSelection"
             app:layout_constraintTop_toBottomOf="@+id/multilineEditTextLegenda"
-            app:legenda="Só data" />
+            app:title="Só data" />
 
 
-        <siac.com.componentes.EditTexCurrencySubtitle
+        <siac.com.componentes.EditTexCurrency
             android:id="@+id/editTexFinaceirotLegenda"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            app:corLegenda="@color/colorAccent"
+            app:colorTitle="@color/colorAccent"
             app:enabled="true"
             app:focusable="true"
             app:layout_constraintEnd_toStartOf="@+id/button9"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextLegendaSelection"
-            app:legenda="Editext Currency"
+            app:title="Editext Currency"
             app:requerido="false"
             app:locale="pt_BR"
             app:requestfocus="true"
