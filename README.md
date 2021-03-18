@@ -16,6 +16,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  * PhotoView
  * Halk
  * SwipeLayout
+ * CalculatorDialog
  
  Gradle Setup
 ------
@@ -992,6 +993,19 @@ Hawk.count();
 
 Get crazy and delete everything
 Hawk.deleteAll();
+ ````
+ 
+ # * CalculatorDialog 
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/calculator_ligth.png" width="20%"> <img src="https://github.com/Concyline/AndroidUi/blob/master/img/calculator_dark.png" width="20%">
+ 
+ ### Usage
+ ````java
+ new CalculatorDialog(this) {
+                @Override
+                public void onResult(Double result) {
+                    editText.setText(result + "");
+                }
+ }.setValue(Double.parseDouble(editText.getText().toString().trim())).showDIalog();
  ````
 
 Resources
