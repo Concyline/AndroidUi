@@ -14,6 +14,7 @@ import android.view.View;
 import java.util.ArrayList;
 
 import br.com.utill.Util;
+import siac.com.androidui.ui.CalculadoraDialogActivity;
 import siac.com.androidui.ui.CamPixActivity;
 import siac.com.androidui.ui.ComponentesActivity;
 import siac.com.androidui.ui.ComponentesDoisActivity;
@@ -176,6 +177,14 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), ComponentesTresActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
+                    findViewById(R.id.calculadoraButton).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getBaseContext(), CalculadoraDialogActivity.class);
                             startActivity(intent);
                         }
                     });

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Display -->
+    <color name="display_color_day">#000000</color>
+    <color name="display_color_nigth">#ffffff</color>
+    <color name="history_input_day">#70202020</color>
+    <color name="history_input_nigth">#CCC</color>
+    <!-- Keyboard -->
+    <color name="pad_advanced_text_color_normal">#91000000</color>
+    <color name="pad_advanced_text_color_disabled">#33000000</color>
+    <color name="pad_text_color_disabled">#33FFFFFF</color>
+    <color name="pad_text_color_normal">#ffffff</color>
+    <color name="widget_text_color">#ffffff</color>
+    <color name="background">#CCC</color>
+
+    <!-- Graph colors -->
+
+</resources>

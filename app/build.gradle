@@ -43,5 +43,6 @@ dependencies {
     implementation project(':permision')
     implementation project(':campix')
     implementation project(':hawk')
+    implementation project(':calculadora')
 
 }
