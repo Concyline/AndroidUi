@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_teste"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ComponentesTresActivity"></activity>
+        <activity android:name=".ui.CalculadoraDialogActivity"></activity>
+        <activity android:name=".ui.ComponentesTresActivity" />
         <activity android:name=".ui.SwipLayoutActivity" />
         <activity android:name=".ui.HawkActivity" />
         <activity android:name=".ui.CamPixActivity" />
