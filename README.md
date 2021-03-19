@@ -16,11 +16,10 @@ This library has 6 modules to aid Android development, speeding up the completio
  * PhotoView
  * Halk
  * SwipeLayout
+ * CalculatorDialog
  
  Gradle Setup
 ------
-
-Version 2.6.70 = 77bf4f737f
 
 ```java
 allprojects {
@@ -33,22 +32,22 @@ allprojects {
 
 ```java
 dependencies {
-	        implementation 'com.github.Concyline:Androidui:77bf4f737f'
+	        implementation 'com.github.Concyline:Androidui:{CURRENT VERSION}'
 	     }
 ```
 
 
 
 # * Componentes
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentes.gif" width="50%">
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentes.gif" width="20%">
 
 ### Usage
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentesimples.png" width="50%">
 
 ```xml
- <siac.com.componentes.EditTextLegenda
-            android:id="@+id/editTextLegenda"
+ <siac.com.componentes.EditTextTitle
+            android:id="@+id/editTextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:colorTitle="@color/colorAccent"
@@ -69,8 +68,8 @@ dependencies {
 
     <!-- Is free to create any mask just edit the app:mascara="" -->
 
-    <siac.com.componentes.EditTextLegenda
-            android:id="@+id/editTextLegenda2"
+    <siac.com.componentes.EditTextTitle
+            android:id="@+id/editTextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Mascara"
@@ -89,8 +88,8 @@ dependencies {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/legenda_requerido.png" width="50%">
 
 ```xml
-    <siac.com.componentes.EditTextLegenda
-            android:id="@+id/editTextLegenda2"
+    <siac.com.componentes.EditTextTitle
+            android:id="@+id/editTextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Enail"
@@ -110,8 +109,8 @@ dependencies {
 ```xml
     <!-- the calendar listener is already implemented within the component -->
 
-     <siac.com.componentes.EditTextCalendarLegenda
-            android:id="@+id/editTextLegenda22"
+     <siac.com.componentes.EditTextCalendar
+            android:id="@+id/editTextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="Só data" />
@@ -122,8 +121,8 @@ dependencies {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/spinner.png" width="50%">
 
 ```xml
-         <siac.com.componentes.SpinnerLegenda
-            android:id="@+id/spinnerLegenda"
+         <siac.com.componentes.SpinnerTitle
+            android:id="@+id/spinnerTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:entries="@array/tipo"
@@ -135,7 +134,7 @@ or add programaticaly adapter
 ArrayAdapter<Object> adapter = new ArrayAdapter<Object>(getBaseContext(), 
 	siac.com.componentes.R.layout.view_spinner_item_ui, new String[]{"aureo", "ana", "davi"});
 	
-spinnerLegenda.setAdapter(adapter);
+spinnerTitle.setAdapter(adapter);
 ````
 
 ---
@@ -143,13 +142,13 @@ spinnerLegenda.setAdapter(adapter);
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/calendarhoradata.png" width="50%">
 
 ```xml
-          <siac.com.componentes.EditTextCalendarLegenda
-            android:id="@+id/editTextCalendarLegenda"
+          <siac.com.componentes.EditTextCalendar
+            android:id="@+id/editTextCalendar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:hora="true"
             app:inicializa="false"
-            app:title="EditTextCalendarLegenda" />
+            app:title="EditTextCalendar" />
 ```
 
 ---
@@ -157,15 +156,15 @@ spinnerLegenda.setAdapter(adapter);
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/iconedireita.png" width="50%">
 
 ```xml
-      <siac.com.componentes.EditTextLegenda
-            android:id="@+id/cadastroEditTextLegenda"
+      <siac.com.componentes.EditTextTitle
+            android:id="@+id/cadastroEditTextTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:coricon="#D6C"
             app:iconRigth="@drawable/icons_coroa_48"
             app:inputType="number"
             app:title="Nome do cliente"
-            app:tamLegendaEditTextUi="@dimen/tamLegendaEditTextUi" />
+            app:tamTitle="@dimen/tamLegendaEditTextUi" />
 ```
 
 ---
@@ -173,14 +172,14 @@ spinnerLegenda.setAdapter(adapter);
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/textocomlegenda.png" width="50%">
 
 ```xml
-    <siac.com.componentes.TextViewLegenda
-            android:id="@+id/textViewsd"
+    <siac.com.componentes.TextViewTitle
+            android:id="@+id/textViewTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
             app:corDescricao="@color/colorPrimaryDark"
             app:colorTitle="@color/colorAccent"
-	    app:tamLegenda="13sp"
+	    app:tamTitle="13sp"
             app:tamDescricao="16sp"
 	    app:singleLine="false"
             app:descricao="Goiânia  adsdasdadsdasdsdasdsadsadsadasdsadadsdaszdsadasdsadasdasda"
@@ -192,18 +191,18 @@ spinnerLegenda.setAdapter(adapter);
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/pesquisasimples.png" width="50%">
 
 ```xml
-   <siac.com.componentes.SearchLegenda
-            android:id="@+id/searchLegenda"
+   <siac.com.componentes.EditTextSearch
+            android:id="@+id/editTextSearch"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:hint="sua pesquisa"
             app:inputType="none"
             app:coricon="@color/colorAccent"
-            app:title="SearchLegenda" />
+            app:title="EditTextSearch" />
 ```
 
 ````java
-searchLegenda.setOnClickListener(new View.OnClickListener() {
+editTextSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ...
@@ -216,8 +215,8 @@ searchLegenda.setOnClickListener(new View.OnClickListener() {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/multiline.png" width="50%">
 
 ````xml
-    <siac.com.componentes.EditTextLegenda
-            android:id="@+id/multilineEditTextLegenda"
+    <siac.com.componentes.EditTextTitle
+            android:id="@+id/multilineEditTextTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -226,7 +225,7 @@ searchLegenda.setOnClickListener(new View.OnClickListener() {
             app:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
             app:title="Multiline"
             app:lines="4"
-            app:tamLegendaEditText="@dimen/tamLegendaEditTextUi" />
+            app:tamTitle="@dimen/tamLegendaEditTextUi" />
 ````
 
 ---
@@ -234,27 +233,46 @@ searchLegenda.setOnClickListener(new View.OnClickListener() {
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/senha.png" width="50%">
 
 ```xml
-      <siac.com.componentes.EditTextLegenda
-            android:id="@+id/senhaEditTextLegenda"
+      <siac.com.componentes.EditTextTitle
+            android:id="@+id/senhaEditTextTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:coricon="@color/colorAccent"
             app:iconRigth="@drawable/round_visibility_black_48dp"
             app:inputType="textPassword"
             app:title="Senha"
-            app:tamLegendaEditTextUi="@dimen/tamLegendaEditTextUi" />
+            app:tamTitle="@dimen/tamLegendaEditTextUi" />
 ```
 
 ``` java
-final EditTextLegenda senhaEditTextLegenda = findViewById(R.id.senhaEditTextLegenda);
-        senhaEditTextLegenda.setOnClickListener(new View.OnClickListener() {
+final EditTextTitle senhaEditTextTitle = findViewById(R.id.senhaEditTextTitle);
+        senhaEditTextTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                senhaEditTextLegenda.mostraSenha();
+                senhaEditTextTitle.mostraSenha();
             }
         });
 ````
 
+---
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/componente_currence.png" width="50%">
+
+```xml
+         <siac.com.componentes.EditTexCurrency
+            android:id="@+id/editTexCurrency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:enabled="true"
+            app:focusable="true"
+            app:title="Valor"
+            app:requerido="false"
+            app:requestfocus="false"
+            app:locale="pt_BR"
+            app:showSymbol="true"
+            app:tag="Valor"
+            app:text="" />
+```
 ---
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progress_image.png" width="50%">
@@ -414,6 +432,92 @@ new CDialog(ParametrosActivity.this)
 
 ---
 
+## GeometricProgress
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/geometric_progress.gif" width="20%"/> 
+
+````xml
+ <siac.com.componentes.GeometricProgressView
+    android:id="@+id/progressView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:gp_type="triangle"
+    app:gp_number_of_angles="7"
+    app:gp_color="@android:color/black"
+    app:gp_duration="800"
+    app:gp_figure_padding="3dp" />
+````
+
+````java
+GeometricProgressView progressView = (GeometricProgressView) findViewById(R.id.progressView);
+progressView.setType(TYPE.KITE);
+progressView.setNumberOfAngles(6);
+progressView.setColor(Color.parseColor("#00897b"));
+progressView.setDuration(1000);
+progressView.setFigurePadding(getResources().getDimensionPixelOffset(R.dimen.figure_padding));
+````
+
+---
+
+## DotLoader
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/loading_anim.gif" width="50%"/> 
+
+````xml
+ <siac.com.componentes.DotLoader
+    android:id="@+id/text_dot_loader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:color_array="@array/dot_colors"
+    app:dot_radius="4dp"
+    app:number_of_dots="3"/>
+````
+
+color.xml
+````xml
+<array name="dot_colors">
+    <item>#03A9F4</item>
+    <item>#E65100</item>
+    <item>#FFBB00</item>
+</array>
+````
+
+````java
+dotLoader.postDelayed(new Runnable() {
+    @Override
+    public void run() {
+        dotLoader.setNumberOfDots(5);
+    }
+}, 3000);
+````
+
+---
+
+## ProgressIndeterminate
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_indetermined.png" width="20%"/> 
+
+````java
+ProgressIndeterminate progressDialog = new ProgressIndeterminate(ComponentesDoisActivity.this).
+                        create("Atenção!")
+                        .multColor(true)
+                        .setTextSize(SizeText.MEDIUM)
+                        .cancelable(false);
+
+      progressDialog.show();
+      
+      //progressDialog.dismiss();
+      //progressDialog.isShowing();
+      //progressDialog.setMessage("Text");
+      //progressDialog.setBackgroundColor(R.color.pink);
+		
+// or
+
+ProgressIndeterminate progressDialog = ProgressIndeterminate.show(ComponentesDoisActivity.this, "OK");
+````
+
+---
+
 ## SwipeLayout
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/swipe_rigth.png" width="20%"/> 
@@ -523,7 +627,7 @@ public listeners
   
   # * Manipulador de texto
   
-  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/manipulatexto.gif" width="50%">
+  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/manipulatexto.gif" width="20%">
   
   ### Usage
   
@@ -577,7 +681,7 @@ public listeners
   
   # * Leitor Qr and CodeBar
   
-  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/leitor.gif" width="50%">
+  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/leitor.gif" width="20%">
   
   ### Usage
   
@@ -651,7 +755,7 @@ public listeners
 ````
 
 # * ShortCut
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/shortcut.png" width="50%">
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/shortcut.png" width="20%">
 
  ### Usage
  
@@ -695,7 +799,7 @@ shortcutUtils.removeDynamicShortCut(dynamicShortcut);
  ````
  
  # * Permisions
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/permisions.png" width="50%">
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/permisions.png" width="20%">
 
  ### Usage
  
@@ -717,7 +821,7 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
  ````
  
  # * Util
- <img src="https://github.com/Concyline/AndroidUi/blob/master/img/util_dois.gif" width="50%">
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/util_dois.gif" width="20%">
  
  ### Usage
  ````java
@@ -758,7 +862,7 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
  ````
  
  # * CamPix
- <img src="https://github.com/Concyline/AndroidUi/blob/master/img/campix.png" width="50%">
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/campix.png" width="20%">
  
  ### Usage
  
@@ -833,7 +937,7 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
  ````
  
 # * PhotoView
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/photo_view.gif" width="50%">
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/photo_view.gif" width="20%">
  
 ### Usage
 ````xml
@@ -851,7 +955,7 @@ photoView.setImageResource(R.drawable.image);
 ````
 
 # * Zoom Frame
- <img src="https://github.com/Concyline/AndroidUi/blob/master/img/zoom.gif" width="50%">
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/zoom.gif" width="20%">
  
  ### Usage
  ````xml
@@ -863,7 +967,7 @@ photoView.setImageResource(R.drawable.image);
  ````
  
  # * Hawk
- <img src="https://github.com/Concyline/AndroidUi/blob/master/img/hawk.png" width="50%">
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/hawk.png" width="20%">
  
  ### Usage
  ````java
@@ -889,6 +993,19 @@ Hawk.count();
 
 Get crazy and delete everything
 Hawk.deleteAll();
+ ````
+ 
+ # * CalculatorDialog 
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/calculator_ligth.png" width="20%"> <img src="https://github.com/Concyline/AndroidUi/blob/master/img/calculator_dark.png" width="20%">
+ 
+ ### Usage
+ ````java
+ new CalculatorDialog(this) {
+                @Override
+                public void onResult(Double result) {
+                    editText.setText(result + "");
+                }
+ }.setValue(Double.parseDouble(editText.getText().toString().trim())).showDIalog();
  ````
 
 Resources
