@@ -97,6 +97,10 @@ public class SpinnerTitle extends FrameLayout {
         return spinner.getSelectedItem();
     }
 
+    public String getSelectedItemString() {
+        return spinner.getSelectedItem().toString();
+    }
+
     public void setAdapter(ArrayAdapter<Object> adapter) {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
