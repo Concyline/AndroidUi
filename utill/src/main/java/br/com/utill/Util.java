@@ -57,8 +57,7 @@ public class Util {
     public static void alertOk(Context context, String mensagem, final OnListnerOk onListnerOk) {
         alertOkInter(context, mensagem, onListnerOk);
     }
-
-
+    
     private static void alertOkInter(final Context context, String mensagem, @NonNull final OnListnerOk onListnerOk) {
         try {
             AlertDialog alertDialog =  new androidx.appcompat.app.AlertDialog.Builder(context)
