@@ -9,6 +9,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.utill.listeners.OnListnerAlertSimCancelar;
@@ -60,7 +61,7 @@ public class Util {
 
     private static void alertOkInter(final Context context, String mensagem, @NonNull final OnListnerOk onListnerOk) {
         try {
-            new androidx.appcompat.app.AlertDialog.Builder(context)
+            AlertDialog alertDialog =  new androidx.appcompat.app.AlertDialog.Builder(context)
                     .setTitle("Atenção")
                     .setMessage(mensagem)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
