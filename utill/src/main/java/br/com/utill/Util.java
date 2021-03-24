@@ -1,14 +1,18 @@
 package br.com.utill;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.utill.listeners.OnListnerAlertSimCancelar;
@@ -49,18 +53,17 @@ public class Util {
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static void alertOk(Context context, String mensagem) {
+    public static void alertOk(Activity context, String mensagem) {
         alertOkInter(context, mensagem, null);
     }
 
-    public static void alertOk(Context context, String mensagem, final OnListnerOk onListnerOk) {
+    public static void alertOk(Activity context, String mensagem, final OnListnerOk onListnerOk) {
         alertOkInter(context, mensagem, onListnerOk);
     }
 
-
-    private static void alertOkInter(final Context context, String mensagem, @NonNull final OnListnerOk onListnerOk) {
+    private static void alertOkInter(final Activity context, String mensagem, @NonNull final OnListnerOk onListnerOk) {
         try {
-            new androidx.appcompat.app.AlertDialog.Builder(context)
+           new androidx.appcompat.app.AlertDialog.Builder(context)
                     .setTitle("Atenção")
                     .setMessage(mensagem)
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {

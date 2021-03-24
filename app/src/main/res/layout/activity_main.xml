@@ -10,7 +10,7 @@
 
     <Button
         android:id="@+id/componentesButton"
-        android:layout_width="0dp"
+        android:layout_width="196dp"
         android:layout_height="wrap_content"
         android:text="Componentes"
         android:textAllCaps="false"
@@ -20,7 +20,7 @@
 
     <Button
         android:id="@+id/componentesDoisButton"
-        android:layout_width="0dp"
+        android:layout_width="196dp"
         android:layout_height="wrap_content"
         android:text="Componentes Dois"
         android:textAllCaps="false"
@@ -30,52 +30,47 @@
 
     <Button
         android:id="@+id/textoButton"
-        android:layout_width="0dp"
+        android:layout_width="196dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="Manipulador de texto"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toStartOf="@+id/leitorButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/componentesTresButton" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/zoomFrameButton"
+        app:layout_constraintTop_toBottomOf="@+id/calculadoraButton" />
 
     <Button
         android:id="@+id/leitorButton"
-        android:layout_width="0dp"
+        android:layout_width="196dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="Leitor Qr CodeBar"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textoButton"
-        app:layout_constraintTop_toBottomOf="@+id/button13" />
+        app:layout_constraintStart_toEndOf="@+id/componentesTresButton"
+        app:layout_constraintTop_toBottomOf="@+id/componentesDoisButton" />
 
     <Button
         android:id="@+id/permision"
-        android:layout_width="0dp"
+        android:layout_width="392dp"
         android:layout_height="wrap_content"
         android:text="Permision"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/abaixaTeclado"
-        android:layout_width="0dp"
+        android:layout_width="196dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="Util Test"
         android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@+id/campix"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/leitorButton" />
+        app:layout_constraintTop_toBottomOf="@+id/componentesTresButton" />
 
     <Button
         android:id="@+id/campix"
-        android:layout_width="0dp"
+        android:layout_width="196dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="CamPix"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,58 +79,52 @@
 
     <Button
         android:id="@+id/zoomFrameButton"
-        android:layout_width="0dp"
+        android:layout_width="196dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="Zoom Frame"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toStartOf="@+id/halkButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/campix" />
-
-    <Button
-        android:id="@+id/halkButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Halk"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/zoomFrameButton"
-        app:layout_constraintTop_toBottomOf="@+id/campix" />
-
-    <Button
-        android:id="@+id/SwipeLayoutButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="SwipeLayout"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toStartOf="@+id/textoButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/halkButton" />
 
     <Button
-        android:id="@+id/componentesTresButton"
-        android:layout_width="0dp"
+        android:id="@+id/halkButton"
+        android:layout_width="196dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:text="Halk"
         android:textAllCaps="false"
-        android:text="Componentes Tres"
         app:layout_constraintEnd_toStartOf="@+id/calculadoraButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/abaixaTeclado" />
+
+    <Button
+        android:id="@+id/SwipeLayoutButton"
+        android:layout_width="392dp"
+        android:layout_height="wrap_content"
+        android:text="SwipeLayout"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textoButton" />
+
+    <Button
+        android:id="@+id/componentesTresButton"
+        android:layout_width="196dp"
+        android:layout_height="wrap_content"
+        android:text="Componentes Tres"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@+id/leitorButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/componentesButton" />
 
     <Button
         android:id="@+id/calculadoraButton"
-        android:layout_width="0dp"
+        android:layout_width="196dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="Calculadora"
-        android:visibility="visible"
         android:textAllCaps="false"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/componentesTresButton"
-        app:layout_constraintTop_toBottomOf="@+id/componentesDoisButton" />
+        app:layout_constraintStart_toEndOf="@+id/halkButton"
+        app:layout_constraintTop_toBottomOf="@+id/campix" />
 </androidx.constraintlayout.widget.ConstraintLayout>
