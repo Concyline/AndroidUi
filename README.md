@@ -432,6 +432,92 @@ new CDialog(ParametrosActivity.this)
 
 ---
 
+## CustomDialog
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/cuson_dialog.png" width="20%"/> 
+
+in res/layout/cadastro.xml
+````xml
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="#FFF">
+	
+	...
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+````
+
+in res/menu/menu_bar.xml
+````xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/miCompose"
+        android:icon="@drawable/round_alarm_white_48dp"
+        app:showAsAction="ifRoom"
+        android:title="Compose">
+    </item>
+    <item
+        android:id="@+id/miProfile"
+        android:icon="@drawable/round_backup_white_48dp"
+        app:showAsAction="ifRoom|withText"
+        android:title="Profile">
+    </item>
+</menu>
+````
+
+in onCreate
+````java
+   try {
+            CustomDialog customDialog = new CustomDialog(MainActivity.this);
+            customDialog.setContentView(R.layout.cadastro)
+                    .setToolbarTitle("Log IN")
+                    .setToolbarSubTitle("Enter the system")
+                    .setMenuToolbar(R.menu.menu_bar)
+                    .setBackgroundResource(CustomDialog.DWindow.ROUND)
+                    .setHeight(CustomDialog.DLayoutParams.WRAP_CONTENT)
+                    .setCancelable(true)
+                    .create();
+
+            customDialog.menu(R.id.miCompose).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+                    System.out.println("MENU");
+                    return false;
+                }
+            });
+
+            Dialog dialog = customDialog.dialog();
+
+            Button button = dialog.findViewById(R.id.button);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    System.out.println("BUTTON");
+                }
+            });
+            
+            customDialog.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+````
+
+---
+
 ## GeometricProgress
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/geometric_progress.gif" width="20%"/> 
