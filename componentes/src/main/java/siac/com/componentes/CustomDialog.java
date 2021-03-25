@@ -15,7 +15,7 @@ public class CustomDialog {
     private android.app.Dialog dialog;
     private androidx.appcompat.widget.Toolbar toolbar;
     private String toolbarTitle = "Dialog";
-    private String toolbarSubTitle = "Dialog subtitle";
+    private String toolbarSubTitle = "";
     private Activity activity;
     private LinearLayout container;
     private boolean cancelable = true;
@@ -85,7 +85,9 @@ public class CustomDialog {
         container = dialog.findViewById(R.id.container);
 
         toolbar.setTitle(toolbarTitle);
-        toolbar.setSubtitle(toolbarSubTitle);
+        if(!toolbarSubTitle.equals("")) {
+            toolbar.setSubtitle(toolbarSubTitle);
+        }
         toolbar.setTitleTextColor(android.graphics.Color.WHITE);
         toolbar.setSubtitleTextColor(android.graphics.Color.WHITE);
         toolbar.setNavigationIcon(R.drawable.outline_arrow_back_white_48dp);
