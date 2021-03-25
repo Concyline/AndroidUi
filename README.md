@@ -785,8 +785,8 @@ public listeners
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), LeitorActivity.class);
                 String codigo = "C=7898958119652;L=50962;V=30/09/2019";
-                intent.putExtra("teste",codigo);
-                startActivityForResult(intent, 0);
+                intent.putExtra(LeitorActivity.CODE_TEST,codigo);
+                startActivityForResult(intent, 123);
             }
         });
 
@@ -795,7 +795,7 @@ public listeners
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), LeitorActivity.class);
-                startActivityForResult(intent, 0);
+                startActivityForResult(intent, 123);
             }
         });
   }
@@ -803,9 +803,12 @@ public listeners
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        retornoEditText.setText("");
-        if (data != null) {
-            retornoEditText.setText(data.getStringExtra("CODIGO"));
+        
+	 if(requestCode == 123) {
+            retornoEditText.setText("");
+            if (data != null) {
+                retornoEditText.setText(data.getStringExtra("CODIGO"));
+            }
         }
   }
   ````
