@@ -11,6 +11,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.InputFilter;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -196,6 +197,18 @@ public class EditTextTitle extends FrameLayout {
 
         if (mascara != null) {
             mascaraDinamica = new Mascara(editText, mascara);
+        }
+    }
+
+    public void removeTextChangedListener(TextWatcher textWatcher){
+        if(editText != null) {
+            editText.removeTextChangedListener(textWatcher);
+        }
+    }
+
+    public void addTextChangedListener(TextWatcher textWatcher){
+        if(editText != null) {
+            editText.addTextChangedListener(textWatcher);
         }
     }
 
