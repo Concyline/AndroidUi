@@ -211,6 +211,18 @@ public class EditTexCurrency extends FrameLayout {
         }
     }
 
+    public void removeTextChangedListener(TextWatcher textWatcher){
+        if(editText != null) {
+            editText.removeTextChangedListener(textWatcher);
+        }
+    }
+
+    public void addTextChangedListener(TextWatcher textWatcher){
+        if(editText != null) {
+            editText.addTextChangedListener(textWatcher);
+        }
+    }
+
     private boolean flag = true;
 
     private void whatch() {
