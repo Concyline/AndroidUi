@@ -29,6 +29,8 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
     private Menu menu;
     private String teste = "";
 
+    public static String CODE_TEST = "CODE_TEST";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +66,7 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
         super.onResume();
         if(testaPermisao()) {
             mScannerView = new ZXingScannerView(this);
-            teste = getIntent().getStringExtra("teste_componete_cardview") == null ? "" : getIntent().getStringExtra("teste_componete_cardview");
+            teste = getIntent().getStringExtra(CODE_TEST) == null ? "" : getIntent().getStringExtra(CODE_TEST);
 
             // LIGA O PADRAO
             mScannerView.setFlash(Hawk.get("flash", false));
@@ -145,7 +147,6 @@ public class LeitorActivity extends AppCompatActivity implements ZXingScannerVie
             case 16908332:{ // HOME
                 if (!teste.equals("")) {
                     Intent intent = new Intent();
-                    //String codigo = "00000751";
                     intent.putExtra("CODIGO", teste);
                     setResult(0, intent);
                 }
