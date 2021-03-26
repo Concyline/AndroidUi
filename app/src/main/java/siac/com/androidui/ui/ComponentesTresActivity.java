@@ -29,7 +29,6 @@ public class ComponentesTresActivity extends AppCompatActivity {
                     customDialog.setContentView(R.layout.cadastro)
                             .setToolbarTitle("Log IN")
                             .setToolbarSubTitle("Enter the system")
-                            .setToolbarColor(R.color.colorAccent)
                             .setMenuToolbar(R.menu.menu_bar)
                             .setBackgroundResource(CustomDialog.DWindow.ROUND)
                             .setHeight(CustomDialog.DLayoutParams.WRAP_CONTENT)
