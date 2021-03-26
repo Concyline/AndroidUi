@@ -80,6 +80,7 @@
         <attr name="tamTextEditText" />
         <attr name="hint" />
         <attr name="text" />
+        <attr name="tamTitle" />
         <attr name="maxLength" />
         <attr name="coricon"/>
         <attr name="enabled" />

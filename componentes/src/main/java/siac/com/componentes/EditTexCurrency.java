@@ -57,10 +57,10 @@ public class EditTexCurrency extends FrameLayout {
 
     // ATRIBUTOS
     private String title = "title";
+    private float tamTitle = 13;
     private String hint = "";
     private String text = "";
     private ColorStateList colorTitle;
-    private float tamTitleEditText = 13;
     private float tamTextEditText = 16;
     private int maxLength = 0;
     private boolean enabled;
@@ -98,7 +98,7 @@ public class EditTexCurrency extends FrameLayout {
             TypedArray typedArray = context.getTheme().obtainStyledAttributes(attrs, R.styleable.EditTextCurrencyLegenda, defStyleAttr, 0);
             title = typedArray.getString(R.styleable.EditTextCurrencyLegenda_title);
             colorTitle = typedArray.getColorStateList(R.styleable.EditTextCurrencyLegenda_colorTitle);
-            tamTitleEditText = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextCurrencyLegenda_tamTitleEditText));
+            tamTitle = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextCurrencyLegenda_tamTitle));
             tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.EditTextCurrencyLegenda_tamTextEditText));
 
             maxLength = typedArray.getInteger(R.styleable.EditTextCurrencyLegenda_maxLength, 0);
@@ -182,7 +182,7 @@ public class EditTexCurrency extends FrameLayout {
         if (colorTitle != null) {
             legendaTextView.setTextColor(colorTitle);
         }
-        legendaTextView.setTextSize(tamTitleEditText);
+        legendaTextView.setTextSize(tamTitle);
 
         editText.setHint(hint);
         editText.setText(text != null ? text : "");
