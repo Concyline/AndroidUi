@@ -39,17 +39,17 @@ public class CustomDialog {
         return this;
     }
 
-    public CustomDialog setMenuToolbar(int menuToolbarResId){
+    public CustomDialog setMenuToolbar(int menuToolbarResId) {
         this.menuToolbarResId = menuToolbarResId;
         return this;
     }
 
-    public CustomDialog setToolbarTitle(String toolbarTitle){
+    public CustomDialog setToolbarTitle(String toolbarTitle) {
         this.toolbarTitle = toolbarTitle;
         return this;
     }
 
-    public CustomDialog setToolbarSubTitle(String toolbarSubTitle){
+    public CustomDialog setToolbarSubTitle(String toolbarSubTitle) {
         this.toolbarSubTitle = toolbarSubTitle;
         return this;
     }
@@ -74,7 +74,7 @@ public class CustomDialog {
     }
 
     @SuppressLint("ResourceAsColor")
-    public CustomDialog create() throws Exception{
+    public CustomDialog create() throws Exception {
 
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.base_dialog_ui);
@@ -85,7 +85,7 @@ public class CustomDialog {
         container = dialog.findViewById(R.id.container);
 
         toolbar.setTitle(toolbarTitle);
-        if(!toolbarSubTitle.equals("")) {
+        if (!toolbarSubTitle.equals("")) {
             toolbar.setSubtitle(toolbarSubTitle);
         }
         toolbar.setTitleTextColor(android.graphics.Color.WHITE);
@@ -93,14 +93,13 @@ public class CustomDialog {
         toolbar.setNavigationIcon(R.drawable.outline_arrow_back_white_48dp);
 
         toolbar.setNavigationOnClickListener(new android.view.View.OnClickListener() {
-            @Override public void onClick(android.view.View view) {
-                if(cancelable) {
-                    dismiss();
-                }
+            @Override
+            public void onClick(android.view.View view) {
+                dismiss();
             }
         });
 
-        if(menuToolbarResId > 0) {
+        if (menuToolbarResId > 0) {
             toolbar.inflateMenu(menuToolbarResId);
         }
 
@@ -124,8 +123,8 @@ public class CustomDialog {
         return this;
     }
 
-    private void addLayoutContainer() throws Exception{
-        if(layoutResId < 0){
+    private void addLayoutContainer() throws Exception {
+        if (layoutResId < 0) {
             throw new Exception("Main layout not found");
         }
 
@@ -134,23 +133,23 @@ public class CustomDialog {
         container.addView(view);
     }
 
-    public MenuItem menu(int id) throws Exception{
+    public MenuItem menu(int id) throws Exception {
         MenuItem menuItem = null;
-        if(toolbar != null){
-           menuItem =  toolbar.getMenu().findItem(id);
+        if (toolbar != null) {
+            menuItem = toolbar.getMenu().findItem(id);
         }
 
-        if(menuItem == null){
+        if (menuItem == null) {
             throw new Exception("Menu item not found!");
         }
         return menuItem;
     }
 
-    public androidx.appcompat.widget.Toolbar toolbar(){
+    public androidx.appcompat.widget.Toolbar toolbar() {
         return toolbar;
     }
 
-    public android.app.Dialog dialog(){
+    public android.app.Dialog dialog() {
         return dialog;
     }
 
