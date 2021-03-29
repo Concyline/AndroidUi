@@ -56,7 +56,7 @@ public class ComponentesTresActivity extends AppCompatActivity {
                     customDialog.setNavigationOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            System.out.println("aqui");
+                            System.out.println("aquis");
                         }
                     });
 
