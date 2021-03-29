@@ -60,7 +60,6 @@ public class ComponentesTresActivity extends AppCompatActivity {
                         }
                     });
 
-
                     customDialog.show();
 
                 } catch (Exception e) {
