@@ -3,6 +3,7 @@ package siac.com.componentes;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -121,6 +122,10 @@ public class CustomDialog {
         dialog.getWindow().getDecorView().setBackgroundResource(backgroundResource);
 
         return this;
+    }
+
+    public void setNavigationOnClickListener(android.view.View.OnClickListener onClickListener){
+        toolbar.setNavigationOnClickListener(onClickListener);
     }
 
     private void addLayoutContainer() throws Exception {
