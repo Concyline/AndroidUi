@@ -9,18 +9,15 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -29,21 +26,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import java.text.DecimalFormat;
 import java.text.Normalizer;
-import java.text.NumberFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
-import siac.com.componentes.Util.Mascara;
-import siac.com.componentes.Util.Util;
-import siac.com.componentes.Util.ValidaCNPJ;
-import siac.com.componentes.Util.ValidaCPF;
 import siac.com.componentes.currency.CurrencyEditText;
 
-import static siac.com.componentes.Util.Constantes.cnpj;
-import static siac.com.componentes.Util.Constantes.cpf;
 import static siac.com.componentes.Util.Util.fadeIn;
 import static siac.com.componentes.Util.Util.shake;
 
@@ -72,7 +60,6 @@ public class EditTexCurrency extends FrameLayout {
     private boolean mShowSymbol;
     private String mLocale = "";
     private Locale locale;
-
 
     public EditTexCurrency(@NonNull Context context) {
         super(context);

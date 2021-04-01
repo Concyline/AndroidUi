@@ -198,6 +198,8 @@
         <attr name="locale" />
         <attr name="showSymbol"/>
         <attr name="decimalPoints" format="integer" />
+        <attr name="allow_negative_values" format="boolean" />
+        <attr name="decimal_digits" format="integer" />
     </declare-styleable>
 
 </resources>

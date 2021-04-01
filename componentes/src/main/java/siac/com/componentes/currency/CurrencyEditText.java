@@ -6,6 +6,7 @@ import android.os.Build;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
+import android.text.method.DigitsKeyListener;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.EditText;
@@ -29,8 +30,10 @@ public class CurrencyEditText extends androidx.appcompat.widget.AppCompatEditTex
     private int fractionDigit;
 
     public CurrencyEditText(Context context, AttributeSet attrs) {
+
         super(context, attrs);
         this.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+        this.setKeyListener(DigitsKeyListener.getInstance("0123456789.-"));
 
         TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.currencyEditText, 0, 0);
 
@@ -124,11 +127,12 @@ public class CurrencyEditText extends androidx.appcompat.widget.AppCompatEditTex
         }
     }
 
+    private boolean negative = false;
+
     private TextWatcher onTextChangeListener = new TextWatcher() {
 
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
         }
 
         @Override
@@ -139,7 +143,6 @@ public class CurrencyEditText extends androidx.appcompat.widget.AppCompatEditTex
             removeTextChangedListener(this);
 
             String text = s.toString();
-            text = text.replaceAll("[^\\d]", "");
 
             try {
                 text = format(text);
@@ -157,15 +160,33 @@ public class CurrencyEditText extends androidx.appcompat.widget.AppCompatEditTex
 
         @Override
         public void afterTextChanged(Editable s) {
-
         }
     };
 
     private String format(String text) throws NumberFormatException, NullPointerException {
-        if (mShowSymbol)
-            return numberFormat.format(Double.parseDouble(text) / Math.pow(10, fractionDigit));
-        else
-            return numberFormat.format(Double.parseDouble(text) / Math.pow(10, fractionDigit)).replace(currencySymbol, "");
+        negative = text.contains("-") ? true : false;
+
+        text = text.replaceAll("[^\\d]", "");
+
+        String formating = numberFormat.format(Double.parseDouble(text) / Math.pow(10, fractionDigit)).replace(currencySymbol, "");
+
+        if (negative) {
+            formating = "-" + formating;
+        }
+
+        if (mShowSymbol) {
+            formating = currencySymbol + formating;
+        }
+
+        if(formating.equals(currencySymbol+"-0,00")){
+            formating = currencySymbol+"0.00";
+        }
+
+        if(formating.equals("-0,00")){
+            formating = "0.00";
+        }
+
+        return formating;
     }
 
     public Locale getLocale() {
