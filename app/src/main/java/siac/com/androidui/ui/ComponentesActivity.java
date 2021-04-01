@@ -34,7 +34,10 @@ public class ComponentesActivity extends AppCompatActivity {
         findViewById(R.id.button9).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println(""+editTexCurrencyLegenda.getDouble());
+
+                Double aqui = editTexCurrencyLegenda.getDouble();
+
+                System.out.println("" + editTexCurrencyLegenda.getDouble());
             }
         });
 
