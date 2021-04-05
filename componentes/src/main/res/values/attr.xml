@@ -202,4 +202,17 @@
         <attr name="decimal_digits" format="integer" />
     </declare-styleable>
 
+    <declare-styleable name="RecyclerViewButton">
+        <attr name="locationButton" />
+        <attr name="numberOfColumns" format="integer" />
+        <attr name="horizontalDivider" format="boolean"/>
+        <attr name="verticalDivider" format="boolean"/>
+    </declare-styleable>
+
+    <attr name="locationButton">
+        <flag name="center" value="0" />
+        <flag name="left" value="1" />
+        <flag name="right" value="2" />
+    </attr>
+
 </resources>

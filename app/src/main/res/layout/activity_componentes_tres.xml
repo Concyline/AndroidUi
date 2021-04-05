@@ -199,4 +199,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_dot_loader" />
+
+    <siac.com.componentes.RecyclerViewButton
+        android:id="@+id/recyclerViewButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:horizontalDivider="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button12"
+        app:locationButton="right"
+        app:numberOfColumns="2"
+        app:verticalDivider="true" />
 </androidx.constraintlayout.widget.ConstraintLayout>
