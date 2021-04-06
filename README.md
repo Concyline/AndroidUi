@@ -273,6 +273,106 @@ final EditTextTitle senhaEditTextTitle = findViewById(R.id.senhaEditTextTitle);
             app:tag="Valor"
             app:text="" />
 ```
+
+---
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/recyclerviewbutton.png" width="20%">
+
+XML file
+```xml
+   <siac.com.componentes.RecyclerViewButton
+        android:id="@+id/recyclerViewButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:horizontalDivider="true"
+        app:locationButton="right"
+        app:numberOfColumns="2"
+        app:basic="false"
+        app:refresh="true"
+        app:verticalDivider="true" />
+```
+
+in OnCreate
+````java
+recyclerViewButton.setAdapter(this, new Adapter());
+
+recyclerViewButton.scrollToPosition(0)
+
+recyclerViewButton.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Async().execute();
+            }
+});
+
+recyclerViewButton.addOnItemTouchListener(new RecyclerViewButton.ItemClickListener(new RecyclerViewButton.Listener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                System.out.println("aqui");
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+                System.out.println("aqui");
+            }
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                System.out.println("aqui");
+            }
+}));
+````
+
+Adapter
+````java
+ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+        private LayoutInflater mInflater;
+
+        Adapter() {
+            this.mInflater = LayoutInflater.from(getBaseContext());
+        }
+
+        @Override
+        @NonNull
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View view = mInflater.inflate(R.layout.cidade_item, parent, false);
+            return new ViewHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+            final ViewHolder viewHolder = (ViewHolder) holder;
+
+            Cidade cidade = lCidade.get(position);
+
+            viewHolder.nomeTextView.setText(cidade.getNome());
+            viewHolder.ufTextView.setText(cidade.getUf());
+        }
+
+        @Override
+        public int getItemCount() {
+            return lCidade.size();
+        }
+
+        public class ViewHolder extends RecyclerView.ViewHolder {
+            TextView nomeTextView;
+            TextView ufTextView;
+
+            ViewHolder(View itemView) {
+                super(itemView);
+                nomeTextView = itemView.findViewById(R.id.nomeTextView);
+                ufTextView = itemView.findViewById(R.id.ufTextView);
+            }
+        }
+
+        Cidade getItem(int id) {
+            return lCidade.get(id);
+        }
+}
+````
+
 ---
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progress_image.png" width="50%">
