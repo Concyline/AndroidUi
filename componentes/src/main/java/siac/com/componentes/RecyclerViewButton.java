@@ -34,6 +34,8 @@ public class RecyclerViewButton extends FrameLayout {
     private int numberOfColumns;
     private boolean horizontalDivider;
     private boolean verticalDivider;
+    private boolean refresh;
+    private int listitem;
 
     public RecyclerViewButton(@NonNull Context context) {
         super(context);
@@ -62,6 +64,8 @@ public class RecyclerViewButton extends FrameLayout {
             numberOfColumns = typedArray.getInteger(R.styleable.RecyclerViewButton_numberOfColumns, 1);
             horizontalDivider = typedArray.getBoolean(R.styleable.RecyclerViewButton_horizontalDivider, false);
             verticalDivider = typedArray.getBoolean(R.styleable.RecyclerViewButton_verticalDivider, false);
+            refresh = typedArray.getBoolean(R.styleable.RecyclerViewButton_refresh, true);
+            listitem = typedArray.getResourceId(R.styleable.RecyclerViewButton_listitem, 1);
             return;
         }
 
@@ -100,6 +104,9 @@ public class RecyclerViewButton extends FrameLayout {
         });
 
         recyclerView.addOnScrollListener(onScrollListener);
+
+        swipeRefreshLayout.setEnabled(refresh);
+
     }
 
     RecyclerView.OnScrollListener onScrollListener = new RecyclerView.OnScrollListener() {
