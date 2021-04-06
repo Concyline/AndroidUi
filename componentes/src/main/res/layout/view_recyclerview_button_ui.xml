@@ -28,6 +28,7 @@
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <RelativeLayout
+        android:id="@+id/painelButtonRelativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/swipeRefreshLayout"

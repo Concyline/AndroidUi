@@ -212,6 +212,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button12"
         app:locationButton="right"
         app:numberOfColumns="2"
-        app:refresh="false"
+        app:basic="false"
+        app:refresh="true"
         app:verticalDivider="true" />
 </androidx.constraintlayout.widget.ConstraintLayout>

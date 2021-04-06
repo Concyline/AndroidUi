@@ -28,6 +28,7 @@ public class RecyclerViewButton extends FrameLayout {
     private SwipeRefreshLayout swipeRefreshLayout;
     private static RecyclerView recyclerView;
     private ImageView goToTopImageView;
+    private RelativeLayout painelButtonRelativeLayout;
 
     private static Context context;
     private int locationButton;
@@ -35,6 +36,7 @@ public class RecyclerViewButton extends FrameLayout {
     private boolean horizontalDivider;
     private boolean verticalDivider;
     private boolean refresh;
+    private boolean basic;
     private int listitem;
 
     public RecyclerViewButton(@NonNull Context context) {
@@ -65,6 +67,7 @@ public class RecyclerViewButton extends FrameLayout {
             horizontalDivider = typedArray.getBoolean(R.styleable.RecyclerViewButton_horizontalDivider, false);
             verticalDivider = typedArray.getBoolean(R.styleable.RecyclerViewButton_verticalDivider, false);
             refresh = typedArray.getBoolean(R.styleable.RecyclerViewButton_refresh, true);
+            basic = typedArray.getBoolean(R.styleable.RecyclerViewButton_basic, false);
             listitem = typedArray.getResourceId(R.styleable.RecyclerViewButton_listitem, 1);
             return;
         }
@@ -77,6 +80,7 @@ public class RecyclerViewButton extends FrameLayout {
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
         goToTopImageView = findViewById(R.id.goToTopImageView);
         recyclerView = findViewById(R.id.recyclerView);
+        painelButtonRelativeLayout = findViewById(R.id.painelButtonRelativeLayout);
 
         setup();
     }
@@ -106,6 +110,11 @@ public class RecyclerViewButton extends FrameLayout {
         recyclerView.addOnScrollListener(onScrollListener);
 
         swipeRefreshLayout.setEnabled(refresh);
+
+        if(basic){
+            swipeRefreshLayout.setEnabled(false);
+            painelButtonRelativeLayout.setVisibility(View.GONE);
+        }
 
     }
 
@@ -158,6 +167,10 @@ public class RecyclerViewButton extends FrameLayout {
 
     public void addOnItemTouchListener(@NonNull RecyclerView.OnItemTouchListener listener){
         recyclerView.addOnItemTouchListener(listener);
+    }
+
+    public void scrollToPosition(int position){
+        recyclerView.scrollToPosition(position);
     }
 
     public void setRefreshing(boolean refreshing) {

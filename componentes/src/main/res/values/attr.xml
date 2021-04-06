@@ -208,6 +208,7 @@
         <attr name="horizontalDivider" format="boolean"/>
         <attr name="verticalDivider" format="boolean"/>
         <attr name="refresh" format="boolean"/>
+        <attr name="basic" format="boolean"/>
         <attr name="listitem" format="reference"/>
     </declare-styleable>
 
