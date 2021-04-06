@@ -34,6 +34,8 @@ public class ComponentesTresActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_componentes_tres);
 
+        ///
+
         findViewById(R.id.button12).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
