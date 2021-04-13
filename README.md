@@ -438,7 +438,7 @@ final ProgressButton progressButtonOk = findViewById(R.id.progressButtonOk);
 ```
 ---
 
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/help_buttom.png" > 
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/help_buttom.png" width="20%"> 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/dialog_help_buttom.png" width="20%">
 
 ```xml
@@ -459,7 +459,7 @@ final ProgressButton progressButtonOk = findViewById(R.id.progressButtonOk);
 ```
 ---
 
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/image_rounted.png" width="50%">
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/image_rounted.png" width="20%">
 
 ````xml
      <siac.com.componentes.RoundishImageView
@@ -474,7 +474,7 @@ final ProgressButton progressButtonOk = findViewById(R.id.progressButtonOk);
 
 ---
 
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/rount_image.png" width="50%">
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/rount_image.png" width="20%">
 
 ````xml
      <siac.com.componentes.RoundImageView
