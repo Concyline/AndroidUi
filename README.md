@@ -438,6 +438,27 @@ final ProgressButton progressButtonOk = findViewById(R.id.progressButtonOk);
 ```
 ---
 
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/help_buttom.png" > 
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/dialog_help_buttom.png" width="20%">
+
+```xml
+  <siac.com.componentes.HelpButton
+    android:id="@+id/helpButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:color="@color/colorError"
+    app:helpMsg="Lorem Ipsum is simply dummy text of the printing and typesetting industry."/>
+```
+```java
+ HelpButton helpButton = findViewById(R.id.helpButton);
+ helpButton.setActivity(this);
+ 
+ // In XML file or programmatically
+ helpButton.setHelpMsg("Lorem Ipsum is simply dummy text of the printing and typesetting industry.");
+
+```
+---
+
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/image_rounted.png" width="50%">
 
 ````xml
