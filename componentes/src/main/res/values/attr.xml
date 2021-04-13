@@ -218,4 +218,9 @@
         <flag name="right" value="2" />
     </attr>
 
+    <declare-styleable name="HelpButton">
+        <attr name="color"/>
+        <attr name="helpMsg" format="string"/>
+    </declare-styleable>
+
 </resources>

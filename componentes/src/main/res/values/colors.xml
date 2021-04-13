@@ -15,5 +15,6 @@
     <color name="black">#000</color>
     <color name="pink">#DC73FF</color>
     <color name="white">#FFF</color>
+    <color name="cyan">#AAA</color>
 
 </resources>
