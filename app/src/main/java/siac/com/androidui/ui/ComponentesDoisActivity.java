@@ -15,6 +15,7 @@ import java.io.InputStream;
 
 import siac.com.androidui.R;
 import siac.com.componentes.CDialog;
+import siac.com.componentes.HelpButton;
 import siac.com.componentes.ProgressButton;
 import siac.com.componentes.ProgressIndeterminate;
 import siac.com.componentes.ProgressImageView;
@@ -223,7 +224,6 @@ public class ComponentesDoisActivity extends AppCompatActivity {
                 progressDialog.setBackgroundColor(R.color.pink);
 
 
-
                 //progressDialog.dismiss();
                 //progressDialog.isShowing();
                 //progressDialog.setMessage("Text");
@@ -233,6 +233,12 @@ public class ComponentesDoisActivity extends AppCompatActivity {
 
             }
         });
+
+        HelpButton helpButton = findViewById(R.id.helpButton);
+        helpButton.setActivity(this);
+        helpButton.setHelpMsg("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley");
+
+
     }
 
     public Bitmap getBitmapFromAsset() {

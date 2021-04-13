@@ -7,8 +7,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
 
         <siac.com.componentes.RoundImageView
             android:id="@+id/roundImageView"
@@ -145,6 +145,17 @@
             android:text="Progress Dialog"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/snackBarButton" />
+
+        <siac.com.componentes.HelpButton
+            android:id="@+id/helpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:color="@color/colorError"
+            app:helpMsg="Teste aqui"
+            app:layout_constraintBottom_toBottomOf="@+id/progressDialogButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/progressDialogButton"
+            app:layout_constraintTop_toTopOf="@+id/progressDialogButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
