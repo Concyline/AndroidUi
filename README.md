@@ -1217,6 +1217,25 @@ Hawk.deleteAll();
                 }
  }.setValue(Double.parseDouble(editText.getText().toString().trim())).showDIalog();
  ````
+ 
+  # * KeyBoardDialog 
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/keyboard.png" width="20%">
+ 
+ ### Usage
+ ````java
+ KeyBoardDialog customDialog = new KeyBoardDialog(ComponentesDoisActivity.this);
+                    customDialog.setBackgroundResource(KeyBoardDialog.DWindow.ROUND)
+                            .setCancelable(true)
+                            .setJustNumber(false)
+                            .create();
+
+                    customDialog.show(editTextNumber.getText().toString(), new KeyBoardDialog.OnDismissListener() {
+                        @Override
+                        public void dismiss(String value) {
+                            editTextNumber.setText(value);
+                        }
+                    });
+ ````
 
 Resources
 =========
