@@ -273,8 +273,8 @@
             app:layout_constraintStart_toEndOf="@+id/doisButton"
             app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />
 
-        <Button
-            android:id="@+id/vazioButton"
+<!--        <Button
+            android:id="@+id/tresButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -286,7 +286,7 @@
             app:layout_constraintBottom_toTopOf="@+id/seisButton"
             app:layout_constraintEnd_toStartOf="@+id/vazio"
             app:layout_constraintStart_toEndOf="@+id/doisButton"
-            app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />-->
 
         <ImageView
             android:id="@+id/vazio"
