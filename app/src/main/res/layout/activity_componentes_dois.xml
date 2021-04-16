@@ -143,6 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:text="Progress Dialog"
+            app:layout_constraintEnd_toStartOf="@+id/helpButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/snackBarButton" />
 
@@ -150,11 +151,25 @@
             android:id="@+id/helpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="3dp"
             app:color="@color/colorError"
             app:helpMsg="Teste aqui"
             app:layout_constraintBottom_toBottomOf="@+id/progressDialogButton"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
             app:layout_constraintStart_toEndOf="@+id/progressDialogButton"
+            app:layout_constraintTop_toTopOf="@+id/progressDialogButton" />
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:focusable="false"
+            android:text="5.75"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/helpButton"
             app:layout_constraintTop_toTopOf="@+id/progressDialogButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

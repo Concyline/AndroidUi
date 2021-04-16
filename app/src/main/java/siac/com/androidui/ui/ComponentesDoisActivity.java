@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,7 +16,9 @@ import java.io.InputStream;
 
 import siac.com.androidui.R;
 import siac.com.componentes.CDialog;
+import siac.com.componentes.CustomDialog;
 import siac.com.componentes.HelpButton;
+import siac.com.componentes.KeyBoardDialog;
 import siac.com.componentes.ProgressButton;
 import siac.com.componentes.ProgressIndeterminate;
 import siac.com.componentes.ProgressImageView;
@@ -238,6 +241,31 @@ public class ComponentesDoisActivity extends AppCompatActivity {
         helpButton.setActivity(this);
         helpButton.setHelpMsg("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley");
 
+        final EditText editTextNumber = findViewById(R.id.editTextNumber);
+        editTextNumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    KeyBoardDialog customDialog = new KeyBoardDialog(ComponentesDoisActivity.this);
+                    customDialog.setBackgroundResource(KeyBoardDialog.DWindow.ROUND)
+                            .setCancelable(true)
+                            .setJustNumber(true)
+                            .create();
+
+                    customDialog.show(editTextNumber.getText().toString(), new KeyBoardDialog.OnDismissListener() {
+                        @Override
+                        public void dismiss(String value) {
+                            editTextNumber.setText(value);
+                        }
+                    });
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
 
     }
 
