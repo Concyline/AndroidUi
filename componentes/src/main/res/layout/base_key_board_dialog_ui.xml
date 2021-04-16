@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/baseContainerLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="#FFF"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/numeroEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="8dp"
+            android:ems="10"
+            android:enabled="true"
+            android:focusable="false"
+            android:gravity="right"
+            android:inputType="numberDecimal"
+            android:text=""
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/umButton"
+            app:layout_constraintEnd_toStartOf="@+id/apagaImageView"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/apagaImageView"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_c_rmv_char"
+            app:layout_constraintBottom_toBottomOf="@+id/numeroEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/numeroEditText"
+            app:layout_constraintTop_toTopOf="@+id/numeroEditText" />
+
+        <Button
+            android:id="@+id/umButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:background="@null"
+            android:text="1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#6E6E6E"
+            app:layout_constraintBottom_toTopOf="@+id/quatroButton"
+            app:layout_constraintEnd_toStartOf="@+id/doisButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />
+
+        <Button
+            android:id="@+id/doisButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@null"
+            android:text="2"
+            android:textColor="#6E6E6E"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/cincoButton"
+            app:layout_constraintEnd_toStartOf="@+id/tresButton"
+            app:layout_constraintStart_toEndOf="@+id/umButton"
+            app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />
+
+        <Button
+            android:id="@+id/quatroButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:background="@null"
+            android:text="4"
+            android:textColor="#6E6E6E"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/seteButton"
+            app:layout_constraintEnd_toStartOf="@+id/cincoButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/umButton" />
+
+        <Button
+            android:id="@+id/seteButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:background="@null"
+            android:text="7"
+            android:textSize="20sp"
+            android:textColor="#6E6E6E"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/button10"
+            app:layout_constraintEnd_toStartOf="@+id/oitoButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quatroButton" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@null"
+            android:textColor="#6E6E6E"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/zeroButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seteButton" />
+
+        <Button
+            android:id="@+id/zeroButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@null"
+            android:text="0"
+            android:textSize="20sp"
+            android:textColor="#6E6E6E"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/pontoButton"
+            app:layout_constraintStart_toEndOf="@+id/button10"
+            app:layout_constraintTop_toBottomOf="@+id/oitoButton" />
+
+        <Button
+            android:id="@+id/pontoButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@null"
+            android:text="."
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="#6E6E6E"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/okImageView"
+            app:layout_constraintStart_toEndOf="@+id/zeroButton"
+            app:layout_constraintTop_toBottomOf="@+id/noveButton" />
+
+        <ImageView
+            android:id="@+id/okImageView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:tint="#36D900"
+            android:src="@drawable/baseline_done_black_36"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pontoButton"
+            app:layout_constraintTop_toBottomOf="@+id/button15" />
+
+        <Button
+            android:id="@+id/oitoButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="8"
+            android:textColor="#6E6E6E"
+            app:layout_constraintBottom_toTopOf="@+id/zeroButton"
+            app:layout_constraintEnd_toStartOf="@+id/noveButton"
+            app:layout_constraintStart_toEndOf="@+id/seteButton"
+            app:layout_constraintTop_toBottomOf="@+id/cincoButton" />
+
+        <Button
+            android:id="@+id/noveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="9"
+            android:textSize="20sp"
+            android:textColor="#6E6E6E"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/pontoButton"
+            app:layout_constraintEnd_toStartOf="@+id/button15"
+            app:layout_constraintStart_toEndOf="@+id/oitoButton"
+            app:layout_constraintTop_toBottomOf="@+id/seisButton" />
+
+        <Button
+            android:id="@+id/button15"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@null"
+            android:text="Button"
+            android:textSize="20sp"
+            android:textColor="#6E6E6E"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/okImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/noveButton"
+            app:layout_constraintTop_toBottomOf="@+id/button14" />
+
+        <Button
+            android:id="@+id/cincoButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="5"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#6E6E6E"
+            app:layout_constraintBottom_toTopOf="@+id/oitoButton"
+            app:layout_constraintEnd_toStartOf="@+id/seisButton"
+            app:layout_constraintStart_toEndOf="@+id/quatroButton"
+            app:layout_constraintTop_toBottomOf="@+id/doisButton" />
+
+        <Button
+            android:id="@+id/seisButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="6"
+            android:textColor="#6E6E6E"
+            app:layout_constraintBottom_toTopOf="@+id/noveButton"
+            app:layout_constraintEnd_toStartOf="@+id/button14"
+            app:layout_constraintStart_toEndOf="@+id/cincoButton"
+            app:layout_constraintTop_toBottomOf="@+id/tresButton" />
+
+        <Button
+            android:id="@+id/button14"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@null"
+            android:text="Button"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#6E6E6E"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/button15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/seisButton"
+            app:layout_constraintTop_toBottomOf="@+id/vazio" />
+
+        <Button
+            android:id="@+id/tresButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@null"
+            android:text="3"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#6E6E6E"
+            app:layout_constraintBottom_toTopOf="@+id/seisButton"
+            app:layout_constraintEnd_toStartOf="@+id/vazio"
+            app:layout_constraintStart_toEndOf="@+id/doisButton"
+            app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />
+
+        <Button
+            android:id="@+id/vazioButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@null"
+            android:text="3"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#6E6E6E"
+            app:layout_constraintBottom_toTopOf="@+id/seisButton"
+            app:layout_constraintEnd_toStartOf="@+id/vazio"
+            app:layout_constraintStart_toEndOf="@+id/doisButton"
+            app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />
+
+        <ImageView
+            android:id="@+id/vazio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:tint="#36D900"
+            android:visibility="invisible"
+            android:src="@drawable/ic_c_rmv_char"
+            app:layout_constraintBottom_toTopOf="@+id/button14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tresButton"
+            app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
