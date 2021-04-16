@@ -45,7 +45,7 @@ public class ComponentesDoisActivity extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        progressImageView.removeProgres();
+                        progressImageView.removeProgres();  
                     }
                 }, 2000);
             }
