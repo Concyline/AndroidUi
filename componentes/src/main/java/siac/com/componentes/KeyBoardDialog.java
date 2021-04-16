@@ -153,7 +153,7 @@ public class KeyBoardDialog {
                             valueEdit = numeroEditText.getText().toString().trim() + value;
                         }
                     } else {
-                        valueEdit = numeroEditText.getText().toString().trim() + value;
+                        valueEdit = (valueEdit.equals("0") ? "" : valueEdit) + value;
                     }
 
                     numeroEditText.setText(valueEdit);
