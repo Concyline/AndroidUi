@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -56,6 +57,8 @@ public class KeyBoardDialog {
         }
         return this;
     }*/
+
+
 
     @SuppressLint("ResourceAsColor")
     public KeyBoardDialog create() throws Exception {
