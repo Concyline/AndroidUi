@@ -208,6 +208,9 @@ editTextSearch.setOnClickListener(new View.OnClickListener() {
                 ...
             }
         });
+	
+// Custom inputType programmatically
+searchLegenda.setInputTypeSearch(Constantes.textPassword);
 ````
 
 ---
