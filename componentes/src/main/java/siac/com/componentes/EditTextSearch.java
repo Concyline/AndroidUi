@@ -176,6 +176,10 @@ public class EditTextSearch extends FrameLayout {
         }
     }
 
+    public void setInputTypeSearch(int inputType){
+        setInputType(editText, inputType, 1);
+    }
+
     public void setHint(String text) {
         editText.setHint(text);
     }
