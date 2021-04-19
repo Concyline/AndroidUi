@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import br.com.utill.Util;
 import siac.com.androidui.R;
 import siac.com.componentes.EditTexCurrency;
+import siac.com.componentes.EditTextSearch;
 import siac.com.componentes.EditTextTitle;
+import siac.com.componentes.Util.Constantes;
 
 public class ComponentesActivity extends AppCompatActivity {
 
@@ -41,5 +44,8 @@ public class ComponentesActivity extends AppCompatActivity {
             }
         });
 
+
+        EditTextSearch searchLegenda = findViewById(R.id.searchLegenda);
+        searchLegenda.setInputTypeSearch(Constantes.textPassword);
     }
 }
