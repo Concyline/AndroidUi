@@ -20,6 +20,7 @@ import siac.com.androidui.ui.ComponentesActivity;
 import siac.com.androidui.ui.ComponentesDoisActivity;
 import siac.com.androidui.ui.ComponentesTresActivity;
 import siac.com.androidui.ui.HawkActivity;
+import siac.com.androidui.ui.HttpAgentActivity;
 import siac.com.androidui.ui.LerQrBarCodeActivity;
 import siac.com.androidui.ui.ManipulaTextoActivity;
 import siac.com.androidui.ui.Premisao;
@@ -185,6 +186,14 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), CalculadoraDialogActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
+                    findViewById(R.id.httpAgentButton).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getBaseContext(), HttpAgentActivity.class);
                             startActivity(intent);
                         }
                     });

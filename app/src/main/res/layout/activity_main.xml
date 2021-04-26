@@ -99,11 +99,11 @@
 
     <Button
         android:id="@+id/SwipeLayoutButton"
-        android:layout_width="392dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="SwipeLayout"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/httpAgentButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textoButton" />
 
@@ -127,4 +127,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/halkButton"
         app:layout_constraintTop_toBottomOf="@+id/campix" />
+
+    <Button
+        android:id="@+id/httpAgentButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="HttpAgent"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/SwipeLayoutButton"
+        app:layout_constraintTop_toBottomOf="@+id/textoButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
