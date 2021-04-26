@@ -6,9 +6,8 @@ This library has 6 modules to aid Android development, speeding up the completio
 
  Features
 ------
- * Componentes
  * [Componentes](#Componentes)
- * Manipulador de texto
+ * [Manipulador de texto](#Manipulador de texto)
  * Leitor CodeBar and QrCode
  * SortCut 
  * Permisions
@@ -548,6 +547,63 @@ new CDialog(ParametrosActivity.this)
 ````
 
 ---
+
+ ### Manipulador de texto
+  
+  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/manipulatexto.gif" width="20%">
+  
+  ### Usage
+  
+  ````java
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_manipula_texto);
+  
+  		ManipulaTexto.init( this,"Manipula","Log.txt");
+  		log = ManipulaTexto.getInstance();
+  
+  		// METHODS
+  		//log.info("");
+  		//log.erro("");
+  		//log.processaException("class", Exception error);
+  		//log.delete()
+  		//String all = log.getAll();
+  }
+  ````
+  
+  ````xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="siac.com.androidui">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_teste"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon_teste"
+        android:supportsRtl="true"
+	android:requestLegacyExternalStorage="true" <!--VERY IMPORTANT API > 26-->
+        android:theme="@style/AppTheme">
+        <activity android:name=".ManipulaTextoActivity"></activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+	   
+    </application>
+
+</manifest>
+````
+
+---
+
 ## SnackBar
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/sneckbar.png" width="20%"/> 
@@ -841,59 +897,7 @@ public listeners
     }
   ````
   
-  # * Manipulador de texto
-  
-  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/manipulatexto.gif" width="20%">
-  
-  ### Usage
-  
-  ````java
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manipula_texto);
-  
-  		ManipulaTexto.init( this,"Manipula","Log.txt");
-  		log = ManipulaTexto.getInstance();
-  
-  		// METHODS
-  		//log.info("");
-  		//log.erro("");
-  		//log.processaException("class", Exception error);
-  		//log.delete()
-  		//String all = log.getAll();
-  }
-  ````
-  
-  ````xml
-  <?xml version="1.0" encoding="utf-8"?>
-  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="siac.com.androidui">
-
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/icon_teste"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/icon_teste"
-        android:supportsRtl="true"
-	android:requestLegacyExternalStorage="true" <!--VERY IMPORTANT API > 26-->
-        android:theme="@style/AppTheme">
-        <activity android:name=".ManipulaTextoActivity"></activity>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-	   
-    </application>
-
-</manifest>
-````
+ 
   
   # * Leitor Qr and CodeBar
   
