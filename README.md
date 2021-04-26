@@ -738,7 +738,7 @@ in onCreate
 
 ---
 
-## GeometricProgress
+### GeometricProgress
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/geometric_progress.gif" width="20%"/> 
 
@@ -765,7 +765,7 @@ progressView.setFigurePadding(getResources().getDimensionPixelOffset(R.dimen.fig
 
 ---
 
-## DotLoader
+### DotLoader
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/loading_anim.gif" width="50%"/> 
 
@@ -799,7 +799,7 @@ dotLoader.postDelayed(new Runnable() {
 
 ---
 
-## ProgressIndeterminate
+### ProgressIndeterminate
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_indetermined.png" width="20%"/> 
 
@@ -824,7 +824,7 @@ ProgressIndeterminate progressDialog = ProgressIndeterminate.show(ComponentesDoi
 
 ---
 
-## SwipeLayout
+### SwipeLayout
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/swipe_rigth.png" width="20%"/> 
 
@@ -933,7 +933,7 @@ public listeners
   
  
   
-  # * Leitor Qr and CodeBar
+  ### Leitor Qr and CodeBar
   
   <img src="https://github.com/Concyline/AndroidUi/blob/master/img/leitor.gif" width="20%">
   
