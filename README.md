@@ -32,14 +32,16 @@ This library has 6 modules to aid Android development, speeding up the completio
  * [ProgressIndeterminate](#ProgressIndeterminate)
  * [SwipeLayout](#SwipeLayout)
  * [Leitor Qr and CodeBar](#Leitor-Qr-and-CodeBar)
- * SortCut 
- * Permisions
- * Util
- * CamPix
- * PhotoView
- * Halk
- * CalculatorDialog
- * HttpAgent
+ * [ShortCut](#ShortCut)
+ * [Permisions](#Permisions)
+ * [Util](#Util)
+ * [CamPix](#CamPix)
+ * [PhotoView](#PhotoView)
+ * [Zoom Frame](#Zoom-Frame)
+ * [Hawk](#Hawk)
+ * [CalculatorDialog](#CalculatorDialog)
+ * [KeyBoardDialog](#KeyBoardDialog)
+ * [HttpAgent](#HttpAgent)
 
  
  Gradle Setup
@@ -62,7 +64,7 @@ dependencies {
 
 
 
-### Componentes
+## Componentes
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentes.gif" width="20%">
 
 ### Simples
@@ -652,7 +654,7 @@ new CDialog(ParametrosActivity.this)
 
 ---
 
-### CustomDialog
+## CustomDialog
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/cuson_dialog.png" width="20%"/> 
 
@@ -738,7 +740,7 @@ in onCreate
 
 ---
 
-### GeometricProgress
+## GeometricProgress
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/geometric_progress.gif" width="20%"/> 
 
@@ -765,7 +767,7 @@ progressView.setFigurePadding(getResources().getDimensionPixelOffset(R.dimen.fig
 
 ---
 
-### DotLoader
+## DotLoader
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/loading_anim.gif" width="50%"/> 
 
@@ -799,7 +801,7 @@ dotLoader.postDelayed(new Runnable() {
 
 ---
 
-### ProgressIndeterminate
+## ProgressIndeterminate
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_indetermined.png" width="20%"/> 
 
@@ -823,8 +825,7 @@ ProgressIndeterminate progressDialog = ProgressIndeterminate.show(ComponentesDoi
 ````
 
 ---
-
-### SwipeLayout
+## SwipeLayout
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/swipe_rigth.png" width="20%"/> 
 
@@ -932,8 +933,8 @@ public listeners
   ````
   
  
-  
-  ### Leitor Qr and CodeBar
+  ---
+  ## Leitor Qr and CodeBar
   
   <img src="https://github.com/Concyline/AndroidUi/blob/master/img/leitor.gif" width="20%">
   
@@ -1010,8 +1011,8 @@ public listeners
 
 </manifest>
 ````
-
-# * ShortCut
+---
+## ShortCut
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/shortcut.png" width="20%">
 
  ### Usage
@@ -1054,8 +1055,9 @@ public listeners
  ````java
 shortcutUtils.removeDynamicShortCut(dynamicShortcut);
  ````
+ ---
+ ## Permisions
  
- # * Permisions
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/permisions.png" width="20%">
 
  ### Usage
@@ -1076,8 +1078,9 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
        }
 });
  ````
+ ---
+ ## Util
  
- # * Util
  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/util_dois.gif" width="20%">
  
  ### Usage
@@ -1117,8 +1120,9 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
           }
   });
  ````
+ ---
+ ## CamPix
  
- # * CamPix
  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/campix.png" width="20%">
  
  ### Usage
@@ -1192,8 +1196,9 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
     }
 	
  ````
- 
-# * PhotoView
+---
+## PhotoView
+
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/photo_view.gif" width="20%">
  
 ### Usage
@@ -1211,8 +1216,10 @@ PhotoView photoView = (PhotoView) findViewById(R.id.photo_view);
 photoView.setImageResource(R.drawable.image);
 ````
 
-# * Zoom Frame
- <img src="https://github.com/Concyline/AndroidUi/blob/master/img/zoom.gif" width="20%">
+---
+## Zoom Frame
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/zoom.gif" width="20%">
  
  ### Usage
  ````xml
@@ -1223,7 +1230,9 @@ photoView.setImageResource(R.drawable.image);
         android:src="@drawable/image_3" />
  ````
  
- # * Hawk
+ ---
+ ## Hawk
+ 
  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/hawk.png" width="20%">
  
  ### Usage
@@ -1252,8 +1261,10 @@ Get crazy and delete everything
 Hawk.deleteAll();
  ````
  
- # * CalculatorDialog 
- <img src="https://github.com/Concyline/AndroidUi/blob/master/img/calculator_ligth.png" width="20%"> <img src="https://github.com/Concyline/AndroidUi/blob/master/img/calculator_dark.png" width="20%">
+ ---
+## CalculatorDialog 
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/calculator_ligth.png" width="20%"> <img src="https://github.com/Concyline/AndroidUi/blob/master/img/calculator_dark.png" width="20%">
  
  ### Usage
  ````java
@@ -1265,7 +1276,9 @@ Hawk.deleteAll();
  }.setValue(Double.parseDouble(editText.getText().toString().trim())).showDIalog();
  ````
  
-  # * KeyBoardDialog 
+ ---
+ ## KeyBoardDialog 
+ 
  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/keyboard.png" width="20%">
  
  ### Usage
@@ -1284,7 +1297,9 @@ Hawk.deleteAll();
                     });
  ````
  
-   # * HttpAgent
+ ---
+ ## HttpAgent
+ 
  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/httagent.png" width="20%">
  
  ### Usage
