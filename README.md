@@ -548,6 +548,20 @@ new CDialog(ParametrosActivity.this)
 
 ---
 
+## SnackBar
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/sneckbar.png" width="20%"/> 
+
+````java
+ new CDialog(ComponentesDoisActivity.this)
+                        .createAlertSneckBar("Info SnackBar",
+                            TypeDialog.INFO,
+                            SizeDialog.MEDIUM)
+                        .show();
+````
+
+---
+
  ### Manipulador de texto
   
   <img src="https://github.com/Concyline/AndroidUi/blob/master/img/manipulatexto.gif" width="20%">
@@ -600,20 +614,6 @@ new CDialog(ParametrosActivity.this)
     </application>
 
 </manifest>
-````
-
----
-
-## SnackBar
-
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/sneckbar.png" width="20%"/> 
-
-````java
- new CDialog(ComponentesDoisActivity.this)
-                        .createAlertSneckBar("Info SnackBar",
-                            TypeDialog.INFO,
-                            SizeDialog.MEDIUM)
-                        .show();
 ````
 
 ---
