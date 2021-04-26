@@ -20,6 +20,11 @@ This library has 6 modules to aid Android development, speeding up the completio
    - [PassWord](#PassWord)
    - [EditTexCurrency](#EditTexCurrency)
    - [RecyclerViewButton](#RecyclerViewButton)
+   - [ProgressImageView](#ProgressImageView)
+   - [ProgressButton](#ProgressButton)
+   - [HelpButton](#HelpButton)
+   - [RoundishImageView](#RoundishImageView)
+   - [RoundImageView](#RoundImageView)
  * [Manipulador de texto](#Manipulador-de-texto)
  * [CustomDialog](#CustomDialog)
  * Leitor CodeBar and QrCode
@@ -403,6 +408,7 @@ Adapter
 ````
 
 ---
+### ProgressImageView
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progress_image.png" width="50%">
 
@@ -434,6 +440,7 @@ Adapter
         });
 ```
 ---
+### ProgressButton
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_button.png" width="50%"> 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/progres_button_pressed.png" width="50%">
@@ -466,6 +473,7 @@ final ProgressButton progressButtonOk = findViewById(R.id.progressButtonOk);
         });
 ```
 ---
+### HelpButton
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/help_buttom.png" width="20%"> 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/dialog_help_buttom.png" width="20%">
@@ -487,6 +495,7 @@ final ProgressButton progressButtonOk = findViewById(R.id.progressButtonOk);
 
 ```
 ---
+### RoundishImageView
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/image_rounted.png" width="20%">
 
@@ -502,6 +511,7 @@ final ProgressButton progressButtonOk = findViewById(R.id.progressButtonOk);
 ````
 
 ---
+### RoundImageView
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/rount_image.png" width="20%">
 
