@@ -8,6 +8,7 @@ This library has 6 modules to aid Android development, speeding up the completio
 ------
  * [Componentes](#Componentes)
  * [Manipulador de texto](#Manipulador-de-texto)
+ * [CustomDialog](#CustomDialog)
  * Leitor CodeBar and QrCode
  * SortCut 
  * Permisions
@@ -18,10 +19,6 @@ This library has 6 modules to aid Android development, speeding up the completio
  * SwipeLayout
  * CalculatorDialog
  * HttpAgent
-
-[click on this link](#my-multi-word-header)
-
-### My Multi Word Header
 
  
  Gradle Setup
@@ -618,7 +615,7 @@ new CDialog(ParametrosActivity.this)
 
 ---
 
-## CustomDialog
+### CustomDialog
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/cuson_dialog.png" width="20%"/> 
 
