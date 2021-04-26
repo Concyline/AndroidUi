@@ -1240,6 +1240,75 @@ Hawk.deleteAll();
                         }
                     });
  ````
+ 
+   # * HttpAgent
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/httagent.png" width="20%">
+ 
+ ### Usage
+ ````java
+   String content = gson.toJson(new LoginBody("12247272000170", "API", "123456"));
+
+        new HttpAgent(MainActivity.this, "https://viacep.com.br/ws/01001000/json/", HTTP.GET)
+                //new HttpAgent(MainActivity.this,"http://10.0.2.2:8080/SiacAPI/Login", HTTP.POST)
+                //new HttpAgent(MainActivity.this,"http://10.0.2.2:8080/SiacAPI/Minutas", HTTP.GET)
+                //.headers("Authorization", "Bearer " + token, "Content-Type", "application/json")
+                .headers("Content-Type", "application/json")
+                //.setTokenBearer(token)
+		//.queryParams("key_1","value_1","key_2","value_2","key_N","value_N")
+                //.withBody("{name:popapp ,age:27}")
+                //.withBody(content)
+                .goString(new StringCallback() {
+                    @Override
+                    protected void onDone(boolean success, String stringResults) {
+                        if (success) {
+                            System.out.println(stringResults);
+                        } else {
+                            System.out.println(getErrorMessage());
+                        }
+                    }
+                });
+		
+
+//Get no results, Just send the request
+go(new SuccessCallback() {
+                        @Override
+                        protected void onDone(boolean success) {
+                            getErrorMessage(); //returns error message if exists.
+                            getResponseCode(); // well, it's obvious...
+                            getStringResults(); // returns results as as string.
+                        }
+                    })
+
+//Get a string results
+goString(new StringCallback() {
+                        @Override
+                        protected void onDone(boolean success, String results) {
+                            getErrorMessage(); //returns error message if exists.
+                            getResponseCode(); // well, it's obvious...
+                            getStringResults(); // returns results as as string.
+                        }
+                    })
+
+//Get Json results
+goJson(new JsonCallback() {
+                        @Override
+                        protected void onDone(boolean success, JSONObject jsonObject) {
+                            getErrorMessage(); //returns error message if exists.
+                            getResponseCode(); // well, it's obvious...
+                            getStringResults(); // returns results as as string.
+                        }
+                    })
+
+//Get JsonArray results
+goJsonArray(new JsonArrayCallback() {
+                        @Override
+                        protected void onDone(boolean success, JSONArray jsonArray) {
+ 			    getErrorMessage(); //returns error message if exists.
+                            getResponseCode(); // well, it's obvious...
+                            getStringResults(); // returns results as as string.
+                        }
+                    });
+ ````
 
 Resources
 =========
