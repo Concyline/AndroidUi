@@ -25,8 +25,8 @@ This library has 6 modules to aid Android development, speeding up the completio
    - [HelpButton](#HelpButton)
    - [RoundishImageView](#RoundishImageView)
    - [RoundImageView](#RoundImageView)
- * [Manipulador de texto](#Manipulador-de-texto)
  * [CustomDialog](#CustomDialog)
+ * [Manipulador de texto](#Manipulador-de-texto)
  * Leitor CodeBar and QrCode
  * SortCut 
  * Permisions
