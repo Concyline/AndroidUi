@@ -7,7 +7,8 @@ This library has 6 modules to aid Android development, speeding up the completio
  Features
 ------
  * [Componentes](#Componentes)
-   > [Componente simples](#Componente-simples)
+   > [Simples](#Simples)
+   > [Mascara](#Mascara)
  * [Manipulador de texto](#Manipulador-de-texto)
  * [CustomDialog](#CustomDialog)
  * Leitor CodeBar and QrCode
@@ -45,7 +46,7 @@ dependencies {
 ### Componentes
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentes.gif" width="20%">
 
-### Componente simples
+### Simples
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentesimples.png" width="50%">
 
@@ -65,6 +66,7 @@ dependencies {
 ```
 
 ---
+### Mascara
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/mascara.png" width="50%">
 
