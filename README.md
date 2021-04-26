@@ -27,14 +27,17 @@ This library has 6 modules to aid Android development, speeding up the completio
    - [RoundImageView](#RoundImageView)
  * [Manipulador de texto](#Manipulador-de-texto)
  * [CustomDialog](#CustomDialog)
- * Leitor CodeBar and QrCode
+ * [GeometricProgress](#GeometricProgress)
+ * [DotLoader](#DotLoader)
+ * [ProgressIndeterminate](#ProgressIndeterminate)
+ * [SwipeLayout](#SwipeLayout)
+ * [Leitor Qr and CodeBar](#Leitor-Qr-and-CodeBar)
  * SortCut 
  * Permisions
  * Util
  * CamPix
  * PhotoView
  * Halk
- * SwipeLayout
  * CalculatorDialog
  * HttpAgent
 
