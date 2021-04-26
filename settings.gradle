@@ -1,3 +1,4 @@
+include ':httpagent'
 include ':calculadora'
 include ':hawk'
 include ':halkk'
