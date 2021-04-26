@@ -7,7 +7,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  Features
 ------
  * [Componentes](#Componentes)
- * [Manipulador de texto](#Manipulador de texto)
+ * [Manipulador de texto](#Manipulador-de-texto)
  * Leitor CodeBar and QrCode
  * SortCut 
  * Permisions
