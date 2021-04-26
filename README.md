@@ -11,6 +11,15 @@ This library has 6 modules to aid Android development, speeding up the completio
    - [Mascara](#Mascara)
    - [Requerido](#Requerido)
    - [Só data](#Só-data)
+   - [Spinner](#Spinner)
+   - [Dara e Hora](#Dara-e-Hora)
+   - [Icon direita](#Icon-direita)
+   - [TextViewTitle](#TextViewTitle)
+   - [EditTextSearch](#EditTextSearch)
+   - [Multiline](#Multiline)
+   - [PassWord](#PassWord)
+   - [EditTexCurrency](#EditTexCurrency)
+   - [RecyclerViewButton](#RecyclerViewButton)
  * [Manipulador de texto](#Manipulador-de-texto)
  * [CustomDialog](#CustomDialog)
  * Leitor CodeBar and QrCode
@@ -128,6 +137,7 @@ dependencies {
 
 ---
 
+### Spinner
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/spinner.png" width="50%">
 
 ```xml
@@ -148,6 +158,7 @@ spinnerTitle.setAdapter(adapter);
 ````
 
 ---
+### Dara e Hora
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/calendarhoradata.png" width="50%">
 
@@ -162,7 +173,7 @@ spinnerTitle.setAdapter(adapter);
 ```
 
 ---
-
+### Icon direita
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/iconedireita.png" width="50%">
 
 ```xml
@@ -178,6 +189,7 @@ spinnerTitle.setAdapter(adapter);
 ```
 
 ---
+### TextViewTitle
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/textocomlegenda.png" width="50%">
 
@@ -197,6 +209,7 @@ spinnerTitle.setAdapter(adapter);
 ```
 
 ---
+### EditTextSearch
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/pesquisasimples.png" width="50%">
 
@@ -223,6 +236,7 @@ editTextSearch.setOnClickListener(new View.OnClickListener() {
 searchLegenda.setInputTypeSearch(Constantes.textPassword);
 ````
 ---
+### Multiline
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/multiline.png" width="50%">
 
@@ -241,6 +255,7 @@ searchLegenda.setInputTypeSearch(Constantes.textPassword);
 ````
 
 ---
+### PassWord
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/senha.png" width="50%">
 
@@ -267,6 +282,7 @@ final EditTextTitle senhaEditTextTitle = findViewById(R.id.senhaEditTextTitle);
 ````
 
 ---
+### EditTexCurrency
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/componente_currence.png" width="50%">
 
@@ -287,6 +303,7 @@ final EditTextTitle senhaEditTextTitle = findViewById(R.id.senhaEditTextTitle);
 ```
 
 ---
+### RecyclerViewButton
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/recyclerviewbutton.png" width="20%">
 
