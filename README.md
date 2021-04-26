@@ -596,7 +596,7 @@ new CDialog(ParametrosActivity.this)
 
 ---
 
- ### Manipulador de texto
+ ## Manipulador de texto
   
   <img src="https://github.com/Concyline/AndroidUi/blob/master/img/manipulatexto.gif" width="20%">
   
