@@ -7,6 +7,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  Features
 ------
  * Componentes
+ * [Componentes](#Componentes)
  * Manipulador de texto
  * Leitor CodeBar and QrCode
  * SortCut 
@@ -20,6 +21,8 @@ This library has 6 modules to aid Android development, speeding up the completio
  * HttpAgent
 
 [click on this link](#my-multi-word-header)
+
+### My Multi Word Header
 
  
  Gradle Setup
@@ -42,7 +45,7 @@ dependencies {
 
 
 
-# * Componentes
+### Componentes
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/componentes.gif" width="20%">
 
 ### Usage
@@ -216,8 +219,6 @@ editTextSearch.setOnClickListener(new View.OnClickListener() {
 // Custom inputType programmatically
 searchLegenda.setInputTypeSearch(Constantes.textPassword);
 ````
-
-### My Multi Word Header
 ---
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/multiline.png" width="50%">
