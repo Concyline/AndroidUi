@@ -17,6 +17,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  * Halk
  * SwipeLayout
  * CalculatorDialog
+ * HttpAgent
  
  Gradle Setup
 ------
