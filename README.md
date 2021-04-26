@@ -7,8 +7,8 @@ This library has 6 modules to aid Android development, speeding up the completio
  Features
 ------
  * [Componentes](#Componentes)
-   > [Simples](#Simples)
-   > [Mascara](#Mascara)
+   - [Simples](#Simples)
+   - [Mascara](#Mascara)
  * [Manipulador de texto](#Manipulador-de-texto)
  * [CustomDialog](#CustomDialog)
  * Leitor CodeBar and QrCode
