@@ -9,6 +9,8 @@ This library has 6 modules to aid Android development, speeding up the completio
  * [Componentes](#Componentes)
    - [Simples](#Simples)
    - [Mascara](#Mascara)
+   - [Requerido](#Requerido)
+   - [Só data](#Só-data)
  * [Manipulador de texto](#Manipulador-de-texto)
  * [CustomDialog](#CustomDialog)
  * Leitor CodeBar and QrCode
@@ -90,6 +92,7 @@ dependencies {
 ```
 
 ---
+### Requerido
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/legenda_requerido.png" width="50%">
 
@@ -109,6 +112,7 @@ dependencies {
 ```
 
 ---
+### Só data
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/sodata.png" width="50%">
 
