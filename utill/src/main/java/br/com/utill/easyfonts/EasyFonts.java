@@ -13,10 +13,12 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package br.com.acordeonapplication;
+package br.com.utill.easyfonts;
 
 import android.content.Context;
 import android.graphics.Typeface;
+
+import siac.com.util.R;
 
 
 /**

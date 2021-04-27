@@ -21,7 +21,6 @@ import siac.com.androidui.R;
 public class HttpAgentActivity extends AppCompatActivity {
 
     EditText urlEditText;
-    Button button16;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,89 +56,5 @@ public class HttpAgentActivity extends AppCompatActivity {
 
             }
         });
-
-        button16 = findViewById(R.id.button16);
-        button16.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                executInBackground();
-            }
-        });
-    }
-
-    int cont = 0;
-    private ProgressDialog progressDialog;
-
-    private void executInBackground() {
-
-        BackgroundTask.with(this) // Activity|FragmentActivity(v4)|Fragment|Fragment(v4)
-                .assign(new BackgroundTask.TaskDescription() {
-                    @Override
-                    public Object onBackground() {
-                        // Do what you want to do on background thread.
-                        // If you want to post something to MainThread,
-                        // just call SugarTask.post(YOUR_MESSAGE).
-
-                        // Return your finally result(Nullable).
-
-                        do {
-                            cont++;
-
-                            Message message = Message.obtain();
-                            message.obj = cont;
-
-                            BackgroundTask.post(message);
-
-                            if (cont == 10) {
-                                cont = 10 / 0;
-                            }
-
-                            try {
-                                Thread.sleep(1000);
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-
-                        } while (cont < 15);
-
-                        return "Finalizado com sucesso!";
-                    }
-                })
-                .preExecute(new BackgroundTask.PreExecuteListener() {
-                    @Override
-                    public void onPreExecute() {
-                        progressDialog = ProgressDialog.show(HttpAgentActivity.this, "Aguarde", "Carregando os clientes...", false, false);
-                    }
-                })
-                .handle(new BackgroundTask.MessageListener() {
-                    @Override
-                    public void handleMessage(@NonNull Message message) {
-                        // Receive message in MainThread which sent from WorkerThread,
-                        // update your UI just in time.
-                        button16.setText("Message " + message.obj);
-                    }
-                })
-                .finish(new BackgroundTask.FinishListener() {
-                    @Override
-                    public void onFinish(@Nullable Object result) {
-                        // If WorkerThread finish without Exception and lifecycle safety,
-                        // deal with your WorkerThread result at here.
-                        button16.setText(result.toString());
-                    }
-                })
-                .broken(new BackgroundTask.BrokenListener() {
-                    @Override
-                    public void onBroken(@NonNull Exception e) {
-                        // If WorkerThread finish with Exception and lifecycle safety,
-                        // deal with Exception at here.
-                        e.printStackTrace();
-                        button16.setText(e.getMessage());
-
-                        if(progressDialog != null){
-                            progressDialog.dismiss();
-                        }
-                    }
-                })
-                .execute();
     }
 }

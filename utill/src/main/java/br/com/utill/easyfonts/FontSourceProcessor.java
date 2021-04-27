@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package br.com.acordeonapplication;
+package br.com.utill.easyfonts;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -24,7 +24,6 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
 import java.io.InputStream;
 
 /**

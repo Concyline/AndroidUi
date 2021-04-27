@@ -53,6 +53,7 @@
         android:layout_width="392dp"
         android:layout_height="wrap_content"
         android:text="Permision"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -61,7 +62,7 @@
         android:id="@+id/abaixaTeclado"
         android:layout_width="196dp"
         android:layout_height="wrap_content"
-        android:text="Util Test"
+        android:text="Util"
         android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@+id/campix"
         app:layout_constraintStart_toStartOf="parent"
@@ -137,4 +138,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/SwipeLayoutButton"
         app:layout_constraintTop_toBottomOf="@+id/textoButton" />
+
+    <Button
+        android:id="@+id/button17"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Fonts"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@+id/button18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SwipeLayoutButton" />
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button17"
+        app:layout_constraintTop_toBottomOf="@+id/httpAgentButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
