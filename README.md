@@ -35,6 +35,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  * [ShortCut](#ShortCut)
  * [Permisions](#Permisions)
  * [Util](#Util)
+  - [BackgroundTask](#BackgroundTask)
  * [CamPix](#CamPix)
  * [PhotoView](#PhotoView)
  * [Zoom Frame](#Zoom-Frame)
@@ -1119,6 +1120,54 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
       		  ...
           }
   });
+ ````
+ 
+ ### BackgroundTask
+ 
+ ````java
+ BackgroundTask.with(this) // Activity|FragmentActivity(v4)|Fragment|Fragment(v4)
+        .assign(new BackgroundTask.TaskDescription() {
+            @Override
+            public Object onBackground() {
+                // Do what you want to do on background thread.
+                // If you want to post something to MainThread,
+                // just call BackgroundTask.post(YOUR_MESSAGE).
+
+                // Return your finally result(Nullable).
+                return null;
+            }
+        })
+        .handle(new BackgroundTask.MessageListener() {
+            @Override
+            public void handleMessage(@NonNull Message message) {
+                // Receive message in MainThread which sent from WorkerThread,
+                // update your UI just in time.
+            }
+        })
+        .finish(new BackgroundTask.FinishListener() {
+            @Override
+            public void onFinish(@Nullable Object result) {
+                // If WorkerThread finish without Exception and lifecycle safety,
+                // deal with your WorkerThread result at here.
+            }
+        })
+        .broken(new BackgroundTask.BrokenListener() {
+            @Override
+            public void onBroken(@NonNull Exception e) {
+                // If WorkerThread finish with Exception and lifecycle safety,
+                // deal with Exception at here.
+            }
+        })
+        .execute();
+	
+
+Notice:
+
+MUST: .with(), .assign(), .execute().
+
+OPTION: .handle(), .finish(), broken(). Every method just call once, otherwise the newer with replace the older.
+
+Use BackgroundTask.post() To send message from WorkerThread to MainThread just in time.
  ````
  ---
  ## CamPix
