@@ -1137,6 +1137,12 @@ Permissions.check(MainActivity.this, permissions, null, null, new PermissionHand
                 return null;
             }
         })
+	.preExecute(new BackgroundTask.PreExecuteListener() {
+             @Override
+             public void onPreExecute() {
+                 // Run task before starting
+             }
+         })
         .handle(new BackgroundTask.MessageListener() {
             @Override
             public void handleMessage(@NonNull Message message) {
