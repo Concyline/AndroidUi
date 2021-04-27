@@ -36,6 +36,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  * [Permisions](#Permisions)
  * [Util](#Util)
    - [BackgroundTask](#BackgroundTask)
+ * [EasyFonts](#EasyFonts)
  * [CamPix](#CamPix)
  * [PhotoView](#PhotoView)
  * [Zoom Frame](#Zoom-Frame)
@@ -1179,6 +1180,17 @@ OPTION: .handle(), .finish(), broken(). Every method just call once, otherwise t
 
 Use: BackgroundTask.post() To send message from WorkerThread to MainThread just in time.
  ````
+ 
+ ---
+## EasyFonts
+ 
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/font.png" width="20%">
+
+````java
+TextView tv_hello = (TextView) findViewById(R.id.tv_hello);
+tv_hello.setTypeface(EasyFonts.robotoThin(this));
+````
+ 
  ---
  ## CamPix
  
