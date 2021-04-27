@@ -1167,7 +1167,7 @@ MUST: .with(), .assign(), .execute().
 
 OPTION: .handle(), .finish(), broken(). Every method just call once, otherwise the newer with replace the older.
 
-Use BackgroundTask.post() To send message from WorkerThread to MainThread just in time.
+Use: BackgroundTask.post() To send message from WorkerThread to MainThread just in time.
  ````
  ---
  ## CamPix
