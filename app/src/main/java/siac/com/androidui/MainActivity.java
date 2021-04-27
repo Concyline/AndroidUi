@@ -19,6 +19,7 @@ import siac.com.androidui.ui.CamPixActivity;
 import siac.com.androidui.ui.ComponentesActivity;
 import siac.com.androidui.ui.ComponentesDoisActivity;
 import siac.com.androidui.ui.ComponentesTresActivity;
+import siac.com.androidui.ui.EasyFontsActivity;
 import siac.com.androidui.ui.HawkActivity;
 import siac.com.androidui.ui.HttpAgentActivity;
 import siac.com.androidui.ui.LerQrBarCodeActivity;
@@ -194,6 +195,14 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), HttpAgentActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
+                    findViewById(R.id.button17).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getBaseContext(), EasyFontsActivity.class);
                             startActivity(intent);
                         }
                     });
