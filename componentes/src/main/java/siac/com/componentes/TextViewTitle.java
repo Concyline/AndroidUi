@@ -3,6 +3,7 @@ package siac.com.componentes;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -26,22 +27,26 @@ public class TextViewTitle extends FrameLayout {
     private ColorStateList corDescricao;
     private float tamDescricao;
     private boolean singleLine;
+    private Context context;
 
 
     public TextViewTitle(@NonNull Context context) {
         super(context);
+        this.context = context;
         obtainStyledAttributes(context, null, 0);
         init();
     }
 
     public TextViewTitle(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        this.context = context;
         obtainStyledAttributes(context, attrs, 0);
         init();
     }
 
     public TextViewTitle(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        this.context = context;
         obtainStyledAttributes(context, attrs, defStyleAttr);
         init();
     }
@@ -116,6 +121,12 @@ public class TextViewTitle extends FrameLayout {
 
     public void setCorDescricao(int color){
         descricaoTextView.setTextColor(ContextCompat.getColor(getContext(), color));
+    }
+
+    public void setFont(String path){
+        Typeface face=Typeface.createFromAsset(context.getAssets(),path);
+        legendaTextView.setTypeface(face);
+        descricaoTextView.setTypeface(face);
     }
 
 }

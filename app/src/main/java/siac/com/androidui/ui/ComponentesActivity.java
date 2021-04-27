@@ -10,6 +10,7 @@ import siac.com.androidui.R;
 import siac.com.componentes.EditTexCurrency;
 import siac.com.componentes.EditTextSearch;
 import siac.com.componentes.EditTextTitle;
+import siac.com.componentes.TextViewTitle;
 import siac.com.componentes.Util.Constantes;
 
 public class ComponentesActivity extends AppCompatActivity {
@@ -47,5 +48,9 @@ public class ComponentesActivity extends AppCompatActivity {
 
         EditTextSearch searchLegenda = findViewById(R.id.searchLegenda);
         searchLegenda.setInputTypeSearch(Constantes.textPassword);
+
+        TextViewTitle textViewTitle = findViewById(R.id.textViewsd);
+        textViewTitle.setFont("fonts/Lobster-Regular.ttf");
+
     }
 }
