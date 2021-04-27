@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.os.Looper;
 import android.os.Message;
 import android.view.View;
 import android.widget.Button;
@@ -66,17 +68,12 @@ public class HttpAgentActivity extends AppCompatActivity {
     }
 
     int cont = 0;
+    private ProgressDialog progressDialog;
 
     private void executInBackground() {
 
         BackgroundTask.with(this) // Activity|FragmentActivity(v4)|Fragment|Fragment(v4)
                 .assign(new BackgroundTask.TaskDescription() {
-                    @Override
-                    public Void onPreExecute() {
-                        System.out.println("aqui");
-                        return null;
-                    }
-
                     @Override
                     public Object onBackground() {
                         // Do what you want to do on background thread.
@@ -108,6 +105,12 @@ public class HttpAgentActivity extends AppCompatActivity {
                         return "Finalizado com sucesso!";
                     }
                 })
+                .preExecute(new BackgroundTask.PreExecuteListener() {
+                    @Override
+                    public void onPreExecute() {
+                        progressDialog = ProgressDialog.show(HttpAgentActivity.this, "Aguarde", "Carregando os clientes...", false, false);
+                    }
+                })
                 .handle(new BackgroundTask.MessageListener() {
                     @Override
                     public void handleMessage(@NonNull Message message) {
@@ -131,6 +134,10 @@ public class HttpAgentActivity extends AppCompatActivity {
                         // deal with Exception at here.
                         e.printStackTrace();
                         button16.setText(e.getMessage());
+
+                        if(progressDialog != null){
+                            progressDialog.dismiss();
+                        }
                     }
                 })
                 .execute();
