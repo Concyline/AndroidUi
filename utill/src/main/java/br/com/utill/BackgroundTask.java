@@ -24,6 +24,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class BackgroundTask {
 
+    public static final int MESSAGE_PREEXECUTE = 415023;
     public static final int MESSAGE_FINISH = 415024;
     public static final int MESSAGE_BROKEN = 415025;
     public static final int MESSAGE_STOP = 415026;
@@ -38,13 +39,25 @@ public class BackgroundTask {
     private Map<Integer, MessageListener> messageMap = new ConcurrentHashMap();
     private Map<Integer, FinishListener> finishMap = new ConcurrentHashMap();
     private Map<Integer, BrokenListener> brokenMap = new ConcurrentHashMap();
+    private Map<Integer, PreExecuteListener> preExecuteMap = new ConcurrentHashMap();
     private Executor executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 8);
 
     private Handler handler = new Handler(Looper.getMainLooper(), new Handler.Callback() {
         public boolean handleMessage(@NonNull Message message) {
             BackgroundTask.Holder result;
+
+            if (message.what == 123) {
+                Iterator i$ = BackgroundTask.this.preExecuteMap.values().iterator();
+
+                while (i$.hasNext()) {
+                    BackgroundTask.PreExecuteListener listenerx = (BackgroundTask.PreExecuteListener) i$.next();
+                    listenerx.onPreExecute();
+                }
+                return true;
+            }
+
             if (message.what == 415024 && message.obj instanceof BackgroundTask.Holder) {
-                result = (BackgroundTask.Holder)message.obj;
+                result = (BackgroundTask.Holder) message.obj;
                 BackgroundTask.this.taskMap.remove(result.id);
                 BackgroundTask.this.messageMap.remove(result.id);
                 BackgroundTask.this.brokenMap.remove(result.id);
@@ -54,31 +67,45 @@ public class BackgroundTask {
                 }
 
                 BackgroundTask.getInstance().dispatchUnregister();
-            } else if (message.what == 415025 && message.obj instanceof BackgroundTask.Holder) {
-                result = (BackgroundTask.Holder)message.obj;
+
+                return true;
+
+            }
+
+            if (message.what == 415025 && message.obj instanceof BackgroundTask.Holder) {
+                result = (BackgroundTask.Holder) message.obj;
                 BackgroundTask.this.taskMap.remove(result.id);
                 BackgroundTask.this.messageMap.remove(result.id);
                 BackgroundTask.this.finishMap.remove(result.id);
                 BackgroundTask.BrokenListener listenerxx = (BackgroundTask.BrokenListener) BackgroundTask.this.brokenMap.remove(result.id);
                 if (listenerxx != null) {
-                    listenerxx.onBroken((Exception)result.object);
+                    listenerxx.onBroken((Exception) result.object);
                 }
 
                 BackgroundTask.getInstance().dispatchUnregister();
-            } else if (message.what == 415026) {
+
+                return true;
+            }
+
+            if (message.what == 415026) {
                 BackgroundTask.this.resetHolder();
                 BackgroundTask.this.taskMap.clear();
                 BackgroundTask.this.messageMap.clear();
                 BackgroundTask.this.finishMap.clear();
                 BackgroundTask.this.brokenMap.clear();
-            } else {
-                Iterator i$ = BackgroundTask.this.messageMap.values().iterator();
 
-                while(i$.hasNext()) {
-                    BackgroundTask.MessageListener listenerx = (BackgroundTask.MessageListener)i$.next();
-                    listenerx.handleMessage(message);
-                }
+                return true;
+
             }
+
+            // MESSAGE
+            Iterator i$ = BackgroundTask.this.messageMap.values().iterator();
+
+            while (i$.hasNext()) {
+                BackgroundTask.MessageListener listenerx = (BackgroundTask.MessageListener) i$.next();
+                listenerx.handleMessage(message);
+            }
+
 
             return true;
         }
@@ -146,16 +173,13 @@ public class BackgroundTask {
                 Process.setThreadPriority(10);
                 if (BackgroundTask.this.taskMap.containsKey(id)) {
                     Message message = Message.obtain();
-
                     try {
                         message.what = 415024;
-                        message.obj = BackgroundTask.this.new Holder(id, ((BackgroundTask.TaskDescription) BackgroundTask.this.taskMap.get(id)).onPreExecute());
                         message.obj = BackgroundTask.this.new Holder(id, ((BackgroundTask.TaskDescription) BackgroundTask.this.taskMap.get(id)).onBackground());
                     } catch (Exception var3) {
                         message.what = 415025;
                         message.obj = BackgroundTask.this.new Holder(id, var3);
                     }
-
                     BackgroundTask.post(message);
                 }
 
@@ -165,7 +189,7 @@ public class BackgroundTask {
 
     private void registerHookToContext(@NonNull Activity activity) {
         FragmentManager manager = activity.getFragmentManager();
-        BackgroundTask.HookFragment hookFragment = (BackgroundTask.HookFragment)manager.findFragmentByTag("HOOK");
+        BackgroundTask.HookFragment hookFragment = (BackgroundTask.HookFragment) manager.findFragmentByTag("HOOK");
         if (hookFragment == null) {
             hookFragment = new BackgroundTask.HookFragment();
             manager.beginTransaction().add(hookFragment, "HOOK").commitAllowingStateLoss();
@@ -175,7 +199,7 @@ public class BackgroundTask {
 
     private void registerHookToContext(@NonNull FragmentActivity activity) {
         androidx.fragment.app.FragmentManager manager = activity.getSupportFragmentManager();
-        BackgroundTask.HookSupportFragment hookSupportFragment = (BackgroundTask.HookSupportFragment)manager.findFragmentByTag("HOOK");
+        BackgroundTask.HookSupportFragment hookSupportFragment = (BackgroundTask.HookSupportFragment) manager.findFragmentByTag("HOOK");
         if (hookSupportFragment == null) {
             hookSupportFragment = new BackgroundTask.HookSupportFragment();
             manager.beginTransaction().add(hookSupportFragment, "HOOK").commitAllowingStateLoss();
@@ -186,7 +210,7 @@ public class BackgroundTask {
     @TargetApi(17)
     private void registerHookToContext(@NonNull Fragment fragment) {
         FragmentManager manager = fragment.getChildFragmentManager();
-        BackgroundTask.HookFragment hookFragment = (BackgroundTask.HookFragment)manager.findFragmentByTag("HOOK");
+        BackgroundTask.HookFragment hookFragment = (BackgroundTask.HookFragment) manager.findFragmentByTag("HOOK");
         if (hookFragment == null) {
             hookFragment = new BackgroundTask.HookFragment();
             manager.beginTransaction().add(hookFragment, "HOOK").commitAllowingStateLoss();
@@ -196,7 +220,7 @@ public class BackgroundTask {
 
     private void registerHookToContext(@NonNull androidx.fragment.app.Fragment fragment) {
         androidx.fragment.app.FragmentManager manager = fragment.getChildFragmentManager();
-        BackgroundTask.HookSupportFragment hookSupportFragment = (BackgroundTask.HookSupportFragment)manager.findFragmentByTag("HOOK");
+        BackgroundTask.HookSupportFragment hookSupportFragment = (BackgroundTask.HookSupportFragment) manager.findFragmentByTag("HOOK");
         if (hookSupportFragment == null) {
             hookSupportFragment = new BackgroundTask.HookSupportFragment();
             manager.beginTransaction().add(hookSupportFragment, "HOOK").commitAllowingStateLoss();
@@ -207,13 +231,13 @@ public class BackgroundTask {
     private void dispatchUnregister() {
         if (this.holder != null && this.taskMap.size() <= 0) {
             if (this.holder.id.equals(ID_ACTIVITY) && this.holder.object instanceof Activity) {
-                this.unregisterHookToContext((Activity)this.holder.object);
+                this.unregisterHookToContext((Activity) this.holder.object);
             } else if (this.holder.id.equals(ID_FRAGMENT_ACTIVITY) && this.holder.object instanceof FragmentActivity) {
-                this.unregisterHookToContext((FragmentActivity)this.holder.object);
+                this.unregisterHookToContext((FragmentActivity) this.holder.object);
             } else if (this.holder.id.equals(ID_FRAGMENT) && this.holder.object instanceof Fragment) {
-                this.unregisterHookToContext((Fragment)this.holder.object);
+                this.unregisterHookToContext((Fragment) this.holder.object);
             } else if (this.holder.id.equals(ID_SUPPORT_FRAGMENT) && this.holder.object instanceof androidx.fragment.app.Fragment) {
-                this.unregisterHookToContext((androidx.fragment.app.Fragment)this.holder.object);
+                this.unregisterHookToContext((androidx.fragment.app.Fragment) this.holder.object);
             }
 
             this.resetHolder();
@@ -222,7 +246,7 @@ public class BackgroundTask {
 
     private void unregisterHookToContext(@NonNull Activity activity) {
         FragmentManager manager = activity.getFragmentManager();
-        BackgroundTask.HookFragment hookFragment = (BackgroundTask.HookFragment)manager.findFragmentByTag("HOOK");
+        BackgroundTask.HookFragment hookFragment = (BackgroundTask.HookFragment) manager.findFragmentByTag("HOOK");
         if (hookFragment != null) {
             hookFragment.postEnable = false;
             manager.beginTransaction().remove(hookFragment).commitAllowingStateLoss();
@@ -232,7 +256,7 @@ public class BackgroundTask {
 
     private void unregisterHookToContext(@NonNull FragmentActivity activity) {
         androidx.fragment.app.FragmentManager manager = activity.getSupportFragmentManager();
-        BackgroundTask.HookSupportFragment hookSupportFragment = (BackgroundTask.HookSupportFragment)manager.findFragmentByTag("HOOK");
+        BackgroundTask.HookSupportFragment hookSupportFragment = (BackgroundTask.HookSupportFragment) manager.findFragmentByTag("HOOK");
         if (hookSupportFragment != null) {
             hookSupportFragment.postEnable = false;
             manager.beginTransaction().remove(hookSupportFragment).commitAllowingStateLoss();
@@ -243,7 +267,7 @@ public class BackgroundTask {
     @TargetApi(17)
     private void unregisterHookToContext(@NonNull Fragment fragment) {
         FragmentManager manager = fragment.getChildFragmentManager();
-        BackgroundTask.HookFragment hookFragment = (BackgroundTask.HookFragment)manager.findFragmentByTag("HOOK");
+        BackgroundTask.HookFragment hookFragment = (BackgroundTask.HookFragment) manager.findFragmentByTag("HOOK");
         if (hookFragment != null) {
             hookFragment.postEnable = false;
             manager.beginTransaction().remove(hookFragment).commitAllowingStateLoss();
@@ -253,7 +277,7 @@ public class BackgroundTask {
 
     private void unregisterHookToContext(@NonNull androidx.fragment.app.Fragment fragment) {
         androidx.fragment.app.FragmentManager manager = fragment.getChildFragmentManager();
-        BackgroundTask.HookSupportFragment hookSupportFragment = (BackgroundTask.HookSupportFragment)manager.findFragmentByTag("HOOK");
+        BackgroundTask.HookSupportFragment hookSupportFragment = (BackgroundTask.HookSupportFragment) manager.findFragmentByTag("HOOK");
         if (hookSupportFragment != null) {
             hookSupportFragment.postEnable = false;
             manager.beginTransaction().remove(hookSupportFragment).commitAllowingStateLoss();
@@ -346,6 +370,16 @@ public class BackgroundTask {
         }
 
         @MainThread
+        public BackgroundTask.Builder preExecute(BackgroundTask.PreExecuteListener listener) {
+            BackgroundTask.this.preExecuteMap.put(this.id, listener);
+
+            Message message = Message.obtain();
+            message.what = 123;
+            BackgroundTask.post(message);
+            return this;
+        }
+
+        @MainThread
         public void execute() {
             BackgroundTask.this.executor.execute(BackgroundTask.this.buildRunnable(this.id));
         }
@@ -373,12 +407,15 @@ public class BackgroundTask {
         void onFinish(@Nullable Object var1);
     }
 
+    public interface PreExecuteListener {
+        void onPreExecute();
+    }
+
     public interface MessageListener {
         void handleMessage(@NonNull Message var1);
     }
 
     public interface TaskDescription {
-        Void onPreExecute();
         Object onBackground();
     }
 }
