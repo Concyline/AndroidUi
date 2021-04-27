@@ -35,7 +35,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  * [ShortCut](#ShortCut)
  * [Permisions](#Permisions)
  * [Util](#Util)
-  - [BackgroundTask](#BackgroundTask)
+   - [BackgroundTask](#BackgroundTask)
  * [CamPix](#CamPix)
  * [PhotoView](#PhotoView)
  * [Zoom Frame](#Zoom-Frame)
