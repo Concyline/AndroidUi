@@ -149,6 +149,7 @@ public class BackgroundTask {
 
                     try {
                         message.what = 415024;
+                        message.obj = BackgroundTask.this.new Holder(id, ((BackgroundTask.TaskDescription) BackgroundTask.this.taskMap.get(id)).onPreExecute());
                         message.obj = BackgroundTask.this.new Holder(id, ((BackgroundTask.TaskDescription) BackgroundTask.this.taskMap.get(id)).onBackground());
                     } catch (Exception var3) {
                         message.what = 415025;
@@ -377,6 +378,7 @@ public class BackgroundTask {
     }
 
     public interface TaskDescription {
+        Void onPreExecute();
         Object onBackground();
     }
 }

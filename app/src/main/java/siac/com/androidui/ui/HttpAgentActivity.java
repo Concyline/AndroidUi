@@ -72,6 +72,12 @@ public class HttpAgentActivity extends AppCompatActivity {
         BackgroundTask.with(this) // Activity|FragmentActivity(v4)|Fragment|Fragment(v4)
                 .assign(new BackgroundTask.TaskDescription() {
                     @Override
+                    public Void onPreExecute() {
+                        System.out.println("aqui");
+                        return null;
+                    }
+
+                    @Override
                     public Object onBackground() {
                         // Do what you want to do on background thread.
                         // If you want to post something to MainThread,
