@@ -219,6 +219,10 @@ spinnerTitle.setAdapter(adapter);
             app:title="Cidade" />
 ```
 
+````java
+textViewTitle.setFont("fonts/Lobster-Regular.ttf");
+````
+
 ---
 ### EditTextSearch
 
