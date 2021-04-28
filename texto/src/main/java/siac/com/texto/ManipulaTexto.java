@@ -19,8 +19,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import siac.com.texto.util.Util;
-
 public class ManipulaTexto {
 
 	private FileReader fileReader;
