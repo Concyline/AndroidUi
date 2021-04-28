@@ -1,18 +1,7 @@
 package siac.com.texto.storagesd;
 
-import android.Manifest;
 import android.content.Context;
-import android.content.pm.PackageManager;
-import android.os.Environment;
-import android.util.Log;
 
-import androidx.core.content.ContextCompat;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 public class StorageSD {
