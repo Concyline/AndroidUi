@@ -616,9 +616,11 @@ new CDialog(ParametrosActivity.this)
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manipula_texto);
 	
-	  StorageSD
-                .init(this)
-                .setFolderAndFileName("Manipula","Log.txt")
+	//anywhere in the system
+	
+	 StorageSD
+               .init(this)
+               .setFolderAndFileName("Manipula","Log.txt")
 		.setLog(new Log() {
                     @Override
                     public void onLog(String message) {
