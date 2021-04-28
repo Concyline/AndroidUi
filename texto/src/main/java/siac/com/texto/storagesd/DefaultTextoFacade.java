@@ -2,27 +2,79 @@ package siac.com.texto.storagesd;
 
 import java.util.List;
 
-public interface TextoFacade {
+public class DefaultTextoFacade implements TextoFacade {
 
-    boolean erro(String value);
+    private Log log;
+    private SdInterface sd;
 
-    boolean linha(String value);
+    public DefaultTextoFacade(StorageSDBuilder storageSDBuilder) {
+        this.log = storageSDBuilder.getLog();
+        this.sd = storageSDBuilder.getSdInterface();
+    }
 
-    boolean info(String value);
+    @Override
+    public boolean erro(String value) {
+        log.onLog("erro > "+value);
+        return sd.erro(value);
+    }
 
-    boolean cabecalho(String value);
+    @Override
+    public boolean linha(String value) {
+        log.onLog("linha > "+value);
+        return sd.linha(value);
+    }
 
-    boolean divisao();
+    @Override
+    public boolean info(String value) {
+        log.onLog("info > "+value);
+        return sd.info(value);
+    }
 
-    boolean delete();
+    @Override
+    public boolean cabecalho(String value) {
+        log.onLog("cabecalho > "+value);
+        return sd.cabecalho(value);
+    }
 
-    String getVersao();
+    @Override
+    public boolean divisao() {
+        log.onLog("divisao");
+        return sd.divisao();
+    }
 
-    String getAll();
+    @Override
+    public boolean delete() {
+        log.onLog("delete");
+        return sd.delete();
+    }
 
-    List<String> getAllList();
+    @Override
+    public String getVersao() {
+        log.onLog("getVersao");
+        return sd.getVersao();
+    }
 
-    void insereLog(StackTraceElement[] erro);
+    @Override
+    public String getAll() {
+        log.onLog("getAll");
+        return sd.getAll();
+    }
 
-    void processaException(String classe, Exception e);
+    @Override
+    public List<String> getAllList() {
+        log.onLog("getAllList");
+        return sd.getAllList();
+    }
+
+    @Override
+    public void insereLog(StackTraceElement[] erro) {
+        log.onLog("insereLog");
+        sd.insereLog(erro);
+    }
+
+    @Override
+    public void processaException(String classe, Exception e) {
+        log.onLog("processaException");
+        sd.processaException(classe, e);
+    }
 }
