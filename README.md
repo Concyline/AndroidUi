@@ -615,16 +615,24 @@ new CDialog(ParametrosActivity.this)
   protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manipula_texto);
+	
+	  StorageSD
+                .init(this)
+                .setFolderAndFileName("Manipula","Log.txt")
+		.setLog(new Log() {
+                    @Override
+                    public void onLog(String message) {
+                        // 
+                    }
+                })
+                .build();
   
-  		ManipulaTexto.init( this,"Manipula","Log.txt");
-  		log = ManipulaTexto.getInstance();
-  
-  		// METHODS
-  		//log.info("");
-  		//log.erro("");
-  		//log.processaException("class", Exception error);
-  		//log.delete()
-  		//String all = log.getAll();
+  	// METHODS
+  	//StorageSD.info("");
+  	//StorageSD.erro("");
+  	//StorageSD.processaException("class", Exception error);
+  	//StorageSD.delete()
+  	//String all = StorageSD.getAll();
   }
   ````
   
