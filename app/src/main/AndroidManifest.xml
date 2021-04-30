@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_teste"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.EasyFontsActivity"></activity>
+        <activity android:name=".ui.SignatureActivity"></activity>
+        <activity android:name=".ui.EasyFontsActivity" />
         <activity android:name=".ui.HttpAgentActivity" />
         <activity android:name=".ui.CalculadoraDialogActivity" />
         <activity android:name=".ui.ComponentesTresActivity" />
