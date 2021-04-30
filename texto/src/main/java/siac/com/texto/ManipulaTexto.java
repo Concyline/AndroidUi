@@ -1,3 +1,4 @@
+/*
 package siac.com.texto;
 
 import android.Manifest;
@@ -216,3 +217,4 @@ public class ManipulaTexto {
 	}
 
 }
+*/
