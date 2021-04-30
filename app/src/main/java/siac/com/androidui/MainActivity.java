@@ -25,6 +25,7 @@ import siac.com.androidui.ui.HttpAgentActivity;
 import siac.com.androidui.ui.LerQrBarCodeActivity;
 import siac.com.androidui.ui.ManipulaTextoActivity;
 import siac.com.androidui.ui.Premisao;
+import siac.com.androidui.ui.SignatureActivity;
 import siac.com.androidui.ui.SwipLayoutActivity;
 import siac.com.androidui.ui.UtilActivity;
 import siac.com.androidui.ui.ZoomFrameImageViewActivity;
@@ -203,6 +204,14 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), EasyFontsActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
+                    findViewById(R.id.button18).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getBaseContext(), SignatureActivity.class);
                             startActivity(intent);
                         }
                     });

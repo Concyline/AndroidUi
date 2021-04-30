@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">AndroidUi</string>
+    <string name="agreement">I agree the terms and conditions.</string>
+    <string name="clear_pad">Clear Pad</string>
+    <string name="save_signature">Save Signature</string>
 
     <array name="tipo">
         <item>Nome</item>
