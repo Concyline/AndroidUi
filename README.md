@@ -44,6 +44,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  * [CalculatorDialog](#CalculatorDialog)
  * [KeyBoardDialog](#KeyBoardDialog)
  * [HttpAgent](#HttpAgent)
+ * [SignaturePad](#SignaturePad)
 
  
  Gradle Setup
@@ -1447,6 +1448,62 @@ goJsonArray(new JsonArrayCallback() {
                             getStringResults(); // returns results as as string.
                         }
                     });
+ ````
+ 
+ ---
+ ## SignaturePad
+ 
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/signature.png" width="20%">
+ 
+ ### Usage
+ 
+````xml
+        <br.com.signature.SignaturePad
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            signature:penColor="#000"
+            signature:clearOnDoubleClick="true"
+            signature:velocityFilterWeight="2000"
+            android:id="@+id/signature_pad" />
+````
+ ````java
+  mSignaturePad.setOnSignedListener(new SignaturePad.OnSignedListener() {
+            @Override
+            public void onStartSigning() {
+                ...
+            }
+
+            @Override
+            public void onSigned() {
+                ...
+            }
+
+            @Override
+            public void onClear() {
+               ...
+            }
+        });
+	
+//// Clear
+ mSignaturePad.clear();
+ 
+ //// Save
+ mSaveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bitmap signatureBitmap = mSignaturePad.getSignatureBitmap();
+                if (addJpgSignatureToGallery(signatureBitmap)) {
+                    Toast("Signature saved into the Gallery");
+                } else {
+                    Toast("Unable to store the signature");
+                }
+                if (addSvgSignatureToGallery(mSignaturePad.getSignatureSvg())) {
+                    Toast("SVG Signature saved into the Gallery");
+                } else {
+                    Toast("Unable to store the SVG signature");
+                }
+            }
+        });
  ````
 
 Resources
