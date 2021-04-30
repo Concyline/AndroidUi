@@ -1,3 +1,4 @@
+include ':signature'
 include ':httpagent'
 include ':calculadora'
 include ':hawk'
