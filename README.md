@@ -1526,7 +1526,11 @@ protected void onCreate(Bundle savedInstanceState) {
      super.onCreate(savedInstanceState);
      setContentView(R.layout.activity_error);
 
-      new UnCaughtException.Builder(this).build();
+     new UnCaughtException
+              .Builder(this)
+              .setTrackActivitiesEnabled(true)
+              .setBackgroundModeEnabled(true)
+              .build();
 
 }
 
@@ -1539,9 +1543,6 @@ Optional Parameters
 
 .setBackgroundModeEnabled(true/false)
 // default 'true' => Choose if you want to catch exceptions while app is in background.
-
-.addCommaSeparatedEmailAddresses("abc@gmail.com, pqr@gmail.com,...)
-// default - empty => Add comma separated email addresses who will receive the crash logs.
 
 'Save Error Log' will work only if your app already has storage permission as library does not ask for it.
 ````
