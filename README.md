@@ -45,6 +45,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  * [KeyBoardDialog](#KeyBoardDialog)
  * [HttpAgent](#HttpAgent)
  * [SignaturePad](#SignaturePad)
+ * [UnCaughtException](#UnCaughtException)
 
  
  Gradle Setup
@@ -1505,6 +1506,28 @@ goJsonArray(new JsonArrayCallback() {
             }
         });
  ````
+ 
+ ---
+ ## UnCaughtException
+ 
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/error.png" width="20%">
+ 
+In AndroidManifest.xml
+
+````xml
+<activity android:name="br.com.error.uce.DefaultActivity"></activity>
+````
+
+````java
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+     super.onCreate(savedInstanceState);
+     setContentView(R.layout.activity_error);
+
+      new UnCaughtException.Builder(this).build();
+
+}
+````
 
 Resources
 =========
