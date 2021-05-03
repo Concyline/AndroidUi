@@ -1535,7 +1535,8 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ````
 
-Optional Parameters
+### Optional Parameters
+
 .setUCEHEnabled(true/false)
 // default 'true' => Enable/Disable UCE_Handler.
 
