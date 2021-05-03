@@ -1533,6 +1533,7 @@ protected void onCreate(Bundle savedInstanceState) {
               .build();
 
 }
+````
 
 Optional Parameters
 .setUCEHEnabled(true/false)
@@ -1545,7 +1546,8 @@ Optional Parameters
 // default 'true' => Choose if you want to catch exceptions while app is in background.
 
 'Save Error Log' will work only if your app already has storage permission as library does not ask for it.
-````
+
+---
 
 Resources
 =========
