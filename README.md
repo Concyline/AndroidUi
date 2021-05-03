@@ -1512,6 +1512,8 @@ goJsonArray(new JsonArrayCallback() {
  
  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/error.png" width="20%">
  
+Tracking down all exceptions is the crucial part of the development. We could just expect that we have handled all exceptions. But whatever we do, we come across it with the so-called pop-up saying “Unfortunately, App has stopped”, that is why it is called uncaught-exceptions.
+ 
 In AndroidManifest.xml
 
 ````xml
@@ -1527,6 +1529,21 @@ protected void onCreate(Bundle savedInstanceState) {
       new UnCaughtException.Builder(this).build();
 
 }
+
+Optional Parameters
+.setUCEHEnabled(true/false)
+// default 'true' => Enable/Disable UCE_Handler.
+
+.setTrackActivitiesEnabled(true/false)
+// default 'false' => Choose whether you want to track the flow of activities the user/tester has taken or not.
+
+.setBackgroundModeEnabled(true/false)
+// default 'true' => Choose if you want to catch exceptions while app is in background.
+
+.addCommaSeparatedEmailAddresses("abc@gmail.com, pqr@gmail.com,...)
+// default - empty => Add comma separated email addresses who will receive the crash logs.
+
+'Save Error Log' will work only if your app already has storage permission as library does not ask for it.
 ````
 
 Resources
