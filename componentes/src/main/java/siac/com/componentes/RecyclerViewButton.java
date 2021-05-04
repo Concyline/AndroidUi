@@ -38,6 +38,7 @@ public class RecyclerViewButton extends FrameLayout {
     private boolean refresh;
     private boolean basic;
     private int listitem;
+    int dyMaster = 0;
 
     public RecyclerViewButton(@NonNull Context context) {
         super(context);
@@ -103,7 +104,9 @@ public class RecyclerViewButton extends FrameLayout {
             @Override
             public void onClick(View v) {
                 fadeIn(v);
-                recyclerView.smoothScrollToPosition(0);
+                if(dyMaster > 0) {
+                    recyclerView.smoothScrollToPosition(0);
+                }
             }
         });
 
@@ -123,6 +126,8 @@ public class RecyclerViewButton extends FrameLayout {
         @Override
         public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
             super.onScrolled(recyclerView, dx, dy);
+
+            dyMaster = dy;
         }
 
         @Override
