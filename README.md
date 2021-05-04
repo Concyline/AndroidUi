@@ -1517,6 +1517,9 @@ Tracking down all exceptions is the crucial part of the development. We could ju
 In AndroidManifest.xml
 
 ````xml
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
 <activity android:name="br.com.error.uce.DefaultActivity"></activity>
 ````
 
@@ -1526,11 +1529,11 @@ protected void onCreate(Bundle savedInstanceState) {
      super.onCreate(savedInstanceState);
      setContentView(R.layout.activity_error);
 
-     new UnCaughtException
-              .Builder(this)
-              .setTrackActivitiesEnabled(true)
-              .setBackgroundModeEnabled(true)
-              .build();
+      new UnCaughtException.Builder(this)
+                .setMailSuport("mailone@hotmail.com", "mailtwo@gmail.com")
+                .setTrackActivitiesEnabled(true)
+                .setBackgroundModeEnabled(true)
+                .build();
 
 }
 ````
