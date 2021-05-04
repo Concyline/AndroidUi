@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import siac.com.androidui.R;
-import siac.com.texto.ManipulaTexto;
-import siac.com.texto.storagesd.Log;
 import siac.com.texto.storagesd.StorageSD;
 
 public class ManipulaTextoActivity extends AppCompatActivity {
@@ -26,7 +24,7 @@ public class ManipulaTextoActivity extends AppCompatActivity {
 
         StorageSD
                 .init(this)
-                .setFolderAndFileName("Manipula","Log.txt")
+                .setFolderAndFileName("Manipula", "Log.txt")
                 .build();
 
         //ManipulaTexto.init( this,"Manipula","Log.txt");
@@ -44,7 +42,7 @@ public class ManipulaTextoActivity extends AppCompatActivity {
                     StorageSD.info(textoEditText.getText().toString());
                     textoEditText.setText("");
                     montaTela();
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                     StorageSD.processaException(this.getClass().getName(), e);
                 }
@@ -54,7 +52,7 @@ public class ManipulaTextoActivity extends AppCompatActivity {
         montaTela();
     }
 
-    private void montaTela(){
+    private void montaTela() {
         //String all = log.getAll();
         String all = StorageSD.getAll();
 

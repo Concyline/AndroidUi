@@ -14,7 +14,7 @@ public class ZoomFrameImageViewActivity extends AppCompatActivity {
 
     ZoomFrameImageView zoomFrameImageView;
     int index = -1;
-    int[] array = new int[]{R.drawable.image_1, R.drawable.image_2, R.drawable.image_3};
+    int[] array = new int[]{R.drawable.image_1, R.drawable.image_2, R.drawable.image_1};
      Handler handler;
 
     @Override

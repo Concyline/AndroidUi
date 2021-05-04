@@ -47,4 +47,5 @@ dependencies {
     implementation project(':calculadora')
     implementation project(':httpagent')
     implementation project(':signature')
+    implementation project(':error')
 }

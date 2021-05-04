@@ -13,6 +13,7 @@ import android.view.View;
 
 import java.util.ArrayList;
 
+import br.com.error.uce.UnCaughtException;
 import br.com.utill.Util;
 import siac.com.androidui.ui.CalculadoraDialogActivity;
 import siac.com.androidui.ui.CamPixActivity;
@@ -20,6 +21,7 @@ import siac.com.androidui.ui.ComponentesActivity;
 import siac.com.androidui.ui.ComponentesDoisActivity;
 import siac.com.androidui.ui.ComponentesTresActivity;
 import siac.com.androidui.ui.EasyFontsActivity;
+import siac.com.androidui.ui.ErrorActivity;
 import siac.com.androidui.ui.HawkActivity;
 import siac.com.androidui.ui.HttpAgentActivity;
 import siac.com.androidui.ui.LerQrBarCodeActivity;
@@ -42,6 +44,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        new UnCaughtException.Builder(this)
+                .setMailSuport("concyline@hotmail.com", "concyinfo@gmail.com")
+                .setTrackActivitiesEnabled(true)
+                .setBackgroundModeEnabled(true)
+                .build();
+
         validaPermisoes();
         addShortCut();
 
@@ -49,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void addShortCut(){
-       ShortcutUtils shortcutUtils = new ShortcutUtils(this);
+    private void addShortCut() {
+        ShortcutUtils shortcutUtils = new ShortcutUtils(this);
 
-       Shortcut dynamicShortcut = new Shortcut.ShortcutBuilder()
+        Shortcut dynamicShortcut = new Shortcut.ShortcutBuilder()
                 .setShortcutIcon(R.drawable.round_device_hub_white_48dp)
                 .setShortcutId("dynamicShortcutId")
                 .setShortcutLongLabel("ALL Devices")
@@ -124,10 +132,10 @@ public class MainActivity extends AppCompatActivity {
 
                             Premisao premisao = new Premisao();
 
-                            premisao.validaPermisoes(getApplicationContext(), new String[]{ Manifest.permission.CAMERA}, new Premisao.onOk() {
+                            premisao.validaPermisoes(getApplicationContext(), new String[]{Manifest.permission.CAMERA}, new Premisao.onOk() {
                                 @Override
                                 public void ok(boolean flag) {
-                                    if(flag){
+                                    if (flag) {
                                         System.out.println("aqui");
                                     }
                                 }
@@ -212,6 +220,14 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getBaseContext(), SignatureActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+
+                    findViewById(R.id.button19).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getBaseContext(), ErrorActivity.class);
                             startActivity(intent);
                         }
                     });

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:justificationMode="inter_word"
+        android:text="@string/ask_for_error_log"
+        android:textColor="#212121"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:layout_editor_absoluteX="16dp">
+
+        <Button
+            android:id="@+id/button_view_error_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape_amarelo"
+            android:text="Ver dialog com os erros"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button_copy_error_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_shape_verde"
+            android:text="Copiar para area de transferência"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button_share_error_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_shape_azul"
+            android:text="Compartilhar os erros encontrados"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button_share_email_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_shape_vermelho"
+            android:text="Enviar por email"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button_save_error_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/button_shape_verde_agua"
+            android:text="Salvar no seu dispositivo os erros encontrados"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button_close_app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button_shape"
+            android:text="Fechar a aplicação"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/copyright_info"
+        android:textColor="#212121"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
