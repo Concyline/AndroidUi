@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ErrorDois</string>
+    <string name="ask_for_error_log">Ocorreu um erro inesperado.\nAjude os desenvolvedores fornecendo detalhes do erro.\nObrigado por seu suporte.</string>
+    <string name="copyright_info">UnCaughtException - AndroidUi\nCopyright © 2021 Concyline.</string>
+</resources>

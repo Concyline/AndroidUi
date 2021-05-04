@@ -14,13 +14,13 @@
         android:layout_marginTop="8dp"
         app:coricon="@color/colorAccent"
         app:inputType="textMultiLine"
-        app:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutasd"
-        app:title="Add value"
+        app:layout_constraintTop_toTopOf="parent"
         app:lines="4"
-        app:tamTitle="@dimen/tamLegendaEditTextUi" />
+        app:tamTitle="@dimen/tamLegendaEditTextUi"
+        app:text=""
+        app:title="Add value" />
 
     <Button
         android:id="@+id/addButton"
