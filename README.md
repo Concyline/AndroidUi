@@ -1510,7 +1510,7 @@ goJsonArray(new JsonArrayCallback() {
  ---
  ## UnCaughtException
  
- <img src="https://github.com/Concyline/AndroidUi/blob/master/img/error.png" width="20%">
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/error_dois.png" width="20%">
  
 Tracking down all exceptions is the crucial part of the development. We could just expect that we have handled all exceptions. But whatever we do, we come across it with the so-called pop-up saying “Unfortunately, App has stopped”, that is why it is called uncaught-exceptions.
  
