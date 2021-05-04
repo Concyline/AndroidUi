@@ -14,3 +14,4 @@
 .cxx
 keyboard/build/.transforms/
 keyboard/build/generated/source/buildConfig/debug/br/com/keyboard/BuildConfig.java
+error/build/
