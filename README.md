@@ -1456,7 +1456,11 @@ goJsonArray(new JsonArrayCallback() {
  ## SOAPManager
  
  <img src="https://github.com/Concyline/AndroidUi/blob/master/img/soapaction.png" width="20%">
- <img src="https://github.com/Concyline/AndroidUi/blob/master/img/wsdl.png" width="20%">
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/wsdl.png" width="50%">
+ 
+ SOAP has been losing ground to REST services in mobile the last years, thus losing attention. But SOAP isn't gone and many still use it. The thing is that it usually requires a lot of work from the dev to create and parse all the messages.
+
+JSoap is an Android library which allows automatic handling of SOAP requests and resposes, making the process effortless to the user. It works on top of the well-known library KSOAP2.
  
  ### Usage
  ````java
