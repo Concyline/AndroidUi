@@ -44,6 +44,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  * [CalculatorDialog](#CalculatorDialog)
  * [KeyBoardDialog](#KeyBoardDialog)
  * [HttpAgent](#HttpAgent)
+ * [SOAPManager](#SOAPManager)
  * [SignaturePad](#SignaturePad)
  * [UnCaughtException](#UnCaughtException)
 
@@ -1449,6 +1450,83 @@ goJsonArray(new JsonArrayCallback() {
                             getStringResults(); // returns results as as string.
                         }
                     });
+ ````
+ 
+  ---
+ ## SOAPManager
+ 
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/soapaction.png" width="20%">
+ <img src="https://github.com/Concyline/AndroidUi/blob/master/img/wsdl.png" width="20%">
+ 
+ ### Usage
+ ````java
+@JSoapClass(namespace = "http://tempuri.org/")
+public class Cidade {
+
+    @JSoapResField(name = "CidadeId")
+    public int CidadeId;
+
+    @JSoapResField(name = "EstadoId")
+    public String EstadoId;
+
+    @JSoapResField(name = "Nome")
+    public String Nome;
+
+    //very important
+    public Cidade() {
+    }
+}
+
+@JSoapClass(namespace = "http://tempuri.org/")
+public class Parametros {
+
+    @JSoapReqField(order = 0, fieldName = "DataHora")
+    private String DataHora;
+
+    public Parametros(String DataHora) {
+        this.DataHora = DataHora;
+    }
+}
+
+@JSoapClass(namespace = "http://tempuri.org/")
+public class Response {
+
+    @JSoapResField(name = "GetCidadesResult")
+    public Cidade[] result;
+
+}
+
+private void get() {
+        String url = "http://10.0.2.2:2193/Integracao.asmx";
+        String namespace = "http://tempuri.org/";
+        String method = "GetCidades";
+        String soap_action = "http://tempuri.org/GetCidades";
+
+        SOAPManager.get(namespace, url, method, soap_action, new Parametros("01/01/1000"), Response.class, new JSoapCallback() {
+
+            @Override
+            public void onSuccess(Object result) {
+                Response res = (Response) result;
+                setAdapter(res.result);
+            }
+
+            @Override
+            public void onError(int error) {
+                switch (error) {
+                    case JsoapError.NETWORK_ERROR:
+                        Log.v("JSoapExample", "Network error");
+                        break;
+                    case JsoapError.PARSE_ERROR:
+                        Log.v("JSoapExample", "Parsing error");
+                        break;
+                    default:
+                        Log.v("JSoapExample", "Unknown error");
+                        break;
+                }
+            }
+
+        });
+    }
  ````
  
  ---
