@@ -1,4 +1,4 @@
-package br.com.httpagent;
+package br.com.httpagent.httpagent;
 
 public abstract class SuccessCallback extends HttpAgentResults {
     protected abstract void onDone(boolean success);

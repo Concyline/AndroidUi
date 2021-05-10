@@ -1,4 +1,4 @@
-package br.com.httpagent;
+package br.com.httpagent.httpagent;
 
 public abstract class StringCallback extends HttpAgentResults {
     protected abstract void onDone(boolean success, String stringResults);
