@@ -1,4 +1,4 @@
-package br.com.httpagent;
+package br.com.httpagent.httpagent;
 
 import android.os.Handler;
 import android.os.Message;

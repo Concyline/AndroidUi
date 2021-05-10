@@ -1,11 +1,12 @@
-package br.com.httpagent;
+package br.com.httpagent.httpagent;
 
 import android.util.Log;
 
-import org.json.JSONObject;
+import org.json.JSONArray;
 
-public abstract class JsonCallback extends HttpAgentResults {
-    protected abstract void onDone(boolean success, JSONObject jsonResults);
+public abstract class JsonArrayCallback extends HttpAgentResults {
+
+    protected abstract void onDone(boolean success, JSONArray jsonResults);
 
     @Override
     protected void notify(String results) {
@@ -13,12 +14,10 @@ public abstract class JsonCallback extends HttpAgentResults {
             onDone(false, null);
             return;
         }
-
-        //there was no error -> lets parse the json object
+        //there was no error -> lets parse the json array
         try {
-            if (U.isEmpty(results)) results = "{}";
-            JSONObject jsonObject = new JSONObject(results);
-            onDone(!hasError(), jsonObject);
+            JSONArray jsonArray = new JSONArray(results);
+            onDone(!hasError(), jsonArray);
         } catch (Exception ex) {
             Log.e(HttpAgent.TAG_ERROR, ex.getMessage());
             //update the error message (probably parse error...)
@@ -26,5 +25,6 @@ public abstract class JsonCallback extends HttpAgentResults {
             onDone(false, null);
             return;
         }
+
     }
 }

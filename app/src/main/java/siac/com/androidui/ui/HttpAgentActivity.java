@@ -1,21 +1,14 @@
 package siac.com.androidui.ui;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.os.Looper;
-import android.os.Message;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
-import br.com.httpagent.HTTP;
-import br.com.httpagent.HttpAgent;
-import br.com.httpagent.StringCallback;
-import br.com.utill.BackgroundTask;
+import br.com.httpagent.httpagent.HTTP;
+import br.com.httpagent.httpagent.HttpAgent;
+import br.com.httpagent.httpagent.StringCallback;
 import siac.com.androidui.R;
 
 public class HttpAgentActivity extends AppCompatActivity {
