@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_teste"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ErrorActivity"></activity>
+        <activity android:name=".ui.SoapActionActivity"></activity>
+        <activity android:name=".ui.ErrorActivity" />
         <activity android:name=".ui.SignatureActivity" />
         <activity android:name=".ui.EasyFontsActivity" />
         <activity android:name=".ui.HttpAgentActivity" />
@@ -25,7 +26,7 @@
         <activity android:name=".ui.CamPixActivity" />
         <activity android:name=".ui.UtilActivity" />
         <activity android:name=".ui.ManipulaTextoActivity" />
-        <activity android:name="br.com.error.uce.DefaultActivity"></activity>
+        <activity android:name="br.com.error.uce.DefaultActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
