@@ -236,8 +236,8 @@ public class MainActivity extends AppCompatActivity {
                     findViewById(R.id.button20).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Intent intent = new Intent(getBaseContext(), SoapActionActivity.class);
-                            startActivity(intent);
+                           //Intent intent = new Intent(getBaseContext(), SoapActionActivity.class);
+                            //startActivity(intent);
                         }
                     });
 

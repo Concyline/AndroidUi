@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_teste"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.SoapActionActivity"></activity>
+
         <activity android:name=".ui.ErrorActivity" />
         <activity android:name=".ui.SignatureActivity" />
         <activity android:name=".ui.EasyFontsActivity" />
