@@ -28,6 +28,7 @@ import siac.com.androidui.ui.LerQrBarCodeActivity;
 import siac.com.androidui.ui.ManipulaTextoActivity;
 import siac.com.androidui.ui.Premisao;
 import siac.com.androidui.ui.SignatureActivity;
+import siac.com.androidui.ui.SoapActionActivity;
 import siac.com.androidui.ui.SwipLayoutActivity;
 import siac.com.androidui.ui.UtilActivity;
 import siac.com.androidui.ui.ZoomFrameImageViewActivity;
@@ -235,8 +236,8 @@ public class MainActivity extends AppCompatActivity {
                     findViewById(R.id.button20).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                           //Intent intent = new Intent(getBaseContext(), SoapActionActivity.class);
-                            //startActivity(intent);
+                           Intent intent = new Intent(getBaseContext(), SoapActionActivity.class);
+                           startActivity(intent);
                         }
                     });
 
