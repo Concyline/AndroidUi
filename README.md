@@ -75,6 +75,12 @@ dependencies {
 }
 ```
 
+You can add below lines into your gradle.properties file:
+
+```java
+android.useAndroidX=true
+android.enableJetifier=true
+```
 
 
 ## Componentes
