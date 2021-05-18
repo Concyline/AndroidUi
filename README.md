@@ -52,6 +52,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  Gradle Setup
 ------
 
+Add Maven Central to the project's build.gradle :
 ```java
 allprojects {
 	repositories {
@@ -62,10 +63,15 @@ allprojects {
 	    }
 ````
 
+Add the following dependency into your module's build.gradle:
 ```java
+ defaultConfig {
+        multiDexEnabled true
+ }
+    
 dependencies {
-	        implementation 'com.github.Concyline:Androidui:{CURRENT VERSION}'
-	     }
+	implementation 'com.github.Concyline:Androidui:TAG'
+}
 ```
 
 
