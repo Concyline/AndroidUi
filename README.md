@@ -1,7 +1,5 @@
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/logo_projeto_novo.png" width="100%">
 
-[![](https://jitpack.io/v/concyline/androidui.svg)](https://jitpack.io/#concyline/androidui)
-
 This library has 6 modules to aid Android development, speeding up the completion of the application
 
  Features
@@ -64,6 +62,9 @@ allprojects {
 ````
 
 Add the following dependency into your module's build.gradle:
+
+TAG = [![](https://jitpack.io/v/concyline/androidui.svg)](https://jitpack.io/#concyline/androidui)
+
 ```java
  defaultConfig {
         multiDexEnabled true
