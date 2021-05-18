@@ -56,11 +56,11 @@ Add Maven Central to the project's build.gradle :
 ```java
 allprojects {
 	repositories {
-			...
-			maven { url 'https://jitpack.io' }
-			maven { url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases' }
-		    }
-	    }
+		...
+		maven { url 'https://jitpack.io' }
+		maven { url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases' }
+	}
+}
 ````
 
 Add the following dependency into your module's build.gradle:
