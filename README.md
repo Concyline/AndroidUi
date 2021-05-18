@@ -1095,7 +1095,14 @@ shortcutUtils.removeDynamicShortCut(dynamicShortcut);
 
  ### Usage
  
- ````java
+ in AndroidManifest.xml
+ ````xml
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+````
+
+in Activity
+````java
 String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
