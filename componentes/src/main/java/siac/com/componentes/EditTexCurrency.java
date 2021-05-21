@@ -336,7 +336,7 @@ public class EditTexCurrency extends FrameLayout {
     public Double getDouble() {
         try {
 
-            String dado = editText.getText().toString().trim();
+            String dado = editText.getText().toString().replaceAll("\\s","");
 
             if (locale.toString().equals("en_US")) {
                 dado = dado.replace("$", "");
