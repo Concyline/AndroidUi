@@ -153,8 +153,7 @@
                 android:layout_weight="1"
                 app:coricon="@color/colorAccent"
                 app:hint="sua pesquisa"
-                app:inputType="none"
-                app:title="SearchLegenda" />
+                app:inputType="none"/>
         </LinearLayout>
 
         <LinearLayout

@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -26,7 +27,7 @@ public class EditTextSearch extends FrameLayout {
     private ImageView imageView;
 
     // ATRIBUTOS
-    private String title = "title";
+    private String title = "";
     private String hint = "";
     private ColorStateList colorTitle;
 
@@ -120,11 +121,16 @@ public class EditTextSearch extends FrameLayout {
     }
 
     private void setup() {
+
         legendaTextView.setText(title);
         if (colorTitle != null) {
             legendaTextView.setTextColor(colorTitle);
         }
         legendaTextView.setTextSize(tamTitle);
+
+        if(title == null || title.equals("")){
+            legendaTextView.setVisibility(View.GONE);
+        }
 
         editText.setHint(hint);
         editText.setEnabled(enabled);
