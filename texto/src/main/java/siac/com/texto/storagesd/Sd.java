@@ -22,12 +22,15 @@ public class Sd implements SdInterface {
     public Sd(Log log, String folderName, String fileName) {
         try {
             this.log = log;
-            String PATH = Environment.getExternalStorageDirectory() + File.separator + folderName + File.separator;
-            File folder = new File(PATH);
-            if (!folder.exists())
+            //String PATH = Environment.getExternalStorageDirectory() + File.separator + folderName + File.separator;
+            File folder = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + folderName + File.separator);
+            //File folder = new File(PATH);
+            if (!folder.exists()) {
                 folder.mkdirs();
+            }
 
-            file = new File(Environment.getExternalStorageDirectory() + File.separator + folderName + File.separator + fileName);
+            //file = new File(Environment.getExternalStorageDirectory() + File.separator + folderName + File.separator + fileName);
+            file = new File(Environment.getExternalStorageDirectory().getAbsolutePath()  + File.separator + folderName + File.separator + fileName);
             if (!file.exists()) {
                 file.createNewFile();
             }
