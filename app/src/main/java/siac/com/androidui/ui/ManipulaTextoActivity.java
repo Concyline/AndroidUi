@@ -15,8 +15,6 @@ public class ManipulaTextoActivity extends AppCompatActivity {
     EditText resultadoEditText, textoEditText;
     Button gravarButton;
 
-    //ManipulaTexto log;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +25,6 @@ public class ManipulaTextoActivity extends AppCompatActivity {
                 .setFolderAndFileName("Manipula", "Log.txt")
                 .build();
 
-        //ManipulaTexto.init( this,"Manipula","Log.txt");
-        //log = ManipulaTexto.getInstance();
 
         textoEditText = findViewById(R.id.textoEditText);
         resultadoEditText = findViewById(R.id.resultadoEditText);
@@ -37,7 +33,6 @@ public class ManipulaTextoActivity extends AppCompatActivity {
         gravarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //log.info(textoEditText.getText().toString());
                 try {
                     StorageSD.info(textoEditText.getText().toString());
                     textoEditText.setText("");
