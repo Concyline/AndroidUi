@@ -3,7 +3,10 @@ package br.com.utill;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
+import android.text.Html;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -12,6 +15,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -111,11 +115,11 @@ public class Util {
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public static void setBar(AppCompatActivity context, String title) {
+   /* public static void setBar(AppCompatActivity context, String title) {
         setBar(context, title, "");
-    }
+    }*/
 
-    public static void setBar(AppCompatActivity context, String title, String subtitle) {
+    /*public static void setBar(AppCompatActivity context, String title, String subtitle) {
         context.getSupportActionBar().setDisplayShowTitleEnabled(true);
         context.getSupportActionBar().setDisplayShowHomeEnabled(true);
         context.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -125,7 +129,29 @@ public class Util {
         if (subtitle != null) {
             context.getSupportActionBar().setSubtitle(subtitle);
         }
+    }*/
+
+ /*   public static void setBar(AppCompatActivity context, String title, String subtitle) {
+        setBar(context, title, subtitle, 1);
     }
+
+
+    public static void setBar(AppCompatActivity context, String title, String subtitle, float elevation) {
+        ActionBar actionBar = context.getSupportActionBar();
+
+        actionBar.setElevation(elevation);
+
+        actionBar.setDisplayShowTitleEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FFFFFF")));
+
+        actionBar.setTitle(Html.fromHtml("<font face='sans-serif' color='#212121'>"+title+"</font>"));
+        if (subtitle != null) {
+            actionBar.setSubtitle(Html.fromHtml("<font color='#212121'>"+subtitle+"</font>"));
+        }
+    }*/
 
 
 }

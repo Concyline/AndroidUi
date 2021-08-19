@@ -10,6 +10,7 @@ import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 
+import br.com.utill.ActionBarCuston;
 import br.com.utill.BackgroundTask;
 import br.com.utill.Util;
 import br.com.utill.listeners.OnListnerAlertSimCancelar;
@@ -79,7 +80,11 @@ public class UtilActivity extends AppCompatActivity {
     }
 
     public void setActionBar(View view) {
-        Util.setBar(UtilActivity.this, "Title", "Subtitle");
+        ActionBarCuston actionBarCuston = ActionBarCuston.getInstance(this);
+        actionBarCuston.setBarColor(R.color.colorPrimary);
+        actionBarCuston.setTitleColor("#E60000");
+
+        actionBarCuston.setBar("Teste", "Subtitle");
     }
 
     int cont = 0;

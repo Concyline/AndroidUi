@@ -14,6 +14,7 @@ import android.view.View;
 import java.util.ArrayList;
 
 import br.com.error.uce.UnCaughtException;
+import br.com.utill.ActionBarCuston;
 import br.com.utill.Util;
 import siac.com.androidui.ui.CalculadoraDialogActivity;
 import siac.com.androidui.ui.CamPixActivity;
@@ -54,8 +55,11 @@ public class MainActivity extends AppCompatActivity {
         validaPermisoes();
         addShortCut();
 
-        Util.setBar(this, "Teste", "Subtitle");
+        ActionBarCuston actionBarCuston = ActionBarCuston.getInstance(this);
+        actionBarCuston.setBarColor(R.color.colorPrimary);
+        actionBarCuston.setTitleColor("#E60000");
 
+        actionBarCuston.setBar("Teste", "Subtitle");
     }
 
     private void addShortCut() {
