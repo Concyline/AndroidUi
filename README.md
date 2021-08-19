@@ -35,6 +35,7 @@ This library has 6 modules to aid Android development, speeding up the completio
  * [Util](#Util)
    - [BackgroundTask](#BackgroundTask)
    - [EasyFonts](#EasyFonts)
+   - [ActionBarCuston](#ActionBarCuston)
  * [CamPix](#CamPix)
  * [PhotoView](#PhotoView)
  * [Zoom Frame](#Zoom-Frame)
@@ -1223,6 +1224,19 @@ Use: BackgroundTask.post() To send message from WorkerThread to MainThread just 
 ````java
 TextView tv_hello = (TextView) findViewById(R.id.tv_hello);
 tv_hello.setTypeface(EasyFonts.robotoThin(this));
+````
+
+## ActionBarCuston
+ 
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/actionbar.png" width="20%">
+
+````java
+     ActionBarCuston actionBarCuston = ActionBarCuston.getInstance(this);
+     actionBarCuston.setBarColor(R.color.colorPrimary);
+     actionBarCuston.setTitleColor("#E60000");
+     actionBarCuston.setSubTitleColor("#E60000");
+
+     actionBarCuston.setBar("Teste", "Subtitle");
 ````
  
  ---
