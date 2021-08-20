@@ -1242,7 +1242,7 @@ tv_hello.setTypeface(EasyFonts.robotoThin(this));
 
 ## MeasureIcon
 
-<img src="https://github.com/Concyline/AndroidUi/blob/master/img/icon_measure.png" width="20%">
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/icon_measure.png" width="50%">
  
  ---
  ## CamPix
