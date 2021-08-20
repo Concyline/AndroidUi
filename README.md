@@ -1232,7 +1232,7 @@ tv_hello.setTypeface(EasyFonts.robotoThin(this));
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/actionbar.png" width="20%">
 
 ````java
-     ActionBarCuston actionBarCuston = ActionBarCuston.getInstance(this);
+     ActionBarCuston actionBarCuston = new ActionBarCuston(this);
      actionBarCuston.setBarColor(R.color.colorPrimary);
      actionBarCuston.setTitleColor("#E60000");
      actionBarCuston.setSubTitleColor("#E60000");
