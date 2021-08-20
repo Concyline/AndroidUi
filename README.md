@@ -36,7 +36,7 @@ This library has 6 modules to aid Android development, speeding up the completio
    - [BackgroundTask](#BackgroundTask)
    - [EasyFonts](#EasyFonts)
    - [ActionBarCuston](#ActionBarCuston)
-   - [Measure icon](#Measure Icon)
+   - [Measure icon](#MeasureIcon)
  * [CamPix](#CamPix)
  * [PhotoView](#PhotoView)
  * [Zoom Frame](#Zoom-Frame)
