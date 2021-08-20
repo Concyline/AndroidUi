@@ -36,7 +36,7 @@ This library has 6 modules to aid Android development, speeding up the completio
    - [BackgroundTask](#BackgroundTask)
    - [EasyFonts](#EasyFonts)
    - [ActionBarCuston](#ActionBarCuston)
-   - [Measure icon](#MeasureIcon)
+   - [Measure icon](#Measure Icon)
  * [CamPix](#CamPix)
  * [PhotoView](#PhotoView)
  * [Zoom Frame](#Zoom-Frame)
@@ -1240,7 +1240,7 @@ tv_hello.setTypeface(EasyFonts.robotoThin(this));
      actionBarCuston.setBar("Teste", "Subtitle");
 ````
 
-## MeasureIcon
+## Measure Icon
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/icon_measure.png" width="50%">
  
