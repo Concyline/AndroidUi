@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -103,6 +104,10 @@ public class SpinnerTitle extends FrameLayout {
 
     public void setAdapter(ArrayAdapter<Object> adapter) {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+    }
+
+    public void setAdapter(SpinnerAdapter adapter) {
         spinner.setAdapter(adapter);
     }
 
