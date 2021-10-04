@@ -37,6 +37,7 @@ This library has 6 modules to aid Android development, speeding up the completio
    - [EasyFonts](#EasyFonts)
    - [ActionBarCuston](#ActionBarCuston)
    - [MeasureIcon](#MeasureIcon)
+   - [EasyLocation](#EasyLocation)
  * [CamPix](#CamPix)
  * [PhotoView](#PhotoView)
  * [Zoom Frame](#Zoom-Frame)
@@ -1225,6 +1226,45 @@ Use: BackgroundTask.post() To send message from WorkerThread to MainThread just 
 ````java
 TextView tv_hello = (TextView) findViewById(R.id.tv_hello);
 tv_hello.setTypeface(EasyFonts.robotoThin(this));
+````
+
+ ---
+## EasyLocation
+ 
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/easy_location.png" width="20%">
+
+````xml
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+</manifest>
+````
+
+````java
+     findViewById(R.id.button23).setOnClickListener(v -> {
+
+            EditText editText = findViewById(R.id.editTextTextMultiLine2);
+            GeoLocationModel geoLocationModel = new EasyLocationFetch(this).getLocationData();
+
+            if(geoLocationModel == null){
+                editText.setText("The system was unable to retrieve the location!");
+                return;
+            }
+
+            StringBuilder builder = new StringBuilder();
+
+            builder.append("Address:   "+geoLocationModel.getAddress() +"\r\n");
+            builder.append("City:      "+geoLocationModel.getCity() +"\r\n");
+            builder.append("Lattitude: "+geoLocationModel.getLattitude() +"\r\n");
+            builder.append("Longitude: "+geoLocationModel.getLongitude() +"\r\n");
+
+            editText.setText(builder.toString());
+
+        });
 ````
 
 ## ActionBarCuston
