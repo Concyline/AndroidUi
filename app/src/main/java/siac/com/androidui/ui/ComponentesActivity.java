@@ -10,6 +10,7 @@ import siac.com.androidui.R;
 import siac.com.componentes.EditTexCurrency;
 import siac.com.componentes.EditTextSearch;
 import siac.com.componentes.EditTextTitle;
+import siac.com.componentes.SpinnerTitle;
 import siac.com.componentes.TextViewTitle;
 import siac.com.componentes.Util.Constantes;
 
