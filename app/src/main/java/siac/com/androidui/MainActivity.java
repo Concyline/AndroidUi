@@ -22,6 +22,7 @@ import siac.com.androidui.ui.ComponentesActivity;
 import siac.com.androidui.ui.ComponentesDoisActivity;
 import siac.com.androidui.ui.ComponentesTresActivity;
 import siac.com.androidui.ui.EasyFontsActivity;
+import siac.com.androidui.ui.EasyLocationActivity;
 import siac.com.androidui.ui.ErrorActivity;
 import siac.com.androidui.ui.HawkActivity;
 import siac.com.androidui.ui.HttpAgentActivity;
@@ -92,7 +93,8 @@ public class MainActivity extends AppCompatActivity {
     private void validaPermisoes() {
         String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.CAMERA};
+                Manifest.permission.CAMERA,
+                Manifest.permission.ACCESS_FINE_LOCATION};
 
         Permissions.check(MainActivity.this, permissions, null, null, new PermissionHandler() {
             @Override
@@ -241,6 +243,14 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                            Intent intent = new Intent(getBaseContext(), SoapActionActivity.class);
+                           startActivity(intent);
+                        }
+                    });
+
+                    findViewById(R.id.button21).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                           Intent intent = new Intent(getBaseContext(), EasyLocationActivity.class);
                            startActivity(intent);
                         }
                     });
