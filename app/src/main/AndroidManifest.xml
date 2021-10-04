@@ -3,7 +3,9 @@
     package="siac.com.androidui">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="30" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="30" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -16,6 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_teste"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.EasyLocationActivity"
+            android:exported="true" />
         <activity android:name=".ui.ErrorActivity" />
         <activity android:name=".ui.SignatureActivity" />
         <activity android:name=".ui.EasyFontsActivity" />
@@ -28,7 +33,6 @@
         <activity android:name=".ui.UtilActivity" />
         <activity android:name=".ui.ManipulaTextoActivity" />
         <activity android:name="br.com.error.uce.DefaultActivity" />
-
         <activity android:name=".ui.SoapActionActivity"/>
 
         <activity android:name=".MainActivity">
