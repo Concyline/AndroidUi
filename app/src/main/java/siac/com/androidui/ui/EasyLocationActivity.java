@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import br.com.utill.geolocation.EasyLocationFetch;
+import br.com.utill.geolocation.EasyLocationFetchService;
 import br.com.utill.geolocation.GeoLocationModel;
 import siac.com.androidui.R;
 
@@ -21,7 +22,7 @@ public class EasyLocationActivity extends AppCompatActivity {
         findViewById(R.id.button23).setOnClickListener(v -> {
 
             EditText editText = findViewById(R.id.editTextTextMultiLine2);
-            GeoLocationModel geoLocationModel = new EasyLocationFetch(this).getLocationData();
+            GeoLocationModel geoLocationModel = new EasyLocationFetchService(this).getLocationData();
 
             if(geoLocationModel == null){
                 editText.setText("O sistema não conseguio recuperar a localização!");
