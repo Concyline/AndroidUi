@@ -388,6 +388,27 @@ recyclerViewButton.addOnItemTouchListener(new RecyclerViewButton.ItemClickListen
 }));
 ````
 
+AsyncTask
+````java
+ public class Async extends AsyncTask<Void, Void, List<Cidade>>{
+
+        @Override
+        protected List<Cidade> doInBackground(Void... voids) {
+            List<Cidade> list = helper.CidadeController().getAll();
+            return list;
+        }
+
+        @Override
+        protected void onPostExecute(List<Cidade> cidade) {
+            super.onPostExecute(cidade);
+
+            recyclerViewButton.setAdapter(this, new Adapter(cidade));
+            recyclerViewButton.scrollToPosition(0);
+            recyclerViewButton.setRefreshing(false);
+        }
+}
+````
+
 Adapter
 ````java
  public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
