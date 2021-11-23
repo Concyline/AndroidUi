@@ -387,7 +387,7 @@ recyclerViewButton.addOnItemTouchListener(new RecyclerViewButton.ItemClickListen
 
 AsyncTask
 ````java
- public class Async extends AsyncTask<Void, Void, List<Cidade>>{
+   public class Async extends AsyncTask<Void, Void, List<Cidade>> {
 
         @Override
         protected List<Cidade> doInBackground(Void... voids) {
@@ -399,7 +399,13 @@ AsyncTask
         protected void onPostExecute(List<Cidade> cidade) {
             super.onPostExecute(cidade);
 
-            recyclerViewButton.setAdapter(this, new Adapter(cidade));
+            if (adapter == null) {
+                adapter = new Adapter(cidade);
+                recyclerViewButton.setAdapter(this, adapter);
+            } else {
+                adapter.notifyDataSetChanged();
+            }
+
             recyclerViewButton.scrollToPosition(0);
             recyclerViewButton.setRefreshing(false);
         }
@@ -411,9 +417,11 @@ Adapter
  public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private LayoutInflater mInflater;
+	private List<Cidade> lCidade;
 
-        Adapter() {
+        Adapter(List<Cidade> lCidade) {
             this.mInflater = LayoutInflater.from(getBaseContext());
+	    this.lCidade = lCidade;
         }
 
         @Override
