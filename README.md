@@ -357,11 +357,8 @@ XML file
         app:verticalDivider="true" />
 ```
 
-in OnCreate
+Set Listener
 ````java
-recyclerViewButton.setAdapter(this, new Adapter());
-
-recyclerViewButton.scrollToPosition(0)
 
 recyclerViewButton.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
