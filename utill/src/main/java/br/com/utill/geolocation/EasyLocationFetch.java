@@ -90,7 +90,6 @@ public class EasyLocationFetch extends AppCompatActivity {
                 locPermission();
             } else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
 
-
                 if (ActivityCompat.checkSelfPermission(context, ACCESS_FINE_LOCATION)
                         != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
                         (context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
