@@ -12,9 +12,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +31,7 @@ public class RecyclerViewButton extends FrameLayout {
     private static RecyclerView recyclerView;
     private ImageView goToTopImageView;
     private RelativeLayout painelButtonRelativeLayout;
+    private TextView notfoundTextView;
 
     private static Context context;
     private int locationButton;
@@ -82,6 +85,7 @@ public class RecyclerViewButton extends FrameLayout {
         goToTopImageView = findViewById(R.id.goToTopImageView);
         recyclerView = findViewById(R.id.recyclerView);
         painelButtonRelativeLayout = findViewById(R.id.painelButtonRelativeLayout);
+        notfoundTextView = findViewById(R.id.notfoundTextView);
 
         setup();
     }
@@ -150,12 +154,16 @@ public class RecyclerViewButton extends FrameLayout {
         }
     };
 
+    RecyclerView.Adapter adapterRoot;
+
     public void setAdapter(final Activity context, @Nullable final RecyclerView.Adapter adapter) {
         this.context = context;
 
         context.runOnUiThread(new Runnable() {
             @Override
             public void run() {
+                adapterRoot = adapter;
+
                 recyclerView.setLayoutManager(new GridLayoutManager(context, numberOfColumns));
 
                 if (horizontalDivider) {
@@ -166,7 +174,13 @@ public class RecyclerViewButton extends FrameLayout {
                     recyclerView.addItemDecoration(new DividerItemDecoration(context, DividerItemDecoration.VERTICAL));
                 }
 
-                recyclerView.setAdapter(adapter);
+                if(adapter.getItemCount() == 0){
+                    notfoundTextView.setVisibility(View.VISIBLE);
+                }else{
+                    notfoundTextView.setVisibility(View.INVISIBLE);
+                }
+
+                recyclerView.setAdapter(adapterRoot);
             }
         });
     }
