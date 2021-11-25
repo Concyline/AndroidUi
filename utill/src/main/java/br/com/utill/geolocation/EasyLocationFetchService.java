@@ -88,6 +88,7 @@ public class EasyLocationFetchService extends AppCompatActivity {
                 locPermission();
             } else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
 
+<<<<<<< HEAD
                 Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                 Location location1 = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                 Location location2 = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
@@ -172,11 +173,28 @@ public class EasyLocationFetchService extends AppCompatActivity {
                     locPermission();
 
                 } else {
+=======
+
+                if (ActivityCompat.checkSelfPermission(context, ACCESS_FINE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
+                        (context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+                    locPermission();
+                    ActivityCompat.requestPermissions(this, new String[]{ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+
+                } else {
+
+                    //  Looking for location from Network Provides or GPS or Passive Provider
+>>>>>>> develop
 
                     Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                     Location location1 = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                     Location location2 = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
                     if (location != null) {
 
                         //Location data available from Network provider
@@ -235,6 +253,7 @@ public class EasyLocationFetchService extends AppCompatActivity {
                     }
                 }
             }
+<<<<<<< HEAD
         }
 
         return data;
@@ -277,6 +296,12 @@ public class EasyLocationFetchService extends AppCompatActivity {
                     }
                 })
                 .addOnCanceledListener(() -> Log.e("GPS", "checkLocationSettings -> onCanceled"));
+=======
+        } else {
+            locPermission();
+        }
+        return data;
+>>>>>>> develop
     }
 
     private GeoLocationModel googleLocationFinder(GeoLocationModel data) {
@@ -331,8 +356,16 @@ public class EasyLocationFetchService extends AppCompatActivity {
                         }
                     }
                 });
+<<<<<<< HEAD
             }
 
+=======
+            } else {
+                // A local method to request required permissions;
+                // See https://developer.android.com/training/permissions/requesting
+                locPermission();
+            }
+>>>>>>> develop
         } catch (Exception ert) {
             ert.printStackTrace();
             data.setLongitude(0);
@@ -358,6 +391,45 @@ public class EasyLocationFetchService extends AppCompatActivity {
         }
     }
 
+<<<<<<< HEAD
+=======
+    private void locPermission() {
+        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder();
+        builder.addLocationRequest(new LocationRequest().setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY));
+        builder.setAlwaysShow(true);
+        mLocationSettingsRequest = builder.build();
+
+        mSettingsClient = LocationServices.getSettingsClient(context);
+
+        mSettingsClient
+                .checkLocationSettings(mLocationSettingsRequest)
+                .addOnSuccessListener(locationSettingsResponse -> {
+                    try {
+                        getLocationData();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    int statusCode = ((ApiException) e).getStatusCode();
+                    switch (statusCode) {
+                        case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
+                            try {
+                                ResolvableApiException rae = (ResolvableApiException) e;
+
+                                rae.startResolutionForResult(this, REQUEST_CHECK_SETTINGS);
+//                                    startIntentSenderForResult(rae.getResolution().getIntentSender(), REQUEST_CHECK_SETTINGS, null, 0, 0, 0, null);
+                            } catch (Exception sie) {
+                                Log.e("GPS", "Unable to execute request.");
+                            }
+                            break;
+                        case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
+                            Log.e("GPS", "Location settings are inadequate, and cannot be fixed here. Fix in Settings.");
+                    }
+                })
+                .addOnCanceledListener(() -> Log.e("GPS", "checkLocationSettings -> onCanceled"));
+    }
+>>>>>>> develop
 
     LocationListener locationListenerGPS = new LocationListener() {
         @Override

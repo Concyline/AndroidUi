@@ -92,8 +92,13 @@ public class RecyclerViewButton extends FrameLayout {
 
         if (locationButton == 1) {
             params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+
         } else if (locationButton == 2) {
             params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+
+        } else if (locationButton == 3) { // NONE BUTTON
+            painelButtonRelativeLayout.setVisibility(View.GONE);
+
         } else {
             params.addRule(RelativeLayout.TEXT_ALIGNMENT_CENTER);
         }
