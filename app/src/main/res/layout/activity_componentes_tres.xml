@@ -209,7 +209,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button12"
-        app:locationButton="left"
+        app:locationButton="none"
         app:numberOfColumns="2"
         app:basic="false"
         app:refresh="true"
