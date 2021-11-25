@@ -188,7 +188,7 @@
         android:layout_height="wrap_content"
         android:text="Easy Location"
         android:textAllCaps="false"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@+id/button22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button19" />

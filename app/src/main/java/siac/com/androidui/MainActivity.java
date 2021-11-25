@@ -15,14 +15,12 @@ import java.util.ArrayList;
 
 import br.com.error.uce.UnCaughtException;
 import br.com.utill.ActionBarCuston;
-import br.com.utill.Util;
 import siac.com.androidui.ui.CalculadoraDialogActivity;
 import siac.com.androidui.ui.CamPixActivity;
 import siac.com.androidui.ui.ComponentesActivity;
 import siac.com.androidui.ui.ComponentesDoisActivity;
 import siac.com.androidui.ui.ComponentesTresActivity;
 import siac.com.androidui.ui.EasyFontsActivity;
-import siac.com.androidui.ui.EasyLocationActivity;
 import siac.com.androidui.ui.ErrorActivity;
 import siac.com.androidui.ui.HawkActivity;
 import siac.com.androidui.ui.HttpAgentActivity;
@@ -247,13 +245,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
-                    findViewById(R.id.button21).setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                           Intent intent = new Intent(getBaseContext(), EasyLocationActivity.class);
-                           startActivity(intent);
-                        }
-                    });
 
                 } catch (Exception e) {
                     e.printStackTrace();
