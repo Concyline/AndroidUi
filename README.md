@@ -17,6 +17,7 @@ This library has 6 modules to aid Android development, speeding up the completio
    - [Multiline](#Multiline)
    - [PassWord](#PassWord)
    - [EditTexCurrency](#EditTexCurrency)
+   - [RecyclerViewParallax](#RecyclerViewParallax)
    - [RecyclerViewButton](#RecyclerViewButton)
    - [ProgressImageView](#ProgressImageView)
    - [ProgressButton](#ProgressButton)
@@ -337,6 +338,12 @@ final EditTextTitle senhaEditTextTitle = findViewById(R.id.senhaEditTextTitle);
             app:tag="Valor"
             app:text="" />
 ```
+
+---
+### RecyclerViewParallax
+
+<img src="https://github.com/Concyline/AndroidUi/blob/master/img/reciclerview_parallax.gif" width="20%">
+---
 
 ---
 ### RecyclerViewButton
