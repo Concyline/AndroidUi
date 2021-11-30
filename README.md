@@ -343,6 +343,13 @@ final EditTextTitle senhaEditTextTitle = findViewById(R.id.senhaEditTextTitle);
 ### RecyclerViewParallax
 
 <img src="https://github.com/Concyline/AndroidUi/blob/master/img/reciclerview_parallax.gif" width="20%">
+
+```xml
+    <siac.com.componentes.RecyclerViewParallax
+         android:id="@+id/rv"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"/>
+```
 ---
 
 ---
