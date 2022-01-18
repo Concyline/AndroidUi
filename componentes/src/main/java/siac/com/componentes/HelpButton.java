@@ -69,9 +69,6 @@ public class HelpButton extends FrameLayout {
     private void init() {
         inflate(getContext(), R.layout.view_question_button_view_ui, this);
         imageView = findViewById(R.id.imageView);
-        /*masterButton = findViewById(R.id.masterButton);
-        masterProgressBar = findViewById(R.id.masterProgressBar);
-        */
 
         setup();
     }

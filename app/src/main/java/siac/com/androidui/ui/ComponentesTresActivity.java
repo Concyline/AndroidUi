@@ -22,6 +22,7 @@ import java.util.List;
 import siac.com.androidui.MainActivity;
 import siac.com.androidui.R;
 import siac.com.componentes.CustomDialog;
+import siac.com.componentes.HelpButton;
 import siac.com.componentes.RecyclerViewButton;
 
 public class ComponentesTresActivity extends AppCompatActivity {
@@ -35,6 +36,9 @@ public class ComponentesTresActivity extends AppCompatActivity {
         setContentView(R.layout.activity_componentes_tres);
 
         ///
+
+        HelpButton helpButton = findViewById(R.id.helpButton);
+        helpButton.setActivity(this);
 
         findViewById(R.id.button12).setOnClickListener(new View.OnClickListener() {
             @Override
