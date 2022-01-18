@@ -101,6 +101,7 @@
         <attr name="title"/>
         <attr name="colorTitle"/>
         <attr name="tamTitle" />
+        <attr name="tamTextEditText"/>
         <attr name="hora" format="boolean"/>
         <attr name="inicializa" format="boolean"/>
     </declare-styleable>

@@ -153,6 +153,7 @@
                 android:layout_weight="1"
                 app:coricon="@color/colorAccent"
                 app:hint="sua pesquisa"
+                app:title=" "
                 app:inputType="none"/>
         </LinearLayout>
 

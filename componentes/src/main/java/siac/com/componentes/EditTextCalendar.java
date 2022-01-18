@@ -37,6 +37,7 @@ public class EditTextCalendar extends FrameLayout {
     private ColorStateList colorTitle;
 
     private float tamTitle = 13;
+    private float tamTextEditText = 16;
     private boolean hora;
     private boolean inicializa;
     private Date dataColetada;
@@ -68,6 +69,7 @@ public class EditTextCalendar extends FrameLayout {
             tamTitle = getSizeFontLegendaEditText(typedArray.getString(R.styleable.EditTextCalendarLegenda_tamTitle));
             hora = typedArray.getBoolean(R.styleable.EditTextCalendarLegenda_hora, false);
             inicializa = typedArray.getBoolean(R.styleable.EditTextCalendarLegenda_inicializa, false);
+            tamTextEditText = getSizeFontTextEditText(typedArray.getString(R.styleable.EditTextCalendarLegenda_tamTextEditText));
 
             return;
         }
@@ -80,6 +82,17 @@ public class EditTextCalendar extends FrameLayout {
         } catch (Exception e) {
             float scaleRatio = getResources().getDisplayMetrics().density;
             float dimenPix = getResources().getDimension(R.dimen.tamLegendaEditTextUi);
+            return dimenPix / scaleRatio;
+        }
+    }
+
+    private float getSizeFontTextEditText(String value) {
+        try {
+            String sp = value.replace("sp", "");
+            return Float.parseFloat(sp);
+        } catch (Exception e) {
+            float scaleRatio = getResources().getDisplayMetrics().density;
+            float dimenPix = getResources().getDimension(R.dimen.txtEditUi);
             return dimenPix / scaleRatio;
         }
     }
@@ -99,6 +112,7 @@ public class EditTextCalendar extends FrameLayout {
             legendaTextView.setTextColor(colorTitle);
         }
         legendaTextView.setTextSize(tamTitle);
+        editText.setTextSize(tamTextEditText);
 
         if (hora) {
             format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
