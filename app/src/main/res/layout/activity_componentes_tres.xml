@@ -176,16 +176,27 @@
 
     <siac.com.componentes.DotLoader
         android:id="@+id/text_dot_loader"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         app:color_array="@array/dot_colors"
         app:dot_radius="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/helpButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         app:number_of_dots="3" />
+
+    <siac.com.componentes.HelpButton
+        android:id="@+id/helpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:color="@color/colorError"
+        app:helpMsg="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_dot_loader"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <Button
         android:id="@+id/button12"
