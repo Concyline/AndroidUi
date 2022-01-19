@@ -58,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
         ActionBarCuston actionBarCuston = ActionBarCuston.getInstance(this);
         actionBarCuston.setBarColor(R.color.colorPrimary);
-        actionBarCuston.setTitleColor("#E60000");
+        ///actionBarCuston.setTitleColor("#E60000");
+        actionBarCuston.setTitleColor(R.color.teste);
 
         actionBarCuston.setBar("Teste", "Subtitle");
     }
