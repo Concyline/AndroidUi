@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorTitle">#484848</color>
+    <color name="colorDescription">#484848</color>
+    <color name="tint">#444</color>
+    <color name="colorAccent">#00D9A3</color>
+    <color name="colorTextEditext">#4B4B4B</color>
+
+    <color name="colorPrimary">#005F92</color>
+
+    <color name="colorSuccess">#32CD32</color>
+    <color name="colorWarning">#FF8C00</color>
+    <color name="colorError">#CC0000</color>
+    <color name="colorInfo">#2879C1</color>
+    <color name="black">#000</color>
+    <color name="pink">#DC73FF</color>
+    <color name="white">#FFF</color>
+    <color name="cyan">#AAA</color>
+
+</resources>
