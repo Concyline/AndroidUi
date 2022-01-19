@@ -6,6 +6,9 @@ import android.text.Html;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
+import siac.com.util.R;
 
 public class ActionBarCuston {
 
@@ -33,7 +36,7 @@ public class ActionBarCuston {
 
     public ActionBarCuston setBarColor(int barColor) {
         try {
-            this.barColor = context.getResources().getString(barColor);
+            this.barColor = String.format("#%06x", ContextCompat.getColor(context, barColor) & 0xffffff);
         } catch (Exception e) {
             e.printStackTrace();
             this.barColor = "#000000";
@@ -48,7 +51,7 @@ public class ActionBarCuston {
 
     public ActionBarCuston setTitleColor(int titleColor) {
         try {
-            this.titleColor = context.getResources().getString(titleColor);
+            this.titleColor = String.format("#%06x", ContextCompat.getColor(context, titleColor) & 0xffffff);
         } catch (Exception e) {
             e.printStackTrace();
             this.titleColor = "#FFFFFF";
@@ -63,7 +66,7 @@ public class ActionBarCuston {
 
     public ActionBarCuston setSubTitleColor(int subTitleColor) {
         try {
-            this.subTitleColor = context.getResources().getString(subTitleColor);
+            this.subTitleColor = String.format("#%06x", ContextCompat.getColor(context, subTitleColor) & 0xffffff);
         } catch (Exception e) {
             e.printStackTrace();
             this.subTitleColor = "#FFFFFF";
