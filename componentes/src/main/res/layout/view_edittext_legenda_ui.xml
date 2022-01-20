@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/edit_selector_ui"
         android:textSize="@dimen/tamDescricaoUi"
+        android:textColorHint="@color/hint_text_color"
         android:textColor="@color/colorTextEditext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
