@@ -89,49 +89,42 @@ public class KeyBoardDialog {
 
         numeroEditText = dialog.findViewById(R.id.numeroEditText);
 
+        int color = activity.getResources().getColor(backgroundColor);
+
         umButton = dialog.findViewById(R.id.umButton);
-        umButton.setTag("1");
-        umButton.setBackgroundResource(backgroundColor);
+        umButton.setBackgroundColor(color);
 
         doisButton = dialog.findViewById(R.id.doisButton);
-        doisButton.setTag("2");
-        doisButton.setBackgroundResource(backgroundColor);
+        doisButton.setBackgroundColor(color);
 
         tresButton = dialog.findViewById(R.id.tresButton);
-        tresButton.setTag("3");
-        tresButton.setBackgroundResource(backgroundColor);
+        tresButton.setBackgroundColor(color);
 
         quatroButton = dialog.findViewById(R.id.quatroButton);
-        quatroButton.setTag("4");
-        quatroButton.setBackgroundResource(backgroundColor);
+        quatroButton.setBackgroundColor(color);
 
         cincoButton = dialog.findViewById(R.id.cincoButton);
-        cincoButton.setTag("5");
-        cincoButton.setBackgroundResource(backgroundColor);
+        cincoButton.setBackgroundColor(color);
 
         seisButton = dialog.findViewById(R.id.seisButton);
-        seisButton.setTag("6");
-        seisButton.setBackgroundResource(backgroundColor);
+        seisButton.setBackgroundColor(color);
 
         seteButton = dialog.findViewById(R.id.seteButton);
-        seteButton.setTag("7");
-        seteButton.setBackgroundResource(backgroundColor);
+        seteButton.setBackgroundColor(color);
 
         oitoButton = dialog.findViewById(R.id.oitoButton);
-        oitoButton.setTag("8");
-        oitoButton.setBackgroundResource(backgroundColor);
+        oitoButton.setBackgroundColor(color);
 
         noveButton = dialog.findViewById(R.id.noveButton);
-        noveButton.setTag("9");
-        noveButton.setBackgroundResource(backgroundColor);
+        noveButton.setBackgroundColor(color);
 
         zeroButton = dialog.findViewById(R.id.zeroButton);
-        zeroButton.setTag("0");
-        zeroButton.setBackgroundResource(backgroundColor);
+        zeroButton.setBackgroundColor(color);
 
         pontoButton = dialog.findViewById(R.id.pontoButton);
-        pontoButton.setTag(".");
-        pontoButton.setBackgroundResource(backgroundColor);
+        pontoButton.setBackgroundColor(color);
+
+        dialog.findViewById(R.id.button10).setBackgroundColor(color);
 
         if(justNumber){
             pontoButton.setVisibility(View.INVISIBLE);

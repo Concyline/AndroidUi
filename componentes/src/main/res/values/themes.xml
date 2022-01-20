@@ -176,14 +176,14 @@
         <item name="android:windowExitAnimation">@anim/slide_to_top</item>
     </style>
 
-    <style name="CustomDialogTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+    <style name="CustomDialogTheme">
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@null</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">false</item>
     </style>
 
-    <style name="CustomDialogToobarTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+    <style name="CustomDialogToobarTheme">
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:windowActionBarOverlay">true</item>
 
