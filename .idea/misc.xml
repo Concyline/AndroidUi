@@ -14,8 +14,10 @@
         <entry key="..\:/SiacDev - migracao/AndroidUI/componentes/src/main/res/drawable/bg_dialog_round_ui.xml" value="0.34629629629629627" />
         <entry key="..\:/SiacDev - migracao/AndroidUI/componentes/src/main/res/layout/help_dialog_ui.xml" value="0.2861111111111111" />
         <entry key="..\:/SiacDev - migracao/AndroidUI/componentes/src/main/res/layout/simples_text_view.xml" value="0.3390625" />
+        <entry key="..\:/SiacDev - migracao/AndroidUI/componentes/src/main/res/layout/view_edittext_financeiro_legenda_ui.xml" value="0.3390625" />
         <entry key="..\:/SiacDev - migracao/AndroidUI/componentes/src/main/res/layout/view_edittext_legenda_ui.xml" value="0.23703703703703705" />
         <entry key="..\:/SiacDev - migracao/AndroidUI/componentes/src/main/res/layout/view_recyclerview_button_ui.xml" value="0.3390625" />
+        <entry key="..\:/SiacDev - migracao/AndroidUI/componentes/src/main/res/layout/view_search_legenda_ui.xml" value="0.3390625" />
       </map>
     </option>
   </component>
