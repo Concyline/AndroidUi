@@ -4,12 +4,15 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.text.Html;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+
+import androidx.core.content.ContextCompat;
 
 public class CustomDialog {
 
@@ -85,12 +88,13 @@ public class CustomDialog {
         toolbar = dialog.findViewById(R.id.toolbar);
         container = dialog.findViewById(R.id.container);
 
-        toolbar.setTitle(toolbarTitle);
+        String titleColor = String.format("#%06x", ContextCompat.getColor(activity, R.color.actionbar_title_color) & 0xffffff);
+        toolbar.setTitle(Html.fromHtml("<font face='sans-serif' color='" + titleColor + "'>" + toolbarTitle + "</font>"));
+
         if (!toolbarSubTitle.equals("")) {
-            toolbar.setSubtitle(toolbarSubTitle);
+            String subTitleColor = String.format("#%06x", ContextCompat.getColor(activity, R.color.actionbar_title_color) & 0xffffff);
+            toolbar.setSubtitle(Html.fromHtml("<font face='sans-serif' color='" + subTitleColor + "'>" + toolbarSubTitle + "</font>"));
         }
-        toolbar.setTitleTextColor(android.graphics.Color.WHITE);
-        toolbar.setSubtitleTextColor(android.graphics.Color.WHITE);
         toolbar.setNavigationIcon(R.drawable.outline_arrow_back_white_48dp);
 
         toolbar.setNavigationOnClickListener(new android.view.View.OnClickListener() {
@@ -113,7 +117,6 @@ public class CustomDialog {
         int width = displayMetrics.widthPixels;
 
         if (width < height) {
-            //dialog.getWindow().setLayout((width * 90 / 100), HEIGTH_PERCENTAGE == -2 ? WindowManager.LayoutParams.WRAP_CONTENT : (height * HEIGTH_PERCENTAGE / 100));
             dialog.getWindow().setLayout((width * 90 / 100), HEIGTH_PERCENTAGE == -2 ? WindowManager.LayoutParams.WRAP_CONTENT : (height * HEIGTH_PERCENTAGE / 100));
         } else {
             dialog.getWindow().setLayout((width * 60 / 100), HEIGTH_PERCENTAGE == -2 ? WindowManager.LayoutParams.WRAP_CONTENT : (height * HEIGTH_PERCENTAGE / 100));
