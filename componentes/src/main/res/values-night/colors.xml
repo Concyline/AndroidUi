@@ -5,6 +5,8 @@
     <color name="tint">#444</color>
     <color name="colorAccent">#00D9A3</color>
     <color name="colorTextEditext">#4B4B4B</color>
+    <color name="colorTextEditextKeyBoard">#9E9E9E</color>
+    <color name="colorTextButtonKeyBoard">#9E9E9E</color>
     <color name="hint_text_color">#9E9E9E</color>
     <color name="actionbar_title_color">#AAC6BD</color>
 

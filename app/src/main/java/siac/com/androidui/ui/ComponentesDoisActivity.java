@@ -250,7 +250,8 @@ public class ComponentesDoisActivity extends AppCompatActivity {
                     KeyBoardDialog customDialog = new KeyBoardDialog(ComponentesDoisActivity.this);
                     customDialog.setBackgroundResource(KeyBoardDialog.DWindow.ROUND)
                             .setCancelable(true)
-                            .setJustNumber(true)
+                            .setJustNumber(false)
+                            .setBackgroundColor(R.color.background)
                             .create();
 
                     customDialog.show(editTextNumber.getText().toString(), new KeyBoardDialog.OnDismissListener() {
