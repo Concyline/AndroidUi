@@ -251,6 +251,7 @@ public class ComponentesDoisActivity extends AppCompatActivity {
                     customDialog.setBackgroundResource(KeyBoardDialog.DWindow.ROUND)
                             .setCancelable(true)
                             .setJustNumber(false)
+                            .setBackgroundColor(R.color.background)
                             .create();
 
                     customDialog.show(editTextNumber.getText().toString(), new KeyBoardDialog.OnDismissListener() {

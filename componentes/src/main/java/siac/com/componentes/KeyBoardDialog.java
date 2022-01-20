@@ -13,6 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 public class KeyBoardDialog {
 
@@ -21,6 +22,7 @@ public class KeyBoardDialog {
     private boolean cancelable = true;
     private int backgroundResource = R.drawable.bg_dialog_round_ui;
     private int HEIGTH_PERCENTAGE = -2;
+    private int backgroundColor = R.color.white;
     private boolean justNumber = true;
     private OnDismissListener onDismissListener;
 
@@ -39,26 +41,15 @@ public class KeyBoardDialog {
         return this;
     }
 
+    public KeyBoardDialog setBackgroundColor(int backgroundColor) {
+        this.backgroundColor = backgroundColor;
+        return this;
+    }
+
     public KeyBoardDialog setBackgroundResource(DWindow dWindow) {
         backgroundResource = dWindow.equals(DWindow.ROUND) ? R.drawable.bg_dialog_round_ui : R.drawable.bg_dialog_square_ui;
         return this;
     }
-
-  /*  public KeyBoardDialog setHeight(DLayoutParams dLayoutParams) {
-        switch (dLayoutParams) {
-            case WRAP_CONTENT: {
-                HEIGTH_PERCENTAGE = -2;
-                break;
-            }
-            case MATCH_PARENT: {
-                HEIGTH_PERCENTAGE = 90;
-                break;
-            }
-        }
-        return this;
-    }*/
-
-
 
     @SuppressLint("ResourceAsColor")
     public KeyBoardDialog create() throws Exception {
@@ -67,6 +58,9 @@ public class KeyBoardDialog {
         dialog.setContentView(R.layout.base_key_board_dialog_ui);
         dialog.setCancelable(cancelable);
         dialog.getWindow().getAttributes().windowAnimations = R.style.scale_fade_in_out;
+
+        LinearLayout baseContainerLinearLayout = dialog.findViewById(R.id.baseContainerLinearLayout);
+        baseContainerLinearLayout.setBackgroundResource(backgroundColor);
 
         addLayoutContainer();
 
@@ -97,36 +91,47 @@ public class KeyBoardDialog {
 
         umButton = dialog.findViewById(R.id.umButton);
         umButton.setTag("1");
+        umButton.setBackgroundResource(backgroundColor);
 
         doisButton = dialog.findViewById(R.id.doisButton);
         doisButton.setTag("2");
+        doisButton.setBackgroundResource(backgroundColor);
 
         tresButton = dialog.findViewById(R.id.tresButton);
         tresButton.setTag("3");
+        tresButton.setBackgroundResource(backgroundColor);
 
         quatroButton = dialog.findViewById(R.id.quatroButton);
         quatroButton.setTag("4");
+        quatroButton.setBackgroundResource(backgroundColor);
 
         cincoButton = dialog.findViewById(R.id.cincoButton);
         cincoButton.setTag("5");
+        cincoButton.setBackgroundResource(backgroundColor);
 
         seisButton = dialog.findViewById(R.id.seisButton);
         seisButton.setTag("6");
+        seisButton.setBackgroundResource(backgroundColor);
 
         seteButton = dialog.findViewById(R.id.seteButton);
         seteButton.setTag("7");
+        seteButton.setBackgroundResource(backgroundColor);
 
         oitoButton = dialog.findViewById(R.id.oitoButton);
         oitoButton.setTag("8");
+        oitoButton.setBackgroundResource(backgroundColor);
 
         noveButton = dialog.findViewById(R.id.noveButton);
         noveButton.setTag("9");
+        noveButton.setBackgroundResource(backgroundColor);
 
         zeroButton = dialog.findViewById(R.id.zeroButton);
         zeroButton.setTag("0");
+        zeroButton.setBackgroundResource(backgroundColor);
 
         pontoButton = dialog.findViewById(R.id.pontoButton);
         pontoButton.setTag(".");
+        pontoButton.setBackgroundResource(backgroundColor);
 
         if(justNumber){
             pontoButton.setVisibility(View.INVISIBLE);
