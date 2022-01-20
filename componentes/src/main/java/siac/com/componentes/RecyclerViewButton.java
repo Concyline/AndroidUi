@@ -185,6 +185,14 @@ public class RecyclerViewButton extends FrameLayout {
         });
     }
 
+    public void notifyDataSetChanged(){
+        if(adapterRoot != null && adapterRoot.getItemCount() == 0){
+            notfoundTextView.setVisibility(View.VISIBLE);
+        }else{
+            notfoundTextView.setVisibility(View.INVISIBLE);
+        }
+    }
+
     public void setOnRefreshListener(SwipeRefreshLayout.OnRefreshListener onRefreshListener) {
         swipeRefreshLayout.setOnRefreshListener(onRefreshListener);
     }
