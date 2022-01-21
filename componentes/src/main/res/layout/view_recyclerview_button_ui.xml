@@ -39,9 +39,9 @@
             android:id="@+id/goToTopImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:background="@drawable/top"
             android:elevation="10dp"
-            android:layout_centerHorizontal="true"
             android:visibility="invisible" />
 
     </RelativeLayout>
