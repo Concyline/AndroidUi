@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class KeyBoardDialog {
 
@@ -59,9 +60,6 @@ public class KeyBoardDialog {
         dialog.setCancelable(cancelable);
         dialog.getWindow().getAttributes().windowAnimations = R.style.scale_fade_in_out;
 
-        LinearLayout baseContainerLinearLayout = dialog.findViewById(R.id.baseContainerLinearLayout);
-        baseContainerLinearLayout.setBackgroundResource(backgroundColor);
-
         addLayoutContainer();
 
         /////////////////////////////////////////////////////////////////////
@@ -81,7 +79,7 @@ public class KeyBoardDialog {
         return this;
     }
 
-    private Button umButton, doisButton, tresButton, quatroButton, cincoButton, seisButton, seteButton, oitoButton, noveButton, zeroButton, pontoButton;
+    private TextView umButton, doisButton, tresButton, quatroButton, cincoButton, seisButton, seteButton, oitoButton, noveButton, zeroButton, pontoButton;
     private ImageView apagaImageView, okImageView;
     private EditText numeroEditText;
 
@@ -89,42 +87,17 @@ public class KeyBoardDialog {
 
         numeroEditText = dialog.findViewById(R.id.numeroEditText);
 
-        int color = activity.getResources().getColor(backgroundColor);
-
         umButton = dialog.findViewById(R.id.umButton);
-        umButton.setBackgroundColor(color);
-
         doisButton = dialog.findViewById(R.id.doisButton);
-        doisButton.setBackgroundColor(color);
-
         tresButton = dialog.findViewById(R.id.tresButton);
-        tresButton.setBackgroundColor(color);
-
         quatroButton = dialog.findViewById(R.id.quatroButton);
-        quatroButton.setBackgroundColor(color);
-
         cincoButton = dialog.findViewById(R.id.cincoButton);
-        cincoButton.setBackgroundColor(color);
-
         seisButton = dialog.findViewById(R.id.seisButton);
-        seisButton.setBackgroundColor(color);
-
         seteButton = dialog.findViewById(R.id.seteButton);
-        seteButton.setBackgroundColor(color);
-
         oitoButton = dialog.findViewById(R.id.oitoButton);
-        oitoButton.setBackgroundColor(color);
-
         noveButton = dialog.findViewById(R.id.noveButton);
-        noveButton.setBackgroundColor(color);
-
         zeroButton = dialog.findViewById(R.id.zeroButton);
-        zeroButton.setBackgroundColor(color);
-
         pontoButton = dialog.findViewById(R.id.pontoButton);
-        pontoButton.setBackgroundColor(color);
-
-        dialog.findViewById(R.id.button10).setBackgroundColor(color);
 
         if(justNumber){
             pontoButton.setVisibility(View.INVISIBLE);
@@ -133,9 +106,9 @@ public class KeyBoardDialog {
         apagaImageView = dialog.findViewById(R.id.apagaImageView);
         okImageView = dialog.findViewById(R.id.okImageView);
 
-        Button[] arrayButton = new Button[]{umButton, doisButton, tresButton, quatroButton, cincoButton, seisButton, seteButton, oitoButton, noveButton, zeroButton, pontoButton};
+        TextView[] arrayButton = new TextView[]{umButton, doisButton, tresButton, quatroButton, cincoButton, seisButton, seteButton, oitoButton, noveButton, zeroButton, pontoButton};
 
-        for (Button button : arrayButton) {
+        for (TextView button : arrayButton) {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -147,7 +120,7 @@ public class KeyBoardDialog {
                     if (value.equals(".")) {
                         if (!valueEdit.contains(".")) {
 
-                            if (valueEdit.length() == 0) { /////// CORRIGIR
+                            if (valueEdit.length() == 0) {
                                 numeroEditText.setText("0");
                             }
 
@@ -183,6 +156,10 @@ public class KeyBoardDialog {
                 fadeIn(v);
 
                 String value = numeroEditText.getText().toString().trim();
+
+                if(value.equals("0.")){
+                    value = "0";
+                }
 
                 if(justNumber){
                     value = value.replaceAll("[^0-9]+", "");

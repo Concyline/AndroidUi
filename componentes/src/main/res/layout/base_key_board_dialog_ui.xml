@@ -47,13 +47,15 @@
             app:layout_constraintStart_toEndOf="@+id/numeroEditText"
             app:layout_constraintTop_toTopOf="@+id/numeroEditText" />
 
-        <Button
+        <TextView
             android:id="@+id/umButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="1"
+            android:tag="1"
             android:textColor="@color/colorTextButtonKeyBoard"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -62,12 +64,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />
 
-        <Button
+
+        <TextView
             android:id="@+id/doisButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginTop="8dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="2"
+            android:tag="2"
             android:textColor="@color/colorTextButtonKeyBoard"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -76,13 +81,15 @@
             app:layout_constraintStart_toEndOf="@+id/umButton"
             app:layout_constraintTop_toBottomOf="@+id/numeroEditText" />
 
-        <Button
+        <TextView
             android:id="@+id/quatroButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="4"
+            android:tag="4"
             android:textColor="@color/colorTextButtonKeyBoard"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -91,13 +98,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/umButton" />
 
-        <Button
+        <TextView
             android:id="@+id/seteButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="7"
+            android:tag="7"
             android:textColor="@color/colorTextButtonKeyBoard"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -106,25 +115,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/quatroButton" />
 
-        <Button
+        <TextView
             android:id="@+id/button10"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal|center_vertical"
             android:textColor="@color/colorTextButtonKeyBoard"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/zeroButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/seteButton" />
 
-        <Button
+        <TextView
             android:id="@+id/zeroButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="0"
+            android:tag="0"
             android:textColor="@color/colorTextButtonKeyBoard"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -133,12 +145,14 @@
             app:layout_constraintStart_toEndOf="@+id/button10"
             app:layout_constraintTop_toBottomOf="@+id/oitoButton" />
 
-        <Button
+        <TextView
             android:id="@+id/pontoButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="."
+            android:tag="."
             android:textColor="@color/colorTextButtonKeyBoard"
             android:textSize="25sp"
             android:textStyle="bold"
@@ -161,11 +175,13 @@
             app:layout_constraintStart_toEndOf="@+id/pontoButton"
             app:layout_constraintTop_toBottomOf="@+id/button15" />
 
-        <Button
+        <TextView
             android:id="@+id/oitoButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="8"
+            android:tag="8"
             android:textColor="@color/colorTextButtonKeyBoard"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -174,11 +190,13 @@
             app:layout_constraintStart_toEndOf="@+id/seteButton"
             app:layout_constraintTop_toBottomOf="@+id/cincoButton" />
 
-        <Button
+        <TextView
             android:id="@+id/noveButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="9"
+            android:tag="9"
             android:textColor="@color/colorTextButtonKeyBoard"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -187,12 +205,13 @@
             app:layout_constraintStart_toEndOf="@+id/oitoButton"
             app:layout_constraintTop_toBottomOf="@+id/seisButton" />
 
-        <Button
+        <TextView
             android:id="@+id/button15"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="Button"
             android:textColor="@color/colorTextButtonKeyBoard"
             android:textSize="20sp"
@@ -203,11 +222,13 @@
             app:layout_constraintStart_toEndOf="@+id/noveButton"
             app:layout_constraintTop_toBottomOf="@+id/button14" />
 
-        <Button
+        <TextView
             android:id="@+id/cincoButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="5"
+            android:tag="5"
             android:textColor="@color/colorTextButtonKeyBoard"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -216,12 +237,13 @@
             app:layout_constraintStart_toEndOf="@+id/quatroButton"
             app:layout_constraintTop_toBottomOf="@+id/doisButton" />
 
-        <Button
+        <TextView
             android:id="@+id/seisButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-
+            android:layout_height="40dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="6"
+            android:tag="6"
             android:textColor="@color/colorTextButtonKeyBoard"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -230,12 +252,13 @@
             app:layout_constraintStart_toEndOf="@+id/cincoButton"
             app:layout_constraintTop_toBottomOf="@+id/tresButton" />
 
-        <Button
+        <TextView
             android:id="@+id/button14"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="Button"
             android:textColor="@color/colorTextButtonKeyBoard"
             android:textSize="20sp"
@@ -246,12 +269,14 @@
             app:layout_constraintStart_toEndOf="@+id/seisButton"
             app:layout_constraintTop_toBottomOf="@+id/vazio" />
 
-        <Button
+        <TextView
             android:id="@+id/tresButton"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginTop="10dp"
+            android:gravity="center_horizontal|center_vertical"
             android:text="3"
+            android:tag="3"
             android:textColor="@color/colorTextButtonKeyBoard"
             android:textSize="20sp"
             android:textStyle="bold"
