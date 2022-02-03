@@ -3,6 +3,7 @@ package siac.com.androidui.ui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 
 import br.com.utill.Util;
@@ -51,6 +52,9 @@ public class ComponentesActivity extends AppCompatActivity {
 
         TextViewTitle textViewTitle = findViewById(R.id.textViewsd);
         textViewTitle.setFont("fonts/Lobster-Regular.ttf");
+
+       TextViewTitle textViewTitle1 = findViewById(R.id.textViewsdasd);
+       textViewTitle1.setDescricao(Html.fromHtml("<b>Aureo</> Jose", Html.FROM_HTML_MODE_COMPACT));
 
     }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
+import android.text.Spanned;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -117,6 +118,10 @@ public class TextViewTitle extends FrameLayout {
 
     public void setDescricao(String descricao) {
         descricaoTextView.setText(descricao);
+    }
+
+    public void setDescricao(Spanned spanned) {
+        descricaoTextView.setText(spanned);
     }
 
     public void setCorDescricao(int color){
