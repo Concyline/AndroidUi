@@ -254,6 +254,24 @@
             app:layout_constraintStart_toEndOf="@+id/editTexFinaceirotLegenda"
             app:layout_constraintTop_toBottomOf="@+id/editTextLegenda22asd" />
 
+
+        <siac.com.componentes.TextViewTitle
+            android:id="@+id/textViewsdasd"
+            android:layout_width="372dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:colorTitle="@color/colorAccent"
+            app:corDescricao="@color/colorPrimaryDark"
+            app:descricao="Goiânia"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTexFinaceirotLegenda"
+            app:singleLine="false"
+            app:tamDescricao="16sp"
+            app:tamTitle="13sp"
+            app:title="Cidade" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
