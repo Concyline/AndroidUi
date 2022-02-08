@@ -1585,6 +1585,20 @@ goJsonArray(new JsonArrayCallback() {
 JSoap is an Android library which allows automatic handling of SOAP requests and resposes, making the process effortless to the user. It works on top of the well-known library KSOAP2.
  
  ### Usage
+ 
+````xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.androidui">
+
+    <application
+ 	...
+        android:usesCleartextTraffic="true">
+     
+    </application>
+
+</manifest>
+````
  ````java
 @JSoapClass(namespace = "http://tempuri.org/")
 public class Cidade {
